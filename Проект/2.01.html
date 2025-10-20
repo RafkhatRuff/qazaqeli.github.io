@@ -1,0 +1,827 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Раннее средневековье: Эпоха каганатов</title>
+    <link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@200..900&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Unbounded', sans-serif;
+            background-color: rgb(244, 244, 244);
+            color: #333;
+            line-height: 1.6;
+        }
+
+        a {
+            text-decoration: none;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        /* Шапка */
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 100%;
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 30px 20px;
+        }
+
+        header .logo {
+            color: rgb(0, 109, 219);
+            text-transform: uppercase;
+            font-size: 20px;
+            font-weight: 500;
+        }
+
+        /* Бургер */
+        .dropdown {
+            position: relative;
+            display: inline-block;
+        }
+
+        .dropdown-btn {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            padding: 10px 15px;
+            background: #f8f9fa;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .dropdown-btn:hover {
+            background: #e9ecef;
+            border-color: #adb5bd;
+        }
+
+        .dropdown-btn span {
+            font-weight: 500;
+            font-size: 15px;
+            font-family: Unbounded;
+            color: rgb(0, 109, 219);
+        }
+
+        .dropdown-content {
+            position: absolute;
+            right: 0;
+            background: white;
+            min-width: 300px;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+            border-radius: 10px;
+            z-index: 1000;
+            opacity: 0;
+            visibility: hidden;
+            transform: translateY(-10px);
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .dropdown-content a {
+            display: block;
+            padding: 12px 16px;
+            text-decoration: none;
+            color: #333;
+            border-bottom: 2px solid #eee;
+            transition: all 0.2s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .dropdown-content a:last-child {
+            border-bottom: none;
+        }
+
+        .dropdown-content a:hover {
+            background: #f8f9fa;
+            border-radius: 8px;
+        }
+
+        .dropdown:hover .dropdown-content {
+            opacity: 1;
+            visibility: visible;
+            transform: translateY(0);
+        }
+
+        /* Баннер */
+        .banner {
+            display: grid;
+            align-items: center;
+            text-align: center;
+            width: 1500px;
+            margin: 0 auto;
+            border-radius: 25px;
+            height: 250px;
+            margin-bottom: 50px;
+            box-shadow: 10px 5px 5px rgba(0,0,0,0.1);
+            background: linear-gradient(rgba(0, 123, 255, 0.5), rgba(0, 109, 219,0.5)), url('./Баннер/Баннер\ 1.jpg') center/cover no-repeat;
+        }
+
+        .banner-text-1 {
+            font-size: 3.6rem;
+            font-weight: 800;
+            color: rgb(255, 255, 255);
+        }
+
+        /* Разделы */
+        .razdel-tema {
+            width: 100%;
+            max-width: 1400px;
+            margin: 0 auto;
+            margin-top: 50px;
+            margin-bottom: 30px;
+            padding: 0 20px;
+        }
+
+        .razdel {
+            color: rgb(0, 109, 219);
+            font-size: 2.1rem;
+            font-weight: 500;
+        }
+
+        /* Контент */
+        .content-container {
+            max-width: 1500px;
+            margin: 0 auto;
+            padding: 0 20px 50px;
+        }
+
+        .content-section {
+            background: white;
+            border-radius: 20px;
+            padding: 35px;
+            margin-bottom: 35px;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.08);
+            border-left: 5px solid rgb(0, 109, 219);
+        }
+
+        .section-title {
+            color: rgb(0, 109, 219);
+            font-size: 2rem;
+            margin-bottom: 25px;
+            display: flex;
+            align-items: center;
+            padding-bottom: 10px;
+            border-bottom: 2px solid #f0f0f0;
+        }
+
+        .section-title::before {
+            content: "▶";
+            display: inline-block;
+            margin-right: 15px;
+            color: rgb(0, 109, 219);
+            font-size: 1.5rem;
+        }
+
+        .subsection-title {
+            color: #2c5282;
+            font-size: 1.5rem;
+            margin: 25px 0 15px;
+            padding-left: 20px;
+            border-left: 4px solid #2c5282;
+        }
+
+        .timeline-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 25px 0;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+            border-radius: 10px;
+            overflow: hidden;
+        }
+
+        .timeline-table th {
+            background: linear-gradient(135deg, rgb(0, 109, 219), #2c5282);
+            color: white;
+            padding: 18px;
+            text-align: left;
+            font-weight: 600;
+        }
+
+        .timeline-table td {
+            padding: 18px;
+            border-bottom: 1px solid #eaeaea;
+            vertical-align: top;
+        }
+
+        .timeline-table tr:nth-child(even) {
+            background: #f8fafc;
+        }
+
+        .timeline-table tr:hover {
+            background: #e6f2ff;
+            transform: translateY(-1px);
+            transition: all 0.2s ease;
+        }
+
+        .key-points {
+            background: linear-gradient(135deg, #f0f7ff, #e6f2ff);
+            border-left: 6px solid rgb(0, 109, 219);
+            padding: 25px;
+            margin: 25px 0;
+            border-radius: 0 15px 15px 0;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+        }
+
+        .key-points h3 {
+            margin-bottom: 15px;
+            color: rgb(0, 109, 219);
+            font-size: 1.4rem;
+        }
+
+        .key-points ul {
+            padding-left: 25px;
+        }
+
+        .key-points li {
+            margin-bottom: 10px;
+            position: relative;
+        }
+
+        .key-points li::before {
+            content: "•";
+            color: rgb(0, 109, 219);
+            font-weight: bold;
+            display: inline-block;
+            width: 1em;
+            margin-left: -1em;
+        }
+
+        .kaganat-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+            gap: 25px;
+            margin: 25px 0;
+        }
+
+        .kaganat-card {
+            background: white;
+            border-radius: 15px;
+            padding: 25px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+            border-top: 5px solid rgb(0, 109, 219);
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .kaganat-card::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, rgb(0, 109, 219), #2c5282);
+        }
+
+        .kaganat-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 12px 30px rgba(0,0,0,0.15);
+        }
+
+        .kaganat-card h4 {
+            color: rgb(0, 109, 219);
+            margin-bottom: 12px;
+            font-size: 1.3rem;
+        }
+
+        .kaganat-card .period {
+            background: #e6f2ff;
+            color: #2c5282;
+            padding: 5px 12px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            display: inline-block;
+            margin-bottom: 15px;
+        }
+
+        .conclusion {
+            background: linear-gradient(135deg, #e8f4ff, #d4e7ff);
+            padding: 30px;
+            border-radius: 15px;
+            margin: 35px 0;
+            border: 2px solid #c2e0ff;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+        }
+
+        .conclusion h3 {
+            color: rgb(0, 109, 219);
+            margin-bottom: 20px;
+            font-size: 1.6rem;
+            text-align: center;
+        }
+
+        .important-note {
+            background: #fff3cd;
+            border: 2px solid #ffeaa7;
+            border-left: 6px solid #fdcb6e;
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 10px;
+        }
+
+        .comparison-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 25px 0;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+            border-radius: 10px;
+            overflow: hidden;
+        }
+
+        .comparison-table th {
+            background: #2c5282;
+            color: white;
+            padding: 15px;
+            text-align: center;
+            font-weight: 600;
+        }
+
+        .comparison-table td {
+            padding: 15px;
+            border: 1px solid #eaeaea;
+            text-align: center;
+        }
+
+        .comparison-table tr:nth-child(even) {
+            background: #f8fafc;
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px;
+            margin: 20px 0;
+        }
+
+        .feature-card {
+            background: white;
+            border-radius: 12px;
+            padding: 20px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+            border-left: 4px solid rgb(0, 109, 219);
+            transition: all 0.3s ease;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.12);
+        }
+
+        .feature-card h5 {
+            color: rgb(0, 109, 219);
+            margin-bottom: 10px;
+            font-size: 1.2rem;
+        }
+
+        /* Футер */
+        footer {
+            width: 100%;
+            max-width: 1300px;
+            margin: 0 auto;
+            border-top: 3px solid #3498db;
+            border-left: 3px solid #3498db;
+            border-right: 3px solid #3498db;
+            border-bottom: none;
+            border-radius: 15px 15px 0 0;
+            background-color: rgb(244, 244, 244);
+            text-align: center;
+            padding: 25px 25px;
+            margin-top: 3rem;
+        }
+        .footer-content {
+            color:rgb(69, 69, 69);
+        }
+
+        @media (max-width: 768px) {
+            .banner-text-1 {
+                font-size: 2.5rem;
+            }
+            
+            .razdel {
+                font-size: 1.8rem;
+            }
+            
+            .section-title {
+                font-size: 1.5rem;
+            }
+            
+            .timeline-table {
+                display: block;
+                overflow-x: auto;
+            }
+            
+            .kaganat-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            header {
+                flex-direction: column;
+                gap: 15px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Шапка -->
+    <header>
+        <a href="./Главная.html"><span class="logo">QAZAQ ELI</span></a>
+        <div class="dropdown">
+            <button class="dropdown-btn">
+                <span>Разделы</span>
+            </button>
+            <div class="dropdown-content">
+                <a href="#periodization">Периодизация</a>
+                <a href="#turkic-kaganate">Тюркский каганат</a>
+                <a href="#western-turkic">Западно-тюркский</a>
+                <a href="#turgesh">Тюргешский</a>
+                <a href="#karluk">Карлукский</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Баннер -->
+    <div class="banner">
+        <span class="banner-text-1">Раннее средневековье: <br> Эпоха каганатов</span>
+    </div>
+
+    <div class="content-container">
+        <!-- Введение -->
+        <div class="content-section" id="introduction">
+            <h2 class="section-title">Эпоха раннего средневековья в Казахстане</h2>
+            <p>VI-IX века стали периодом формирования и расцвета тюркских государств на территории Казахстана. Это время известно как "эпоха каганатов" - мощных кочевых империй, созданных тюркскими народами.</p>
+            
+            <div class="key-points">
+                <h3>Характерные черты эпохи каганатов:</h3>
+                <ul>
+                    <li>Создание первых тюркских государственных образований</li>
+                    <li>Формирование тюркской рунической письменности</li>
+                    <li>Развитие трансконтинентальной торговли по Великому Шелковому пути</li>
+                    <li>Сложение основ тюркской культуры и мировоззрения</li>
+                    <li>Начало распространения ислама в регионе</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Периодизация -->
+        <div class="razdel-tema" id="periodization">
+            <span class="razdel">Периодизация средневековой истории Казахстана</span>
+        </div>
+
+        <div class="content-section">
+            <h2 class="section-title">Основные периоды средневековья</h2>
+            
+            <table class="timeline-table">
+                <thead>
+                    <tr>
+                        <th>Период</th>
+                        <th>Хронология</th>
+                        <th>Основные государства</th>
+                        <th>Характерные черты</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>Раннее средневековье</strong></td>
+                        <td>VI-IX вв.</td>
+                        <td>Тюркский, Западно-тюркский, Тюргешский, Карлукский каганаты</td>
+                        <td>Формирование тюркской государственности, создание письменности</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Развитое средневековье</strong></td>
+                        <td>X-XIII вв.</td>
+                        <td>Государство Караханидов, Кыпчакское ханство</td>
+                        <td>Принятие ислама, развитие городской культуры</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Позднее средневековье</strong></td>
+                        <td>XIV-XV вв.</td>
+                        <td>Ак-Орда, Могулистан, Ногайская Орда</td>
+                        <td>Монгольское завоевание, формирование казахской народности</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <h3 class="subsection-title">Хронология раннего средневековья</h3>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <h5>552-603 гг.</h5>
+                    <p><strong>Единый Тюркский каганат</strong><br>Объединение тюркских племен от Желтого моря до Черного</p>
+                </div>
+                <div class="feature-card">
+                    <h5>603-704 гг.</h5>
+                    <p><strong>Западно-тюркский каганат</strong><br>Расцвет тюркской государственности в Казахстане</p>
+                </div>
+                <div class="feature-card">
+                    <h5>704-756 гг.</h5>
+                    <p><strong>Тюргешский каганат</strong><br>Борьба с арабскими завоевателями</p>
+                </div>
+                <div class="feature-card">
+                    <h5>756-940 гг.</h5>
+                    <p><strong>Карлукский каганат</strong><br>Принятие ислама, развитие культуры</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Тюркский каганат -->
+        <div class="razdel-tema" id="turkic-kaganate">
+            <span class="razdel">Великий Тюркский каганат (552-603 гг.)</span>
+        </div>
+
+        <div class="content-section">
+            <h2 class="section-title">Первая тюркская империя</h2>
+            
+            <div class="key-points">
+                <h3>Историческое значение:</h3>
+                <ul>
+                    <li>Первое государственное объединение тюркских племен</li>
+                    <li>Создало империю от Желтого моря до Черного моря</li>
+                    <li>Заложило основы тюркской государственности и культуры</li>
+                    <li>Создало тюркскую руническую письменность</li>
+                </ul>
+            </div>
+
+            <div class="kaganat-grid">
+                <div class="kaganat-card">
+                    <div class="period">552-553 гг.</div>
+                    <h4>Бумын-каган</h4>
+                    <p><strong>Основатель каганата</strong><br>
+                    Разгромил жужаней в 552 году<br>
+                    Принял титул "иль-каган"<br>
+                    Объединил тюркские племена</p>
+                </div>
+                
+                <div class="kaganat-card">
+                    <div class="period">553-572 гг.</div>
+                    <h4>Кара-Иссык Хакан (Мукан-каган)</h4>
+                    <p><strong>Период расцвета</strong><br>
+                    Завершил объединение тюрков<br>
+                    Укрепил государство<br>
+                    Расширил границы империи</p>
+                </div>
+
+                <div class="kaganat-card">
+                    <div class="period">572-581 гг.</div>
+                    <h4>Таспар-каган</h4>
+                    <p><strong>Внутренние реформы</strong><br>
+                    Упорядочил администрацию<br>
+                    Развивал торговлю<br>
+                    Поддерживал буддизм</p>
+                </div>
+            </div>
+
+            <h3 class="subsection-title">Административное устройство</h3>
+            <table class="comparison-table">
+                <thead>
+                    <tr>
+                        <th>Уровень управления</th>
+                        <th>Должность</th>
+                        <th>Функции</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>Центральная власть</strong></td>
+                        <td>Каган</td>
+                        <td>Верховный правитель, главнокомандующий</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Региональное управление</strong></td>
+                        <td>Ябгу, Шад</td>
+                        <td>Управление уделами, военное командование</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Племенное управление</strong></td>
+                        <td>Беки, Tarханы</td>
+                        <td>Управление племенами, сбор налогов</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <div class="important-note">
+                <strong>Культурное наследие:</strong> Тюркский каганат создал орхоно-енисейскую письменность - древнейшую тюркскую письменность, памятники которой найдены в Монголии и на территории Казахстана.
+            </div>
+        </div>
+
+        <!-- Западно-тюркский каганат -->
+        <div class="razdel-tema" id="western-turkic">
+            <span class="razdel">Западно-тюркский каганат (603-704 гг.)</span>
+        </div>
+
+        <div class="content-section">
+            <h2 class="section-title">Государство на территории Казахстана</h2>
+            
+            <div class="key-points">
+                <h3>Особенности Западно-тюркского каганата:</h3>
+                <ul>
+                    <li>Образовался после распада единого Тюркского каганата в 603 году</li>
+                    <li>Занимал территорию от Алтая до Кавказа</li>
+                    <li>Столица - Суяб (близ современного Токмака)</li>
+                    <li>Контролировал важнейшие участки Великого Шелкового пути</li>
+                </ul>
+            </div>
+
+            <h3 class="subsection-title">Политическая структура</h3>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <h5>Две орды</h5>
+                    <p>Каганат делился на <strong>дулу</strong> (восточное крыло) и <strong>нушиби</strong> (западное крыло) по 5 племен в каждой</p>
+                </div>
+                <div class="feature-card">
+                    <h5>10 стрел</h5>
+                    <p>Военно-административная система: "он ок будун" - народ десяти стрел (10 племенных объединений)</p>
+                </div>
+                <div class="feature-card">
+                    <h5>Столицы</h5>
+                    <p>Суяб (летняя) и Тараз (зимняя) столицы. Развитая городская культура</p>
+                </div>
+            </div>
+
+            <h3 class="subsection-title">Великие каганы</h3>
+            <div class="kaganat-grid">
+                <div class="kaganat-card">
+                    <div class="period">610-618 гг.</div>
+                    <h4>Тон-ябгу-каган</h4>
+                    <p><strong>Объединитель каганата</strong><br>
+                    Укрепил центральную власть<br>
+                    Провел административную реформу<br>
+                    Установил контроль над Шелковым путем</p>
+                </div>
+                
+                <div class="kaganat-card">
+                    <div class="period">634-642 гг.</div>
+                    <h4>Ишбара-каган</h4>
+                    <p><strong>Борьба за независимость</strong><br>
+                    Противостояние с Танским Китаем<br>
+                    Сохранение независимости каганата<br>
+                    Развитие международных связей</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Тюргешский каганат -->
+        <div class="razdel-tema" id="turgesh">
+            <span class="razdel">Тюргешский каганат (704-756 гг.)</span>
+        </div>
+
+        <div class="content-section">
+            <h2 class="section-title">Борьба с арабским нашествием</h2>
+            
+            <div class="key-points">
+                <h3>Историческая роль тюргешей:</h3>
+                <ul>
+                    <li>Пришли к власти после упадка Западно-тюркского каганата</li>
+                    <li>Возглавили сопротивление арабским завоевателям</li>
+                    <li>Столица - Суяб, затем Баласагун</li>
+                    <li>Сохранили тюркские традиции государственности</li>
+                </ul>
+            </div>
+
+            <h3 class="subsection-title">Борьба с арабами</h3>
+            <table class="timeline-table">
+                <thead>
+                    <tr>
+                        <th>Год</th>
+                        <th>Событие</th>
+                        <th>Результат</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>705 г.</strong></td>
+                        <td>Начало арабского наступления</td>
+                        <td>Захват арабами Бухары и Самарканда</td>
+                    </tr>
+                    <tr>
+                        <td><strong>720-735 гг.</strong></td>
+                        <td>Правление Сулу-кагана</td>
+                        <td>Организация сопротивления, успешные боевые действия</td>
+                    </tr>
+                    <tr>
+                        <td><strong>731 г.</strong></td>
+                        <td>Битва у крепости Баб</td>
+                        <td>Победа тюргешей над арабским войском</td>
+                    </tr>
+                    <tr>
+                        <td><strong>740 г.</strong></td>
+                        <td>Смерть Сулу-кагана</td>
+                        <td>Начало упадка каганата</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <div class="important-note">
+                <strong>Сулу-каган</strong> (720-738 гг.) - выдающийся правитель, сумевший объединить тюркские племена для борьбы с арабскими завоевателями и нанести им несколько серьезных поражений.
+            </div>
+        </div>
+
+        <!-- Карлукский каганат -->
+        <div class="razdel-tema" id="karluk">
+            <span class="razdel">Карлукский каганат (756-940 гг.)</span>
+        </div>
+
+        <div class="content-section">
+            <h2 class="section-title">Принятие ислама и развитие культуры</h2>
+            
+            <div class="key-points">
+                <h3>Основные достижения карлуков:</h3>
+                <ul>
+                    <li>Приняли ислам в 766 году - первые тюрки-мусульмане в Казахстане</li>
+                    <li>Создали развитую городскую культуру</li>
+                    <li>Вели успешную борьбу с китайскими завоевателями</li>
+                    <li>Подготовили почву для образования государства Караханидов</li>
+                </ul>
+            </div>
+
+            <h3 class="subsection-title">Важнейшие события</h3>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <h5>Таласская битва</h5>
+                    <p><strong>751 год</strong> - совместно с арабами разгромили китайскую армию, остановив экспансию Танской империи на запад</p>
+                </div>
+                <div class="feature-card">
+                    <h5>Принятие ислама</h5>
+                    <p><strong>766 год</strong> - карлуки массово приняли ислам, что способствовало культурному развитию</p>
+                </div>
+                <div class="feature-card">
+                    <h5>Города и культура</h5>
+                    <p>Расцвет городской жизни в Таразе, Испиджабе, Баласагуне. Развитие ремесел, торговли, науки</p>
+                </div>
+            </div>
+
+            <h3 class="subsection-title">Наследие карлуков</h3>
+            <table class="comparison-table">
+                <thead>
+                    <tr>
+                        <th>Сфера</th>
+                        <th>Достижения</th>
+                        <th>Значение</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>Религия</strong></td>
+                        <td>Принятие ислама</td>
+                        <td>Вхождение в исламскую цивилизацию</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Культура</strong></td>
+                        <td>Городская культура, ремесла</td>
+                        <td>Синтез тюркских и мусульманских традиций</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Политика</strong></td>
+                        <td>Государственная организация</td>
+                        <td>Преемственность с Караханидским государством</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <!-- Выводы -->
+        <div class="content-section" id="conclusion">
+            <h2 class="section-title">Историческое значение эпохи каганатов</h2>
+            
+            <div class="conclusion">
+                <h3>Основные итоги развития раннего средневековья</h3>
+                <p>Эпоха каганатов (VI-IX вв.) стала фундаментальным периодом в истории Казахстана, в ходе которого были заложены основы тюркской государственности, культуры и мировоззрения.</p>
+                
+                <div class="key-points">
+                    <h3>Ключевые достижения:</h3>
+                    <ul>
+                        <li><strong>Создание первых тюркских государств</strong> с развитой административной системой</li>
+                        <li><strong>Формирование тюркской письменности</strong> и литературных традиций</li>
+                        <li><strong>Развитие международной торговли</strong> по Великому Шелковому пути</li>
+                        <li><strong>Военные успехи</strong> в противостоянии с Китаем, арабами, другими империями</li>
+                        <li><strong>Культурный синтез</strong> тюркских, иранских, китайских и мусульманских традиций</li>
+                    </ul>
+                </div>
+                
+                <p>Наследие тюркских каганатов оказало profound влияние на последующее развитие государственности в Казахстане и стало важной частью культурного кода тюркских народов.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Футер -->
+    <footer>
+        <div class="footer-content">
+            <p>&copy; 2025 Образовательный веб-ресурс "История Казахстана"</p>
+            <p>Разработано в рамках учебного проекта средствами HTML и CSS</p>
+        </div>
+    </footer>
+</body>
+</html>

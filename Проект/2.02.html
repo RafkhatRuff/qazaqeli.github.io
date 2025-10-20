@@ -1,0 +1,771 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Расцвет тюркских государств на территории Казахстана</title>
+    <style>
+@import url('https://fonts.googleapis.com/css2?family=Dela+Gothic+One&family=Unbounded:wght@200..900&display=swap');
+
+/* Главные */
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Unbounded;
+    background-color: rgb(244, 244, 244);
+}
+
+a {
+    text-decoration: none;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+/* Шапка */
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 1400px;
+    margin: 0 auto;
+    padding: 30px 0;
+}
+
+header .logo {
+    color: rgb(0, 109, 219);
+    text-transform: uppercase;
+    font-size: 20px;
+    font-weight: 500;
+}
+
+/* Бургер */
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown-btn {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 10px 15px;
+    background: #f8f9fa;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.dropdown-btn:hover {
+    background: #e9ecef;
+    border-color: #adb5bd;
+}
+
+.dropdown-btn span {
+    font-weight: 500;
+    font-size: 15px;
+    font-family: Unbounded;
+    color: rgb(0, 109, 219);
+}
+
+.dropdown-content {
+    position: absolute;
+    right: 0;
+    background: white;
+    min-width: 300px;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+    border-radius: 10px;
+    z-index: 1000;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-10px);
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.dropdown-content a {
+    display: block;
+    padding: 12px 16px;
+    text-decoration: none;
+    color: #333;
+    border-bottom: 2px solid #eee;
+    transition: all 0.2s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.dropdown-content a:last-child {
+    border-bottom: none;
+}
+
+.dropdown-content a:hover {
+    background: #f8f9fa;
+    border-radius: 8px;
+}
+
+.dropdown:hover .dropdown-content {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+/* Баннер */
+
+.banner {
+    display: grid;
+    align-items: center;
+    text-align: center;
+    width: 1500px;
+    margin: 0 auto;
+    border-radius: 25px;
+    height: 250px;
+    margin-bottom: 50px;
+    box-shadow: 10px 5px 5px rgba(0,0,0,0.1);
+    background: linear-gradient(rgba(0, 123, 255, 0.5), rgba(0, 109, 219,0.5)), url('./Баннер/Баннер\ 1.jpg') center/cover no-repeat;
+}
+
+.banner-text-1 {
+    font-size: 3.6rem;
+    font-weight: 800;
+    color: rgb(255, 255, 255);
+}
+
+/* Разделы */
+
+.razdel-tema {
+    width: 1400px;
+    margin: 0 auto;
+    margin-top: 50px;
+    margin-bottom: 30px;
+}
+
+.razdel {
+    color: rgb(0, 109, 219);
+    font-size: 2.1rem;
+    font-weight: 500;
+}
+
+/* Контент */
+
+.content-section {
+    width: 1400px;
+    background: white;
+    margin: 0 auto;
+    border-radius: 20px;
+    padding: 35px;
+    margin-bottom: 35px;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.08);
+    border-left: 5px solid rgb(0, 109, 219);
+}
+
+        .section-title {
+            color: rgb(0, 109, 219);
+            font-size: 2rem;
+            margin-bottom: 25px;
+            display: flex;
+            align-items: center;
+            padding-bottom: 10px;
+            border-bottom: 2px solid #f0f0f0;
+        }
+
+        .section-title::before {
+            content: "▶";
+            display: inline-block;
+            margin-right: 15px;
+            color: rgb(0, 109, 219);
+            font-size: 1.5rem;
+        }
+
+        .subsection-title {
+            color: #2c5282;
+            font-size: 1.5rem;
+            margin: 25px 0 15px;
+            padding-left: 20px;
+            border-left: 4px solid #2c5282;
+        }
+
+        .timeline-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 25px 0;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+            border-radius: 10px;
+            overflow: hidden;
+        }
+
+        .timeline-table th {
+            background: linear-gradient(135deg, rgb(0, 109, 219), #2c5282);
+            color: white;
+            padding: 18px;
+            text-align: left;
+            font-weight: 600;
+        }
+
+        .timeline-table td {
+            padding: 18px;
+            border-bottom: 1px solid #eaeaea;
+            vertical-align: top;
+        }
+
+        .timeline-table tr:nth-child(even) {
+            background: #f8fafc;
+        }
+
+        .timeline-table tr:hover {
+            background: #e6f2ff;
+            transform: translateY(-1px);
+            transition: all 0.2s ease;
+        }
+
+        .key-points {
+            background: linear-gradient(135deg, #f0f7ff, #e6f2ff);
+            border-left: 6px solid rgb(0, 109, 219);
+            padding: 25px;
+            margin: 25px 0;
+            border-radius: 0 15px 15px 0;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+        }
+
+        .key-points h3 {
+            margin-bottom: 15px;
+            color: rgb(0, 109, 219);
+            font-size: 1.4rem;
+        }
+
+        .key-points ul {
+            padding-left: 25px;
+        }
+
+        .key-points li {
+            margin-bottom: 10px;
+            position: relative;
+        }
+
+        .key-points li::before {
+            content: "•";
+            color: rgb(0, 109, 219);
+            font-weight: bold;
+            display: inline-block;
+            width: 1em;
+            margin-left: -1em;
+        }
+
+        .archaeological-sites {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+            gap: 25px;
+            margin: 25px 0;
+        }
+
+        .site-card {
+            background: white;
+            border-radius: 15px;
+            padding: 25px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+            border-top: 5px solid rgb(0, 109, 219);
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .site-card::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, rgb(0, 109, 219), #2c5282);
+        }
+
+        .site-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 12px 30px rgba(0,0,0,0.15);
+        }
+
+        .site-card h4 {
+            color: rgb(0, 109, 219);
+            margin-bottom: 12px;
+            font-size: 1.3rem;
+        }
+
+        .site-card .region {
+            background: #e6f2ff;
+            color: #2c5282;
+            padding: 5px 12px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            display: inline-block;
+            margin-bottom: 15px;
+        }
+
+        .conclusion {
+            background: linear-gradient(135deg, #e8f4ff, #d4e7ff);
+            padding: 30px;
+            border-radius: 15px;
+            margin: 35px 0;
+            border: 2px solid #c2e0ff;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+        }
+
+        .conclusion h3 {
+            color: rgb(0, 109, 219);
+            margin-bottom: 20px;
+            font-size: 1.6rem;
+            text-align: center;
+        }
+
+        .important-note {
+            background: #fff3cd;
+            border: 2px solid #ffeaa7;
+            border-left: 6px solid #fdcb6e;
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 10px;
+        }
+
+        .comparison-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 25px 0;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+            border-radius: 10px;
+            overflow: hidden;
+        }
+
+        .comparison-table th {
+            background: #2c5282;
+            color: white;
+            padding: 15px;
+            text-align: center;
+            font-weight: 600;
+        }
+
+        .comparison-table td {
+            padding: 15px;
+            border: 1px solid #eaeaea;
+            text-align: center;
+        }
+
+        .comparison-table tr:nth-child(even) {
+            background: #f8fafc;
+        }
+
+/* Футер */
+
+footer {
+    width: 1300px;
+    margin: 0 auto;
+    border-top: 3px solid #3498db;
+    border-left: 3px solid #3498db;
+    border-right: 3px solid #3498db;
+    border-bottom: none;
+    border-radius: 15px 15px 0 0;
+    background-color: rgb(244, 244, 244);
+    text-align: center;
+    padding: 25px 25px;
+    margin-top: 3rem;
+}
+.footer-content {
+    color:rgb(69, 69, 69);
+}
+    </style>
+</head>
+<body>
+    <!-- Шапка -->
+    <header>
+        <a href="./Главная.html"><span class="logo">QAZAQ ELI</span></a>
+        <div class="dropdown">
+            <button class="dropdown-btn">
+                <span>Навигация</span>
+            </button>
+            <div class="dropdown-content">
+                <a href="#raz1">Тюркский каганат</a>
+                <a href="#raz2">Западно-тюркский каганат</a>
+                <a href="#raz3">Тюргешский каганат</a>
+                <a href="#raz4">Карлукский каганат</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Баннер 1 -->
+    <div class="banner">
+        <span class="banner-text-1">Расцвет тюркских государств на территории Казахстана</span>
+    </div>
+
+    <!-- Введение -->
+        <div class="content-section" id="introduction">
+            <h2 class="section-title">Введение: Эпоха великих тюркских империй</h2>
+            <p>VI-IX века нашей эры стали периодом расцвета тюркской государственности на территории Казахстана. В это время сформировались мощные кочевые империи, которые оказали значительное влияние на историю Евразии и установили культурные связи между Востоком и Западом.</p>
+            
+            <div class="key-points">
+                <h3>Значение тюркских государств в мировой истории:</h3>
+                <ul>
+                    <li>Создание первой тюркской письменности - древнетюркской руники</li>
+                    <li>Формирование трансконтинентальных торговых путей</li>
+                    <li>Развитие уникальной кочевой цивилизации</li>
+                    <li>Установление дипломатических отношений с Китаем, Византией, Ираном</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Тюркский каганат -->
+        <div class="razdel-tema" id="raz1">
+            <span class="razdel">Тюркский каганат (552-603 гг.)</span>
+        </div>
+
+        <div class="content-section">
+            <h2 class="section-title">Образование и расцвет Первого Тюркского каганата</h2>
+            <p>Тюркский каганат был создан в 552 году вождем тюрков Бумыном, который объединил тюркские племена и нанес поражение жужаням. Столица каганата располагалась в долине реки Орхон (Монголия).</p>
+            
+            <h3 class="subsection-title">Правители и административное устройство</h3>
+            <table class="timeline-table">
+                <thead>
+                    <tr>
+                        <th>Каган</th>
+                        <th>Годы правления</th>
+                        <th>Основные достижения</th>
+                        <th>Территория влияния</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>Бумын-каган</strong></td>
+                        <td>552-553 гг.</td>
+                        <td>Основатель каганата, победитель жужаней</td>
+                        <td>От Алтая до Байкала</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Кара-Иссык-каган</strong><br>(Мугань-каган)</td>
+                        <td>553-572 гг.</td>
+                        <td>Завершил разгром жужаней, укрепил государство</td>
+                        <td>Расширение до Средней Азии</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Таспар-каган</strong></td>
+                        <td>572-581 гг.</td>
+                        <td>Период наибольшего могущества, развитие торговли</td>
+                        <td>От Китая до Византии</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Джагбу-каган</strong></td>
+                        <td>581-587 гг.</td>
+                        <td>Борьба с внутренними междоусобицами</td>
+                        <td>Начало распада каганата</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <h3 class="subsection-title">Социальная структура и хозяйство</h3>
+            <table class="timeline-table">
+                <thead>
+                    <tr>
+                        <th>Социальный слой</th>
+                        <th>Состав</th>
+                        <th>Обязанности и права</th>
+                        <th>Роль в государстве</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>Аристократия</strong></td>
+                        <td>Каган, ябгу, шады, тудуны</td>
+                        <td>Управление, военное руководство</td>
+                        <td>Высшая власть, сбор налогов</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Военная знать</strong></td>
+                        <td>Беки, тарханы, багатуры</td>
+                        <td>Военная служба, охрана границ</td>
+                        <td>Опора каганской власти</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Свободные общинники</strong></td>
+                        <td>Основное население - карабудун</td>
+                        <td>Скотоводство, земледелие, ополчение</td>
+                        <td>Налогоплательщики, воины</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Зависимое население</strong></td>
+                        <td>Кулы, ятуки</td>
+                        <td>Ремесло, обслуживание знати</td>
+                        <td>Экономическая основа</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <!-- Западно-тюркский каганат -->
+        <div class="razdel-tema" id="raz2">
+            <span class="razdel">Западно-тюркский каганат (603-704 гг.)</span>
+        </div>
+
+        <div class="content-section">
+            <h2 class="section-title">Образование и развитие Западно-тюркского каганата</h2>
+            <p>После распада Тюркского каганата в 603 году на западных землях образовался независимый Западно-тюркский каганат со столицей в Суябе (около современного Токмака).</p>
+            
+            <h3 class="subsection-title">Политическая история и правители</h3>
+            <div class="archaeological-sites">
+                <div class="site-card">
+                    <div class="region">Период объединения</div>
+                    <h4>Тардуш и Нушиби</h4>
+                    <p><strong>Годы:</strong> 603-630 гг.<br>
+                    <strong>Правители:</strong> Шегуй-каган, Тон-ябгу-каган<br>
+                    <strong>Достижения:</strong> Объединение западных племен<br>
+                    <strong>Особенности:</strong> Деление на два крыла - тардуш и нушиби</p>
+                </div>
+                <div class="site-card">
+                    <div class="region">Период расцвета</div>
+                    <h4>Великий Шегуй</h4>
+                    <p><strong>Годы:</strong> 611-618 гг.<br>
+                    <strong>Правитель:</strong> Шегуй-каган<br>
+                    <strong>Достижения:</strong> Максимальное расширение территории<br>
+                    <strong>Особенности:</strong> Установление контроля над Шелковым путем</p>
+                </div>
+                <div class="site-card">
+                    <div class="region">Период упадка</div>
+                    <h4>Междоусобицы</h4>
+                    <p><strong>Годы:</strong> 630-704 гг.<br>
+                    <strong>Правители:</strong> Иль-Кюлюг-шад, Эльтерис-каган<br>
+                    <strong>Достижения:</strong> Борьба за независимость<br>
+                    <strong>Особенности:</strong> Ослабление центральной власти</p>
+                </div>
+            </div>
+
+            <h3 class="subsection-title">Территориальное устройство и племенной состав</h3>
+            <table class="comparison-table">
+                <thead>
+                    <tr>
+                        <th>Административная единица</th>
+                        <th>Территория</th>
+                        <th>Племенной состав</th>
+                        <th>Руководитель</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>Тардуш (левое крыло)</strong></td>
+                        <td>Северо-восточные земли</td>
+                        <td>Телесские племена, кыргызы</td>
+                        <td>Шад</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Нушиби (правое крыло)</strong></td>
+                        <td>Юго-западные земли</td>
+                        <td>Карлуки, тюргеши, огузы</td>
+                        <td>Ябгу</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Он ок будун</strong><br>(10 племен)</td>
+                        <td>Центральные области</td>
+                        <td>Ягма, чигили, аргу</td>
+                        <td>Каган</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <!-- Тюргешский каганат -->
+        <div class="razdel-tema" id="raz3">
+            <span class="razdel">Тюргешский каганат (704-756 гг.)</span>
+        </div>
+
+        <div class="content-section">
+            <h2 class="section-title">Тюргеши - наследники западных тюрков</h2>
+            <p>Тюргешский каганат был создан вождем тюргешей Уч-Элигом, который сверг власть западно-тюркских каганов. Столица - город Суяб, затем Баласагун.</p>
+            
+            <h3 class="subsection-title">Правящие династии и внутренняя политика</h3>
+            <table class="timeline-table">
+                <thead>
+                    <tr>
+                        <th>Правитель</th>
+                        <th>Годы правления</th>
+                        <th>Династия</th>
+                        <th>Основные события</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>Уч-Элиг-каган</strong></td>
+                        <td>704-706 гг.</td>
+                        <td>Черные тюргеши</td>
+                        <td>Основание каганата</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Сакал-каган</strong></td>
+                        <td>706-711 гг.</td>
+                        <td>Черные тюргеши</td>
+                        <td>Борьба с арабами</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Сулу-каган</strong></td>
+                        <td>716-738 гг.</td>
+                        <td>Желтые тюргеши</td>
+                        <td>Период расцвета, победы над арабами</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Кюль-чор-каган</strong></td>
+                        <td>738-739 гг.</td>
+                        <td>Желтые тюргеши</td>
+                        <td>Междоусобная борьба</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <div class="important-note">
+                <strong>Историческое значение:</strong> Тюргешский каганат сыграл crucial роль в остановке арабской экспансии в Среднюю Азию. Битва у Таласа (751 г.) между тюргешами и арабами имела мировое значение - тюркские воины захватили китайских бумажных мастеров, что привело к распространению технологии производства бумаги в арабском мире и Европе.
+            </div>
+
+            <h3 class="subsection-title">Военная организация и монетная система</h3>
+            <div class="archaeological-sites">
+                <div class="site-card">
+                    <h4>Военная реформа</h4>
+                    <p>• Деление на "20 стрел" - 20 туменов<br>
+                    • Создание регулярной армии<br>
+                    • Введение военных округов<br>
+                    • Развитие осадной техники</p>
+                </div>
+                <div class="site-card">
+                    <h4>Экономика</h4>
+                    <p>• Чеканка собственных монет<br>
+                    • Контроль над Шелковым путем<br>
+                    • Развитие городов<br>
+                    • Налоговая система</p>
+                </div>
+                <div class="site-card">
+                    <h4>Монетное дело</h4>
+                    <p>• Монеты с тюргешской тамгой<br>
+                    • Надписи на согдийском<br>
+                    • Использование серебра и меди<br>
+                    • Торговля с соседями</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Карлукский каганат -->
+        <div class="razdel-tema" id="raz4">
+            <span class="razdel">Карлукский каганат (756-940 гг.)</span>
+        </div>
+
+        <div class="content-section">
+            <h2 class="section-title">Карлуки - создатели нового государства</h2>
+            <p>Карлукский каганат был образован в 756 году после победы карлуков над тюргешами. Карлуки создали одно из самых устойчивых тюркских государств, просуществовавшее почти 200 лет.</p>
+            
+            <h3 class="subsection-title">Этапы развития и внешняя политика</h3>
+            <table class="comparison-table">
+                <thead>
+                    <tr>
+                        <th>Период</th>
+                        <th>Хронология</th>
+                        <th>Основные направления политики</th>
+                        <th>Отношения с соседями</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>Образование</strong></td>
+                        <td>756-766 гг.</td>
+                        <td>Консолидация карлукских племен</td>
+                        <td>Союз с Китаем против тибетцев</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Расцвет</strong></td>
+                        <td>766-840 гг.</td>
+                        <td>Экспансия в Среднюю Азию</td>
+                        <td>Борьба с арабами, уйгурами</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Стабилизация</strong></td>
+                        <td>840-940 гг.</td>
+                        <td>Развитие городов, культуры</td>
+                        <td>Принятие ислама (960 г.)</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <h3 class="subsection-title">Культура и достижения карлуков</h3>
+            <div class="key-points">
+                <h3>Культурные достижения карлукского периода:</h3>
+                <ul>
+                    <li><strong>Городская культура</strong> - развитие городов Тараз, Каялык, Испиджаб</li>
+                    <li><strong>Письменность</strong> - использование древнетюркской руники, согдийского письма</li>
+                    <li><strong>Ремесла</strong> - развитие металлургии, керамики, ювелирного дела</li>
+                    <li><strong>Архитектура</strong> - строительство дворцов, мечетей, караван-сараев</li>
+                    <li><strong>Сельское хозяйство</strong> - развитие орошаемого земледелия в оазисах</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Наследие и значение -->
+        <div class="content-section" id="heritage">
+            <h2 class="section-title">Наследие тюркских государств</h2>
+            
+            <h3 class="subsection-title">Культурное и историческое значение</h3>
+            <table class="timeline-table">
+                <thead>
+                    <tr>
+                        <th>Сфера влияния</th>
+                        <th>Достижения</th>
+                        <th>Вклад в мировую цивилизацию</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>Государственное строительство</strong></td>
+                        <td>Создание имперской модели управления, административное деление</td>
+                        <td>Образец для последующих кочевых империй</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Военное искусство</strong></td>
+                        <td>Тактика конных лучников, осадная техника, организация армии</td>
+                        <td>Влияние на военное дело многих народов</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Экономика и торговля</strong></td>
+                        <td>Контроль над Шелковым путем, денежное обращение</td>
+                        <td>Связь между Востоком и Западом</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Культура и письменность</strong></td>
+                        <td>Древнетюркская письменность, орхоно-енисейские памятники</td>
+                        <td>Древнейшие письменные памятники тюркских народов</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <div class="conclusion">
+                <h3>Историческое значение тюркских государств на территории Казахстана</h3>
+                <p>Эпоха тюркских каганатов (VI-IX вв.) стала золотым веком тюркской государственности, когда были заложены основы политической организации, культуры и традиций, которые сохраняли свое значение на протяжении последующих столетий.</p>
+                
+                <div class="key-points">
+                    <h3>Основные итоги развития:</h3>
+                    <ul>
+                        <li><strong>Государственная традиция</strong> - создание устойчивых политических структур</li>
+                        <li><strong>Этнокультурное единство</strong> - консолидация тюркских племен</li>
+                        <li><strong>Международные связи</strong> - установление дипломатических отношений</li>
+                        <li><strong>Культурный синтез</strong> - соединение кочевых и оседлых традиций</li>
+                        <li><strong>Экономическая интеграция</strong> - включение в систему мировой торговли</li>
+                    </ul>
+                </div>
+                
+                <p>Наследие тюркских каганатов стало фундаментом для последующего развития государственности на территории Казахстана и оказало значительное влияние на формирование казахской народности и культуры.</p>
+            </div>
+        </div>
+    </div>
+     <!-- Футер -->
+    <footer>
+        <div class="footer-content">
+            <p>&copy; 2025 Образовательный веб-ресурс "История Казахстана"</p>
+            <p>Разработано в рамках учебного проекта средствами HTML и CSS</p>
+        </div>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,787 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Становление советской власти и эпоха тоталитаризма</title>
+    <style>
+@import url('https://fonts.googleapis.com/css2?family=Dela+Gothic+One&family=Unbounded:wght@200..900&display=swap');
+
+/* Главные */
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Unbounded;
+    background-color: rgb(244, 244, 244);
+}
+
+a {
+    text-decoration: none;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+/* Шапка */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 1400px;
+    margin: 0 auto;
+    padding: 30px 0;
+}
+
+header .logo {
+    color: rgb(0, 109, 219);
+    text-transform: uppercase;
+    font-size: 20px;
+    font-weight: 500;
+}
+
+/* Бургер */
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown-btn {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 10px 15px;
+    background: #f8f9fa;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.dropdown-btn:hover {
+    background: #e9ecef;
+    border-color: #adb5bd;
+}
+
+.dropdown-btn span {
+    font-weight: 500;
+    font-size: 15px;
+    font-family: Unbounded;
+    color: rgb(0, 109, 219);
+}
+
+.dropdown-content {
+    position: absolute;
+    right: 0;
+    background: white;
+    min-width: 300px;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+    border-radius: 10px;
+    z-index: 1000;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-10px);
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.dropdown-content a {
+    display: block;
+    padding: 12px 16px;
+    text-decoration: none;
+    color: #333;
+    border-bottom: 2px solid #eee;
+    transition: all 0.2s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.dropdown-content a:last-child {
+    border-bottom: none;
+}
+
+.dropdown-content a:hover {
+    background: #f8f9fa;
+    border-radius: 8px;
+}
+
+.dropdown:hover .dropdown-content {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+/* Баннер */
+.banner {
+    display: grid;
+    align-items: center;
+    text-align: center;
+    width: 1500px;
+    margin: 0 auto;
+    border-radius: 25px;
+    height: 250px;
+    margin-bottom: 50px;
+    box-shadow: 10px 5px 5px rgba(0,0,0,0.1);
+    background: linear-gradient(rgba(0, 123, 255, 0.5), rgba(0, 109, 219,0.5)), url('./Баннер/Баннер\ 1.jpg') center/cover no-repeat;
+}
+
+.banner-text-1 {
+    font-size: 3.6rem;
+    font-weight: 800;
+    color: rgb(255, 255, 255);
+}
+
+/* Разделы */
+.razdel-tema {
+    width: 1400px;
+    margin: 0 auto;
+    margin-top: 50px;
+    margin-bottom: 30px;
+}
+
+.razdel {
+    color: rgb(0, 109, 219);
+    font-size: 2.1rem;
+    font-weight: 500;
+}
+
+/* Контент */
+.content-section {
+    width: 1400px;
+    background: white;
+    margin: 0 auto;
+    border-radius: 20px;
+    padding: 35px;
+    margin-bottom: 35px;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.08);
+    border-left: 5px solid rgb(0, 109, 219);
+}
+
+.section-title {
+    color: rgb(0, 109, 219);
+    font-size: 2rem;
+    margin-bottom: 25px;
+    display: flex;
+    align-items: center;
+    padding-bottom: 10px;
+    border-bottom: 2px solid #f0f0f0;
+}
+
+.section-title::before {
+    content: "▶";
+    display: inline-block;
+    margin-right: 15px;
+    color: rgb(0, 109, 219);
+    font-size: 1.5rem;
+}
+
+.subsection-title {
+    color: #2c5282;
+    font-size: 1.5rem;
+    margin: 25px 0 15px;
+    padding-left: 20px;
+    border-left: 4px solid #2c5282;
+}
+
+.key-points {
+    background: linear-gradient(135deg, #f0f7ff, #e6f2ff);
+    border-left: 6px solid rgb(0, 109, 219);
+    padding: 25px;
+    margin: 25px 0;
+    border-radius: 0 15px 15px 0;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+}
+
+.key-points h3 {
+    margin-bottom: 15px;
+    color: rgb(0, 109, 219);
+    font-size: 1.4rem;
+}
+
+.key-points ul {
+    padding-left: 25px;
+}
+
+.key-points li {
+    margin-bottom: 10px;
+    position: relative;
+}
+
+.key-points li::before {
+    content: "•";
+    color: rgb(0, 109, 219);
+    font-weight: bold;
+    display: inline-block;
+    width: 1em;
+    margin-left: -1em;
+}
+
+.archaeological-sites {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+    gap: 25px;
+    margin: 25px 0;
+}
+
+.site-card {
+    background: white;
+    border-radius: 15px;
+    padding: 25px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+    border-top: 5px solid rgb(0, 109, 219);
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.site-card::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: linear-gradient(90deg, rgb(0, 109, 219), #2c5282);
+}
+
+.site-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 12px 30px rgba(0,0,0,0.15);
+}
+
+.site-card h4 {
+    color: rgb(0, 109, 219);
+    margin-bottom: 12px;
+    font-size: 1.3rem;
+}
+
+.site-card .region {
+    background: #e6f2ff;
+    color: #2c5282;
+    padding: 5px 12px;
+    border-radius: 20px;
+    font-size: 0.9rem;
+    font-weight: 600;
+    display: inline-block;
+    margin-bottom: 15px;
+}
+
+.conclusion {
+    background: linear-gradient(135deg, #e8f4ff, #d4e7ff);
+    padding: 30px;
+    border-radius: 15px;
+    margin: 35px 0;
+    border: 2px solid #c2e0ff;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+}
+
+.conclusion h3 {
+    color: rgb(0, 109, 219);
+    margin-bottom: 20px;
+    font-size: 1.6rem;
+    text-align: center;
+}
+
+.important-note {
+    background: #fff3cd;
+    border: 2px solid #ffeaa7;
+    border-left: 6px solid #fdcb6e;
+    padding: 20px;
+    margin: 20px 0;
+    border-radius: 10px;
+}
+
+.timeline-event {
+    background: #f8fafc;
+    border-left: 4px solid #2c5282;
+    padding: 20px;
+    margin: 15px 0;
+    border-radius: 0 8px 8px 0;
+}
+
+.event-year {
+    font-weight: bold;
+    color: #2c5282;
+    font-size: 1.1rem;
+    margin-bottom: 8px;
+}
+
+.leader-card {
+    background: linear-gradient(135deg, #ffffff, #f8fafc);
+    border-radius: 12px;
+    padding: 20px;
+    margin: 15px 0;
+    border: 2px solid #e6f2ff;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+}
+
+.leader-name {
+    color: #2c5282;
+    font-size: 1.3rem;
+    font-weight: 600;
+    margin-bottom: 10px;
+}
+
+.timeline-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 25px 0;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.timeline-table th {
+    background: linear-gradient(135deg, rgb(0, 109, 219), #2c5282);
+    color: white;
+    padding: 18px;
+    text-align: left;
+    font-weight: 600;
+}
+
+.timeline-table td {
+    padding: 18px;
+    border-bottom: 1px solid #eaeaea;
+    vertical-align: top;
+}
+
+.timeline-table tr:nth-child(even) {
+    background: #f8fafc;
+}
+
+.timeline-table tr:hover {
+    background: #e6f2ff;
+    transform: translateY(-1px);
+    transition: all 0.2s ease;
+}
+
+.comparison-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 25px 0;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.comparison-table th {
+    background: #2c5282;
+    color: white;
+    padding: 15px;
+    text-align: center;
+    font-weight: 600;
+}
+
+.comparison-table td {
+    padding: 15px;
+    border: 1px solid #eaeaea;
+    text-align: center;
+}
+
+.comparison-table tr:nth-child(even) {
+    background: #f8fafc;
+}
+
+.repression-card {
+    background: linear-gradient(135deg, #fff5f5, #fed7d7);
+    border-left: 5px solid #e53e3e;
+    padding: 20px;
+    margin: 15px 0;
+    border-radius: 0 10px 10px 0;
+}
+
+.repression-title {
+    color: #e53e3e;
+    font-size: 1.2rem;
+    font-weight: 600;
+    margin-bottom: 10px;
+}
+
+/* Футер */
+footer {
+    width: 1300px;
+    margin: 0 auto;
+    border-top: 3px solid #3498db;
+    border-left: 3px solid #3498db;
+    border-right: 3px solid #3498db;
+    border-bottom: none;
+    border-radius: 15px 15px 0 0;
+    background-color: rgb(244, 244, 244);
+    text-align: center;
+    padding: 25px 25px;
+    margin-top: 3rem;
+}
+.footer-content {
+    color:rgb(69, 69, 69);
+}
+    </style>
+</head>
+<body>
+    <!-- Шапка -->
+    <header>
+        <a href="./Главная.html"><span class="logo">QAZAQ ELI</span></a>
+        <div class="dropdown">
+            <button class="dropdown-btn">
+                <span>Навигация</span>
+            </button>
+            <div class="dropdown-content">
+                <a href="#raz1">Создание Казахской АССР</a>
+                <a href="#raz2">Коллективизация и голод</a>
+                <a href="#raz3">Политические репрессии</a>
+                <a href="#raz4">Индустриализация</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Баннер 1 -->
+    <div class="banner">
+        <span class="banner-text-1">Становление советской власти и эпоха тоталитаризма</span>
+    </div>
+
+    <!-- Введение -->
+    <div class="content-section" id="introduction">
+        <h2 class="section-title">1920-1940: От автономии к тоталитаризму</h2>
+        <p>Период между двумя мировыми войнами стал временем радикальных преобразований в Казахстане. Создание советской государственности сопровождалось насильственной модернизацией, коллективизацией, индустриализацией и массовыми политическими репрессиями, которые коренным образом изменили традиционное казахское общество.</p>
+        
+        <div class="key-points">
+            <h3>Основные характеристики советского периода:</h3>
+            <ul>
+                <li>Создание и развитие казахской советской государственности</li>
+                <li>Насильственная коллективизация и оседание кочевников</li>
+                <li>Массовый голод 1931-1933 годов и демографическая катастрофа</li>
+                <li>Политические репрессии и уничтожение национальной интеллигенции</li>
+                <li>Индустриализация и создание промышленной базы</li>
+                <li>Формирование тоталитарной политической системы</li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- Создание Казахской АССР -->
+    <div class="razdel-tema" id="raz1">
+        <span class="razdel">Создание Казахской АССР</span>
+    </div>
+
+    <div class="content-section">
+        <h2 class="section-title">Становление советской государственности</h2>
+        <p>26 августа 1920 года был подписан Декрет ВЦИК и СНК РСФСР "Об образовании Автономной Киргизской (Казахской) Советской Социалистической Республики" в составе РСФСР. Это событие стало важным этапом в истории казахской государственности.</p>
+        
+        <h3 class="subsection-title">Этапы формирования советской власти</h3>
+        
+        <table class="timeline-table">
+            <thead>
+                <tr>
+                    <th>Период</th>
+                    <th>События</th>
+                    <th>Руководители</th>
+                    <th>Значение</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><strong>1920-1925</strong></td>
+                    <td>Образование Киргизской АССР, столица - Оренбург</td>
+                    <td>С. Мендешев, В. Радус-Зенькович</td>
+                    <td>Создание основ советской государственности</td>
+                </tr>
+                <tr>
+                    <td><strong>1925-1929</strong></td>
+                    <td>Переименование в Казахскую АССР, перенос столицы в Кзыл-Орду</td>
+                    <td>Н. Нурмаков, Ж. Садвакасов</td>
+                    <td>Укрепление административного аппарата</td>
+                </tr>
+                <tr>
+                    <td><strong>1929-1936</strong></td>
+                    <td>Перенос столицы в Алма-Ату, подготовка к статусу союзной республики</td>
+                    <td>У. Исаев, У. Кулумбетов</td>
+                    <td>Централизация управления, развитие инфраструктуры</td>
+                </tr>
+                <tr>
+                    <td><strong>1936</strong></td>
+                    <td>Преобразование в Казахскую ССР</td>
+                    <td>Л. Мирзоян, Н. Скворцов</td>
+                    <td>Получение статуса союзной республики</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <h3 class="subsection-title">Административно-территориальные преобразования</h3>
+        <div class="archaeological-sites">
+            <div class="site-card">
+                <h4>Территориальное размежевание</h4>
+                <p>• 1920 - Включение областей бывшего Туркестанского края<br>
+                • 1924-1925 - Национально-государственное размежевание в Средней Азии<br>
+                • 1928 - Ликвидация губерний, создание округов<br>
+                • 1932 - Образование областей вместо округов</p>
+            </div>
+            <div class="site-card">
+                <h4>Столицы Казахстана</h4>
+                <p>• 1920-1925 - Оренбург (вне территории Казахстана)<br>
+                • 1925-1929 - Кзыл-Орда<br>
+                • 1929-1997 - Алма-Ата<br>
+                • С 1997 - Астана (Нур-Султан)</p>
+            </div>
+            <div class="site-card">
+                <h4>Политическая система</h4>
+                <p>• Высший орган - Всеказахский съезд Советов<br>
+                • Постоянный орган - ЦИК Казахской АССР<br>
+                • Исполнительная власть - СНК КазАССР<br>
+                • Руководящая роль ВКП(б)</p>
+            </div>
+        </div>
+
+        <div class="important-note">
+            <strong>Историческое значение:</strong> Создание Казахской АССР стало первым опытом национальной государственности в советский период. Несмотря на ограниченность автономии, это способствовало консолидации казахской нации и созданию основ для будущей независимости.
+        </div>
+    </div>
+
+    <!-- Коллективизация и голод -->
+    <div class="razdel-tema" id="raz2">
+        <span class="razdel">Коллективизация и голод 1931-1933 годов</span>
+    </div>
+
+    <div class="content-section">
+        <h2 class="section-title">Трагедия казахского народа</h2>
+        <p>Насильственная коллективизация сельского хозяйства и принудительное оседание кочевников привели к одной из самых страшных гуманитарных катастроф в истории казахского народа. Голод 1931-1933 годов унес жизни миллионов людей и коренным образом изменил демографическую структуру населения.</p>
+        
+        <h3 class="subsection-title">Ход коллективизации</h3>
+        
+        <div class="timeline-event">
+            <div class="event-year">1928 год - Начало массовой коллективизации</div>
+            <p>Принятие курса на сплошную коллективизацию сельского хозяйства. Создание первых колхозов и совхозов. Начало конфискации имущества баев и зажиточных крестьян.</p>
+        </div>
+
+        <div class="timeline-event">
+            <div class="event-year">1929-1930 годы - Принудительное оседание</div>
+            <p>Насильственный перевод кочевого и полукочевого населения на оседлый образ жизни. Ликвидация традиционной системы кочевания. Уничтожение скота как форма сопротивления.</p>
+        </div>
+
+        <div class="timeline-event">
+            <div class="event-year">1931-1933 годы - Массовый голод</div>
+            <p>Изъятие зерна и скота у населения для выполнения планов хлебозаготовок. Полное истощение продовольственных ресурсов. Массовая гибель населения от голода и болезней.</p>
+        </div>
+
+        <h3 class="subsection-title">Демографические последствия голода</h3>
+        
+        <table class="comparison-table">
+            <thead>
+                <tr>
+                    <th>Показатель</th>
+                    <th>1926 год</th>
+                    <th>1939 год</th>
+                    <th>Потери</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><strong>Казахское население</strong></td>
+                    <td>3,968 млн</td>
+                    <td>2,327 млн</td>
+                    <td>1,641 млн (41%)</td>
+                </tr>
+                <tr>
+                    <td><strong>Общая численность</strong></td>
+                    <td>6,503 млн</td>
+                    <td>6,146 млн</td>
+                    <td>357 тыс. (5,5%)</td>
+                </tr>
+                <tr>
+                    <td><strong>Поголовье скота</strong></td>
+                    <td>29,9 млн</td>
+                    <td>4,5 млн</td>
+                    <td>25,4 млн (85%)</td>
+                </tr>
+                <tr>
+                    <td><strong>Миграция</strong></td>
+                    <td>-</td>
+                    <td>-</td>
+                    <td>1,5 млн беженцев</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <div class="repression-card">
+            <div class="repression-title">Последствия голода</div>
+            <p>• Гибель от 1,5 до 2 миллионов человек (38-48% казахского населения)<br>
+            • Массовый откочев в Китай, Монголию, Афганистан, Иран (около 1 млн человек)<br>
+            • Разрушение традиционного уклада жизни и хозяйства<br>
+            • Необратимые изменения в этнодемографической структуре<br>
+            • Потеря национальных традиций и культурного наследия</p>
+        </div>
+    </div>
+
+    <!-- Политические репрессии -->
+    <div class="razdel-tema" id="raz3">
+        <span class="razdel">Политические репрессии 1930-х годов</span>
+    </div>
+
+    <div class="content-section">
+        <h2 class="section-title">"Большой террор" в Казахстане</h2>
+        <p>1937-1938 годы вошли в историю как период "Большого террора", когда сталинские репрессии достигли своего пика. В Казахстане были уничтожены практически все представители национальной интеллигенции, бывшие деятели Алаш-Орды, партийные и советские работники.</p>
+        
+        <h3 class="subsection-title">Основные жертвы репрессий</h3>
+        
+        <div class="archaeological-sites">
+            <div class="site-card">
+                <div class="region">Лидеры Алаш</div>
+                <h4>Ахмет Байтурсынов</h4>
+                <p>Выдающийся просветитель, реформатор казахской письменности. Расстрелян 8 декабря 1937 года. Реабилитирован посмертно в 1988 году.</p>
+            </div>
+            <div class="site-card">
+                <div class="region">Писатели и поэты</div>
+                <h4>Миржакип Дулатов</h4>
+                <p>Поэт, публицист, один из лидеров Алаш-Орды. Расстрелян 5 октября 1935 года. Реабилитирован в 1988 году.</p>
+            </div>
+            <div class="site-card">
+                <div class="region">Государственные деятели</div>
+                <h4>Ураз Джанозин</h4>
+                <p>Нарком просвещения КазАССР, организатор образования. Расстрелян в 1938 году. Реабилитирован посмертно.</p>
+            </div>
+        </div>
+
+        <h3 class="subsection-title">Масштабы репрессий в Казахстане</h3>
+        
+        <table class="timeline-table">
+            <thead>
+                <tr>
+                    <th>Категория репрессированных</th>
+                    <th>Количество</th>
+                    <th>Период</th>
+                    <th>Основные обвинения</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><strong>Приговорены к расстрелу</strong></td>
+                    <td>25,000 человек</td>
+                    <td>1937-1938</td>
+                    <td>Контрреволюционная деятельность, шпионаж</td>
+                </tr>
+                <tr>
+                    <td><strong>Осуждены к лагерям</strong></td>
+                    <td>约100,000 человек</td>
+                    <td>1930-1950</td>
+                    <td>Измена родине, антисоветская агитация</td>
+                </tr>
+                <tr>
+                    <td><strong>Депортированные народы</strong></td>
+                    <td>1,200,000 человек</td>
+                    <td>1936-1944</td>
+                    <td>Наказание за "коллективную измену"</td>
+                </tr>
+                <tr>
+                    <td><strong>Реабилитированные</strong></td>
+                    <td>34,000 человек</td>
+                    <td>1954-1991</td>
+                    <td>Посмертная реабилитация</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <div class="repression-card">
+            <div class="repression-title">КАРЛАГ - Карагандинский исправительно-трудовой лагерь</div>
+            <p>Крупнейший лагерь ГУЛАГа на территории Казахстана. Существовал с 1931 по 1959 год. Площадь - около 300 км². Через лагерь прошли десятки тысяч заключенных, включая известных ученых, писателей, политических деятелей. Условия содержания были чрезвычайно тяжелыми, смертность достигала высоких показателей.</p>
+        </div>
+
+        <div class="important-note">
+            <strong>Историческая память:</strong> Политические репрессии 1930-х годов нанесли непоправимый удар по казахской интеллигенции и культуре. Была уничтожена целая плеяда выдающихся деятелей, что затормозило развитие национальной культуры и науки на десятилетия.
+        </div>
+    </div>
+
+    <!-- Индустриализация -->
+    <div class="razdel-tema" id="raz4">
+        <span class="razdel">Индустриализация и культурное строительство</span>
+    </div>
+
+    <div class="content-section">
+        <h2 class="section-title">Модернизация по-советски</h2>
+        <p>Несмотря на трагические страницы истории, 1920-1930-е годы стали периодом интенсивного промышленного и культурного развития Казахстана. Создание промышленной базы, развитие образования и науки заложили основы для современного экономического потенциала республики.</p>
+        
+        <h3 class="subsection-title">Ключевые стройки индустриализации</h3>
+        
+        <div class="archaeological-sites">
+            <div class="site-card">
+                <div class="region">Угольная промышленность</div>
+                <h4>Карагандинский угольный бассейн</h4>
+                <p>Создан в 1930-е годы. Стал третьей угольной кочегаркой СССР. Привлек тысячи рабочих со всей страны. Превратил Караганду в крупный промышленный центр.</p>
+            </div>
+            <div class="site-card">
+                <div class="region">Цветная металлургия</div>
+                <h4>Балхашский медеплавильный завод</h4>
+                <p>Построен в 1938-1942 годах. Крупнейшее предприятие цветной металлургии. Использовал руды Коунрадского и Sayakского месторождений.</p>
+            </div>
+            <div class="site-card">
+                <div class="region">Нефтяная промышленность</div>
+                <h4>Эмбинский нефтяной район</h4>
+                <p>Разработка начата в 1911 году, интенсифицирована в 1930-е. Давал до 70% нефти Казахстана. Сыграл важную роль в обеспечении страны топливом.</p>
+            </div>
+        </div>
+
+        <h3 class="subsection-title">Достижения культурной революции</h3>
+        
+        <table class="comparison-table">
+            <thead>
+                <tr>
+                    <th>Сфера</th>
+                    <th>1920 год</th>
+                    <th>1940 год</th>
+                    <th>Достижения</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><strong>Грамотность</strong></td>
+                    <td>8,1%</td>
+                    <td>76,3%</td>
+                    <td>Ликвидация неграмотности</td>
+                </tr>
+                <tr>
+                    <td><strong>Школы</strong></td>
+                    <td>2,371</td>
+                    <td>7,654</td>
+                    <td>Создание системы образования</td>
+                </tr>
+                <tr>
+                    <td><strong>ВУЗы</strong></td>
+                    <td>0</td>
+                    <td>20</td>
+                    <td>Подготовка национальных кадров</td>
+                </tr>
+                <tr>
+                    <td><strong>Театры</strong></td>
+                    <td>1</td>
+                    <td>27</td>
+                    <td>Развитие профессионального искусства</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <div class="conclusion">
+            <h3>Сложное наследие советского периода</h3>
+            <p>1920-1940-е годы оставили противоречивое наследие в истории Казахстана. С одной стороны, это было время невиданных трагедий - голода, репрессий, насильственной ломки традиционного уклада. С другой стороны, именно в этот период были заложены основы современной промышленности, образования, науки и культуры.</p>
+            
+            <div class="key-points">
+                <h3>Основные исторические уроки:</h3>
+                <ul>
+                    <li><strong>Цена модернизации</strong> - насильственные методы приводят к гуманитарным катастрофам</li>
+                    <li><strong>Значение национальной интеллигенции</strong> - ее уничтожение замедляет развитие общества</li>
+                    <li><strong>Важность исторической памяти</strong> - трагические страницы истории должны быть осмыслены</li>
+                    <li><strong>Сложность исторической оценки</strong> - необходимо учитывать как достижения, так и потери</li>
+                    <li><strong>Уроки тоталитаризма</strong> - важность защиты прав человека и демократических ценностей</li>
+                </ul>
+            </div>
+            
+            <p>Несмотря на все трагедии и потери, казахский народ смог сохранить свою идентичность, язык и культуру. Опыт советского периода, как положительный, так и отрицательный, стал частью национальной исторической памяти и продолжает влиять на развитие современного Казахстана.</p>
+        </div>
+    </div>
+
+    <!-- Футер -->
+    <footer>
+        <div class="footer-content">
+            <p>&copy; 2025 Образовательный веб-ресурс "История Казахстана"</p>
+            <p>Разработано в рамках учебного проекта средствами HTML и CSS</p>
+        </div>
+    </footer>
+</body>
+</html>

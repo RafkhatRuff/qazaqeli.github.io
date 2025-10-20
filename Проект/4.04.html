@@ -1,0 +1,752 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Казахстан в годы Великой Отечественной войны</title>
+    <style>
+@import url('https://fonts.googleapis.com/css2?family=Dela+Gothic+One&family=Unbounded:wght@200..900&display=swap');
+
+/* Главные */
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Unbounded;
+    background-color: rgb(244, 244, 244);
+}
+
+a {
+    text-decoration: none;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+/* Шапка */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 1400px;
+    margin: 0 auto;
+    padding: 30px 0;
+}
+
+header .logo {
+    color: rgb(0, 109, 219);
+    text-transform: uppercase;
+    font-size: 20px;
+    font-weight: 500;
+}
+
+/* Бургер */
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown-btn {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 10px 15px;
+    background: #f8f9fa;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.dropdown-btn:hover {
+    background: #e9ecef;
+    border-color: #adb5bd;
+}
+
+.dropdown-btn span {
+    font-weight: 500;
+    font-size: 15px;
+    font-family: Unbounded;
+    color: rgb(0, 109, 219);
+}
+
+.dropdown-content {
+    position: absolute;
+    right: 0;
+    background: white;
+    min-width: 300px;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+    border-radius: 10px;
+    z-index: 1000;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-10px);
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.dropdown-content a {
+    display: block;
+    padding: 12px 16px;
+    text-decoration: none;
+    color: #333;
+    border-bottom: 2px solid #eee;
+    transition: all 0.2s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.dropdown-content a:last-child {
+    border-bottom: none;
+}
+
+.dropdown-content a:hover {
+    background: #f8f9fa;
+    border-radius: 8px;
+}
+
+.dropdown:hover .dropdown-content {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+/* Баннер */
+.banner {
+    display: grid;
+    align-items: center;
+    text-align: center;
+    width: 1500px;
+    margin: 0 auto;
+    border-radius: 25px;
+    height: 250px;
+    margin-bottom: 50px;
+    box-shadow: 10px 5px 5px rgba(0,0,0,0.1);
+    background: linear-gradient(rgba(0, 123, 255, 0.5), rgba(0, 109, 219,0.5)), url('./Баннер/Баннер\ 1.jpg') center/cover no-repeat;
+}
+
+.banner-text-1 {
+    font-size: 3.6rem;
+    font-weight: 800;
+    color: rgb(255, 255, 255);
+}
+
+/* Разделы */
+.razdel-tema {
+    width: 1400px;
+    margin: 0 auto;
+    margin-top: 50px;
+    margin-bottom: 30px;
+}
+
+.razdel {
+    color: rgb(0, 109, 219);
+    font-size: 2.1rem;
+    font-weight: 500;
+}
+
+/* Контент */
+.content-section {
+    width: 1400px;
+    background: white;
+    margin: 0 auto;
+    border-radius: 20px;
+    padding: 35px;
+    margin-bottom: 35px;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.08);
+    border-left: 5px solid rgb(0, 109, 219);
+}
+
+.section-title {
+    color: rgb(0, 109, 219);
+    font-size: 2rem;
+    margin-bottom: 25px;
+    display: flex;
+    align-items: center;
+    padding-bottom: 10px;
+    border-bottom: 2px solid #f0f0f0;
+}
+
+.section-title::before {
+    content: "▶";
+    display: inline-block;
+    margin-right: 15px;
+    color: rgb(0, 109, 219);
+    font-size: 1.5rem;
+}
+
+.subsection-title {
+    color: #2c5282;
+    font-size: 1.5rem;
+    margin: 25px 0 15px;
+    padding-left: 20px;
+    border-left: 4px solid #2c5282;
+}
+
+.key-points {
+    background: linear-gradient(135deg, #f0f7ff, #e6f2ff);
+    border-left: 6px solid rgb(0, 109, 219);
+    padding: 25px;
+    margin: 25px 0;
+    border-radius: 0 15px 15px 0;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+}
+
+.key-points h3 {
+    margin-bottom: 15px;
+    color: rgb(0, 109, 219);
+    font-size: 1.4rem;
+}
+
+.key-points ul {
+    padding-left: 25px;
+}
+
+.key-points li {
+    margin-bottom: 10px;
+    position: relative;
+}
+
+.key-points li::before {
+    content: "•";
+    color: rgb(0, 109, 219);
+    font-weight: bold;
+    display: inline-block;
+    width: 1em;
+    margin-left: -1em;
+}
+
+.archaeological-sites {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+    gap: 25px;
+    margin: 25px 0;
+}
+
+.site-card {
+    background: white;
+    border-radius: 15px;
+    padding: 25px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+    border-top: 5px solid rgb(0, 109, 219);
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.site-card::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: linear-gradient(90deg, rgb(0, 109, 219), #2c5282);
+}
+
+.site-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 12px 30px rgba(0,0,0,0.15);
+}
+
+.site-card h4 {
+    color: rgb(0, 109, 219);
+    margin-bottom: 12px;
+    font-size: 1.3rem;
+}
+
+.site-card .region {
+    background: #e6f2ff;
+    color: #2c5282;
+    padding: 5px 12px;
+    border-radius: 20px;
+    font-size: 0.9rem;
+    font-weight: 600;
+    display: inline-block;
+    margin-bottom: 15px;
+}
+
+.conclusion {
+    background: linear-gradient(135deg, #e8f4ff, #d4e7ff);
+    padding: 30px;
+    border-radius: 15px;
+    margin: 35px 0;
+    border: 2px solid #c2e0ff;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+}
+
+.conclusion h3 {
+    color: rgb(0, 109, 219);
+    margin-bottom: 20px;
+    font-size: 1.6rem;
+    text-align: center;
+}
+
+.important-note {
+    background: #fff3cd;
+    border: 2px solid #ffeaa7;
+    border-left: 6px solid #fdcb6e;
+    padding: 20px;
+    margin: 20px 0;
+    border-radius: 10px;
+}
+
+.timeline-event {
+    background: #f8fafc;
+    border-left: 4px solid #2c5282;
+    padding: 20px;
+    margin: 15px 0;
+    border-radius: 0 8px 8px 0;
+}
+
+.event-year {
+    font-weight: bold;
+    color: #2c5282;
+    font-size: 1.1rem;
+    margin-bottom: 8px;
+}
+
+.leader-card {
+    background: linear-gradient(135deg, #ffffff, #f8fafc);
+    border-radius: 12px;
+    padding: 20px;
+    margin: 15px 0;
+    border: 2px solid #e6f2ff;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+}
+
+.leader-name {
+    color: #2c5282;
+    font-size: 1.3rem;
+    font-weight: 600;
+    margin-bottom: 10px;
+}
+
+.timeline-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 25px 0;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.timeline-table th {
+    background: linear-gradient(135deg, rgb(0, 109, 219), #2c5282);
+    color: white;
+    padding: 18px;
+    text-align: left;
+    font-weight: 600;
+}
+
+.timeline-table td {
+    padding: 18px;
+    border-bottom: 1px solid #eaeaea;
+    vertical-align: top;
+}
+
+.timeline-table tr:nth-child(even) {
+    background: #f8fafc;
+}
+
+.timeline-table tr:hover {
+    background: #e6f2ff;
+    transform: translateY(-1px);
+    transition: all 0.2s ease;
+}
+
+.comparison-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 25px 0;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.comparison-table th {
+    background: #2c5282;
+    color: white;
+    padding: 15px;
+    text-align: center;
+    font-weight: 600;
+}
+
+.comparison-table td {
+    padding: 15px;
+    border: 1px solid #eaeaea;
+    text-align: center;
+}
+
+.comparison-table tr:nth-child(even) {
+    background: #f8fafc;
+}
+
+.hero-card {
+    background: linear-gradient(135deg, #fff5f5, #fed7d7);
+    border-left: 5px solid #e53e3e;
+    padding: 20px;
+    margin: 15px 0;
+    border-radius: 0 10px 10px 0;
+}
+
+.hero-title {
+    color: #e53e3e;
+    font-size: 1.2rem;
+    font-weight: 600;
+    margin-bottom: 10px;
+}
+
+/* Футер */
+footer {
+    width: 1300px;
+    margin: 0 auto;
+    border-top: 3px solid #3498db;
+    border-left: 3px solid #3498db;
+    border-right: 3px solid #3498db;
+    border-bottom: none;
+    border-radius: 15px 15px 0 0;
+    background-color: rgb(244, 244, 244);
+    text-align: center;
+    padding: 25px 25px;
+    margin-top: 3rem;
+}
+.footer-content {
+    color:rgb(69, 69, 69);
+}
+    </style>
+</head>
+<body>
+    <!-- Шапка -->
+    <header>
+        <a href="./Главная.html"><span class="logo">QAZAQ ELI</span></a>
+        <div class="dropdown">
+            <button class="dropdown-btn">
+                <span>Навигация</span>
+            </button>
+            <div class="dropdown-content">
+                <a href="#raz1">Мобилизация и фронт</a>
+                <a href="#raz2">Тыл - арсенал фронта</a>
+                <a href="#raz3">Герои-казахстанцы</a>
+                <a href="#raz4">Итоги и память</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Баннер 1 -->
+    <div class="banner">
+        <span class="banner-text-1">Казахстан в годы Великой Отечественной войны</span>
+    </div>
+
+    <!-- Введение -->
+    <div class="content-section" id="introduction">
+        <h2 class="section-title">1941-1945: Все для фронта, все для победы!</h2>
+        <p>Великая Отечественная война стала суровым испытанием для всего советского народа, в том числе и для казахстанцев. Казахская ССР внесла огромный вклад в победу над фашизмом, став надежным тылом и поставщиком человеческих ресурсов для Красной Армии.</p>
+        
+        <div class="key-points">
+            <h3>Вклад Казахстана в победу:</h3>
+            <ul>
+                <li>Более 1,2 миллиона казахстанцев ушли на фронт</li>
+                <li>Сформировано 12 стрелковых, 4 кавалерийских дивизий, 7 стрелковых бригад</li>
+                <li>500 казахстанцев удостоены звания Героя Советского Союза</li>
+                <li>Казахстан принял 532 эвакуированных предприятия</li>
+                <li>Произведено 85% свинца, 35% меди от общесоюзной добычи</li>
+                <li>В республику эвакуировано более 1,5 миллиона человек</li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- Мобилизация и фронт -->
+    <div class="razdel-tema" id="raz1">
+        <span class="razdel">Мобилизация и боевой путь</span>
+    </div>
+
+    <div class="content-section">
+        <h2 class="section-title">Казахстанцы на фронтах Великой Отечественной</h2>
+        <p>С первых дней войны казахстанцы массово встали на защиту Родины. За годы войны из Казахской ССР было мобилизовано более 1,2 миллиона человек, что составляло около 20% всего населения республики.</p>
+        
+        <h3 class="subsection-title">Формирование воинских соединений</h3>
+        
+        <table class="timeline-table">
+            <thead>
+                <tr>
+                    <th>Соединение</th>
+                    <th>Место формирования</th>
+                    <th>Боевой путь</th>
+                    <th>Награды</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><strong>316-я стрелковая дивизия</strong></td>
+                    <td>Алма-Ата</td>
+                    <td>Оборона Москвы, битва за Берлин</td>
+                    <td>8-я гвардейская, Краснознаменная</td>
+                </tr>
+                <tr>
+                    <td><strong>238-я стрелковая дивизия</strong></td>
+                    <td>Караганда</td>
+                    <td>Сталинградская битва, освобождение Украины</td>
+                    <td>Краснознаменная</td>
+                </tr>
+                <tr>
+                    <td><strong>100-я стрелковая бригада</strong></td>
+                    <td>Актюбинск</td>
+                    <td>Оборона Ленинграда, Курская битва</td>
+                    <td>Краснознаменная</td>
+                </tr>
+                <tr>
+                    <td><strong>96-я казахская национальная бригада</strong></td>
+                    <td>Алма-Ата</td>
+                    <td>Битва за Кавказ, освобождение Крыма</td>
+                    <td>Краснознаменная</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <h3 class="subsection-title">Участие в ключевых битвах</h3>
+        <div class="archaeological-sites">
+            <div class="site-card">
+                <div class="region">1941 год</div>
+                <h4>Оборона Москвы</h4>
+                <p>316-я стрелковая дивизия под командованием генерала И.В. Панфилова героически защищала подступы к столице. Подвиг 28 панфиловцев стал символом мужества.</p>
+            </div>
+            <div class="site-card">
+                <div class="region">1942-1943 годы</div>
+                <h4>Сталинградская битва</h4>
+                <p>Казахстанцы участвовали в оборонительных и наступательных операциях. 73-я гвардейская дивизия отличилась в уличных боях за город.</p>
+            </div>
+            <div class="site-card">
+                <div class="region">1943 год</div>
+                <h4>Курская битва</h4>
+                <p>В сражении на Огненной дуге участвовали несколько казахстанских соединений. Танкисты-казахстанцы проявили массовый героизм.</p>
+            </div>
+        </div>
+
+        <div class="important-note">
+            <strong>Подвиг 28 панфиловцев:</strong> 16 ноября 1941 года у разъезда Дубосеково воины 316-й стрелковой дивизии под командованием политрука В.Г. Клочкова вступили в бой с 50 немецкими танками. Ценой своей жизни они уничтожили 18 танков и не пропустили врага к Москве. Легендарные слова политрука: "Велика Россия, а отступать некуда - позади Москва!" стали символом стойкости.
+        </div>
+    </div>
+
+    <!-- Тыл - арсенал фронта -->
+    <div class="razdel-tema" id="raz2">
+        <span class="razdel">Тыл - арсенал фронта</span>
+    </div>
+
+    <div class="content-section">
+        <h2 class="section-title">Казахстан - надежный тыл</h2>
+        <p>В годы войны Казахская ССР стала важнейшим промышленным и agricultural регионом страны. Эвакуированные предприятия, развитие добывающей промышленности и сельского хозяйства обеспечивали фронт всем необходимым.</p>
+        
+        <h3 class="subsection-title">Эвакуация промышленности</h3>
+        
+        <div class="timeline-event">
+            <div class="event-year">1941-1942 годы - Массовая эвакуация</div>
+            <p>В Казахстан было эвакуировано 532 промышленных предприятия из западных регионов СССР. Среди них - Ленинградский завод тяжелого машиностроения, Запорожский металлургический комбинат, Московский авиационный завод.</p>
+        </div>
+
+        <div class="timeline-event">
+            <div class="event-year">1942-1943 годы - Развертывание производства</div>
+            <p>Эвакуированные предприятия в кратчайшие сроки начали выпуск военной продукции. На базе эвакуированных заводов созданы Алма-Атинский машиностроительный, Карагандинский металлургический комбинаты.</p>
+        </div>
+
+        <h3 class="subsection-title">Экономический вклад Казахстана</h3>
+        
+        <table class="comparison-table">
+            <thead>
+                <tr>
+                    <th>Отрасль</th>
+                    <th>Довоенный уровень</th>
+                    <th>Военный период</th>
+                    <th>Вклад в победу</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><strong>Цветная металлургия</strong></td>
+                    <td>Добыча меди, свинца</td>
+                    <td>90% союзного свинца, 50% меди</td>
+                    <td>Снаряды, патроны, техника</td>
+                </tr>
+                <tr>
+                    <td><strong>Угольная промышленность</strong></td>
+                    <td>Карагандинский бассейн</td>
+                    <td>Увеличение добычи в 1,5 раза</td>
+                    <td>Энергия для промышленности</td>
+                </tr>
+                <tr>
+                    <td><strong>Нефтяная промышленность</strong></td>
+                    <td>Эмбинский район</td>
+                    <td>Рост добычи на 40%</td>
+                    <td>Топливо для армии</td>
+                </tr>
+                <tr>
+                    <td><strong>Сельское хозяйство</strong></td>
+                    <td>Зерно, скотоводство</td>
+                    <td>Поставки хлеба, мяса, шерсти</td>
+                    <td>Продовольствие для армии</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <h3 class="subsection-title">Эвакуация населения</h3>
+        <div class="key-points">
+            <ul>
+                <li><strong>Общее число эвакуированных</strong> - более 1,5 миллиона человек</li>
+                <li><strong>Размещение в сельской местности</strong> - создание колхозов и совхозов</li>
+                <li><strong>Эвакогоспитали</strong> - развернуто 150 госпиталей на 45 тысяч коек</li>
+                <li><strong>Эвакуация учреждений культуры</strong> - Московская киностудия, театры, вузы</li>
+                <li><strong>Научные учреждения</strong> - Академия наук СССР, исследовательские институты</li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- Герои-казахстанцы -->
+    <div class="razdel-tema" id="raz3">
+        <span class="razdel">Герои-казахстанцы</span>
+    </div>
+
+    <div class="content-section">
+        <h2 class="section-title">Подвиги воинов-казахстанцев</h2>
+        <p>За мужество и героизм, проявленные в боях с немецко-фашистскими захватчиками, 500 воинов-казахстанцев были удостоены звания Героя Советского Союза, более 100 тысяч награждены орденами и медалями.</p>
+        
+        <h3 class="subsection-title">Выдающиеся герои</h3>
+        
+        <div class="archaeological-sites">
+            <div class="site-card">
+                <div class="region">Легендарный снайпер</div>
+                <h4>Алия Молдагулова</h4>
+                <p><strong>Годы жизни:</strong> 1925-1944<br>
+                <strong>Подвиг:</strong> Уничтожила 78 вражеских солдат и офицеров<br>
+                <strong>Гибель:</strong> Погибла в бою за деревню Казачиха<br>
+                <strong>Награда:</strong> Герой Советского Союза (1944)</p>
+            </div>
+            <div class="site-card">
+                <div class="region">Командир пулеметного расчета</div>
+                <h4>Маншук Маметова</h4>
+                <p><strong>Годы жизни:</strong> 1922-1943<br>
+                <strong>Подвиг:</strong> В одиночку держала оборону, уничтожила 70 солдат<br>
+                <strong>Гибель:</strong> Погибла в боях за Невель<br>
+                <strong>Награда:</strong> Герой Советского Союза (1944)</p>
+            </div>
+            <div class="site-card">
+                <div class="region">Летчик-штурмовик</div>
+                <h4>Талгат Бегельдинов</h4>
+                <p><strong>Годы жизни:</strong> 1922-2014<br>
+                <strong>Подвиг:</strong> Совершил 305 боевых вылетов<br>
+                <strong>Особенность:</strong> Дважды Герой Советского Союза<br>
+                <strong>Награды:</strong> Ордена Ленина, Красного Знамени</p>
+            </div>
+        </div>
+
+        <h3 class="subsection-title">Уникальные подвиги</h3>
+        
+        <div class="hero-card">
+            <div class="hero-title">Подвиг летчика Нуркена Абдирова</div>
+            <p>23 декабря 1942 года экипаж бомбардировщика в составе летчика Нуркена Абдирова и стрелка-радиста Александра Комиссарова, будучи подбитым, направил горящий самолет на колонну вражеской техники. Ценой своей жизни летчики уничтожили несколько немецких танков и автомашин.</p>
+        </div>
+
+        <div class="hero-card">
+            <div class="hero-title">Подвиг Сагадата Нурмагамбетова</div>
+            <p>Командир пулеметного взвода в боях за Днепр лично уничтожил 3 огневые точки и до 50 солдат противника. Будучи раненным, продолжал руководить подразделением. За мужество и отвагу удостоен звания Героя Советского Союза.</p>
+        </div>
+
+        <h3 class="subsection-title">Казахстанцы - полные кавалеры ордена Славы</h3>
+        <div class="key-points">
+            <ul>
+                <li><strong>Кайыргали Абдрахманов</strong> - разведчик, прошел весь боевой путь до Берлина</li>
+                <li><strong>Султан Баймагамбетов</strong> - командир орудийного расчета, участник штурма Берлина</li>
+                <li><strong>Ибрагим Сулейменов</strong> - сапер, обезвредил сотни мин и фугасов</li>
+                <li><strong>Всего полных кавалеров</strong> - 96 казахстанцев</li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- Итоги и память -->
+    <div class="razdel-tema" id="raz4">
+        <span class="razdel">Итоги войны и историческая память</span>
+    </div>
+
+    <div class="content-section">
+        <h2 class="section-title">Цена победы и уроки истории</h2>
+        <p>Великая Отечественная война стала тяжелейшим испытанием для казахстанского народа. Цена победы была огромной - сотни тысяч погибших, разрушенное хозяйство, искалеченные судьбы. Но именно в эти годы проявились лучшие качества народа - мужество, стойкость, готовность к самопожертвованию.</p>
+        
+        <h3 class="subsection-title">Демографические потери</h3>
+        
+        <table class="comparison-table">
+            <thead>
+                <tr>
+                    <th>Показатель</th>
+                    <th>Довоенный период</th>
+                    <th>После войны</th>
+                    <th>Потери</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><strong>Мобилизовано</strong></td>
+                    <td>-</td>
+                    <td>1,200,000 человек</td>
+                    <td>-</td>
+                </tr>
+                <tr>
+                    <td><strong>Погибло на фронте</strong></td>
+                    <td>-</td>
+                    <td>410,000 человек</td>
+                    <td>34% от мобилизованных</td>
+                </tr>
+                <tr>
+                    <td><strong>Пропало без вести</strong></td>
+                    <td>-</td>
+                    <td>125,000 человек</td>
+                    <td>10% от мобилизованных</td>
+                </tr>
+                <tr>
+                    <td><strong>Вернулось инвалидами</strong></td>
+                    <td>-</td>
+                    <td>150,000 человек</td>
+                    <td>12% от мобилизованных</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <h3 class="subsection-title">Экономические последствия</h3>
+        <div class="key-points">
+            <ul>
+                <li><strong>Промышленность</strong> - создание новых отраслей, но износ оборудования</li>
+                <li><strong>Сельское хозяйство</strong> - сокращение поголовья скота, истощение земель</li>
+                <li><strong>Инфраструктура</strong> - развитие транспортной сети, но недостаток инвестиций</li>
+                <li><strong>Социальная сфера</strong> - ухудшение условий жизни, жилищный кризис</li>
+                <li><strong>Демография</strong> - нарушение половозрастной структуры населения</li>
+            </ul>
+        </div>
+
+        <div class="conclusion">
+            <h3>Историческое значение подвига казахстанцев</h3>
+            <p>Вклад Казахстана в победу в Великой Отечественной войне имеет непреходящее историческое значение. Подвиг казахстанцев на фронте и в тылу стал ярким примером патриотизма, интернационализма и готовности к самопожертвованию во имя защиты Родины.</p>
+            
+            <div class="key-points">
+                <h3>Основные исторические уроки:</h3>
+                <ul>
+                    <li><strong>Единство многонационального народа</strong> - вклад всех народов Казахстана в общую победу</li>
+                    <li><strong>Ценность человеческой жизни</strong> - память о каждом погибшем воине</li>
+                    <li><strong>Важность экономической независимости</strong> - способность обеспечить фронт всем необходимым</li>
+                    <li><strong>Сила духа и воли</strong> - способность преодолевать любые трудности</li>
+                    <li><strong>Необходимость сохранения мира</strong> - уроки войны как предостережение будущим поколениям</li>
+                </ul>
+            </div>
+            
+            <p>Память о Великой Отечественной войне остается важной частью национального самосознания казахстанского народа. Подвиг героев-фронтовиков и тружеников тыла продолжает вдохновлять новые поколения на служение Родине и укрепление независимости Казахстана.</p>
+        </div>
+    </div>
+
+    <!-- Футер -->
+    <footer>
+        <div class="footer-content">
+            <p>&copy; 2025 Образовательный веб-ресурс "История Казахстана"</p>
+            <p>Разработано в рамках учебного проекта средствами HTML и CSS</p>
+        </div>
+    </footer>
+</body>
+</html>

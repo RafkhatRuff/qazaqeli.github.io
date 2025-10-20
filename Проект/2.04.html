@@ -1,0 +1,781 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Образование и укрепление Казахского ханства</title>
+    <style>
+@import url('https://fonts.googleapis.com/css2?family=Dela+Gothic+One&family=Unbounded:wght@200..900&display=swap');
+
+/* Главные */
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Unbounded;
+    background-color: rgb(244, 244, 244);
+}
+
+a {
+    text-decoration: none;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+/* Шапка */
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 1400px;
+    margin: 0 auto;
+    padding: 30px 0;
+}
+
+header .logo {
+    color: rgb(0, 109, 219);
+    text-transform: uppercase;
+    font-size: 20px;
+    font-weight: 500;
+}
+
+/* Бургер */
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown-btn {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 10px 15px;
+    background: #f8f9fa;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.dropdown-btn:hover {
+    background: #e9ecef;
+    border-color: #adb5bd;
+}
+
+.dropdown-btn span {
+    font-weight: 500;
+    font-size: 15px;
+    font-family: Unbounded;
+    color: rgb(0, 109, 219);
+}
+
+.dropdown-content {
+    position: absolute;
+    right: 0;
+    background: white;
+    min-width: 300px;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+    border-radius: 10px;
+    z-index: 1000;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-10px);
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.dropdown-content a {
+    display: block;
+    padding: 12px 16px;
+    text-decoration: none;
+    color: #333;
+    border-bottom: 2px solid #eee;
+    transition: all 0.2s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.dropdown-content a:last-child {
+    border-bottom: none;
+}
+
+.dropdown-content a:hover {
+    background: #f8f9fa;
+    border-radius: 8px;
+}
+
+.dropdown:hover .dropdown-content {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+/* Баннер */
+
+.banner {
+    display: grid;
+    align-items: center;
+    text-align: center;
+    width: 1500px;
+    margin: 0 auto;
+    border-radius: 25px;
+    height: 250px;
+    margin-bottom: 50px;
+    box-shadow: 10px 5px 5px rgba(0,0,0,0.1);
+    background: linear-gradient(rgba(0, 123, 255, 0.5), rgba(0, 109, 219,0.5)), url('./Баннер/Баннер\ 1.jpg') center/cover no-repeat;
+}
+
+.banner-text-1 {
+    font-size: 3.6rem;
+    font-weight: 800;
+    color: rgb(255, 255, 255);
+}
+
+/* Разделы */
+
+.razdel-tema {
+    width: 1400px;
+    margin: 0 auto;
+    margin-top: 50px;
+    margin-bottom: 30px;
+}
+
+.razdel {
+    color: rgb(0, 109, 219);
+    font-size: 2.1rem;
+    font-weight: 500;
+}
+
+/* Контент */
+
+.content-section {
+    width: 1400px;
+    background: white;
+    margin: 0 auto;
+    border-radius: 20px;
+    padding: 35px;
+    margin-bottom: 35px;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.08);
+    border-left: 5px solid rgb(0, 109, 219);
+}
+
+        .section-title {
+            color: rgb(0, 109, 219);
+            font-size: 2rem;
+            margin-bottom: 25px;
+            display: flex;
+            align-items: center;
+            padding-bottom: 10px;
+            border-bottom: 2px solid #f0f0f0;
+        }
+
+        .section-title::before {
+            content: "▶";
+            display: inline-block;
+            margin-right: 15px;
+            color: rgb(0, 109, 219);
+            font-size: 1.5rem;
+        }
+
+        .subsection-title {
+            color: #2c5282;
+            font-size: 1.5rem;
+            margin: 25px 0 15px;
+            padding-left: 20px;
+            border-left: 4px solid #2c5282;
+        }
+
+        .timeline-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 25px 0;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+            border-radius: 10px;
+            overflow: hidden;
+        }
+
+        .timeline-table th {
+            background: linear-gradient(135deg, rgb(0, 109, 219), #2c5282);
+            color: white;
+            padding: 18px;
+            text-align: left;
+            font-weight: 600;
+        }
+
+        .timeline-table td {
+            padding: 18px;
+            border-bottom: 1px solid #eaeaea;
+            vertical-align: top;
+        }
+
+        .timeline-table tr:nth-child(even) {
+            background: #f8fafc;
+        }
+
+        .timeline-table tr:hover {
+            background: #e6f2ff;
+            transform: translateY(-1px);
+            transition: all 0.2s ease;
+        }
+
+        .key-points {
+            background: linear-gradient(135deg, #f0f7ff, #e6f2ff);
+            border-left: 6px solid rgb(0, 109, 219);
+            padding: 25px;
+            margin: 25px 0;
+            border-radius: 0 15px 15px 0;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+        }
+
+        .key-points h3 {
+            margin-bottom: 15px;
+            color: rgb(0, 109, 219);
+            font-size: 1.4rem;
+        }
+
+        .key-points ul {
+            padding-left: 25px;
+        }
+
+        .key-points li {
+            margin-bottom: 10px;
+            position: relative;
+        }
+
+        .key-points li::before {
+            content: "•";
+            color: rgb(0, 109, 219);
+            font-weight: bold;
+            display: inline-block;
+            width: 1em;
+            margin-left: -1em;
+        }
+
+        .archaeological-sites {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+            gap: 25px;
+            margin: 25px 0;
+        }
+
+        .site-card {
+            background: white;
+            border-radius: 15px;
+            padding: 25px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+            border-top: 5px solid rgb(0, 109, 219);
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .site-card::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, rgb(0, 109, 219), #2c5282);
+        }
+
+        .site-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 12px 30px rgba(0,0,0,0.15);
+        }
+
+        .site-card h4 {
+            color: rgb(0, 109, 219);
+            margin-bottom: 12px;
+            font-size: 1.3rem;
+        }
+
+        .site-card .region {
+            background: #e6f2ff;
+            color: #2c5282;
+            padding: 5px 12px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            display: inline-block;
+            margin-bottom: 15px;
+        }
+
+        .conclusion {
+            background: linear-gradient(135deg, #e8f4ff, #d4e7ff);
+            padding: 30px;
+            border-radius: 15px;
+            margin: 35px 0;
+            border: 2px solid #c2e0ff;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+        }
+
+        .conclusion h3 {
+            color: rgb(0, 109, 219);
+            margin-bottom: 20px;
+            font-size: 1.6rem;
+            text-align: center;
+        }
+
+        .important-note {
+            background: #fff3cd;
+            border: 2px solid #ffeaa7;
+            border-left: 6px solid #fdcb6e;
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 10px;
+        }
+
+        .comparison-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 25px 0;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+            border-radius: 10px;
+            overflow: hidden;
+        }
+
+        .comparison-table th {
+            background: #2c5282;
+            color: white;
+            padding: 15px;
+            text-align: center;
+            font-weight: 600;
+        }
+
+        .comparison-table td {
+            padding: 15px;
+            border: 1px solid #eaeaea;
+            text-align: center;
+        }
+
+        .comparison-table tr:nth-child(even) {
+            background: #f8fafc;
+        }
+
+/* Футер */
+
+footer {
+    width: 1300px;
+    margin: 0 auto;
+    border-top: 3px solid #3498db;
+    border-left: 3px solid #3498db;
+    border-right: 3px solid #3498db;
+    border-bottom: none;
+    border-radius: 15px 15px 0 0;
+    background-color: rgb(244, 244, 244);
+    text-align: center;
+    padding: 25px 25px;
+    margin-top: 3rem;
+}
+.footer-content {
+    color:rgb(69, 69, 69);
+}
+    </style>
+</head>
+<body>
+    <!-- Шапка -->
+    <header>
+        <a href="./Главная.html"><span class="logo">QAZAQ ELI</span></a>
+        <div class="dropdown">
+            <button class="dropdown-btn">
+                <span>Навигация</span>
+            </button>
+            <div class="dropdown-content">
+                <a href="#raz1">Предпосылки образования</a>
+                <a href="#raz2">Основатели ханства</a>
+                <a href="#raz3">Период укрепления</a>
+                <a href="#raz4">Ханы-объединители</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Баннер 1 -->
+    <div class="banner">
+        <span class="banner-text-1">Образование и укрепление Казахского ханства</span>
+    </div>
+
+    <!-- Введение -->
+        <div class="content-section" id="introduction">
+            <h2 class="section-title">Введение: Рождение казахской государственности</h2>
+            <p>Казахское ханство было образовано в 1465 году султанами Жанибеком и Кереем. Это событие стало важнейшей вехой в истории казахского народа, ознаменовав собой завершение процесса формирования казахской народности и начало новой эпохи в развитии государственности на территории Казахстана.</p>
+            
+            <div class="key-points">
+                <h3>Историческое значение образования Казахского ханства:</h3>
+                <ul>
+                    <li>Завершение процесса этногенеза казахской народности</li>
+                    <li>Создание единого государства для всех казахских родов и племен</li>
+                    <li>Установление легитимной династии чингизидов</li>
+                    <li>Формирование политической системы, основанной на традициях кочевой демократии</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Предпосылки образования -->
+        <div class="razdel-tema" id="raz1">
+            <span class="razdel">Предпосылки образования Казахского ханства</span>
+        </div>
+
+        <div class="content-section">
+            <h2 class="section-title">Исторические условия середины XV века</h2>
+            <p>К середине XV века на территории Казахстана сложилась сложная политическая ситуация. Распад Золотой Орды и государства Абулхаир-хана создал условия для образования нового государственного объединения.</p>
+            
+            <h3 class="subsection-title">Политическая ситуация в регионе</h3>
+            <table class="timeline-table">
+                <thead>
+                    <tr>
+                        <th>Государство</th>
+                        <th>Период</th>
+                        <th>Статус к 1450-м годам</th>
+                        <th>Влияние на казахскую государственность</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>Государство Абулхаир-хана</strong></td>
+                        <td>1428-1468</td>
+                        <td>Кризис власти, междоусобицы</td>
+                        <td>Создало предпосылки для откочевки</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Могулистан</strong></td>
+                        <td>1347-1680</td>
+                        <td>Ослабление, внутренние конфликты</td>
+                        <td>Предоставил убежище Жанибеку и Керею</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Ногайская Орда</strong></td>
+                        <td>XIV-XVII вв.</td>
+                        <td>Стабильное развитие</td>
+                        <td>Конкурент в борьбе за пастбища</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Сибирское ханство</strong></td>
+                        <td>1468-1598</td>
+                        <td>Период образования</td>
+                        <td>Северный сосед, отношения колебались</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <h3 class="subsection-title">Основные предпосылки образования ханства</h3>
+            <table class="timeline-table">
+                <thead>
+                    <tr>
+                        <th>Сфера</th>
+                        <th>Предпосылки</th>
+                        <th>Результат</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>Этническая</strong></td>
+                        <td>Завершение консолидации тюрко-монгольских племен в единую казахскую народность</td>
+                        <td>Формирование общего самосознания</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Политическая</strong></td>
+                        <td>Кризис государственности Абулхаира, необходимость создания стабильной власти</td>
+                        <td>Объединение под властью чингизидов</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Экономическая</strong></td>
+                        <td>Потребность в регулировании кочевания, защите торговых путей, пастбищных территорий</td>
+                        <td>Создание единого экономического пространства</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Внешнеполитическая</strong></td>
+                        <td>Угрозы со стороны ойратов, ногайцев, среднеазиатских государств</td>
+                        <td>Необходимость военно-политического объединения</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <!-- Основатели ханства -->
+        <div class="razdel-tema" id="raz2">
+            <span class="razdel">Основатели Казахского ханства</span>
+        </div>
+
+        <div class="content-section">
+            <h2 class="section-title">Жанибек и Керей - создатели казахской государственности</h2>
+            <p>Султаны Жанибек и Керей, потомки Джучи-хана, возглавили движение за создание независимого государства. Их откочевка из государства Абулхаира в Могулистан вошла в историю как начало казахской государственности.</p>
+            
+            <h3 class="subsection-title">Биографии основателей</h3>
+            <div class="archaeological-sites">
+                <div class="site-card">
+                    <div class="region">Старший жуз</div>
+                    <h4>Керей-хан</h4>
+                    <p><strong>Годы жизни:</strong> 1425-1473<br>
+                    <strong>Происхождение:</strong> Потомок Урус-хана<br>
+                    <strong>Титул:</strong> Старший хан<br>
+                    <strong>Вклад:</strong> Идеологическое обоснование ханства</p>
+                </div>
+                <div class="site-card">
+                    <div class="region">Средний жуз</div>
+                    <h4>Жанибек-хан</h4>
+                    <p><strong>Годы жизни:</strong> 1428-1480<br>
+                    <strong>Происхождение:</strong> Потомок Барак-хана<br>
+                    <strong>Титул:</strong> Младший хан<br>
+                    <strong>Вклад:</strong> Военная организация, администрация</p>
+                </div>
+                <div class="site-card">
+                    <div class="region">Исторический контекст</div>
+                    <h4>Великая откочевка</h4>
+                    <p><strong>Год:</strong> 1459-1465<br>
+                    <strong>Направление:</strong> Из Дашт-и-Кыпчака в Жетысу<br>
+                    <strong>Численность:</strong> Около 200 тысяч человек<br>
+                    <strong>Результат:</strong> Образование Казахского ханства</p>
+                </div>
+            </div>
+
+            <h3 class="subsection-title">Этапы образования ханства</h3>
+            <table class="comparison-table">
+                <thead>
+                    <tr>
+                        <th>Период</th>
+                        <th>Годы</th>
+                        <th>Основные события</th>
+                        <th>Результат</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>Подготовительный</strong></td>
+                        <td>1450-1459</td>
+                        <td>Созыв недовольных султанов и биев, планирование откочевки</td>
+                        <td>Формирование ядра будущего ханства</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Откочевка</strong></td>
+                        <td>1459-1462</td>
+                        <td>Массовый уход племен из государства Абулхаира в Могулистан</td>
+                        <td>Образование независимой общности</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Становление</strong></td>
+                        <td>1462-1465</td>
+                        <td>Переговоры с Есен-Бугой, получение земель в Жетысу</td>
+                        <td>Официальное провозглашение ханства</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Укрепление</strong></td>
+                        <td>1465-1470</td>
+                        <td>Борьба с Абулхаиром, расширение территории</td>
+                        <td>Признание соседями</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <!-- Период укрепления -->
+        <div class="razdel-tema" id="raz3">
+            <span class="razdel">Период укрепления ханства (1465-1518 гг.)</span>
+        </div>
+
+        <div class="content-section">
+            <h2 class="section-title">Расширение территории и укрепление власти</h2>
+            <p>После смерти Абулхаир-хана в 1468 году начался процесс массового присоединения его бывших подданных к Казахскому ханству. Этот период характеризуется значительным расширением территории и укреплением институтов власти.</p>
+            
+            <h3 class="subsection-title">Правители периода укрепления</h3>
+            <table class="timeline-table">
+                <thead>
+                    <tr>
+                        <th>Хан</th>
+                        <th>Годы правления</th>
+                        <th>Основные достижения</th>
+                        <th>Территориальные приобретения</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>Керей-хан</strong></td>
+                        <td>1465-1473</td>
+                        <td>Основание ханства, установление дипломатических отношений</td>
+                        <td>Западное Жетысу, предгорья Каратау</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Жанибек-хан</strong></td>
+                        <td>1473-1480</td>
+                        <td>Военные реформы, укрепление ханской власти</td>
+                        <td>Центральный и Северный Казахстан</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Бурундук-хан</strong></td>
+                        <td>1480-1511</td>
+                        <td>Борьба с Шайбанидами, развитие городов</td>
+                        <td>Южный Казахстан, низовья Сырдарьи</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Касым-хан</strong></td>
+                        <td>1511-1518</td>
+                        <td>Период наивысшего расцвета, "Золотой век"</td>
+                        <td>Все казахские земли, часть Средней Азии</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <div class="important-note">
+                <strong>Касым-хан - объединитель казахских земель:</strong> При Касым-хане Казахское ханство достигло наивысшего могущества. Территория ханства простиралась от Яика на западе до Алтая на востоке, от Сибири на севере до Сырдарьи на юге. Численность населения достигла 1 миллиона человек.
+            </div>
+
+            <h3 class="subsection-title">Административное устройство и управление</h3>
+            <div class="archaeological-sites">
+                <div class="site-card">
+                    <h4>Центральная власть</h4>
+                    <p>• Хан - верховный правитель<br>
+                    • Совет биев - законодательный орган<br>
+                    • Ханский совет - совещательный орган<br>
+                    • Курултай - всенародное собрание</p>
+                </div>
+                <div class="site-card">
+                    <h4>Территориальное деление</h4>
+                    <p>• Улусы - крупные территориальные единицы<br>
+                    • Жузы - военно-административные объединения<br>
+                    • Роды и племена - основная социальная единица<br>
+                    • Аулы - первичная ячейка общества</p>
+                </div>
+                <div class="site-card">
+                    <h4>Военная организация</h4>
+                    <p>• Ополчение родов<br>
+                    • Ханская гвардия<br>
+                    • Отряды султанов<br>
+                    • Система батыров<br>
+                    • Деление на правое и левое крыло</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Ханы-объединители -->
+        <div class="razdel-tema" id="raz4">
+            <span class="razdel">Ханы-объединители и их политика</span>
+        </div>
+
+        <div class="content-section">
+            <h2 class="section-title">Великие правители Казахского ханства</h2>
+            <p>XVI век стал периодом консолидации казахских земель и укрепления государственности. Деятельность ханов-объединителей заложила основы политического устройства, которое сохранялось на протяжении последующих столетий.</p>
+            
+            <h3 class="subsection-title">Политика ханов-объединителей</h3>
+            <table class="comparison-table">
+                <thead>
+                    <tr>
+                        <th>Хан</th>
+                        <th>Внутренняя политика</th>
+                        <th>Внешняя политика</th>
+                        <th>Итоги правления</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>Касым-хан</strong><br>(1511-1518)</td>
+                        <td>Унификация законов, укрепление ханской власти, развитие торговли</td>
+                        <td>Расширение территории, борьба с Шайбанидами, союз с Могулистаном</td>
+                        <td>Создание единого государства, "Золотой век" ханства</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Хак-Назар-хан</strong><br>(1538-1580)</td>
+                        <td>Реформа администрации, укрепление жузовой системы, развитие городов</td>
+                        <td>Борьба с ойратами, отношения с Россией, Бухарой</td>
+                        <td>Сохранение целостности ханства в сложных условиях</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Тауекель-хан</strong><br>(1582-1598)</td>
+                        <td>Централизация власти, развитие дипломатии, поддержка земледелия</td>
+                        <td>Борьба с Бухарой за города на Сырдарье, отношения с Россией</td>
+                        <td>Возврат городов Туркестана, укрепление южных границ</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Есим-хан</strong><br>(1598-1628)</td>
+                        <td>"Есимханының ескі жолы" - свод законов, реформа управления</td>
+                        <td>Стабилизация границ, мирные отношения с соседями</td>
+                        <td>Период стабильности и процветания</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <h3 class="subsection-title">"Жеты Жаргы" - свод законов Тауке-хана</h3>
+            <div class="key-points">
+                <h3>Основные положения "Жеты Жаргы" (конец XVII века):</h3>
+                <ul>
+                    <li><strong>Земельный закон</strong> - регулирование пастбищных территорий и водных источников</li>
+                    <li><strong>Семейно-брачный закон</strong> - порядок заключения браков, калым, права женщин</li>
+                    <li><strong>Военный закон</strong> - организация ополчения, обязанности военной службы</li>
+                    <li><strong>Уголовный закон</strong> - система наказаний за преступления</li>
+                    <li><strong>Закон о судебном процессе</strong> - порядок судопроизводства, доказательства</li>
+                    <li><strong>Закон о куне</strong> - система выкупа за преступления</li>
+                    <li><strong>Закон о вдовах</strong> - защита прав вдов и сирот (аменгерство)</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Наследие и значение -->
+        <div class="content-section" id="heritage">
+            <h2 class="section-title">Историческое значение Казахского ханства</h2>
+            
+            <h3 class="subsection-title">Вклад в развитие казахской государственности</h3>
+            <table class="timeline-table">
+                <thead>
+                    <tr>
+                        <th>Сфера</th>
+                        <th>Достижения</th>
+                        <th>Влияние на последующую историю</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>Политическая система</strong></td>
+                        <td>Ханская власть, курултай, совет биев, жузовая организация</td>
+                        <td>Стала основой политической культуры казахов на века</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Правовая система</strong></td>
+                        <td>"Жеты Жаргы", обычное право, суд биев</td>
+                        <td>Сохраняло действие вплоть до XIX века</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Военная организация</strong></td>
+                        <td>Ополчение, деление на крылья, институт батыров</td>
+                        <td>Позволило защищать территорию от внешних угроз</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Экономическое развитие</strong></td>
+                        <td>Кочевое скотоводство, земледелие в оазисах, транзитная торговля</td>
+                        <td>Сформировало хозяйственный уклад казахского общества</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <div class="conclusion">
+                <h3>Образование Казахского ханства - рождение нации</h3>
+                <p>Образование Казахского ханства в 1465 году стало завершающим этапом многовекового процесса формирования казахской народности и началом новой эпохи в истории Казахстана. Это событие имело судьбоносное значение для становления казахской нации и ее государственности.</p>
+                
+                <div class="key-points">
+                    <h3>Основные исторические итоги:</h3>
+                    <ul>
+                        <li><strong>Этническая консолидация</strong> - завершение формирования казахской народности</li>
+                        <li><strong>Территориальное единство</strong> - создание общего государства для всех казахских земель</li>
+                        <li><strong>Политическая легитимность</strong> - установление признанной династии чингизидов</li>
+                        <li><strong>Культурная идентичность</strong> - формирование единой культуры и самосознания</li>
+                        <li><strong>Правовая система</strong> - создание основ государственного управления и права</li>
+                    </ul>
+                </div>
+                
+                <p>Казахское ханство просуществовало более 350 лет, пройдя через периоды расцвета и упадка, но сохранив преемственность государственных традиций, которые стали фундаментом для современного Казахстана.</p>
+            </div>
+        </div>
+    </div>
+     <!-- Футер -->
+    <footer>
+        <div class="footer-content">
+            <p>&copy; 2025 Образовательный веб-ресурс "История Казахстана"</p>
+            <p>Разработано в рамках учебного проекта средствами HTML и CSS</p>
+        </div>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,800 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Становление и укрепление независимого Казахстана</title>
+    <style>
+@import url('https://fonts.googleapis.com/css2?family=Dela+Gothic+One&family=Unbounded:wght@200..900&display=swap');
+
+/* Главные */
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Unbounded;
+    background-color: rgb(244, 244, 244);
+}
+
+a {
+    text-decoration: none;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+/* Шапка */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 1400px;
+    margin: 0 auto;
+    padding: 30px 0;
+}
+
+header .logo {
+    color: rgb(0, 109, 219);
+    text-transform: uppercase;
+    font-size: 20px;
+    font-weight: 500;
+}
+
+/* Бургер */
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown-btn {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 10px 15px;
+    background: #f8f9fa;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.dropdown-btn:hover {
+    background: #e9ecef;
+    border-color: #adb5bd;
+}
+
+.dropdown-btn span {
+    font-weight: 500;
+    font-size: 15px;
+    font-family: Unbounded;
+    color: rgb(0, 109, 219);
+}
+
+.dropdown-content {
+    position: absolute;
+    right: 0;
+    background: white;
+    min-width: 300px;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+    border-radius: 10px;
+    z-index: 1000;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-10px);
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.dropdown-content a {
+    display: block;
+    padding: 12px 16px;
+    text-decoration: none;
+    color: #333;
+    border-bottom: 2px solid #eee;
+    transition: all 0.2s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.dropdown-content a:last-child {
+    border-bottom: none;
+}
+
+.dropdown-content a:hover {
+    background: #f8f9fa;
+    border-radius: 8px;
+}
+
+.dropdown:hover .dropdown-content {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+/* Баннер */
+.banner {
+    display: grid;
+    align-items: center;
+    text-align: center;
+    width: 1500px;
+    margin: 0 auto;
+    border-radius: 25px;
+    height: 250px;
+    margin-bottom: 50px;
+    box-shadow: 10px 5px 5px rgba(0,0,0,0.1);
+    background: linear-gradient(rgba(0, 123, 255, 0.5), rgba(0, 109, 219,0.5)), url('./Баннер/Баннер\ 1.jpg') center/cover no-repeat;
+}
+
+.banner-text-1 {
+    font-size: 3.6rem;
+    font-weight: 800;
+    color: rgb(255, 255, 255);
+}
+
+/* Разделы */
+.razdel-tema {
+    width: 1400px;
+    margin: 0 auto;
+    margin-top: 50px;
+    margin-bottom: 30px;
+}
+
+.razdel {
+    color: rgb(0, 109, 219);
+    font-size: 2.1rem;
+    font-weight: 500;
+}
+
+/* Контент */
+.content-section {
+    width: 1400px;
+    background: white;
+    margin: 0 auto;
+    border-radius: 20px;
+    padding: 35px;
+    margin-bottom: 35px;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.08);
+    border-left: 5px solid rgb(0, 109, 219);
+}
+
+.section-title {
+    color: rgb(0, 109, 219);
+    font-size: 2rem;
+    margin-bottom: 25px;
+    display: flex;
+    align-items: center;
+    padding-bottom: 10px;
+    border-bottom: 2px solid #f0f0f0;
+}
+
+.section-title::before {
+    content: "▶";
+    display: inline-block;
+    margin-right: 15px;
+    color: rgb(0, 109, 219);
+    font-size: 1.5rem;
+}
+
+.subsection-title {
+    color: #2c5282;
+    font-size: 1.5rem;
+    margin: 25px 0 15px;
+    padding-left: 20px;
+    border-left: 4px solid #2c5282;
+}
+
+.key-points {
+    background: linear-gradient(135deg, #f0f7ff, #e6f2ff);
+    border-left: 6px solid rgb(0, 109, 219);
+    padding: 25px;
+    margin: 25px 0;
+    border-radius: 0 15px 15px 0;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+}
+
+.key-points h3 {
+    margin-bottom: 15px;
+    color: rgb(0, 109, 219);
+    font-size: 1.4rem;
+}
+
+.key-points ul {
+    padding-left: 25px;
+}
+
+.key-points li {
+    margin-bottom: 10px;
+    position: relative;
+}
+
+.key-points li::before {
+    content: "•";
+    color: rgb(0, 109, 219);
+    font-weight: bold;
+    display: inline-block;
+    width: 1em;
+    margin-left: -1em;
+}
+
+.archaeological-sites {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+    gap: 25px;
+    margin: 25px 0;
+}
+
+.site-card {
+    background: white;
+    border-radius: 15px;
+    padding: 25px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+    border-top: 5px solid rgb(0, 109, 219);
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.site-card::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: linear-gradient(90deg, rgb(0, 109, 219), #2c5282);
+}
+
+.site-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 12px 30px rgba(0,0,0,0.15);
+}
+
+.site-card h4 {
+    color: rgb(0, 109, 219);
+    margin-bottom: 12px;
+    font-size: 1.3rem;
+}
+
+.site-card .region {
+    background: #e6f2ff;
+    color: #2c5282;
+    padding: 5px 12px;
+    border-radius: 20px;
+    font-size: 0.9rem;
+    font-weight: 600;
+    display: inline-block;
+    margin-bottom: 15px;
+}
+
+.conclusion {
+    background: linear-gradient(135deg, #e8f4ff, #d4e7ff);
+    padding: 30px;
+    border-radius: 15px;
+    margin: 35px 0;
+    border: 2px solid #c2e0ff;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+}
+
+.conclusion h3 {
+    color: rgb(0, 109, 219);
+    margin-bottom: 20px;
+    font-size: 1.6rem;
+    text-align: center;
+}
+
+.important-note {
+    background: #fff3cd;
+    border: 2px solid #ffeaa7;
+    border-left: 6px solid #fdcb6e;
+    padding: 20px;
+    margin: 20px 0;
+    border-radius: 10px;
+}
+
+.timeline-event {
+    background: #f8fafc;
+    border-left: 4px solid #2c5282;
+    padding: 20px;
+    margin: 15px 0;
+    border-radius: 0 8px 8px 0;
+}
+
+.event-year {
+    font-weight: bold;
+    color: #2c5282;
+    font-size: 1.1rem;
+    margin-bottom: 8px;
+}
+
+.leader-card {
+    background: linear-gradient(135deg, #ffffff, #f8fafc);
+    border-radius: 12px;
+    padding: 20px;
+    margin: 15px 0;
+    border: 2px solid #e6f2ff;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+}
+
+.leader-name {
+    color: #2c5282;
+    font-size: 1.3rem;
+    font-weight: 600;
+    margin-bottom: 10px;
+}
+
+.timeline-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 25px 0;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.timeline-table th {
+    background: linear-gradient(135deg, rgb(0, 109, 219), #2c5282);
+    color: white;
+    padding: 18px;
+    text-align: left;
+    font-weight: 600;
+}
+
+.timeline-table td {
+    padding: 18px;
+    border-bottom: 1px solid #eaeaea;
+    vertical-align: top;
+}
+
+.timeline-table tr:nth-child(even) {
+    background: #f8fafc;
+}
+
+.timeline-table tr:hover {
+    background: #e6f2ff;
+    transform: translateY(-1px);
+    transition: all 0.2s ease;
+}
+
+.comparison-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 25px 0;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.comparison-table th {
+    background: #2c5282;
+    color: white;
+    padding: 15px;
+    text-align: center;
+    font-weight: 600;
+}
+
+.comparison-table td {
+    padding: 15px;
+    border: 1px solid #eaeaea;
+    text-align: center;
+}
+
+.comparison-table tr:nth-child(even) {
+    background: #f8fafc;
+}
+
+.achievement-card {
+    background: linear-gradient(135deg, #f0fff4, #c6f6d5);
+    border-left: 5px solid #38a169;
+    padding: 20px;
+    margin: 15px 0;
+    border-radius: 0 10px 10px 0;
+}
+
+.achievement-title {
+    color: #38a169;
+    font-size: 1.2rem;
+    font-weight: 600;
+    margin-bottom: 10px;
+}
+
+.challenge-card {
+    background: linear-gradient(135deg, #fffaf0, #feebc8);
+    border-left: 5px solid #dd6b20;
+    padding: 20px;
+    margin: 15px 0;
+    border-radius: 0 10px 10px 0;
+}
+
+.challenge-title {
+    color: #dd6b20;
+    font-size: 1.2rem;
+    font-weight: 600;
+    margin-bottom: 10px;
+}
+
+/* Футер */
+footer {
+    width: 1300px;
+    margin: 0 auto;
+    border-top: 3px solid #3498db;
+    border-left: 3px solid #3498db;
+    border-right: 3px solid #3498db;
+    border-bottom: none;
+    border-radius: 15px 15px 0 0;
+    background-color: rgb(244, 244, 244);
+    text-align: center;
+    padding: 25px 25px;
+    margin-top: 3rem;
+}
+.footer-content {
+    color:rgb(69, 69, 69);
+}
+    </style>
+</head>
+<body>
+    <!-- Шапка -->
+    <header>
+        <a href="./Главная.html"><span class="logo">QAZAQ ELI</span></a>
+        <div class="dropdown">
+            <button class="dropdown-btn">
+                <span>Навигация</span>
+            </button>
+            <div class="dropdown-content">
+                <a href="#raz1">Первые годы независимости</a>
+                <a href="#raz2">Экономические реформы</a>
+                <a href="#raz3">Политическое развитие</a>
+                <a href="#raz4">Международное признание</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Баннер 1 -->
+    <div class="banner">
+        <span class="banner-text-1">Становление и укрепление независимого Казахстана</span>
+    </div>
+
+    <!-- Введение -->
+    <div class="content-section" id="introduction">
+        <h2 class="section-title">1991-2000: Строительство нового государства</h2>
+        <p>Первое десятилетие независимости стало для Казахстана периодом фундаментальных преобразований во всех сферах жизни. Молодому государству предстояло построить новые институты власти, провести экономические реформы, определить внешнеполитический курс и сохранить стабильность в многонациональном обществе.</p>
+        
+        <div class="key-points">
+            <h3>Основные направления строительства государства:</h3>
+            <ul>
+                <li>Создание государственных институтов и принятие Конституции</li>
+                <li>Проведение радикальных экономических реформ</li>
+                <li>Формирование собственной внешней политики</li>
+                <li>Решение ядерного наследия СССР</li>
+                <li>Сохранение межнационального согласия</li>
+                <li>Развитие национальной культуры и идентичности</li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- Первые годы независимости -->
+    <div class="razdel-tema" id="raz1">
+        <span class="razdel">Первые годы независимости (1991-1995)</span>
+    </div>
+
+    <div class="content-section">
+        <h2 class="section-title">Формирование основ государственности</h2>
+        <p>Первые годы независимости стали временем создания фундаментальных основ казахстанской государственности. За этот короткий период были приняты ключевые документы, определившие дальнейшее развитие страны.</p>
+        
+        <h3 class="subsection-title">Ключевые события становления государства</h3>
+        
+        <table class="timeline-table">
+            <thead>
+                <tr>
+                    <th>Год</th>
+                    <th>Событие</th>
+                    <th>Значение</th>
+                    <th>Результаты</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><strong>1991</strong></td>
+                    <td>Провозглашение независимости</td>
+                    <td>Юридическое оформление суверенитета</td>
+                    <td>Начало строительства независимого государства</td>
+                </tr>
+                <tr>
+                    <td><strong>1992</strong></td>
+                    <td>Вступление в ООН</td>
+                    <td>Международное признание</td>
+                    <td>Казахстан стал полноправным членом мирового сообщества</td>
+                </tr>
+                <tr>
+                    <td><strong>1993</strong></td>
+                    <td>Принятие первой Конституции</td>
+                    <td>Правовая основа государства</td>
+                    <td>Определение принципов государственного устройства</td>
+                </tr>
+                <tr>
+                    <td><strong>1993</strong></td>
+                    <td>Введение национальной валюты - тенге</td>
+                    <td>Экономический суверенитет</td>
+                    <td>Создание независимой денежной системы</td>
+                </tr>
+                <tr>
+                    <td><strong>1995</strong></td>
+                    <td>Принятие новой Конституции</td>
+                    <td>Совершенствование государственного устройства</td>
+                    <td>Укрепление президентской республики</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <h3 class="subsection-title">Символика и атрибуты государства</h3>
+        <div class="archaeological-sites">
+            <div class="site-card">
+                <h4>Государственный флаг</h4>
+                <p>Принят 4 июня 1992 года. Голубой цвет символизирует мир и благополучие. Солнце - богатство и изобилие. Орел - щедрость и зоркость. Национальный орнамент - культуру и традиции.</p>
+            </div>
+            <div class="site-card">
+                <h4>Государственный герб</h4>
+                <p>Принят 4 июня 1992 года. Шанырак - семейное благополучие. Тулпары - гостеприимство. Пятиконечная звезда - дружбу народов. Надпись "Қазақстан" - национальную идентичность.</p>
+            </div>
+            <div class="site-card">
+                <h4>Государственный гимн</h4>
+                <p>Первоначально использовалась песня "Жел қанаты". С 2006 года - современный гимн на музыки Шамши Калдаякова и слова Жумекена Нажимеденова и Нурсултана Назарбаева.</p>
+            </div>
+        </div>
+
+        <div class="achievement-card">
+            <div class="achievement-title">Ядерное разоружение</div>
+            <p>Казахстан добровольно отказался от четвертого в мире ядерного арсенала, доставшегося в наследство от СССР. В 1995 году был закрыт Семипалатинский ядерный полигон, а к 2000 году все ядерные боеголовки были вывезены с территории страны. Этот шаг укрепил международный авторитет Казахстана.</p>
+        </div>
+    </div>
+
+    <!-- Экономические реформы -->
+    <div class="razdel-tema" id="raz2">
+        <span class="razdel">Экономические реформы и преобразования</span>
+    </div>
+
+    <div class="content-section">
+        <h2 class="section-title">Переход к рыночной экономике</h2>
+        <p>1990-е годы стали периодом радикальных экономических преобразований. Казахстан переходил от плановой советской экономики к рыночным отношениям, что сопровождалось серьезными трудностями, но заложило основы будущего экономического роста.</p>
+        
+        <h3 class="subsection-title">Основные экономические реформы</h3>
+        
+        <div class="timeline-event">
+            <div class="event-year">1991-1993 - Либерализация экономики</div>
+            <p>Освобождение цен, приватизация государственной собственности, создание первых коммерческих банков. Формирование основ рыночной инфраструктуры.</p>
+        </div>
+
+        <div class="timeline-event">
+            <div class="event-year">1993 - Введение тенге</div>
+            <p>15 ноября 1993 года национальная валюта - тенге - была введена в обращение. Это стало важным шагом к экономической независимости.</p>
+        </div>
+
+        <div class="timeline-event">
+            <div class="event-year">1994-1996 - Программа приватизации</div>
+            <p>Массовая приватизация жилья, малых и средних предприятий. Начало приватизации крупных промышленных объектов.</p>
+        </div>
+
+        <div class="timeline-event">
+            <div class="event-year">1997 - Стратегия "Казахстан-2030"</div>
+            <p>Принятие долгосрочной стратегии развития, определившей основные приоритеты экономической политики на decades вперед.</p>
+        </div>
+
+        <h3 class="subsection-title">Экономические показатели переходного периода</h3>
+        
+        <table class="comparison-table">
+            <thead>
+                <tr>
+                    <th>Показатель</th>
+                    <th>1991 год</th>
+                    <th>1995 год</th>
+                    <th>2000 год</th>
+                    <th>Тенденция</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><strong>ВВП</strong></td>
+                    <td>100%</td>
+                    <td>61%</td>
+                    <td>76%</td>
+                    <td>Спад → Рост</td>
+                </tr>
+                <tr>
+                    <td><strong>Инфляция</strong></td>
+                    <td>150%</td>
+                    <td>180%</td>
+                    <td>13%</td>
+                    <td>Гиперинфляция → Стабилизация</td>
+                </tr>
+                <tr>
+                    <td><strong>Промышленность</strong></td>
+                    <td>100%</td>
+                    <td>45%</td>
+                    <td>68%</td>
+                    <td>Глубокий спад → Восстановление</td>
+                </tr>
+                <tr>
+                    <td><strong>Иностранные инвестиции</strong></td>
+                    <td>$0,1 млрд</td>
+                    <td>$2,1 млрд</td>
+                    <td>$12,8 млрд</td>
+                    <td>Постоянный рост</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <div class="challenge-card">
+            <div class="challenge-title">Экономические трудности 1990-х</div>
+            <p>• Гиперинфляция и обесценивание сбережений<br>
+            • Массовое закрытие промышленных предприятий<br>
+            • Рост безработицы и социального неравенства<br>
+            • Задержки заработной платы и пенсий<br>
+            • Снижение уровня жизни населения<br>
+            • Необходимость создания новых экономических институтов</p>
+        </div>
+    </div>
+
+    <!-- Политическое развитие -->
+    <div class="razdel-tema" id="raz3">
+        <span class="razdel">Политическое развитие и государственное строительство</span>
+    </div>
+
+    <div class="content-section">
+        <h2 class="section-title">Формирование политической системы</h2>
+        <p>Политическое развитие независимого Казахстана характеризовалось построением президентской республики с сильной исполнительной властью. Этот подход позволил сохранить стабильность в условиях сложных экономических и социальных преобразований.</p>
+        
+        <h3 class="subsection-title">Этапы политического развития</h3>
+        
+        <table class="timeline-table">
+            <thead>
+                <tr>
+                    <th>Период</th>
+                    <th>Политические процессы</th>
+                    <th>Институциональные изменения</th>
+                    <th>Международная оценка</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><strong>1991-1995</strong></td>
+                    <td>Формирование президентской власти</td>
+                    <td>Принятие Конституций 1993 и 1995 годов</td>
+                    <td>Признание переходного характера политической системы</td>
+                </tr>
+                <tr>
+                    <td><strong>1995-1999</strong></td>
+                    <td>Укрепление государственных институтов</td>
+                    <td>Создание Ассамблеи народа Казахстана, перенос столицы</td>
+                    <td>Стабилизация, экономические успехи</td>
+                </tr>
+                <tr>
+                    <td><strong>1999-2000</strong></td>
+                    <td>Первые альтернативные президентские выборы</td>
+                    <td>Формирование многопартийной системы</td>
+                    <td>Критика недостатков демократизации</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <h3 class="subsection-title">Ключевые политические институты</h3>
+        <div class="archaeological-sites">
+            <div class="site-card">
+                <h4>Институт президентства</h4>
+                <p>Сильная президентская власть стала гарантом стабильности в переходный период. Нурсултан Назарбаев, избранный президентом в 1991 году, играл ключевую роль в консолидации государства.</p>
+            </div>
+            <div class="site-card">
+                <h4>Парламент</h4>
+                <p>Верховный Совет (1991-1995), затем двухпалатный Парламент. Постепенное усиление роли законодательной власти в политической системе.</p>
+            </div>
+            <div class="site-card">
+                <h4>Ассамблея народа Казахстана</h4>
+                <p>Создана в 1995 году. Уникальный институт, обеспечивающий межэтническое согласие в многонациональном казахстанском обществе.</p>
+            </div>
+        </div>
+
+        <div class="achievement-card">
+            <div class="achievement-title">Перенос столицы в Астану</div>
+            <p>В 1997 году принято историческое решение о переносе столицы из Алматы в Акмолу (переименованную в 1998 году в Астану). Этот шаг имел стратегическое значение для развития северных регионов страны и укрепления государственности.</p>
+        </div>
+
+        <div class="important-note">
+            <strong>Межнациональное согласие:</strong> В условиях, когда многие постсоветские страны столкнулись с межэтническими конфликтами, Казахстану удалось сохранить мир и стабильность. Это стало одним из главных достижений первого десятилетия независимости.
+        </div>
+    </div>
+
+    <!-- Международное признание -->
+    <div class="razdel-tema" id="raz4">
+        <span class="razdel">Международное признание и внешняя политика</span>
+    </div>
+
+    <div class="content-section">
+        <h2 class="section-title">Формирование многовекторной внешней политики</h2>
+        <p>Казахстан с первых дней независимости проводил многовекторную внешнюю политику, направленную на развитие равноправных отношений со всеми странами мира. Этот подход позволил занять достойное место в международном сообществе.</p>
+        
+        <h3 class="subsection-title">Основные направления внешней политики</h3>
+        
+        <table class="comparison-table">
+            <thead>
+                <tr>
+                    <th>Направление</th>
+                    <th>Основные партнеры</th>
+                    <th>Достижения</th>
+                    <th>Значение</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><strong>СНГ и постсоветское пространство</strong></td>
+                    <td>Россия, страны Центральной Азии</td>
+                    <td>Создание Евразийского экономического сообщества</td>
+                    <td>Сохранение экономических и культурных связей</td>
+                </tr>
+                <tr>
+                    <td><strong>Западные страны</strong></td>
+                    <td>США, страны ЕС</td>
+                    <td>Партнерство с НАТО, сотрудничество с ЕС</td>
+                    <td>Интеграция в мировую экономику</td>
+                </tr>
+                <tr>
+                    <td><strong>Азиатско-Тихоокеанский регион</strong></td>
+                    <td>Китай, Турция, страны ЮВА</td>
+                    <td>Участие в СВМДА, развитие транспортных коридоров</td>
+                    <td>Диверсификация внешнеполитических связей</td>
+                </tr>
+                <tr>
+                    <td><strong>Международные организации</strong></td>
+                    <td>ООН, ОБСЕ, ОИС</td>
+                    <td>Председательство в ОБСЕ (2010)</td>
+                    <td>Укрепление международного авторитета</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <h3 class="subsection-title">Важнейшие международные инициативы</h3>
+        
+        <div class="achievement-card">
+            <div class="achievement-title">Совещание по взаимодействию и мерам доверия в Азии (СВМДА)</div>
+            <p>Инициатива Президента Назарбаева, выдвинутая в 1992 году. Направлена на создание структуры безопасности в Азии по аналогии с ОБСЕ. Первый саммит СВМДА состоялся в 2002 году в Алматы.</p>
+        </div>
+
+        <div class="achievement-card">
+            <div class="achievement-title">Ядерное разоружение и нераспространение</div>
+            <p>Казахстан стал лидером в области ядерного разоружения. Добровольный отказ от ядерного оружия, закрытие Семипалатинского полигона, инициативы по создании зоны, свободной от ядерного оружия в Центральной Азии.</p>
+        </div>
+
+        <div class="achievement-card">
+            <div class="achievement-title">Экономическая интеграция</div>
+            <p>Активное участие в создании Евразийского экономического сообщества (2000), развитие регионального сотрудничества в рамках Шанхайской организации сотрудничества, укрепление экономических связей с ключевыми партнерами.</p>
+        </div>
+
+        <div class="conclusion">
+            <h3>Итоги первого десятилетия независимости</h3>
+            <p>Первое десятилетие независимости стало для Казахстана периодом фундаментальных преобразований и становления как суверенного государства. Несмотря на серьезные экономические трудности и вызовы переходного периода, стране удалось заложить прочный фундамент для будущего развития.</p>
+            
+            <div class="key-points">
+                <h3>Основные достижения 1991-2000 годов:</h3>
+                <ul>
+                    <li><strong>Государственное строительство</strong> - создание рабочих институтов власти, принятие Конституции</li>
+                    <li><strong>Экономические реформы</strong> - переход к рыночной экономике, создание национальной валюты</li>
+                    <li><strong>Международное признание</strong> - установление дипломатических отношений со 120 странами</li>
+                    <li><strong>Ядерное разоружение</strong> - добровольный отказ от ядерного оружия</li>
+                    <li><strong>Межнациональное согласие</strong> - сохранение мира в многонациональном обществе</li>
+                    <li><strong>Стратегическое планирование</strong> - принятие программы "Казахстан-2030"</li>
+                    <li><strong>Новая столица</strong> - перенос столицы в Астану</li>
+                </ul>
+            </div>
+            
+            <p>К началу XXI века Казахстан подошел с уверенностью в своем будущем. Были заложены основы экономического роста, сформирована устойчивая политическая система, определены приоритеты внешней политики. Все это создало прочный фундамент для дальнейшего укрепления независимости и процветания страны.</p>
+        </div>
+    </div>
+
+    <!-- Футер -->
+    <footer>
+        <div class="footer-content">
+            <p>&copy; 2025 Образовательный веб-ресурс "История Казахстана"</p>
+            <p>Разработано в рамках учебного проекта средствами HTML и CSS</p>
+        </div>
+    </footer>
+</body>
+</html>

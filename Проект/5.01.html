@@ -1,0 +1,786 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Послевоенный СССР и хрущевская оттепель в Казахстане</title>
+    <style>
+@import url('https://fonts.googleapis.com/css2?family=Dela+Gothic+One&family=Unbounded:wght@200..900&display=swap');
+
+/* Главные */
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Unbounded;
+    background-color: rgb(244, 244, 244);
+}
+
+a {
+    text-decoration: none;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+/* Шапка */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 1400px;
+    margin: 0 auto;
+    padding: 30px 0;
+}
+
+header .logo {
+    color: rgb(0, 109, 219);
+    text-transform: uppercase;
+    font-size: 20px;
+    font-weight: 500;
+}
+
+/* Бургер */
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown-btn {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 10px 15px;
+    background: #f8f9fa;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.dropdown-btn:hover {
+    background: #e9ecef;
+    border-color: #adb5bd;
+}
+
+.dropdown-btn span {
+    font-weight: 500;
+    font-size: 15px;
+    font-family: Unbounded;
+    color: rgb(0, 109, 219);
+}
+
+.dropdown-content {
+    position: absolute;
+    right: 0;
+    background: white;
+    min-width: 300px;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+    border-radius: 10px;
+    z-index: 1000;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-10px);
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.dropdown-content a {
+    display: block;
+    padding: 12px 16px;
+    text-decoration: none;
+    color: #333;
+    border-bottom: 2px solid #eee;
+    transition: all 0.2s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.dropdown-content a:last-child {
+    border-bottom: none;
+}
+
+.dropdown-content a:hover {
+    background: #f8f9fa;
+    border-radius: 8px;
+}
+
+.dropdown:hover .dropdown-content {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+/* Баннер */
+.banner {
+    display: grid;
+    align-items: center;
+    text-align: center;
+    width: 1500px;
+    margin: 0 auto;
+    border-radius: 25px;
+    height: 250px;
+    margin-bottom: 50px;
+    box-shadow: 10px 5px 5px rgba(0,0,0,0.1);
+    background: linear-gradient(rgba(0, 123, 255, 0.5), rgba(0, 109, 219,0.5)), url('./Баннер/Баннер\ 1.jpg') center/cover no-repeat;
+}
+
+.banner-text-1 {
+    font-size: 3.6rem;
+    font-weight: 800;
+    color: rgb(255, 255, 255);
+}
+
+/* Разделы */
+.razdel-tema {
+    width: 1400px;
+    margin: 0 auto;
+    margin-top: 50px;
+    margin-bottom: 30px;
+}
+
+.razdel {
+    color: rgb(0, 109, 219);
+    font-size: 2.1rem;
+    font-weight: 500;
+}
+
+/* Контент */
+.content-section {
+    width: 1400px;
+    background: white;
+    margin: 0 auto;
+    border-radius: 20px;
+    padding: 35px;
+    margin-bottom: 35px;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.08);
+    border-left: 5px solid rgb(0, 109, 219);
+}
+
+.section-title {
+    color: rgb(0, 109, 219);
+    font-size: 2rem;
+    margin-bottom: 25px;
+    display: flex;
+    align-items: center;
+    padding-bottom: 10px;
+    border-bottom: 2px solid #f0f0f0;
+}
+
+.section-title::before {
+    content: "▶";
+    display: inline-block;
+    margin-right: 15px;
+    color: rgb(0, 109, 219);
+    font-size: 1.5rem;
+}
+
+.subsection-title {
+    color: #2c5282;
+    font-size: 1.5rem;
+    margin: 25px 0 15px;
+    padding-left: 20px;
+    border-left: 4px solid #2c5282;
+}
+
+.key-points {
+    background: linear-gradient(135deg, #f0f7ff, #e6f2ff);
+    border-left: 6px solid rgb(0, 109, 219);
+    padding: 25px;
+    margin: 25px 0;
+    border-radius: 0 15px 15px 0;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+}
+
+.key-points h3 {
+    margin-bottom: 15px;
+    color: rgb(0, 109, 219);
+    font-size: 1.4rem;
+}
+
+.key-points ul {
+    padding-left: 25px;
+}
+
+.key-points li {
+    margin-bottom: 10px;
+    position: relative;
+}
+
+.key-points li::before {
+    content: "•";
+    color: rgb(0, 109, 219);
+    font-weight: bold;
+    display: inline-block;
+    width: 1em;
+    margin-left: -1em;
+}
+
+.archaeological-sites {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+    gap: 25px;
+    margin: 25px 0;
+}
+
+.site-card {
+    background: white;
+    border-radius: 15px;
+    padding: 25px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+    border-top: 5px solid rgb(0, 109, 219);
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.site-card::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: linear-gradient(90deg, rgb(0, 109, 219), #2c5282);
+}
+
+.site-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 12px 30px rgba(0,0,0,0.15);
+}
+
+.site-card h4 {
+    color: rgb(0, 109, 219);
+    margin-bottom: 12px;
+    font-size: 1.3rem;
+}
+
+.site-card .region {
+    background: #e6f2ff;
+    color: #2c5282;
+    padding: 5px 12px;
+    border-radius: 20px;
+    font-size: 0.9rem;
+    font-weight: 600;
+    display: inline-block;
+    margin-bottom: 15px;
+}
+
+.conclusion {
+    background: linear-gradient(135deg, #e8f4ff, #d4e7ff);
+    padding: 30px;
+    border-radius: 15px;
+    margin: 35px 0;
+    border: 2px solid #c2e0ff;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+}
+
+.conclusion h3 {
+    color: rgb(0, 109, 219);
+    margin-bottom: 20px;
+    font-size: 1.6rem;
+    text-align: center;
+}
+
+.important-note {
+    background: #fff3cd;
+    border: 2px solid #ffeaa7;
+    border-left: 6px solid #fdcb6e;
+    padding: 20px;
+    margin: 20px 0;
+    border-radius: 10px;
+}
+
+.timeline-event {
+    background: #f8fafc;
+    border-left: 4px solid #2c5282;
+    padding: 20px;
+    margin: 15px 0;
+    border-radius: 0 8px 8px 0;
+}
+
+.event-year {
+    font-weight: bold;
+    color: #2c5282;
+    font-size: 1.1rem;
+    margin-bottom: 8px;
+}
+
+.leader-card {
+    background: linear-gradient(135deg, #ffffff, #f8fafc);
+    border-radius: 12px;
+    padding: 20px;
+    margin: 15px 0;
+    border: 2px solid #e6f2ff;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+}
+
+.leader-name {
+    color: #2c5282;
+    font-size: 1.3rem;
+    font-weight: 600;
+    margin-bottom: 10px;
+}
+
+.timeline-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 25px 0;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.timeline-table th {
+    background: linear-gradient(135deg, rgb(0, 109, 219), #2c5282);
+    color: white;
+    padding: 18px;
+    text-align: left;
+    font-weight: 600;
+}
+
+.timeline-table td {
+    padding: 18px;
+    border-bottom: 1px solid #eaeaea;
+    vertical-align: top;
+}
+
+.timeline-table tr:nth-child(even) {
+    background: #f8fafc;
+}
+
+.timeline-table tr:hover {
+    background: #e6f2ff;
+    transform: translateY(-1px);
+    transition: all 0.2s ease;
+}
+
+.comparison-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 25px 0;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.comparison-table th {
+    background: #2c5282;
+    color: white;
+    padding: 15px;
+    text-align: center;
+    font-weight: 600;
+}
+
+.comparison-table td {
+    padding: 15px;
+    border: 1px solid #eaeaea;
+    text-align: center;
+}
+
+.comparison-table tr:nth-child(even) {
+    background: #f8fafc;
+}
+
+.reform-card {
+    background: linear-gradient(135deg, #f0f9ff, #e0f2fe);
+    border-left: 5px solid #0369a1;
+    padding: 20px;
+    margin: 15px 0;
+    border-radius: 0 10px 10px 0;
+}
+
+.reform-title {
+    color: #0369a1;
+    font-size: 1.2rem;
+    font-weight: 600;
+    margin-bottom: 10px;
+}
+
+/* Футер */
+footer {
+    width: 1300px;
+    margin: 0 auto;
+    border-top: 3px solid #3498db;
+    border-left: 3px solid #3498db;
+    border-right: 3px solid #3498db;
+    border-bottom: none;
+    border-radius: 15px 15px 0 0;
+    background-color: rgb(244, 244, 244);
+    text-align: center;
+    padding: 25px 25px;
+    margin-top: 3rem;
+}
+.footer-content {
+    color:rgb(69, 69, 69);
+}
+    </style>
+</head>
+<body>
+    <!-- Шапка -->
+    <header>
+        <a href="./Главная.html"><span class="logo">QAZAQ ELI</span></a>
+        <div class="dropdown">
+            <button class="dropdown-btn">
+                <span>Навигация</span>
+            </button>
+            <div class="dropdown-content">
+                <a href="#raz1">Послевоенное восстановление</a>
+                <a href="#raz2">Хрущевские реформы</a>
+                <a href="#raz3">Целинная эпопея</a>
+                <a href="#raz4">Культура и наука</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Баннер 1 -->
+    <div class="banner">
+        <span class="banner-text-1">Послевоенный СССР и хрущевская оттепель в Казахстане</span>
+    </div>
+
+    <!-- Введение -->
+    <div class="content-section" id="introduction">
+        <h2 class="section-title">1945-1964: От восстановления к оттепели</h2>
+        <p>Послевоенный период и годы хрущевской оттепели стали временем глубоких преобразований в Казахстане. Восстановление разрушенного войной хозяйства, масштабные экономические реформы, освоение целинных земель и относительная либерализация общественной жизни определили развитие республики на долгие годы вперед.</p>
+        
+        <div class="key-points">
+            <h3>Основные характеристики периода:</h3>
+            <ul>
+                <li>Восстановление промышленности и сельского хозяйства после войны</li>
+                <li>Массовое освоение целинных и залежных земель</li>
+                <li>Развитие сырьевой и энергетической базы республики</li>
+                <li>Относительная либерализация культурной жизни</li>
+                <li>Урбанизация и изменение социальной структуры</li>
+                <li>Сложные демографические процессы и миграции</li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- Послевоенное восстановление -->
+    <div class="razdel-tema" id="raz1">
+        <span class="razdel">Послевоенное восстановление (1945-1953)</span>
+    </div>
+
+    <div class="content-section">
+        <h2 class="section-title">Восстановление хозяйства и новые вызовы</h2>
+        <p>Первые послевоенные годы стали временем напряженного труда по восстановлению народного хозяйства. Казахстан, как и вся страна, столкнулся с огромными трудностями: нехваткой рабочих рук, износом оборудования, продовольственными проблемами.</p>
+        
+        <h3 class="subsection-title">Основные направления восстановления</h3>
+        
+        <table class="timeline-table">
+            <thead>
+                <tr>
+                    <th>Сфера</th>
+                    <th>Проблемы</th>
+                    <th>Меры по восстановлению</th>
+                    <th>Результаты к 1950 году</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><strong>Промышленность</strong></td>
+                    <td>Износ оборудования, нехватка кадров</td>
+                    <td>Реэвакуация предприятий, капитальное строительство</td>
+                    <td>Довоенный уровень превышен на 45%</td>
+                </tr>
+                <tr>
+                    <td><strong>Сельское хозяйство</strong></td>
+                    <td>Сокращение поголовья скота, низкие урожаи</td>
+                    <td>Укрепление колхозов, механизация, новые посевы</td>
+                    <td>Восстановлено поголовье скота, рост урожайности</td>
+                </tr>
+                <tr>
+                    <td><strong>Транспорт</strong></td>
+                    <td>Износ подвижного состава, разрушенная инфраструктура</td>
+                    <td>Строительство железных дорог, развитие автотранспорта</td>
+                    <td>Введены новые железнодорожные линии</td>
+                </tr>
+                <tr>
+                    <td><strong>Социальная сфера</strong></td>
+                    <td>Жилищный кризис, нехватка учреждений образования и здравоохранения</td>
+                    <td>Строительство жилья, школ, больниц</td>
+                    <td>Улучшение условий жизни населения</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <h3 class="subsection-title">Ключевые промышленные проекты</h3>
+        <div class="archaeological-sites">
+            <div class="site-card">
+                <div class="region">Металлургия</div>
+                <h4>Карагандинский металлургический завод</h4>
+                <p>Строительство начато в 1940-е, пуск первой очереди в 1944 году. Стал крупнейшим предприятием черной металлургии в Центральной Азии. Обеспечивал металлом всю Среднюю Азию.</p>
+            </div>
+            <div class="site-card">
+                <div class="region">Энергетика</div>
+                <h4>Усть-Каменогорская ГЭС</h4>
+                <p>Строительство начато в 1939 году, введена в эксплуатацию в 1952 году. Мощность - 332 МВт. Обеспечивала энергией развивающуюся промышленность Восточного Казахстана.</p>
+            </div>
+            <div class="site-card">
+                <div class="region">Машиностроение</div>
+                <h4>Алма-Атинский завод тяжелого машиностроения</h4>
+                <p>Создан на базе эвакуированного оборудования. Выпускал оборудование для горнодобывающей и металлургической промышленности. Стал флагманом казахстанского машиностроения.</p>
+            </div>
+        </div>
+
+        <div class="important-note">
+            <strong>Демографические последствия войны:</strong> Послевоенные годы характеризовались сложной демографической ситуацией. Нарушение половозрастной структуры населения, нехватка мужчин трудоспособного возраста, проблемы с воспроизводством населения оказывали серьезное влияние на социально-экономическое развитие республики.
+        </div>
+    </div>
+
+    <!-- Хрущевские реформы -->
+    <div class="razdel-tema" id="raz2">
+        <span class="razdel">Хрущевские реформы и "оттепель"</span>
+    </div>
+
+    <div class="content-section">
+        <h2 class="section-title">Политические и экономические преобразования</h2>
+        <p>Смерть Сталина в 1953 году и приход к власти Н.С. Хрущева ознаменовали начало периода, вошедшего в историю как "хрущевская оттепель". Этот период характеризовался критикой культа личности, относительной либерализацией общественной жизни и масштабными экономическими реформами.</p>
+        
+        <h3 class="subsection-title">Основные реформы периода</h3>
+        
+        <div class="reform-card">
+            <div class="reform-title">Реорганизация управления промышленностью (1957)</div>
+            <p>Ликвидация отраслевых министерств и создание совнархозов (советов народного хозяйства). В Казахстане создано 9 совнархозов. Цель - децентрализация управления и развитие территориального планирования.</p>
+        </div>
+
+        <div class="reform-card">
+            <div class="reform-title">Освоение целинных и залежных земель (1954-1960)</div>
+            <p>Крупнейшая аграрная программа в истории СССР. В Казахстане распахано 25,5 млн гектаров целинных земель. Коренным образом изменила экономику и демографию республики.</p>
+        </div>
+
+        <div class="reform-card">
+            <div class="reform-title">Реформы в социальной сфере</div>
+            <p>Повышение зарплат, снижение пенсионного возраста, массовое жилищное строительство ("хрущевки"), развитие потребительской сферы. Улучшение уровня жизни населения.</p>
+        </div>
+
+        <h3 class="subsection-title">Политическая "оттепель" в Казахстане</h3>
+        
+        <table class="comparison-table">
+            <thead>
+                <tr>
+                    <th>Направление</th>
+                    <th>Проявления</th>
+                    <th>Результаты</th>
+                    <th>Ограничения</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><strong>Культура</strong></td>
+                    <td>Расширение творческой свободы, публикация ранее запрещенных произведений</td>
+                    <td>Расцвет казахской литературы, появление новых имен</td>
+                    <td>Сохранялся идеологический контроль</td>
+                </tr>
+                <tr>
+                    <td><strong>Наука</strong></td>
+                    <td>Развитие академической науки, создание новых НИИ</td>
+                    <td>Укрепление научного потенциала республики</td>
+                    <td>Ориентация на прикладные исследования</td>
+                </tr>
+                <tr>
+                    <td><strong>Образование</strong></td>
+                    <td>Реформа школьного образования, развитие высшей школы</td>
+                    <td>Рост числа студентов, улучшение качества образования</td>
+                    <td>Сохранялась идеологизация учебного процесса</td>
+                </tr>
+                <tr>
+                    <td><strong>Реабилитация</strong></td>
+                    <td>Частичная реабилитация жертв политических репрессий</td>
+                    <td>Восстановление доброго имени многих деятелей</td>
+                    <td>Реабилитация носила ограниченный характер</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <div class="leader-card">
+            <div class="leader-name">Динмухамед Кунаев (1912-1993)</div>
+            <p>В период хрущевской оттепели занимал ключевые посты в руководстве Казахстана. С 1960 года - Председатель Совета Министров Казахской ССР, с 1964 года - Первый секретарь ЦК Компартии Казахстана. Сыграл важную роль в реализации целинной программы и промышленном развитии республики.</p>
+        </div>
+    </div>
+
+    <!-- Целинная эпопея -->
+    <div class="razdel-tema" id="raz3">
+        <span class="razdel">Целинная эпопея в Казахстане</span>
+    </div>
+
+    <div class="content-section">
+        <h2 class="section-title">Освоение целинных и залежных земель</h2>
+        <p>Освоение целинных и залежных земель стало крупнейшим социально-экономическим проектом в послевоенной истории Казахстана. Начатая в 1954 году, целинная эпопея коренным образом изменила аграрный сектор, демографию и социальную структуру республики.</p>
+        
+        <h3 class="subsection-title">Масштабы и результаты целины</h3>
+        
+        <table class="timeline-table">
+            <thead>
+                <tr>
+                    <th>Показатель</th>
+                    <th>1953 год</th>
+                    <th>1960 год</th>
+                    <th>Рост</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><strong>Распаханные земли</strong></td>
+                    <td>9,7 млн га</td>
+                    <td>25,5 млн га</td>
+                    <td>в 2,6 раза</td>
+                </tr>
+                <tr>
+                    <td><strong>Валовой сбор зерна</strong></td>
+                    <td>4,9 млн тонн</td>
+                    <td>22,5 млн тонн</td>
+                    <td>в 4,6 раза</td>
+                </tr>
+                <tr>
+                    <td><strong>Численность населения</strong></td>
+                    <td>9,1 млн человек</td>
+                    <td>11,8 млн человек</td>
+                    <td>+2,7 млн</td>
+                </tr>
+                <tr>
+                    <td><strong>Количество совхозов</strong></td>
+                    <td>332</td>
+                    <td>1,067</td>
+                    <td>в 3,2 раза</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <h3 class="subsection-title">Социальные последствия целины</h3>
+        <div class="archaeological-sites">
+            <div class="site-card">
+                <h4>Демографические изменения</h4>
+                <p>• Массовый приток переселенцев из других республик<br>
+                • Изменение этнического состава населения<br>
+                • Формирование многонациональных коллективов<br>
+                • Рост городского населения в целинных районах</p>
+            </div>
+            <div class="site-card">
+                <h4>Экономические результаты</h4>
+                <p>• Создание крупной зерновой базы страны<br>
+                • Развитие инфраструктуры целинных районов<br>
+                • Строительство новых городов и поселков<br>
+                • Рост промышленности, обслуживающей сельское хозяйство</p>
+            </div>
+            <div class="site-card">
+                <h4>Экологические проблемы</h4>
+                <p>• Нарушение естественных экосистем<br>
+                • Развитие эрозии почв<br>
+                • Пыльные бури и деградация земель<br>
+                • Сокращение пастбищ для животноводства</p>
+            </div>
+        </div>
+
+        <h3 class="subsection-title">Крупнейшие целинные области</h3>
+        <div class="key-points">
+            <ul>
+                <li><strong>Кокчетавская область</strong> - распахано 2,8 млн гектаров</li>
+                <li><strong>Целиноградская область</strong> - создана специально для освоения целины</li>
+                <li><strong>Кустанайская область</strong> - стала одной из главных житниц страны</li>
+                <li><strong>Северо-Казахстанская область</strong> - традиционный зерновой район</li>
+                <li><strong>Павлодарская область</strong> - сочетание промышленности и сельского хозяйства</li>
+            </ul>
+        </div>
+
+        <div class="important-note">
+            <strong>Историческое значение целины:</strong> Освоение целинных земель имело противоречивые последствия. С одной стороны, Казахстан стал крупнейшей зерновой базой СССР. С другой стороны, экстенсивный характер развития, экологические проблемы и изменение демографической структуры создали долгосрочные challenges для республики.
+        </div>
+    </div>
+
+    <!-- Культура и наука -->
+    <div class="razdel-tema" id="raz4">
+        <span class="razdel">Культура и наука в период оттепели</span>
+    </div>
+
+    <div class="content-section">
+        <h2 class="section-title">Интеллектуальное и культурное возрождение</h2>
+        <p>Период хрущевской оттепели стал временем относительного расцвета культуры и науки в Казахстане. Ослабление идеологического контроля, развитие образования и рост творческой интеллигенции способствовали появлению значительных достижений в различных сферах духовной жизни.</p>
+        
+        <h3 class="subsection-title">Достижения науки и образования</h3>
+        
+        <div class="timeline-event">
+            <div class="event-year">1946 год - Создание Академии наук Казахской ССР</div>
+            <p>Преобразование Казахского филиала АН СССР в самостоятельную Академию наук. Первый президент - К.И. Сатпаев. Создание научно-исследовательских институтов по различным направлениям.</p>
+        </div>
+
+        <div class="timeline-event">
+            <div class="event-year">1950-1960-е годы - Развитие высшего образования</div>
+            <p>Открытие новых вузов: Целиноградский сельскохозяйственный институт, Карагандинский государственный университет, Усть-Каменогорский строительно-дорожный институт. Рост числа студентов и преподавателей.</p>
+        </div>
+
+        <div class="timeline-event">
+            <div class="event-year">1960-е годы - Научные достижения</div>
+            <p>Развитие горно-металлургической науки, геологических исследований, сельскохозяйственной науки. Труды К.И. Сатпаева, А.Б. Бектурова, М.И. Усановича получили всесоюзное признание.</p>
+        </div>
+
+        <h3 class="subsection-title">Расцвет казахской литературы и искусства</h3>
+        
+        <table class="comparison-table">
+            <thead>
+                <tr>
+                    <th>Сфера</th>
+                    <th>Представители</th>
+                    <th>Произведения</th>
+                    <th>Значение</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><strong>Литература</strong></td>
+                    <td>М. Ауэзов, Г. Мусрепов, С. Муканов</td>
+                    <td>"Путь Абая", "Казахские народные сказки"</td>
+                    <td>Мировое признание казахской литературы</td>
+                </tr>
+                <tr>
+                    <td><strong>Театр</strong></td>
+                    <td>К. Куанышбаев, С. Кожамкулов</td>
+                    <td>Постановки национальной и мировой классики</td>
+                    <td>Развитие профессионального театрального искусства</td>
+                </tr>
+                <tr>
+                    <td><strong>Кинематограф</strong></td>
+                    <td>Ш. Айманов, М. Бегалин</td>
+                    <td>"Наш милый доктор", "Его время придет"</td>
+                    <td>Становление национального кинематографа</td>
+                </tr>
+                <tr>
+                    <td><strong>Музыка</strong></td>
+                    <td>Е. Брусиловский, А. Жубанов</td>
+                    <td>Оперы, симфонические произведения</td>
+                    <td>Синтез казахского фольклора и европейской традиции</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <div class="conclusion">
+            <h3>Итоги послевоенного развития и оттепели</h3>
+            <p>Период с 1945 по 1964 год стал важным этапом в истории Казахстана. Несмотря на все трудности и противоречия, это было время значительных достижений в экономическом, социальном и культурном развитии республики.</p>
+            
+            <div class="key-points">
+                <h3>Основные исторические итоги:</h3>
+                <ul>
+                    <li><strong>Экономический рост</strong> - создание мощного промышленного и аграрного потенциала</li>
+                    <li><strong>Социальные изменения</strong> - урбанизация, рост уровня жизни, развитие социальной сферы</li>
+                    <li><strong>Демографические трансформации</strong> - изменение этнического состава, рост населения</li>
+                    <li><strong>Культурное развитие</strong> - расцвет национальной культуры при сохранении интернациональных связей</li>
+                    <li><strong>Научный прогресс</strong> - создание академической науки, подготовка национальных кадров</li>
+                    <li><strong>Политическая эволюция</strong> - относительная либерализация при сохранении партийного контроля</li>
+                </ul>
+            </div>
+            
+            <p>Наследие послевоенного периода и хрущевской оттепели продолжает оказывать влияние на современный Казахстан. Созданный в те годы экономический потенциал, сформировавшаяся социальная структура и достижения культуры стали важным фундаментом для дальнейшего развития суверенного Казахстана.</p>
+        </div>
+    </div>
+
+    <!-- Футер -->
+    <footer>
+        <div class="footer-content">
+            <p>&copy; 2025 Образовательный веб-ресурс "История Казахстана"</p>
+            <p>Разработано в рамках учебного проекта средствами HTML и CSS</p>
+        </div>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,669 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Казахстан в составе Российской империи</title>
+    <style>
+@import url('https://fonts.googleapis.com/css2?family=Dela+Gothic+One&family=Unbounded:wght@200..900&display=swap');
+
+/* Главные */
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Unbounded;
+    background-color: rgb(244, 244, 244);
+}
+
+a {
+    text-decoration: none;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+/* Шапка */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 1400px;
+    margin: 0 auto;
+    padding: 30px 0;
+}
+
+header .logo {
+    color: rgb(0, 109, 219);
+    text-transform: uppercase;
+    font-size: 20px;
+    font-weight: 500;
+}
+
+/* Бургер */
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown-btn {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 10px 15px;
+    background: #f8f9fa;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.dropdown-btn:hover {
+    background: #e9ecef;
+    border-color: #adb5bd;
+}
+
+.dropdown-btn span {
+    font-weight: 500;
+    font-size: 15px;
+    font-family: Unbounded;
+    color: rgb(0, 109, 219);
+}
+
+.dropdown-content {
+    position: absolute;
+    right: 0;
+    background: white;
+    min-width: 300px;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+    border-radius: 10px;
+    z-index: 1000;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-10px);
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.dropdown-content a {
+    display: block;
+    padding: 12px 16px;
+    text-decoration: none;
+    color: #333;
+    border-bottom: 2px solid #eee;
+    transition: all 0.2s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.dropdown-content a:last-child {
+    border-bottom: none;
+}
+
+.dropdown-content a:hover {
+    background: #f8f9fa;
+    border-radius: 8px;
+}
+
+.dropdown:hover .dropdown-content {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+/* Баннер */
+.banner {
+    display: grid;
+    align-items: center;
+    text-align: center;
+    width: 1500px;
+    margin: 0 auto;
+    border-radius: 25px;
+    height: 250px;
+    margin-bottom: 50px;
+    box-shadow: 10px 5px 5px rgba(0,0,0,0.1);
+    background: linear-gradient(rgba(0, 123, 255, 0.5), rgba(0, 109, 219,0.5)), url('./Баннер/Баннер\ 1.jpg') center/cover no-repeat;
+}
+
+.banner-text-1 {
+    font-size: 3.6rem;
+    font-weight: 800;
+    color: rgb(255, 255, 255);
+}
+
+/* Разделы */
+.razdel-tema {
+    width: 1400px;
+    margin: 0 auto;
+    margin-top: 50px;
+    margin-bottom: 30px;
+}
+
+.razdel {
+    color: rgb(0, 109, 219);
+    font-size: 2.1rem;
+    font-weight: 500;
+}
+
+/* Контент */
+.content-section {
+    width: 1400px;
+    background: white;
+    margin: 0 auto;
+    border-radius: 20px;
+    padding: 35px;
+    margin-bottom: 35px;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.08);
+    border-left: 5px solid rgb(0, 109, 219);
+}
+
+.section-title {
+    color: rgb(0, 109, 219);
+    font-size: 2rem;
+    margin-bottom: 25px;
+    display: flex;
+    align-items: center;
+    padding-bottom: 10px;
+    border-bottom: 2px solid #f0f0f0;
+}
+
+.section-title::before {
+    content: "▶";
+    display: inline-block;
+    margin-right: 15px;
+    color: rgb(0, 109, 219);
+    font-size: 1.5rem;
+}
+
+.subsection-title {
+    color: #2c5282;
+    font-size: 1.5rem;
+    margin: 25px 0 15px;
+    padding-left: 20px;
+    border-left: 4px solid #2c5282;
+}
+
+.key-points {
+    background: linear-gradient(135deg, #f0f7ff, #e6f2ff);
+    border-left: 6px solid rgb(0, 109, 219);
+    padding: 25px;
+    margin: 25px 0;
+    border-radius: 0 15px 15px 0;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+}
+
+.key-points h3 {
+    margin-bottom: 15px;
+    color: rgb(0, 109, 219);
+    font-size: 1.4rem;
+}
+
+.key-points ul {
+    padding-left: 25px;
+}
+
+.key-points li {
+    margin-bottom: 10px;
+    position: relative;
+}
+
+.key-points li::before {
+    content: "•";
+    color: rgb(0, 109, 219);
+    font-weight: bold;
+    display: inline-block;
+    width: 1em;
+    margin-left: -1em;
+}
+
+.archaeological-sites {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+    gap: 25px;
+    margin: 25px 0;
+}
+
+.site-card {
+    background: white;
+    border-radius: 15px;
+    padding: 25px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+    border-top: 5px solid rgb(0, 109, 219);
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.site-card::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: linear-gradient(90deg, rgb(0, 109, 219), #2c5282);
+}
+
+.site-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 12px 30px rgba(0,0,0,0.15);
+}
+
+.site-card h4 {
+    color: rgb(0, 109, 219);
+    margin-bottom: 12px;
+    font-size: 1.3rem;
+}
+
+.site-card .region {
+    background: #e6f2ff;
+    color: #2c5282;
+    padding: 5px 12px;
+    border-radius: 20px;
+    font-size: 0.9rem;
+    font-weight: 600;
+    display: inline-block;
+    margin-bottom: 15px;
+}
+
+.conclusion {
+    background: linear-gradient(135deg, #e8f4ff, #d4e7ff);
+    padding: 30px;
+    border-radius: 15px;
+    margin: 35px 0;
+    border: 2px solid #c2e0ff;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+}
+
+.conclusion h3 {
+    color: rgb(0, 109, 219);
+    margin-bottom: 20px;
+    font-size: 1.6rem;
+    text-align: center;
+}
+
+.important-note {
+    background: #fff3cd;
+    border: 2px solid #ffeaa7;
+    border-left: 6px solid #fdcb6e;
+    padding: 20px;
+    margin: 20px 0;
+    border-radius: 10px;
+}
+
+.timeline-event {
+    background: #f8fafc;
+    border-left: 4px solid #2c5282;
+    padding: 20px;
+    margin: 15px 0;
+    border-radius: 0 8px 8px 0;
+}
+
+.event-year {
+    font-weight: bold;
+    color: #2c5282;
+    font-size: 1.1rem;
+    margin-bottom: 8px;
+}
+
+.leader-card {
+    background: linear-gradient(135deg, #ffffff, #f8fafc);
+    border-radius: 12px;
+    padding: 20px;
+    margin: 15px 0;
+    border: 2px solid #e6f2ff;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+}
+
+.leader-name {
+    color: #2c5282;
+    font-size: 1.3rem;
+    font-weight: 600;
+    margin-bottom: 10px;
+}
+
+.reform-card {
+    background: linear-gradient(135deg, #f0f7ff, #e6f2ff);
+    border-radius: 12px;
+    padding: 20px;
+    margin: 15px 0;
+    border-left: 5px solid #2c5282;
+}
+
+.reform-title {
+    color: #2c5282;
+    font-size: 1.2rem;
+    font-weight: 600;
+    margin-bottom: 10px;
+}
+
+/* Футер */
+footer {
+    width: 1300px;
+    margin: 0 auto;
+    border-top: 3px solid #3498db;
+    border-left: 3px solid #3498db;
+    border-right: 3px solid #3498db;
+    border-bottom: none;
+    border-radius: 15px 15px 0 0;
+    background-color: rgb(244, 244, 244);
+    text-align: center;
+    padding: 25px 25px;
+    margin-top: 3rem;
+}
+.footer-content {
+    color:rgb(69, 69, 69);
+}
+    </style>
+</head>
+<body>
+    <!-- Шапка -->
+    <header>
+        <a href="./Главная.html"><span class="logo">QAZAQ ELI</span></a>
+        <div class="dropdown">
+            <button class="dropdown-btn">
+                <span>Навигация</span>
+            </button>
+            <div class="dropdown-content">
+                <a href="#raz1">Административные реформы</a>
+                <a href="#raz2">Экономические изменения</a>
+                <a href="#raz3">Социальные преобразования</a>
+                <a href="#raz4">Культура и просвещение</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Баннер 1 -->
+    <div class="banner">
+        <span class="banner-text-1">Казахстан в составе Российской империи</span>
+    </div>
+
+    <!-- Введение -->
+    <div class="content-section" id="introduction">
+        <h2 class="section-title">Интеграция в имперское пространство</h2>
+        <p>XIX - начало XX века стали периодом глубокой интеграции казахских земель в состав Российской империи. Этот процесс сопровождался коренными изменениями во всех сферах жизни казахского общества - от политического устройства до экономики и культуры.</p>
+        
+        <div class="key-points">
+            <h3>Основные характеристики периода:</h3>
+            <ul>
+                <li>Постепенная ликвидация традиционной политической системы</li>
+                <li>Внедрение российской административной модели управления</li>
+                <li>Массовая крестьянская колонизация и изъятие земель</li>
+                <li>Развитие новых форм хозяйственной деятельности</li>
+                <li>Формирование казахской интеллигенции</li>
+                <li>Включение в общероссийский экономический и культурный процесс</li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- Административные реформы -->
+    <div class="razdel-tema" id="raz1">
+        <span class="razdel">Административные реформы и управление</span>
+    </div>
+
+    <div class="content-section">
+        <h2 class="section-title">Система имперского управления</h2>
+        <p>Российская империя последовательно проводила политику интеграции казахских земель, создавая сложную систему административного управления, которая постепенно вытесняла традиционные институты власти.</p>
+        
+        <h3 class="subsection-title">Ключевые административные преобразования</h3>
+        
+        <div class="reform-card">
+            <div class="reform-title">1822-1824 годы - Реформы М.М. Сперанского</div>
+            <p>Устав о сибирских киргизах (1822) и Устав об оренбургских киргизах (1824) ликвидировали ханскую власть. Территория была разделена на округа, волости и аулы. Введена система выборов старшин и султанов-правителей.</p>
+        </div>
+
+        <div class="reform-card">
+            <div class="reform-title">1867-1868 годы - "Временное положение"</div>
+            <p>Территория Казахстана разделена на 6 областей: Уральская, Тургайская, Акмолинская, Семипалатинская, Семиреченская и Сырдарьинская. Введено российское судопроизводство и налогообложение.</p>
+        </div>
+
+        <div class="reform-card">
+            <div class="reform-title">1891 год - Степное положение</div>
+            <p>Окончательное закрепление административного устройства. Созданы генерал-губернаторства: Степное (Омск) и Туркестанское (Ташкент). Усилен контроль над кочевым населением.</p>
+        </div>
+
+        <h3 class="subsection-title">Структура управления</h3>
+        <div class="archaeological-sites">
+            <div class="site-card">
+                <h4>Центральное управление</h4>
+                <p>• Министерство внутренних дел<br>
+                • Военное министерство<br>
+                • Министерство государственных имуществ<br>
+                • Азиатский департамент</p>
+            </div>
+            <div class="site-card">
+                <h4>Местная администрация</h4>
+                <p>• Генерал-губернаторы<br>
+                • Военные губернаторы<br>
+                • Уездные начальники<br>
+                • Волостные управители<br>
+                • Аульные старшины</p>
+            </div>
+            <div class="site-card">
+                <h4>Судебная система</h4>
+                <p>• Народный суд (бийский)<br>
+                • Войсковой суд<br>
+                • Окружной суд<br>
+                • Судебные палаты<br>
+                • Сенат</p>
+            </div>
+        </div>
+
+        <div class="important-note">
+            <strong>Последствия:</strong> Административные реформы привели к ликвидации традиционной политической системы, ослаблению роли султанов и биев, усилению контроля царской администрации над всеми сферами жизни казахского общества.
+        </div>
+    </div>
+
+    <!-- Экономические изменения -->
+    <div class="razdel-tema" id="raz2">
+        <span class="razdel">Экономические преобразования</span>
+    </div>
+
+    <div class="content-section">
+        <h2 class="section-title">Трансформация хозяйственной жизни</h2>
+        <p>Включение казахских земель в экономическую систему Российской империи привело к коренным изменениям традиционного кочевого хозяйства и появлению новых форм экономической деятельности.</p>
+        
+        <h3 class="subsection-title">Земельная политика и колонизация</h3>
+        
+        <div class="timeline-event">
+            <div class="event-year">1830-1850 годы - Начало массовой колонизации</div>
+            <p>Создание казачьих линий и военных укреплений. Изъятие лучших пастбищных земель для казачьих станиц. Первые переселенцы из центральных губерний России.</p>
+        </div>
+
+        <div class="timeline-event">
+            <div class="event-year">1861 год - Отмена крепостного права</div>
+            <p>Усиление переселенческого движения. Освободившиеся крестьяне активно переселяются в казахские степи в поисках свободных земель.</p>
+        </div>
+
+        <div class="timeline-event">
+            <div class="event-year">1896 год - Создание Переселенческого управления</div>
+            <p>Организация планового переселения крестьян. Систематическое изъятие земель у казахского населения. К 1917 году изъято более 40 млн десятин земли.</p>
+        </div>
+
+        <h3 class="subsection-title">Развитие отраслей хозяйства</h3>
+        <div class="archaeological-sites">
+            <div class="site-card">
+                <h4>Скотоводство</h4>
+                <p>• Сокращение кочевых маршрутов<br>
+                • Переход к полукочевому и оседлому скотоводству<br>
+                • Развитие товарного животноводства<br>
+                • Увеличение поставок мяса и скота в Россию</p>
+            </div>
+            <div class="site-card">
+                <h4>Земледелие</h4>
+                <p>• Распространение оседлого земледелия<br>
+                • Введение новых сельскохозяйственных культур<br>
+                • Развитие ирригационных систем<br>
+                • Рост товарного зернового производства</p>
+            </div>
+            <div class="site-card">
+                <h4>Промышленность и торговля</h4>
+                <p>• Развитие горнодобывающей промышленности<br>
+                • Строительство железных дорог<br>
+                • Рост ярмарочной торговли<br>
+                • Включение в общероссийский рынок</p>
+            </div>
+        </div>
+
+        <div class="leader-card">
+            <div class="leader-name">Экономические последствия</div>
+            <p>К началу XX века казахская степь стала важным аграрно-сырьевым придатком Российской империи. С одной стороны, это привело к разрушению традиционного хозяйства, с другой - способствовало развитию товарно-денежных отношений и включению в мировую экономику.</p>
+        </div>
+    </div>
+
+    <!-- Социальные преобразования -->
+    <div class="razdel-tema" id="raz3">
+        <span class="razdel">Социальные изменения и структура общества</span>
+    </div>
+
+    <div class="content-section">
+        <h2 class="section-title">Трансформация социальной структуры</h2>
+        <p>Вхождение в состав Российской империи вызвало глубокие изменения в социальной организации казахского общества. Традиционная родоплеменная структура постепенно уступала место новым социальным отношениям.</p>
+        
+        <h3 class="subsection-title">Эволюция социальных групп</h3>
+        
+        <div class="archaeological-sites">
+            <div class="site-card">
+                <div class="region">Традиционная элита</div>
+                <h4>Султаны и бии</h4>
+                <p>• Постепенная утрата политического влияния<br>
+                • Часть интегрировалась в имперскую администрацию<br>
+                • Сохранение социального престижа<br>
+                • Получение образования в российских учебных заведениях</p>
+            </div>
+            <div class="site-card">
+                <div class="region">Новые социальные группы</div>
+                <h4>Интеллигенция и предприниматели</h4>
+                <p>• Формирование национальной интеллигенции<br>
+                • Появление казахских предпринимателей<br>
+                • Развитие рабочего класса в промышленных центрах<br>
+                • Рост городского населения</p>
+            </div>
+            <div class="site-card">
+                <div class="region">Основное население</div>
+                <h4>Шаруа и переселенцы</h4>
+                <p>• Обнищание части кочевого населения<br>
+                • Переход к оседлости и земледелию<br>
+                • Массовое переселение русских и украинских крестьян<br>
+                • Формирование многонационального состава населения</p>
+            </div>
+        </div>
+
+        <h3 class="subsection-title">Демографические изменения</h3>
+        <div class="key-points">
+            <ul>
+                <li><strong>Рост численности населения</strong> - с 2,5 млн в середине XIX века до 6 млн в 1914 году</li>
+                <li><strong>Изменение этнического состава</strong> - увеличение доли русского и украинского населения</li>
+                <li><strong>Урбанизация</strong> - рост городов и городского населения</li>
+                <li><strong>Миграционные процессы</strong> - откочевки в соседние страны и внутренние перемещения</li>
+                <li><strong>Социальная мобильность</strong> - возможности получения образования и изменения социального статуса</li>
+            </ul>
+        </div>
+
+        <div class="important-note">
+            <strong>Социальные противоречия:</strong> Колониальная политика вызывала сопротивление казахского населения, что проявлялось в восстаниях и протестах. Одновременно шли процессы адаптации и интеграции в имперское общество.
+        </div>
+    </div>
+
+    <!-- Культура и просвещение -->
+    <div class="razdel-tema" id="raz4">
+        <span class="razdel">Культурное развитие и просвещение</span>
+    </div>
+
+    <div class="content-section">
+        <h2 class="section-title">На стыке культур и традиций</h2>
+        <p>XIX - начало XX века стали временем интенсивного культурного развития и просветительской деятельности. Формирование казахской интеллигенции, развитие образования и печати создали основы для национального возрождения.</p>
+        
+        <h3 class="subsection-title">Развитие образования и науки</h3>
+        
+        <div class="timeline-event">
+            <div class="event-year">1789 год - Первая русско-казахская школа</div>
+            <p>Открыта в Омске для детей казахской знати. Стала центром подготовки переводчиков и административных работников.</p>
+        </div>
+
+        <div class="timeline-event">
+            <div class="event-year">1841 год - Школа при Неплюевском кадетском корпусе</div>
+            <p>Создана в Оренбурге. Давала образование детям султанов и богатых казахов. Многие выпускники стали видными деятелями культуры.</p>
+        </div>
+
+        <div class="timeline-event">
+            <div class="event-year">Конец XIX века - Русско-казахские школы</div>
+            <p>Создание сети начальных школ для казахского населения. Развитие женского образования. Появление первых казахских учителей.</p>
+        </div>
+
+        <h3 class="subsection-title">Выдающиеся просветители</h3>
+        <div class="archaeological-sites">
+            <div class="site-card">
+                <h4>Чокан Валиханов</h4>
+                <p>• Первый казахский ученый-просветитель<br>
+                • Исследования истории и культуры казахов<br>
+                • Участие в экспедициях по Центральной Азии<br>
+                • Труды по этнографии и географии</p>
+            </div>
+            <div class="site-card">
+                <h4>Ибрай Алтынсарин</h4>
+                <p>• Основоположник казахского образования<br>
+                • Создатель первых казахских школ<br>
+                • Автор учебников и педагогических трудов<br>
+                • Разработчик казахского алфавита на основе кириллицы</p>
+            </div>
+            <div class="site-card">
+                <h4>Абай Кунанбаев</h4>
+                <p>• Великий поэт и мыслитель<br>
+                • Реформатор казахской литературы<br>
+                • Пропагандист русской и европейской культуры<br>
+                • Основоположник казахской письменной литературы</p>
+            </div>
+        </div>
+
+        <h3 class="subsection-title">Культурные достижения</h3>
+        <div class="key-points">
+            <ul>
+                <li><strong>Развитие литературы</strong> - переход от устного творчества к письменной литературе</li>
+                <li><strong>Становление журналистики</strong> - издание первых газет и журналов на казахском языке</li>
+                <li><strong>Научные исследования</strong> - изучение истории, этнографии и природы Казахстана</li>
+                <li><strong>Музыкальное искусство</strong> - творчество великих композиторов-кюйши и певцов</li>
+                <li><strong>Архитектура и градостроительство</strong> - развитие городов и строительство общественных зданий</li>
+            </ul>
+        </div>
+
+        <div class="important-note">
+            <strong>Культурный синтез:</strong> Период нахождения в составе Российской империи стал временем интенсивного культурного взаимодействия. Казахская культура, сохраняя свои традиционные основы, обогащалась достижениями русской и европейской культуры.
+        </div>
+    </div>
+
+    <!-- Заключение -->
+    <div class="content-section" id="conclusion">
+        <h2 class="section-title">Итоги имперского периода</h2>
+        
+        <div class="conclusion">
+            <h3>Между традицией и модернизацией</h3>
+            <p>Период нахождения Казахстана в составе Российской империи был противоречивым и многогранным. С одной стороны, это было время потери политической независимости и колониальной эксплуатации. С другой стороны, именно в этот период были заложены основы модернизации казахского общества.</p>
+            
+            <div class="key-points">
+                <h3>Основные итоги имперского периода:</h3>
+                <ul>
+                    <li><strong>Политическая интеграция</strong> - включение в систему имперского управления</li>
+                    <li><strong>Экономическая трансформация</strong> - разрушение традиционного хозяйства и развитие новых отраслей</li>
+                    <li><strong>Социальные изменения</strong> - трансформация традиционной структуры общества</li>
+                    <li><strong>Культурное развитие</strong> - формирование национальной интеллигенции и просвещения</li>
+                    <li><strong>Демографические сдвиги</strong> - изменение этнического состава и рост населения</li>
+                    <li><strong>Инфраструктурное развитие</strong> - строительство городов, дорог, промышленных предприятий</li>
+                </ul>
+            </div>
+            
+            <p>К началу XX века Казахстан представлял собой сложный конгломерат традиционного и нового. Накопившиеся социально-экономические и политические противоречия создали предпосылки для новых потрясений, которые пришлись на период революций и Гражданской войны.</p>
+        </div>
+    </div>
+
+    <!-- Футер -->
+    <footer>
+        <div class="footer-content">
+            <p>&copy; 2025 Образовательный веб-ресурс "История Казахстана"</p>
+            <p>Разработано в рамках учебного проекта средствами HTML и CSS</p>
+        </div>
+    </footer>
+</body>
+</html>

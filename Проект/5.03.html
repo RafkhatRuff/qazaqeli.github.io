@@ -1,0 +1,781 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Перестройка и распад СССР в Казахстане</title>
+    <style>
+@import url('https://fonts.googleapis.com/css2?family=Dela+Gothic+One&family=Unbounded:wght@200..900&display=swap');
+
+/* Главные */
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Unbounded;
+    background-color: rgb(244, 244, 244);
+}
+
+a {
+    text-decoration: none;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+/* Шапка */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 1400px;
+    margin: 0 auto;
+    padding: 30px 0;
+}
+
+header .logo {
+    color: rgb(0, 109, 219);
+    text-transform: uppercase;
+    font-size: 20px;
+    font-weight: 500;
+}
+
+/* Бургер */
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown-btn {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 10px 15px;
+    background: #f8f9fa;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.dropdown-btn:hover {
+    background: #e9ecef;
+    border-color: #adb5bd;
+}
+
+.dropdown-btn span {
+    font-weight: 500;
+    font-size: 15px;
+    font-family: Unbounded;
+    color: rgb(0, 109, 219);
+}
+
+.dropdown-content {
+    position: absolute;
+    right: 0;
+    background: white;
+    min-width: 300px;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+    border-radius: 10px;
+    z-index: 1000;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-10px);
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.dropdown-content a {
+    display: block;
+    padding: 12px 16px;
+    text-decoration: none;
+    color: #333;
+    border-bottom: 2px solid #eee;
+    transition: all 0.2s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.dropdown-content a:last-child {
+    border-bottom: none;
+}
+
+.dropdown-content a:hover {
+    background: #f8f9fa;
+    border-radius: 8px;
+}
+
+.dropdown:hover .dropdown-content {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+/* Баннер */
+.banner {
+    display: grid;
+    align-items: center;
+    text-align: center;
+    width: 1500px;
+    margin: 0 auto;
+    border-radius: 25px;
+    height: 250px;
+    margin-bottom: 50px;
+    box-shadow: 10px 5px 5px rgba(0,0,0,0.1);
+    background: linear-gradient(rgba(0, 123, 255, 0.5), rgba(0, 109, 219,0.5)), url('./Баннер/Баннер\ 1.jpg') center/cover no-repeat;
+}
+
+.banner-text-1 {
+    font-size: 3.6rem;
+    font-weight: 800;
+    color: rgb(255, 255, 255);
+}
+
+/* Разделы */
+.razdel-tema {
+    width: 1400px;
+    margin: 0 auto;
+    margin-top: 50px;
+    margin-bottom: 30px;
+}
+
+.razdel {
+    color: rgb(0, 109, 219);
+    font-size: 2.1rem;
+    font-weight: 500;
+}
+
+/* Контент */
+.content-section {
+    width: 1400px;
+    background: white;
+    margin: 0 auto;
+    border-radius: 20px;
+    padding: 35px;
+    margin-bottom: 35px;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.08);
+    border-left: 5px solid rgb(0, 109, 219);
+}
+
+.section-title {
+    color: rgb(0, 109, 219);
+    font-size: 2rem;
+    margin-bottom: 25px;
+    display: flex;
+    align-items: center;
+    padding-bottom: 10px;
+    border-bottom: 2px solid #f0f0f0;
+}
+
+.section-title::before {
+    content: "▶";
+    display: inline-block;
+    margin-right: 15px;
+    color: rgb(0, 109, 219);
+    font-size: 1.5rem;
+}
+
+.subsection-title {
+    color: #2c5282;
+    font-size: 1.5rem;
+    margin: 25px 0 15px;
+    padding-left: 20px;
+    border-left: 4px solid #2c5282;
+}
+
+.key-points {
+    background: linear-gradient(135deg, #f0f7ff, #e6f2ff);
+    border-left: 6px solid rgb(0, 109, 219);
+    padding: 25px;
+    margin: 25px 0;
+    border-radius: 0 15px 15px 0;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+}
+
+.key-points h3 {
+    margin-bottom: 15px;
+    color: rgb(0, 109, 219);
+    font-size: 1.4rem;
+}
+
+.key-points ul {
+    padding-left: 25px;
+}
+
+.key-points li {
+    margin-bottom: 10px;
+    position: relative;
+}
+
+.key-points li::before {
+    content: "•";
+    color: rgb(0, 109, 219);
+    font-weight: bold;
+    display: inline-block;
+    width: 1em;
+    margin-left: -1em;
+}
+
+.archaeological-sites {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+    gap: 25px;
+    margin: 25px 0;
+}
+
+.site-card {
+    background: white;
+    border-radius: 15px;
+    padding: 25px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+    border-top: 5px solid rgb(0, 109, 219);
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.site-card::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: linear-gradient(90deg, rgb(0, 109, 219), #2c5282);
+}
+
+.site-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 12px 30px rgba(0,0,0,0.15);
+}
+
+.site-card h4 {
+    color: rgb(0, 109, 219);
+    margin-bottom: 12px;
+    font-size: 1.3rem;
+}
+
+.site-card .region {
+    background: #e6f2ff;
+    color: #2c5282;
+    padding: 5px 12px;
+    border-radius: 20px;
+    font-size: 0.9rem;
+    font-weight: 600;
+    display: inline-block;
+    margin-bottom: 15px;
+}
+
+.conclusion {
+    background: linear-gradient(135deg, #e8f4ff, #d4e7ff);
+    padding: 30px;
+    border-radius: 15px;
+    margin: 35px 0;
+    border: 2px solid #c2e0ff;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+}
+
+.conclusion h3 {
+    color: rgb(0, 109, 219);
+    margin-bottom: 20px;
+    font-size: 1.6rem;
+    text-align: center;
+}
+
+.important-note {
+    background: #fff3cd;
+    border: 2px solid #ffeaa7;
+    border-left: 6px solid #fdcb6e;
+    padding: 20px;
+    margin: 20px 0;
+    border-radius: 10px;
+}
+
+.timeline-event {
+    background: #f8fafc;
+    border-left: 4px solid #2c5282;
+    padding: 20px;
+    margin: 15px 0;
+    border-radius: 0 8px 8px 0;
+}
+
+.event-year {
+    font-weight: bold;
+    color: #2c5282;
+    font-size: 1.1rem;
+    margin-bottom: 8px;
+}
+
+.leader-card {
+    background: linear-gradient(135deg, #ffffff, #f8fafc);
+    border-radius: 12px;
+    padding: 20px;
+    margin: 15px 0;
+    border: 2px solid #e6f2ff;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+}
+
+.leader-name {
+    color: #2c5282;
+    font-size: 1.3rem;
+    font-weight: 600;
+    margin-bottom: 10px;
+}
+
+.timeline-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 25px 0;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.timeline-table th {
+    background: linear-gradient(135deg, rgb(0, 109, 219), #2c5282);
+    color: white;
+    padding: 18px;
+    text-align: left;
+    font-weight: 600;
+}
+
+.timeline-table td {
+    padding: 18px;
+    border-bottom: 1px solid #eaeaea;
+    vertical-align: top;
+}
+
+.timeline-table tr:nth-child(even) {
+    background: #f8fafc;
+}
+
+.timeline-table tr:hover {
+    background: #e6f2ff;
+    transform: translateY(-1px);
+    transition: all 0.2s ease;
+}
+
+.comparison-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 25px 0;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.comparison-table th {
+    background: #2c5282;
+    color: white;
+    padding: 15px;
+    text-align: center;
+    font-weight: 600;
+}
+
+.comparison-table td {
+    padding: 15px;
+    border: 1px solid #eaeaea;
+    text-align: center;
+}
+
+.comparison-table tr:nth-child(even) {
+    background: #f8fafc;
+}
+
+.crisis-card {
+    background: linear-gradient(135deg, #fff5f5, #fed7d7);
+    border-left: 5px solid #e53e3e;
+    padding: 20px;
+    margin: 15px 0;
+    border-radius: 0 10px 10px 0;
+}
+
+.crisis-title {
+    color: #e53e3e;
+    font-size: 1.2rem;
+    font-weight: 600;
+    margin-bottom: 10px;
+}
+
+.reform-card {
+    background: linear-gradient(135deg, #f0fff4, #c6f6d5);
+    border-left: 5px solid #38a169;
+    padding: 20px;
+    margin: 15px 0;
+    border-radius: 0 10px 10px 0;
+}
+
+.reform-title {
+    color: #38a169;
+    font-size: 1.2rem;
+    font-weight: 600;
+    margin-bottom: 10px;
+}
+
+/* Футер */
+footer {
+    width: 1300px;
+    margin: 0 auto;
+    border-top: 3px solid #3498db;
+    border-left: 3px solid #3498db;
+    border-right: 3px solid #3498db;
+    border-bottom: none;
+    border-radius: 15px 15px 0 0;
+    background-color: rgb(244, 244, 244);
+    text-align: center;
+    padding: 25px 25px;
+    margin-top: 3rem;
+}
+.footer-content {
+    color:rgb(69, 69, 69);
+}
+    </style>
+</head>
+<body>
+    <!-- Шапка -->
+    <header>
+        <a href="./Главная.html"><span class="logo">QAZAQ ELI</span></a>
+        <div class="dropdown">
+            <button class="dropdown-btn">
+                <span>Навигация</span>
+            </button>
+            <div class="dropdown-content">
+                <a href="#raz1">Начало перестройки</a>
+                <a href="#raz2">Декабрьские события 1986</a>
+                <a href="#raz3">Путь к независимости</a>
+                <a href="#raz4">Распад СССР</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Баннер 1 -->
+    <div class="banner">
+        <span class="banner-text-1">Перестройка и распад СССР в Казахстане</span>
+    </div>
+
+    <!-- Введение -->
+    <div class="content-section" id="introduction">
+        <h2 class="section-title">1985-1991: От реформ к независимости</h2>
+        <p>Период перестройки и распада СССР стал переломным моментом в истории Казахстана. Политика реформ, инициированная Михаилом Горбачевым, привела к необратимым изменениям в советском обществе и в конечном итоге - к краху союзного государства и обретению Казахстаном независимости.</p>
+        
+        <div class="key-points">
+            <h3>Основные этапы перестройки в Казахстане:</h3>
+            <ul>
+                <li>1985-1986 - Начало перестройки, первые реформы</li>
+                <li>Декабрь 1986 - Желтоксан (Декабрьские события) в Алма-Ате</li>
+                <li>1987-1989 - Рост национального движения, экологические протесты</li>
+                <li>1990-1991 - "Парад суверенитетов", августовский путч, Беловежские соглашения</li>
+                <li>16 декабря 1991 - Провозглашение независимости Казахстана</li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- Начало перестройки -->
+    <div class="razdel-tema" id="raz1">
+        <span class="razdel">Начало перестройки в Казахстане</span>
+    </div>
+
+    <div class="content-section">
+        <h2 class="section-title">Первые реформы и сопротивление системы</h2>
+        <p>С приходом к власти Михаила Горбачева в 1985 году начался процесс реформирования советской системы. В Казахстане перестройка столкнулась с сопротивлением консервативной партийной номенклатуры во главе с Динмухамедом Кунаевым.</p>
+        
+        <h3 class="subsection-title">Основные направления перестройки</h3>
+        
+        <table class="timeline-table">
+            <thead>
+                <tr>
+                    <th>Направление реформ</th>
+                    <th>Содержание</th>
+                    <th>Реализация в Казахстане</th>
+                    <th>Результаты</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><strong>Ускорение</strong></td>
+                    <td>Техническое перевооружение, повышение эффективности</td>
+                    <td>Модернизация промышленности, борьба с пьянством</td>
+                    <td>Ограниченные успехи, сопротивление аппарата</td>
+                </tr>
+                <tr>
+                    <td><strong>Гласность</strong></td>
+                    <td>Свобода слова, раскрытие "белых пятен" истории</td>
+                    <td>Критика сталинизма, реабилитация жертв репрессий</td>
+                    <td>Рост национального самосознания</td>
+                </tr>
+                <tr>
+                    <td><strong>Демократизация</strong></td>
+                    <td>Выборы на альтернативной основе, многопартийность</td>
+                    <td>Выборы народных депутатов, создание неформальных организаций</td>
+                    <td>Ослабление монополии КПСС</td>
+                </tr>
+                <tr>
+                    <td><strong>Экономические реформы</strong></td>
+                    <td>Кооперативы, аренда, хозрасчет</td>
+                    <td>Создание кооперативов, развитие предпринимательства</td>
+                    <td>Рост частного сектора, но углубление кризиса</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <h3 class="subsection-title">Политические изменения в руководстве</h3>
+        <div class="archaeological-sites">
+            <div class="site-card">
+                <div class="region">До перестройки</div>
+                <h4>Динмухамед Кунаев</h4>
+                <p>Первый секретарь ЦК КП Казахстана с 1964 года. Олицетворял старую номенклатурную систему. Пользовался авторитетом в республике, но сопротивлялся реформам.</p>
+            </div>
+            <div class="site-card">
+                <div class="region">Переломный момент</div>
+                <h4>Смена руководства</h4>
+                <p>В декабре 1986 года Кунаев был отправлен в отставку. На его место назначен Геннадий Колбин - первый секретарь Ульяновского обкома партии.</p>
+            </div>
+            <div class="site-card">
+                <div class="region">Новый курс</div>
+                <h4>Нурсултан Назарбаев</h4>
+                <p>В 1989 году Назарбаев стал Первым секретарем ЦК. Проводил политику баланса между реформами и стабильностью. Подготовил почву для независимости.</p>
+            </div>
+        </div>
+
+        <div class="important-note">
+            <strong>Особенности перестройки в Казахстане:</strong> В отличие от других республик, в Казахстане перестройка началась с серьезного политического кризиса - Декабрьских событий 1986 года. Это определило особый путь развития республики в последующие годы.
+        </div>
+    </div>
+
+    <!-- Декабрьские события 1986 -->
+    <div class="razdel-tema" id="raz2">
+        <span class="razdel">Декабрьские события 1986 года</span>
+    </div>
+
+    <div class="content-section">
+        <h2 class="section-title">Желтоксан - поворотный момент</h2>
+        <p>16-18 декабря 1986 года в Алма-Ате произошли массовые выступления молодежи против назначения Геннадия Колбина первым секретарем ЦК Компартии Казахстана. Эти события стали первым открытым проявлением национального самосознания и точкой невозврата в процессе распада СССР.</p>
+        
+        <h3 class="subsection-title">Хронология событий</h3>
+        
+        <div class="timeline-event">
+            <div class="event-year">16 декабря 1986 - Начало выступлений</div>
+            <p>Утром на площади перед зданием ЦК начали собираться студенты и молодежь. Требовали отмены назначения Колбина, уважения национальных интересов, назначения казаха на пост руководителя республики.</p>
+        </div>
+
+        <div class="timeline-event">
+            <div class="event-year">17 декабря - Эскалация конфликта</div>
+            <p>Количество демонстрантов достигло 20-30 тысяч человек. Ввод войск и силовое подавление протестов. Применение саперных лопаток, служебных собак, водомётов.</p>
+        </div>
+
+        <div class="timeline-event">
+            <div class="event-year">18 декабря - Завершение выступлений</div>
+            <p>Продолжение силового подавления. Массовые задержания, избиения, исключения из вузов, увольнения с работы. Официальное число погибших - 2 человека, по неофициальным данным - до 168.</p>
+        </div>
+
+        <h3 class="subsection-title">Последствия и значение</h3>
+        
+        <table class="comparison-table">
+            <thead>
+                <tr>
+                    <th>Сфера</th>
+                    <th>Негативные последствия</th>
+                    <th>Позитивные изменения</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><strong>Политическая</strong></td>
+                    <td>Репрессии против участников, ужесточение контроля</td>
+                    <td>Рост национального самосознания, политизация общества</td>
+                </tr>
+                <tr>
+                    <td><strong>Социальная</strong></td>
+                    <td>Раскол общества, межнациональная напряженность</td>
+                    <td>Консолидация казахской интеллигенции, рост гражданской активности</td>
+                </tr>
+                <tr>
+                    <td><strong>Международная</strong></td>
+                    <td>Осуждение со стороны мировой общественности</td>
+                    <td>Привлечение внимания к национальному вопросу в Казахстане</td>
+                </tr>
+                <tr>
+                    <td><strong>Историческая</strong></td>
+                    <td>Долгие годы замалчивания и искажения событий</td>
+                    <td>Становление Желтоксана как символа борьбы за независимость</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <div class="crisis-card">
+            <div class="crisis-title">Репрессии и преследования</div>
+            <p>• Более 8,5 тысяч человек задержаны<br>
+            • 1,7 тысяч человек получили телесные повреждения<br>
+            • 99 человек привлечены к уголовной ответственности<br>
+            • 309 студентов исключены из вузов<br>
+            • 758 человек уволены с работы<br>
+            • Многие участники стали "невыездными"</p>
+        </div>
+    </div>
+
+    <!-- Путь к независимости -->
+    <div class="razdel-tema" id="raz3">
+        <span class="razdel">Путь к независимости (1987-1991)</span>
+    </div>
+
+    <div class="content-section">
+        <h2 class="section-title">Формирование новой государственности</h2>
+        <p>После Декабрьских событий процесс суверенизации Казахстана набирал обороты. Росло национальное движение, формировались новые политические силы, укреплялись позиции республиканского руководства в противостоянии с союзным центром.</p>
+        
+        <h3 class="subsection-title">Ключевые события на пути к независимости</h3>
+        
+        <div class="timeline-event">
+            <div class="event-year">1989 год - Новое руководство</div>
+            <p>Нурсултан Назарбаев становится Первым секретарем ЦК КП Казахстана. Начинается политика баланса между реформами и стабильностью, подготовка к суверенитету.</p>
+        </div>
+
+        <div class="timeline-event">
+            <div class="event-year">1990 год - Декларация о государственном суверенитете</div>
+            <p>25 октября Верховный Совет Казахской ССР принимает Декларацию о государственном суверенитете. Казахстан провозглашается суверенным государством.</p>
+        </div>
+
+        <div class="timeline-event">
+            <div class="event-year">Апрель 1990 - Пост Президента</div>
+            <p>Учреждение поста Президента Казахской ССР. Первым президентом избран Нурсултан Назарбаев.</p>
+        </div>
+
+        <div class="timeline-event">
+            <div class="event-year">1991 год - Августовский путч</div>
+            <p>Попытка государственного переворота в Москве. Назарбаев занимает четкую позицию против путчистов, что укрепляет его авторитет.</p>
+        </div>
+
+        <h3 class="subsection-title">Новые политические движения</h3>
+        <div class="archaeological-sites">
+            <div class="site-card">
+                <h4>Желтоксан</h4>
+                <p>Движение, созданное участниками Декабрьских событий. Требовало демократических реформ, суверенитета, реабилитации жертв 1986 года.</p>
+            </div>
+            <div class="site-card">
+                <h4>Невада-Семипалатинск</h4>
+                <p>Антивоенное движение под руководством Олжаса Сулейменова. Добивалось закрытия Семипалатинского ядерного полигона.</p>
+            </div>
+            <div class="site-card">
+                <h4>Азат</h4>
+                <p>Гражданское движение за демократические преобразования и национальное возрождение. Выступало за суверенитет Казахстана.</p>
+            </div>
+        </div>
+
+        <div class="reform-card">
+            <div class="reform-title">Закрытие Семипалатинского полигона</div>
+            <p>29 августа 1991 года Указом Президента Н. Назарбаева Семипалатинский ядерный полигон был закрыт. Это стало важным символическим шагом на пути к независимости и продемонстрировало способность Казахстана проводить самостоятельную политику.</p>
+        </div>
+    </div>
+
+    <!-- Распад СССР -->
+    <div class="razdel-tema" id="raz4">
+        <span class="razdel">Распад СССР и обретение независимости</span>
+    </div>
+
+    <div class="content-section">
+        <h2 class="section-title">Крах союзного государства</h2>
+        <p>1991 год стал годом окончательного распада Советского Союза. Казахстан, который до последнего пытался сохранить обновленный союз, был вынужден констатировать крах союзных структур и провозгласить свою независимость.</p>
+        
+        <h3 class="subsection-title">Хроника распада СССР</h3>
+        
+        <table class="timeline-table">
+            <thead>
+                <tr>
+                    <th>Дата</th>
+                    <th>Событие</th>
+                    <th>Позиция Казахстана</th>
+                    <th>Значение</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><strong>19-21 августа 1991</strong></td>
+                    <td>Августовский путч в Москве</td>
+                    <td>Осуждение путча, поддержка законной власти</td>
+                    <td>Ускорение распада СССР, рост авторитета Назарбаева</td>
+                </tr>
+                <tr>
+                    <td><strong>8 декабря 1991</strong></td>
+                    <td>Беловежские соглашения</td>
+                    <td>Неучастие в подписании, критика методов роспуска СССР</td>
+                    <td>Фактический распад Советского Союза</td>
+                </tr>
+                <tr>
+                    <td><strong>16 декабря 1991</strong></td>
+                    <td>Закон о независимости</td>
+                    <td>Принятие Конституционного закона о государственной независимости</td>
+                    <td>Юридическое оформление независимости Казахстана</td>
+                </tr>
+                <tr>
+                    <td><strong>21 декабря 1991</strong></td>
+                    <td>Алма-Атинская декларация</td>
+                    <td>Инициатор создания СНГ, принятие декларации о целях СНГ</td>
+                    <td>Оформление постсоветского пространства</td>
+                </tr>
+                <tr>
+                    <td><strong>25 декабря 1991</strong></td>
+                    <td>Отставка Горбачева</td>
+                    <td>Признание независимости другими государствами</td>
+                    <td>Окончательный распад СССР</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <h3 class="subsection-title">Вызовы независимого Казахстана</h3>
+        <div class="archaeological-sites">
+            <div class="site-card">
+                <h4>Экономические проблемы</h4>
+                <p>• Разрыв хозяйственных связей<br>
+                • Гиперинфляция<br>
+                • Спад производства<br>
+                • Безработица<br>
+                • Необходимость создания национальной валюты</p>
+            </div>
+            <div class="site-card">
+                <h4>Политические задачи</h4>
+                <p>• Создание государственных институтов<br>
+                • Принятие Конституции<br>
+                • Формирование внешней политики<br>
+                • Определение статуса ядерного оружия<br>
+                • Решение территориальных вопросов</p>
+            </div>
+            <div class="site-card">
+                <h4>Социальные вызовы</h4>
+                <p>• Межнациональные отношения<br>
+                • Миграционные процессы<br>
+                • Социальное обеспечение<br>
+                • Образование и здравоохранение<br>
+                • Культурное возрождение</p>
+            </div>
+        </div>
+
+        <div class="conclusion">
+            <h3>Историческое значение обретения независимости</h3>
+            <p>16 декабря 1991 года стало поворотным моментом в истории казахского народа. После centuries пребывания в составе различных империй, Казахстан обрел долгожданную независимость и возможность самостоятельно определять свою судьбу.</p>
+            
+            <div class="key-points">
+                <h3>Основные достижения переходного периода:</h3>
+                <ul>
+                    <li><strong>Сохранение стабильности</strong> - избежание гражданского конфликта и межнациональных столкновений</li>
+                    <li><strong>Ядерное разоружение</strong> - добровольный отказ от ядерного оружия</li>
+                    <li><strong>Международное признание</strong> - установление дипломатических отношений со 120 странами</li>
+                    <li><strong>Экономические реформы</strong> - создание рыночной экономики, введение национальной валюты</li>
+                    <li><strong>Политическое строительство</strong> - принятие Конституции, создание государственных институтов</li>
+                    <li><strong>Межнациональное согласие</strong> - сохранение мира и стабильности в многонациональном обществе</li>
+                </ul>
+            </div>
+            
+            <p>Путь Казахстана к независимости был сложным и противоречивым. От Декабрьских событий 1986 года до провозглашения государственного суверенитета в 1991 году - это был период глубоких трансформаций, которые заложили основы современного казахстанского государства.</p>
+        </div>
+    </div>
+
+    <!-- Футер -->
+    <footer>
+        <div class="footer-content">
+            <p>&copy; 2025 Образовательный веб-ресурс "История Казахстана"</p>
+            <p>Разработано в рамках учебного проекта средствами HTML и CSS</p>
+        </div>
+    </footer>
+</body>
+</html>

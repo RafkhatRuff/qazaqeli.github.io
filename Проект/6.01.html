@@ -1,0 +1,787 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Древняя и средневековая культура Казахстана</title>
+    <style>
+@import url('https://fonts.googleapis.com/css2?family=Dela+Gothic+One&family=Unbounded:wght@200..900&display=swap');
+
+/* Главные */
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Unbounded;
+    background-color: rgb(244, 244, 244);
+}
+
+a {
+    text-decoration: none;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+/* Шапка */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 1400px;
+    margin: 0 auto;
+    padding: 30px 0;
+}
+
+header .logo {
+    color: rgb(0, 109, 219);
+    text-transform: uppercase;
+    font-size: 20px;
+    font-weight: 500;
+}
+
+/* Бургер */
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown-btn {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 10px 15px;
+    background: #f8f9fa;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.dropdown-btn:hover {
+    background: #e9ecef;
+    border-color: #adb5bd;
+}
+
+.dropdown-btn span {
+    font-weight: 500;
+    font-size: 15px;
+    font-family: Unbounded;
+    color: rgb(0, 109, 219);
+}
+
+.dropdown-content {
+    position: absolute;
+    right: 0;
+    background: white;
+    min-width: 300px;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+    border-radius: 10px;
+    z-index: 1000;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-10px);
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.dropdown-content a {
+    display: block;
+    padding: 12px 16px;
+    text-decoration: none;
+    color: #333;
+    border-bottom: 2px solid #eee;
+    transition: all 0.2s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.dropdown-content a:last-child {
+    border-bottom: none;
+}
+
+.dropdown-content a:hover {
+    background: #f8f9fa;
+    border-radius: 8px;
+}
+
+.dropdown:hover .dropdown-content {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+/* Баннер */
+.banner {
+    display: grid;
+    align-items: center;
+    text-align: center;
+    width: 1500px;
+    margin: 0 auto;
+    border-radius: 25px;
+    height: 250px;
+    margin-bottom: 50px;
+    box-shadow: 10px 5px 5px rgba(0,0,0,0.1);
+    background: linear-gradient(rgba(0, 123, 255, 0.5), rgba(0, 109, 219,0.5)), url('./Баннер/Баннер\ 1.jpg') center/cover no-repeat;
+}
+
+.banner-text-1 {
+    font-size: 3.6rem;
+    font-weight: 800;
+    color: rgb(255, 255, 255);
+}
+
+/* Разделы */
+.razdel-tema {
+    width: 1400px;
+    margin: 0 auto;
+    margin-top: 50px;
+    margin-bottom: 30px;
+}
+
+.razdel {
+    color: rgb(0, 109, 219);
+    font-size: 2.1rem;
+    font-weight: 500;
+}
+
+/* Контент */
+.content-section {
+    width: 1400px;
+    background: white;
+    margin: 0 auto;
+    border-radius: 20px;
+    padding: 35px;
+    margin-bottom: 35px;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.08);
+    border-left: 5px solid rgb(0, 109, 219);
+}
+
+.section-title {
+    color: rgb(0, 109, 219);
+    font-size: 2rem;
+    margin-bottom: 25px;
+    display: flex;
+    align-items: center;
+    padding-bottom: 10px;
+    border-bottom: 2px solid #f0f0f0;
+}
+
+.section-title::before {
+    content: "▶";
+    display: inline-block;
+    margin-right: 15px;
+    color: rgb(0, 109, 219);
+    font-size: 1.5rem;
+}
+
+.subsection-title {
+    color: #2c5282;
+    font-size: 1.5rem;
+    margin: 25px 0 15px;
+    padding-left: 20px;
+    border-left: 4px solid #2c5282;
+}
+
+.key-points {
+    background: linear-gradient(135deg, #f0f7ff, #e6f2ff);
+    border-left: 6px solid rgb(0, 109, 219);
+    padding: 25px;
+    margin: 25px 0;
+    border-radius: 0 15px 15px 0;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+}
+
+.key-points h3 {
+    margin-bottom: 15px;
+    color: rgb(0, 109, 219);
+    font-size: 1.4rem;
+}
+
+.key-points ul {
+    padding-left: 25px;
+}
+
+.key-points li {
+    margin-bottom: 10px;
+    position: relative;
+}
+
+.key-points li::before {
+    content: "•";
+    color: rgb(0, 109, 219);
+    font-weight: bold;
+    display: inline-block;
+    width: 1em;
+    margin-left: -1em;
+}
+
+.archaeological-sites {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+    gap: 25px;
+    margin: 25px 0;
+}
+
+.site-card {
+    background: white;
+    border-radius: 15px;
+    padding: 25px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+    border-top: 5px solid rgb(0, 109, 219);
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.site-card::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: linear-gradient(90deg, rgb(0, 109, 219), #2c5282);
+}
+
+.site-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 12px 30px rgba(0,0,0,0.15);
+}
+
+.site-card h4 {
+    color: rgb(0, 109, 219);
+    margin-bottom: 12px;
+    font-size: 1.3rem;
+}
+
+.site-card .region {
+    background: #e6f2ff;
+    color: #2c5282;
+    padding: 5px 12px;
+    border-radius: 20px;
+    font-size: 0.9rem;
+    font-weight: 600;
+    display: inline-block;
+    margin-bottom: 15px;
+}
+
+.conclusion {
+    background: linear-gradient(135deg, #e8f4ff, #d4e7ff);
+    padding: 30px;
+    border-radius: 15px;
+    margin: 35px 0;
+    border: 2px solid #c2e0ff;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+}
+
+.conclusion h3 {
+    color: rgb(0, 109, 219);
+    margin-bottom: 20px;
+    font-size: 1.6rem;
+    text-align: center;
+}
+
+.important-note {
+    background: #fff3cd;
+    border: 2px solid #ffeaa7;
+    border-left: 6px solid #fdcb6e;
+    padding: 20px;
+    margin: 20px 0;
+    border-radius: 10px;
+}
+
+.timeline-event {
+    background: #f8fafc;
+    border-left: 4px solid #2c5282;
+    padding: 20px;
+    margin: 15px 0;
+    border-radius: 0 8px 8px 0;
+}
+
+.event-year {
+    font-weight: bold;
+    color: #2c5282;
+    font-size: 1.1rem;
+    margin-bottom: 8px;
+}
+
+.leader-card {
+    background: linear-gradient(135deg, #ffffff, #f8fafc);
+    border-radius: 12px;
+    padding: 20px;
+    margin: 15px 0;
+    border: 2px solid #e6f2ff;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+}
+
+.leader-name {
+    color: #2c5282;
+    font-size: 1.3rem;
+    font-weight: 600;
+    margin-bottom: 10px;
+}
+
+.timeline-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 25px 0;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.timeline-table th {
+    background: linear-gradient(135deg, rgb(0, 109, 219), #2c5282);
+    color: white;
+    padding: 18px;
+    text-align: left;
+    font-weight: 600;
+}
+
+.timeline-table td {
+    padding: 18px;
+    border-bottom: 1px solid #eaeaea;
+    vertical-align: top;
+}
+
+.timeline-table tr:nth-child(even) {
+    background: #f8fafc;
+}
+
+.timeline-table tr:hover {
+    background: #e6f2ff;
+    transform: translateY(-1px);
+    transition: all 0.2s ease;
+}
+
+.comparison-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 25px 0;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.comparison-table th {
+    background: #2c5282;
+    color: white;
+    padding: 15px;
+    text-align: center;
+    font-weight: 600;
+}
+
+.comparison-table td {
+    padding: 15px;
+    border: 1px solid #eaeaea;
+    text-align: center;
+}
+
+.comparison-table tr:nth-child(even) {
+    background: #f8fafc;
+}
+
+.culture-card {
+    background: linear-gradient(135deg, #fff5f5, #fed7d7);
+    border-left: 5px solid #e53e3e;
+    padding: 20px;
+    margin: 15px 0;
+    border-radius: 0 10px 10px 0;
+}
+
+.culture-title {
+    color: #e53e3e;
+    font-size: 1.2rem;
+    font-weight: 600;
+    margin-bottom: 10px;
+}
+
+.art-card {
+    background: linear-gradient(135deg, #f0fff4, #c6f6d5);
+    border-left: 5px solid #38a169;
+    padding: 20px;
+    margin: 15px 0;
+    border-radius: 0 10px 10px 0;
+}
+
+.art-title {
+    color: #38a169;
+    font-size: 1.2rem;
+    font-weight: 600;
+    margin-bottom: 10px;
+}
+
+/* Футер */
+footer {
+    width: 1300px;
+    margin: 0 auto;
+    border-top: 3px solid #3498db;
+    border-left: 3px solid #3498db;
+    border-right: 3px solid #3498db;
+    border-bottom: none;
+    border-radius: 15px 15px 0 0;
+    background-color: rgb(244, 244, 244);
+    text-align: center;
+    padding: 25px 25px;
+    margin-top: 3rem;
+}
+.footer-content {
+    color:rgb(69, 69, 69);
+}
+    </style>
+</head>
+<body>
+    <!-- Шапка -->
+    <header>
+        <a href="./Главная.html"><span class="logo">QAZAQ ELI</span></a>
+        <div class="dropdown">
+            <button class="dropdown-btn">
+                <span>Навигация</span>
+            </button>
+            <div class="dropdown-content">
+                <a href="#raz1">Древняя культура</a>
+                <a href="#raz2">Тюркский период</a>
+                <a href="#raz3">Средневековая культура</a>
+                <a href="#raz4">Наследие и памятники</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Баннер 1 -->
+    <div class="banner">
+        <span class="banner-text-1">Древняя и средневековая культура Казахстана</span>
+    </div>
+
+    <!-- Введение -->
+    <div class="content-section" id="introduction">
+        <h2 class="section-title">Культурное наследие Великой Степи</h2>
+        <p>Территория современного Казахстана с древнейших времен была центром формирования уникальной кочевой цивилизации, где переплетались культурные традиции различных народов. От эпохи бронзы до средневековых государств здесь создавались выдающиеся памятники материальной и духовной культуры.</p>
+        
+        <div class="key-points">
+            <h3>Основные периоды культурного развития:</h3>
+            <ul>
+                <li>Эпоха бронзы (II тыс. до н.э.) - андроновская культура</li>
+                <li>Ранний железный век (I тыс. до н.э.) - сако-скифская культура</li>
+                <li>Тюркский период (VI-XII вв.) - древнетюркская культура</li>
+                <li>Средневековье (X-XV вв.) - культура тюркских государств</li>
+                <li>Эпоха Казахского ханства (XV-XVIII вв.) - формирование казахской культуры</li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- Древняя культура -->
+    <div class="razdel-tema" id="raz1">
+        <span class="razdel">Древняя культура (II тыс. до н.э. - V в. н.э.)</span>
+    </div>
+
+    <div class="content-section">
+        <h2 class="section-title">Андроновская и сако-скифская культуры</h2>
+        <p>Древнейшие культурные традиции на территории Казахстана связаны с андроновской археологической культурой эпохи бронзы и сако-скифской культурой раннего железного века. Эти культуры оставили богатое наследие в виде уникальных памятников, изделий декоративно-прикладного искусства и мифологических представлений.</p>
+        
+        <h3 class="subsection-title">Характеристика древних культур</h3>
+        
+        <table class="timeline-table">
+            <thead>
+                <tr>
+                    <th>Культура</th>
+                    <th>Период</th>
+                    <th>Основные памятники</th>
+                    <th>Культурные достижения</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><strong>Андроновская</strong></td>
+                    <td>XVIII-IX вв. до н.э.</td>
+                    <td>Поселения, могильники, наскальные рисунки</td>
+                    <td>Металлургия, керамика, скотоводство</td>
+                </tr>
+                <tr>
+                    <td><strong>Сако-скифская</strong></td>
+                    <td>VIII-III вв. до н.э.</td>
+                    <td>Курганы, "звериный стиль", городища</td>
+                    <td>Ювелирное искусство, военное дело</td>
+                </tr>
+                <tr>
+                    <td><strong>Уйсуньская</strong></td>
+                    <td>III в. до н.э. - V в. н.э.</td>
+                    <td>Городища, некрополи</td>
+                    <td>Городская культура, земледелие</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <h3 class="subsection-title">Выдающиеся археологические памятники</h3>
+        <div class="archaeological-sites">
+            <div class="site-card">
+                <div class="region">Центральный Казахстан</div>
+                <h4>Бегазы-Дандыбаевская культура</h4>
+                <p>Памятники эпохи поздней бронзы. Уникальные погребальные сооружения, развитая металлургия, керамика с геометрическим орнаментом.</p>
+            </div>
+            <div class="site-card">
+                <div class="region">Восточный Казахстан</div>
+                <h4>Берельские курганы</h4>
+                <p>Сакские захоронения V-IV вв. до н.э. Обнаружены мумифицированные останки, предметы "звериного стиля", украшения.</p>
+            </div>
+            <div class="site-card">
+                <div class="region">Южный Казахстан</div>
+                <h4>Иссыкский курган</h4>
+                <p>Знаменитое сакское захоронение V в. до н.э. Найдены золотые украшения, в том числе "Золотой человек" - символ казахской культуры.</p>
+            </div>
+        </div>
+
+        <div class="art-card">
+            <div class="art-title">"Звериный стиль" в искусстве</div>
+            <p>Характерная черта сако-скифского искусства - изображения животных в динамичных позах. На украшениях, оружии, предметах быта изображались олени, кони, тигры, барсы, грифоны. Эти образы имели не только декоративное, но и символическое значение, связанное с мифологическими представлениями.</p>
+        </div>
+
+        <div class="important-note">
+            <strong>"Золотой человек" из Иссыкского кургана:</strong> Обнаружен в 1969 году, стал одним из символов казахской культуры. Костюм воина украшен золотыми пластинами с изображениями животных в "зверином стиле". Датируется V веком до н.э. и свидетельствует о высоком уровне развития ювелирного искусства древних саков.
+        </div>
+    </div>
+
+    <!-- Тюркский период -->
+    <div class="razdel-tema" id="raz2">
+        <span class="razdel">Тюркский период (VI-XII века)</span>
+    </div>
+
+    <div class="content-section">
+        <h2 class="section-title">Культура тюркских каганатов</h2>
+        <p>С образованием Тюркского каганата в VI веке начинается новый этап в культурном развитии региона. Появляется древнетюркская письменность, развиваются города, формируется синтез кочевых и оседлых культурных традиций.</p>
+        
+        <h3 class="subsection-title">Основные культурные достижения</h3>
+        
+        <div class="timeline-event">
+            <div class="event-year">VI-VIII века - Древнетюркская письменность</div>
+            <p>Создание рунической письменности. Орхоно-енисейские памятники - каменные стелы с надписями, прославляющими тюркских каганов и военачальников.</p>
+        </div>
+
+        <div class="timeline-event">
+            <div class="event-year">VIII-X века - Распространение мировых религий</div>
+            <p>Проникновение буддизма, христианства несторианского толка, манихейства. Строительство храмов и монастырей. Формирование религиозного синкретизма.</p>
+        </div>
+
+        <div class="timeline-event">
+            <div class="event-year">X-XII века - Развитие городской культуры</div>
+            <p>Расцвет городов на Великом Шелковом пути. Строительство мечетей, медресе, караван-сараев. Развитие ремесел, науки, литературы.</p>
+        </div>
+
+        <h3 class="subsection-title">Памятники тюркской культуры</h3>
+        
+        <table class="comparison-table">
+            <thead>
+                <tr>
+                    <th>Памятник</th>
+                    <th>Местонахождение</th>
+                    <th>Дата создания</th>
+                    <th>Значение</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><strong>Памятник Кюль-тегину</strong></td>
+                    <td>Монголия (орхонские надписи)</td>
+                    <td>732 год</td>
+                    <td>Шедевр древнетюркской письменности</td>
+                </tr>
+                <tr>
+                    <td><strong>Памятник Тоньюкуку</strong></td>
+                    <td>Монголия</td>
+                    <td>716 год</td>
+                    <td>Автобиография тюркского полководца</td>
+                </tr>
+                <tr>
+                    <td><strong>Таласские надписи</strong></td>
+                    <td>Жамбылская область</td>
+                    <td>VI-VIII вв.</td>
+                    <td>Древнейшие памятники тюркской письменности в Казахстане</td>
+                </tr>
+                <tr>
+                    <td><strong>Баласагунские памятники</strong></td>
+                    <td>Кыргызстан (долина Чу)</td>
+                    <td>X-XII вв.</td>
+                    <td>Свидетельства развитой городской культуры</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <div class="culture-card">
+            <div class="culture-title">Древнетюркский эпос "Книга моего деда Коркута"</div>
+            <p>Один из древнейших памятников тюркской литературы. Содержит 12 сказаний (повестей) о жизни огузских племен. Отражает доисламские верования, обычаи, мировоззрение тюркских народов. Является общим культурным наследием тюркоязычных народов.</p>
+        </div>
+    </div>
+
+    <!-- Средневековая культура -->
+    <div class="razdel-tema" id="raz3">
+        <span class="razdel">Средневековая культура (X-XV века)</span>
+    </div>
+
+    <div class="content-section">
+        <h2 class="section-title">Расцвет культуры в эпоху тюркских государств</h2>
+        <p>Средневековье стало временем расцвета культуры на территории Казахстана. В государствах Караханидов, Хорезмшахов, Золотой Орды развивались наука, литература, архитектура, искусство. Особое значение имело распространение ислама, который стал доминирующей религией.</p>
+        
+        <h3 class="subsection-title">Основные центры средневековой культуры</h3>
+        
+        <div class="archaeological-sites">
+            <div class="site-card">
+                <div class="region">Южный Казахстан</div>
+                <h4>Отрар</h4>
+                <p>Крупный научный и культурный центр. Здесь жил и работал великий ученый Аль-Фараби. Город имел библиотеки, медресе, обсерватории.</p>
+            </div>
+            <div class="site-card">
+                <div class="region">Жетысу</div>
+                <h4>Тараз</h4>
+                <p>Столица государства Караханидов. Известен великолепными архитектурными памятниками - мавзолеями, мечетями, банями.</p>
+            </div>
+            <div class="site-card">
+                <div class="region">Западный Казахстан</div>
+                <h4>Сарайчик</h4>
+                <p>Столица Золотой Орды. Крупный торговый и ремесленный центр. Место погребения золотоордынских ханов.</p>
+            </div>
+        </div>
+
+        <h3 class="subsection-title">Выдающиеся деятели средневековой культуры</h3>
+        
+        <table class="timeline-table">
+            <thead>
+                <tr>
+                    <th>Деятель</th>
+                    <th>Годы жизни</th>
+                    <th>Вклад в культуру</th>
+                    <th>Основные произведения</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><strong>Аль-Фараби</strong></td>
+                    <td>872-950</td>
+                    <td>Философ, ученый-энциклопедист</td>
+                    <td>"Трактат о взглядах жителей добродетельного города"</td>
+                </tr>
+                <tr>
+                    <td><strong>Юсуф Баласагуни</strong></td>
+                    <td>1015-1075</td>
+                    <td>Поэт, мыслитель</td>
+                    <td>Поэма "Благодатное знание"</td>
+                </tr>
+                <tr>
+                    <td><strong>Махмуд Кашгари</strong></td>
+                    <td>1029-1101</td>
+                    <td>Лингвист, этнограф</td>
+                    <td>"Словарь тюркских наречий"</td>
+                </tr>
+                <tr>
+                    <td><strong>Ходжа Ахмед Ясави</strong></td>
+                    <td>1093-1166</td>
+                    <td>Поэт, суфийский проповедник</td>
+                    <td>"Дивани хикмет"</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <div class="art-card">
+            <div class="art-title">Архитектурные шедевры средневековья</div>
+            <p>В средневековый период на территории Казахстана создавались выдающиеся архитектурные памятники. Мавзолей Ходжи Ахмеда Ясави в Туркестане (XIV-XV вв.) - шедевр тимуридской архитектуры. Мавзолей Айша-Биби и Бабаджи-Хатун в Таразе (XI-XII вв.) - уникальные образцы раннемусульманской архитектуры. Караван-сараи, мечети, медресе свидетельствуют о высоком уровне градостроительства.</p>
+        </div>
+
+        <div class="important-note">
+            <strong>Мавзолей Ходжи Ахмеда Ясави:</strong> Построен по приказу Тимура в конце XIV века. Является уникальным архитектурным комплексом, включающим мавзолей, мечеть, библиотеку, хозяйственные помещения. Считается одним из самых значительных памятников средневековой архитектуры в Центральной Азии. Включен в список Всемирного наследия ЮНЕСКО.
+        </div>
+    </div>
+
+    <!-- Наследие и памятники -->
+    <div class="razdel-tema" id="raz4">
+        <span class="razdel">Наследие и памятники культуры</span>
+    </div>
+
+    <div class="content-section">
+        <h2 class="section-title">Сохранение и изучение культурного наследия</h2>
+        <p>Древняя и средневековая культура Казахстана оставила богатое наследие, которое продолжает изучаться и сохраняться. Археологические находки, архитектурные памятники, письменные источники позволяют воссоздать картину культурного развития региона на протяжении тысячелетий.</p>
+        
+        <h3 class="subsection-title">Основные виды культурного наследия</h3>
+        
+        <table class="comparison-table">
+            <thead>
+                <tr>
+                    <th>Вид наследия</th>
+                    <th>Памятники</th>
+                    <th>Значение</th>
+                    <th>Современное состояние</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><strong>Археологическое</strong></td>
+                    <td>Курганы, городища, наскальные рисунки</td>
+                    <td>Источник знаний о древних культурах</td>
+                    <td>Изучается, частично музеефицировано</td>
+                </tr>
+                <tr>
+                    <td><strong>Архитектурное</strong></td>
+                    <td>Мавзолеи, мечети, караван-сараи</td>
+                    <td>Достижения строительного искусства</td>
+                    <td>Реставрируется, охраняется государством</td>
+                </tr>
+                <tr>
+                    <td><strong>Письменное</strong></td>
+                    <td>Рунические надписи, рукописи</td>
+                    <td>Источник исторической информации</td>
+                    <td>Хранится в музеях и архивах</td>
+                </tr>
+                <tr>
+                    <td><strong>Художественное</strong></td>
+                    <td>Ювелирные изделия, керамика</td>
+                    <td>Проявление эстетических идеалов</td>
+                    <td>Экспонируется в музеях</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <h3 class="subsection-title">Музеи и научные центры</h3>
+        <div class="archaeological-sites">
+            <div class="site-card">
+                <h4>Национальный музей РК</h4>
+                <p>Крупнейший музей страны. Содержит богатейшую коллекцию археологических находок, в том числе "Золотого человека" и другие уникальные экспонаты.</p>
+            </div>
+            <div class="site-card">
+                <h4>Государственный историко-культурный заповедник-музей "Азрет-Султан"</h4>
+                <p>Включает мавзолей Ходжи Ахмеда Ясави и другие памятники Туркестана. Является важным центром изучения средневековой культуры.</p>
+            </div>
+            <div class="site-card">
+                <h4>Институт археологии им. А.Х. Маргулана</h4>
+                <p>Ведущее научное учреждение по изучению древней и средневековой истории Казахстана. Проводит археологические экспедиции по всей стране.</p>
+            </div>
+        </div>
+
+        <div class="conclusion">
+            <h3>Значение древней и средневековой культуры для современного Казахстана</h3>
+            <p>Культурное наследие древности и средневековья составляет фундамент современной казахстанской культуры. Оно свидетельствует о богатой истории региона, вкладе народов Казахстана в развитие мировой цивилизации, преемственности культурных традиций.</p>
+            
+            <div class="key-points">
+                <h3>Основные аспекты культурного наследия:</h3>
+                <ul>
+                    <li><strong>Преемственность традиций</strong> - связь между древними культурами и современной казахской культурой</li>
+                    <li><strong>Многогранность</strong> - сочетание кочевых и оседлых культурных традиций</li>
+                    <li><strong>Взаимовлияние</strong> - синтез различных культурных влияний на Великом Шелковом пути</li>
+                    <li><strong>Научные достижения</strong> - вклад ученых средневековья в развитие мировой науки</li>
+                    <li><strong>Художественные ценности</strong> - уникальные памятники искусства и архитектуры</li>
+                    <li><strong>Духовное наследие</strong> - богатство мифологических, религиозных и философских представлений</li>
+                </ul>
+            </div>
+            
+            <p>Изучение и сохранение древнего и средневекового культурного наследия является важной задачей современного казахстанского общества. Это не только способствует пониманию исторических корней, но и укрепляет национальное самосознание, способствует культурному развитию страны в современном мире.</p>
+        </div>
+    </div>
+
+    <!-- Футер -->
+    <footer>
+        <div class="footer-content">
+            <p>&copy; 2025 Образовательный веб-ресурс "История Казахстана"</p>
+            <p>Разработано в рамках учебного проекта средствами HTML и CSS</p>
+        </div>
+    </footer>
+</body>
+</html>

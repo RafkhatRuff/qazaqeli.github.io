@@ -1,0 +1,754 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Эпоха ранних кочевников</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Dela+Gothic+One&family=Unbounded:wght@200..900&display=swap');
+
+/* Главные */
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Unbounded;
+    background-color: rgb(244, 244, 244);
+}
+
+a {
+    text-decoration: none;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+/* Шапка */
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 1400px;
+    margin: 0 auto;
+    padding: 30px 0;
+}
+
+header .logo {
+    color: rgb(0, 109, 219);
+    text-transform: uppercase;
+    font-size: 20px;
+    font-weight: 500;
+}
+
+/* Бургер */
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown-btn {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 10px 15px;
+    background: #f8f9fa;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.dropdown-btn:hover {
+    background: #e9ecef;
+    border-color: #adb5bd;
+}
+
+.dropdown-btn span {
+    font-weight: 500;
+    font-size: 15px;
+    font-family: Unbounded;
+    color: rgb(0, 109, 219);
+}
+
+.dropdown-content {
+    position: absolute;
+    right: 0;
+    background: white;
+    min-width: 300px;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+    border-radius: 10px;
+    z-index: 1000;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-10px);
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.dropdown-content a {
+    display: block;
+    padding: 12px 16px;
+    text-decoration: none;
+    color: #333;
+    border-bottom: 2px solid #eee;
+    transition: all 0.2s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.dropdown-content a:last-child {
+    border-bottom: none;
+}
+
+.dropdown-content a:hover {
+    background: #f8f9fa;
+    border-radius: 8px;
+}
+
+.dropdown:hover .dropdown-content {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+/* Баннер */
+
+.banner {
+    display: grid;
+    align-items: center;
+    text-align: center;
+    width: 1500px;
+    margin: 0 auto;
+    border-radius: 25px;
+    height: 250px;
+    margin-bottom: 50px;
+    box-shadow: 10px 5px 5px rgba(0,0,0,0.1);
+    background: linear-gradient(rgba(0, 123, 255, 0.5), rgba(0, 109, 219,0.5)), url('./Баннер/Баннер\ 1.jpg') center/cover no-repeat;
+}
+
+.banner-text-1 {
+    font-size: 3.6rem;
+    font-weight: 800;
+    color: rgb(255, 255, 255);
+}
+
+/* Разделы */
+
+.razdel-tema {
+    width: 1400px;
+    margin: 0 auto;
+    margin-top: 50px;
+    margin-bottom: 30px;
+}
+
+.razdel {
+    color: rgb(0, 109, 219);
+    font-size: 2.1rem;
+    font-weight: 500;
+}
+
+        /* Контент */
+        .content-container {
+            max-width: 1500px;
+            margin: 0 auto;
+            padding: 0 20px 50px;
+        }
+
+        .content-section {
+            background: white;
+            border-radius: 20px;
+            padding: 40px;
+            margin-bottom: 40px;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+            border-left: 5px solid rgb(0, 109, 219);
+        }
+
+        .section-title {
+            color: rgb(0, 109, 219);
+            font-size: 2rem;
+            margin-bottom: 30px;
+            display: flex;
+            align-items: center;
+            padding-bottom: 15px;
+            border-bottom: 2px solid #f0f0f0;
+        }
+
+        .section-title::before {
+            content: "▶";
+            margin-right: 15px;
+            color: rgb(0, 109, 219);
+        }
+
+        .subsection-title {
+            color: #2c5282;
+            font-size: 1.6rem;
+            margin: 30px 0 20px;
+            padding-left: 20px;
+            border-left: 4px solid #2c5282;
+        }
+
+        /* Таблицы */
+        .timeline-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 25px 0;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+            border-radius: 10px;
+            overflow: hidden;
+        }
+
+        .timeline-table th {
+            background: linear-gradient(135deg, rgb(0, 109, 219), #2c5282);
+            color: white;
+            padding: 18px;
+            text-align: left;
+            font-weight: 600;
+        }
+
+        .timeline-table td {
+            padding: 18px;
+            border-bottom: 1px solid #eaeaea;
+            vertical-align: top;
+        }
+
+        .timeline-table tr:nth-child(even) {
+            background: #f8fafc;
+        }
+
+        .timeline-table tr:hover {
+            background: #e6f2ff;
+        }
+
+        /* Карточки */
+        .tribes-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            gap: 25px;
+            margin: 25px 0;
+        }
+
+        .tribe-card {
+            background: white;
+            border-radius: 15px;
+            padding: 25px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+            border-top: 5px solid rgb(0, 109, 219);
+            transition: all 0.3s ease;
+        }
+
+        .tribe-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+        }
+
+        .tribe-card h4 {
+            color: rgb(0, 109, 219);
+            margin-bottom: 15px;
+            font-size: 1.4rem;
+        }
+
+        .tribe-card .period {
+            background: #e6f2ff;
+            color: #2c5282;
+            padding: 5px 12px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            display: inline-block;
+            margin-bottom: 15px;
+        }
+
+        /* Особенности */
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px;
+            margin: 20px 0;
+        }
+
+        .feature-card {
+            background: white;
+            border-radius: 12px;
+            padding: 20px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+            border-left: 4px solid rgb(0, 109, 219);
+        }
+
+        .feature-card h5 {
+            color: rgb(0, 109, 219);
+            margin-bottom: 10px;
+            font-size: 1.2rem;
+        }
+
+        /* Ключевые моменты */
+        .key-points {
+            background: linear-gradient(135deg, #f0f7ff, #e6f2ff);
+            border-left: 6px solid rgb(0, 109, 219);
+            padding: 25px;
+            margin: 25px 0;
+            border-radius: 0 15px 15px 0;
+        }
+
+        .key-points h3 {
+            margin-bottom: 15px;
+            color: rgb(0, 109, 219);
+            font-size: 1.4rem;
+        }
+
+        .key-points ul {
+            padding-left: 25px;
+        }
+
+        .key-points li {
+            margin-bottom: 10px;
+        }
+
+        /* Важные заметки */
+        .important-note {
+            background: #fff3cd;
+            border: 2px solid #ffeaa7;
+            border-left: 6px solid #fdcb6e;
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 10px;
+        }
+
+        /* Выводы */
+        .conclusion {
+            background: linear-gradient(135deg, #e8f4ff, #d4e7ff);
+            padding: 30px;
+            border-radius: 15px;
+            margin: 35px 0;
+            border: 2px solid #c2e0ff;
+        }
+
+        .conclusion h3 {
+            color: rgb(0, 109, 219);
+            margin-bottom: 20px;
+            font-size: 1.6rem;
+            text-align: center;
+        }
+
+        /* Футер */
+
+footer {
+    width: 1300px;
+    margin: 0 auto;
+    border-top: 3px solid #3498db;
+    border-left: 3px solid #3498db;
+    border-right: 3px solid #3498db;
+    border-bottom: none;
+    border-radius: 15px 15px 0 0;
+    background-color: rgb(244, 244, 244);
+    text-align: center;
+    padding: 25px 25px;
+    margin-top: 3rem;
+}
+.footer-content {
+    color:rgb(69, 69, 69);
+}  
+    </style>
+</head>
+<body>
+    <!-- Шапка -->
+    <header>
+        <a href="./Главная.html"><span class="logo">QAZAQ ELI</span></a>
+        <div class="dropdown">
+            <button class="dropdown-btn">
+                <span>Навигация</span>
+            </button>
+            <div class="dropdown-content">
+                <a href="#saki">Саки</a>
+                <a href="#sarmaty">Сарматы</a>
+                <a href="#uysuni">Уйсуни</a>
+                <a href="#kanguy">Кангюй</a>
+                <a href="#gunny">Гунны</a>
+                <a href="#culture">Культура</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Баннер -->
+    <div class="banner">
+        <span class="banner-text-1">Эпоха ранних кочевников</span>
+    </div>
+
+    <div class="content-container">
+        <!-- Введение -->
+        <div class="content-section">
+            <h2 class="section-title">Кочевые цивилизации древнего Казахстана</h2>
+            <p>Согласно учебникам истории Казахстана, в I тысячелетии до н.э. на территории Казахстана сложились мощные кочевые объединения, которые оказали значительное влияние на историю Евразии. Эти племена создали уникальную кочевую цивилизацию с развитой культурой, военным искусством и социальной организацией.</p>
+            
+            <div class="key-points">
+                <h3>Хронологические рамки эпохи:</h3>
+                <ul>
+                    <li><strong>VIII-VII вв. до н.э.</strong> - формирование первых кочевых союзов</li>
+                    <li><strong>VI-IV вв. до н.э.</strong> - расцвет кочевых цивилизаций</li>
+                    <li><strong>III в. до н.э. - IV в. н.э.</strong> - великое переселение народов</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Саки -->
+        <div class="razdel-tema" id="saki">
+            <span class="razdel">Саки (VIII-III вв. до н.э.)</span>
+        </div>
+
+        <div class="content-section">
+            <h2 class="section-title">Саки - Древнейшие кочевники Казахстана</h2>
+            
+            <div class="key-points">
+                <h3>Общая характеристика:</h3>
+                <ul>
+                    <li><strong>Саки</strong> - общее название ираноязычных кочевых племен</li>
+                    <li>В античных источниках известны как "скифы"</li>
+                    <li>Занимали территорию от Каспийского моря до Алтая</li>
+                    <li>Период существования: <strong>VIII-III века до н.э.</strong></li>
+                </ul>
+            </div>
+
+            <h3 class="subsection-title">Основные группы саков</h3>
+            <div class="tribes-grid">
+                <div class="tribe-card">
+                    <div class="period">VIII-III вв. до н.э.</div>
+                    <h4>Саки-тиграхауда</h4>
+                    <p><strong>Перевод:</strong> "Носящие остроконечные шапки"<br>
+                    <strong>Территория:</strong> Семиречье, Тянь-Шань<br>
+                    <strong>Столица:</strong> Иссик<br>
+                    <strong>Известные правители:</strong> Ширак, Скунха</p>
+                </div>
+                
+                <div class="tribe-card">
+                    <div class="period">VIII-III вв. до н.э.</div>
+                    <h4>Саки-хаомаварга</h4>
+                    <p><strong>Перевод:</strong> "Изготавливающие хаому"<br>
+                    <strong>Территория:</strong> Средняя Сырдарья<br>
+                    <strong>Хозяйство:</strong> Земледелие и скотоводство<br>
+                    <strong>Культура:</strong> Городская цивилизация</p>
+                </div>
+            </div>
+
+            <h3 class="subsection-title">Хозяйство и экономика</h3>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <h5>Кочевое скотоводство</h5>
+                    <p>Разведение лошадей, овец, верблюдов. Сезонные перекочевки.</p>
+                </div>
+                <div class="feature-card">
+                    <h5>Земледелие</h5>
+                    <p>В оазисах и речных долинах. Выращивание проса, ячменя.</p>
+                </div>
+                <div class="feature-card">
+                    <h5>Ремесла</h5>
+                    <p>Металлургия, ювелирное дело, обработка кожи и кости.</p>
+                </div>
+            </div>
+
+            <div class="important-note">
+                <strong>Археологическая находка:</strong> "Золотой человек" из Иссыкского кургана (V-IV вв. до н.э.) - погребение знатного сакского воина с более чем 4000 золотых изделий.
+            </div>
+        </div>
+
+        <!-- Сарматы -->
+        <div class="razdel-tema" id="sarmaty">
+            <span class="razdel">Сарматы (VI в. до н.э. - IV в. н.э.)</span>
+        </div>
+
+        <div class="content-section">
+            <h2 class="section-title">Сарматы - Воины Западного Казахстана</h2>
+            
+            <div class="key-points">
+                <h3>Историческая справка:</h3>
+                <ul>
+                    <li><strong>Сарматы</strong> - кочевые ираноязычные племена</li>
+                    <li>Расселились в степях от Тобола до Дуная</li>
+                    <li>Период: <strong>VI в. до н.э. - IV в. н.э.</strong></li>
+                    <li>Известны в римских источниках как опасные противники</li>
+                </ul>
+            </div>
+
+            <h3 class="subsection-title">Основные племена</h3>
+            <div class="tribes-grid">
+                <div class="tribe-card">
+                    <div class="period">VI-IV вв. до н.э.</div>
+                    <h4>Савроматы</h4>
+                    <p><strong>Территория:</strong> Западный Казахстан<br>
+                    <strong>Особенности:</strong> Предки сарматов<br>
+                    <strong>Культура:</strong> Курганные погребения</p>
+                </div>
+                
+                <div class="tribe-card">
+                    <div class="period">IV-II вв. до н.э.</div>
+                    <h4>Аорсы</h4>
+                    <p><strong>Территория:</strong> Приуралье, Поволжье<br>
+                    <strong>Хозяйство:</strong> Кочевое скотоводство<br>
+                    <strong>Богатство:</strong> Самые богатые среди сарматов</p>
+                </div>
+
+                <div class="tribe-card">
+                    <div class="period">I-IV вв. н.э.</div>
+                    <h4>Аланы</h4>
+                    <p><strong>Территория:</strong> От Кавказа до Дуная<br>
+                    <strong>Военное дело:</strong> Тяжелая конница<br>
+                    <strong>Наследие:</strong> Предки осетин</p>
+                </div>
+            </div>
+
+            <div class="important-note">
+                <strong>Особенность сарматского общества:</strong> Высокое положение женщин. Сарматские женщины были воительницами, участвовали в боевых действиях и могли занимать высокое социальное положение.
+            </div>
+        </div>
+
+        <!-- Уйсуни -->
+        <div class="razdel-tema" id="uysuni">
+            <span class="razdel">Уйсуни (III в. до н.э. - IV в. н.э.)</span>
+        </div>
+
+        <div class="content-section">
+            <h2 class="section-title">Уйсуни - Государство в Семиречье</h2>
+            
+            <div class="key-points">
+                <h3>Общие сведения:</h3>
+                <ul>
+                    <li><strong>Уйсуни</strong> - кочевой народ тюркского происхождения</li>
+                    <li>Создали государство в <strong>Семиречье</strong></li>
+                    <li>Период: <strong>III в. до н.э. - IV в. н.э.</strong></li>
+                    <li>Упоминаются в китайских хрониках как "усунь"</li>
+                </ul>
+            </div>
+
+            <h3 class="subsection-title">Политическая организация</h3>
+            <table class="timeline-table">
+                <thead>
+                    <tr>
+                        <th>Показатель</th>
+                        <th>Характеристика</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>Глава государства</strong></td>
+                        <td>Гуньмо (верховный правитель)</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Столица</strong></td>
+                        <td>Чигу (город "Красной Долины")</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Чиновничий аппарат</strong></td>
+                        <td>16 высших чинов</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Военная организация</strong></td>
+                        <td>188 800 всадников</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Население</strong></td>
+                        <td>630 000 человек</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <h3 class="subsection-title">Экономика</h3>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <h5>Кочевое скотоводство</h5>
+                    <p>Разведение лошадей, овец, крупного рогатого скота. Сезонные перекочевки.</p>
+                </div>
+                <div class="feature-card">
+                    <h5>Земледелие</h5>
+                    <p>Орошаемое земледелие в долинах рек. Выращивание проса, ячменя, пшеницы.</p>
+                </div>
+                <div class="feature-card">
+                    <h5>Торговля</h5>
+                    <p>Участие в Великом шелковом пути. Торговля с Китаем, Средней Азией.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Кангюй -->
+        <div class="razdel-tema" id="kanguy">
+            <span class="razdel">Кангюй (III в. до н.э. - V в. н.э.)</span>
+        </div>
+
+        <div class="content-section">
+            <h2 class="section-title">Кангюй - Государство в долине Сырдарьи</h2>
+            
+            <div class="key-points">
+                <h3>Основные сведения:</h3>
+                <ul>
+                    <li><strong>Кангюй</strong> (Канлы) - государство в Средней Азии</li>
+                    <li>Существовало в <strong>III в. до н.э. - V в. н.э.</strong></li>
+                    <li>Занимало территорию в долине Сырдарьи</li>
+                    <li>Упоминается в китайских хрониках как "Канцзюй"</li>
+                </ul>
+            </div>
+
+            <h3 class="subsection-title">Политическое устройство</h3>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <h5>5 владений-уделов</h5>
+                    <p>Федеративное устройство государства с пятью административными единицами.</p>
+                </div>
+                <div class="feature-card">
+                    <h5>Столица</h5>
+                    <p>Битянь (точное местоположение не установлено).</p>
+                </div>
+                <div class="feature-card">
+                    <h5>Население и войско</h5>
+                    <p>600 000 человек населения, 120 000 воинов.</p>
+                </div>
+            </div>
+
+            <h3 class="subsection-title">Внешняя политика</h3>
+            <table class="timeline-table">
+                <thead>
+                    <tr>
+                        <th>Государство</th>
+                        <th>Характер отношений</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>Китай</strong></td>
+                        <td>Дипломатические отношения, обмен посольствами</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Гунны</strong></td>
+                        <td>Союзнические отношения против уйсуней</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Уйсуни</strong></td>
+                        <td>Борьба за влияние в Центральной Азии</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Кушанское царство</strong></td>
+                        <td>Торговые и культурные связи</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <!-- Гунны -->
+        <div class="razdel-tema" id="gunny">
+            <span class="razdel">Гунны (III в. до н.э. - IV в. н.э.)</span>
+        </div>
+
+        <div class="content-section">
+            <h2 class="section-title">Гунны - Создатели первой кочевой империи</h2>
+            
+            <div class="key-points">
+                <h3>Историческое значение:</h3>
+                <ul>
+                    <li><strong>Гунны</strong> (хунну) - создатели первой кочевой империи</li>
+                    <li>Объединили кочевые племена от Байкала до Тянь-Шаня</li>
+                    <li>Период: <strong>III в. до н.э. - IV в. н.э.</strong></li>
+                    <li>Инициаторы Великого переселения народов</li>
+                </ul>
+            </div>
+
+            <h3 class="subsection-title">Политическая организация</h3>
+            <div class="tribes-grid">
+                <div class="tribe-card">
+                    <div class="period">III-I вв. до н.э.</div>
+                    <h4>Империя Хунну</h4>
+                    <p><strong>Основатель:</strong> Модэ-шаньюй (209-174 гг. до н.э.)<br>
+                    <strong>Территория:</strong> От Байкала до Тянь-Шаня<br>
+                    <strong>Армия:</strong> 300-400 тысяч конных лучников<br>
+                    <strong>Противник:</strong> Империя Хань</p>
+                </div>
+                
+                <div class="tribe-card">
+                    <div class="period">I-IV вв. н.э.</div>
+                    <h4>Западные гунны</h4>
+                    <p><strong>Миграция:</strong> Движение на запад<br>
+                    <strong>Влияние:</strong> Великое переселение народов<br>
+                    <strong>Наследие:</strong> Гуннские традиции в культуре тюрков<br>
+                    <strong>Значение:</strong> Изменение этнической карты Евразии</p>
+                </div>
+            </div>
+
+            <h3 class="subsection-title">Военная организация</h3>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <h5>Тактика боя</h5>
+                    <p>Молниеносные атаки, ложные отступления, засады. Использование конных лучников.</p>
+                </div>
+                <div class="feature-card">
+                    <h5>Вооружение</h5>
+                    <p>Сложносоставные луки, длинные мечи, копья. Защитные доспехи из кожи и металла.</p>
+                </div>
+                <div class="feature-card">
+                    <h5>Организация</h5>
+                    <p>Десятичная система: тумены (10 000), тысячи, сотни, десятки.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Культура -->
+        <div class="razdel-tema" id="culture">
+            <span class="razdel">Культура ранних кочевников</span>
+        </div>
+
+        <div class="content-section">
+            <h2 class="section-title">Духовная культура и искусство</h2>
+            
+            <h3 class="subsection-title">"Звериный стиль"</h3>
+            <div class="key-points">
+                <h3>Характерные черты:</h3>
+                <ul>
+                    <li>Изображения животных в динамичных, стилизованных позах</li>
+                    <li>Основные мотивы: хищники, олени, горные козлы, грифоны</li>
+                    <li>Символизировал силу, скорость и связь с природой</li>
+                    <li>Использовался в украшении оружия, конской сбруи, одежды</li>
+                </ul>
+            </div>
+
+            <h3 class="subsection-title">Погребальная обрядность</h3>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <h5>Курганы</h5>
+                    <p>"Дома мертвых" - сложные погребальные сооружения с каменными оградами и насыпями.</p>
+                </div>
+                <div class="feature-card">
+                    <h5>Инвентарь</h5>
+                    <p>Захоронения с оружием, украшениями, предметами быта, жертвенными животными.</p>
+                </div>
+                <div class="feature-card">
+                    <h5>Верования</h5>
+                    <p>Вера в загробную жизнь, культ предков, почитание героев и вождей.</p>
+                </div>
+            </div>
+
+            <div class="conclusion">
+                <h3>Историческое значение эпохи ранних кочевников</h3>
+                <p>Кочевые народы древнего Казахстана создали уникальную цивилизацию, оказавшую profound влияние на историю Евразии. Их достижения в военном искусстве, социальной организации и культуре стали важной частью мирового исторического наследия и заложили основы для последующего развития тюркских государств.</p>
+                
+                <div class="key-points">
+                    <h3>Основные достижения:</h3>
+                    <ul>
+                        <li>Создание эффективной модели кочевого хозяйства</li>
+                        <li>Разработка передовой военной тактики и стратегии</li>
+                        <li>Формирование уникального художественного стиля</li>
+                        <li>Установление культурных связей между Востоком и Западом</li>
+                        <li>Заложение основ тюркской государственности</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Футер -->
+    <footer>
+        <div class="footer-content">
+            <p>&copy; 2025 Образовательный веб-ресурс "История Казахстана"</p>
+            <p>Разработано в рамках учебного проекта средствами HTML и CSS</p>
+        </div>
+    </footer>
+</body>
+</html>

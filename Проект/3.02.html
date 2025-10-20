@@ -1,0 +1,633 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Колонизация и национально-освободительная борьба</title>
+    <style>
+@import url('https://fonts.googleapis.com/css2?family=Dela+Gothic+One&family=Unbounded:wght@200..900&display=swap');
+
+/* Главные */
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Unbounded;
+    background-color: rgb(244, 244, 244);
+}
+
+a {
+    text-decoration: none;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+/* Шапка */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 1400px;
+    margin: 0 auto;
+    padding: 30px 0;
+}
+
+header .logo {
+    color: rgb(0, 109, 219);
+    text-transform: uppercase;
+    font-size: 20px;
+    font-weight: 500;
+}
+
+/* Бургер */
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown-btn {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 10px 15px;
+    background: #f8f9fa;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.dropdown-btn:hover {
+    background: #e9ecef;
+    border-color: #adb5bd;
+}
+
+.dropdown-btn span {
+    font-weight: 500;
+    font-size: 15px;
+    font-family: Unbounded;
+    color: rgb(0, 109, 219);
+}
+
+.dropdown-content {
+    position: absolute;
+    right: 0;
+    background: white;
+    min-width: 300px;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+    border-radius: 10px;
+    z-index: 1000;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-10px);
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.dropdown-content a {
+    display: block;
+    padding: 12px 16px;
+    text-decoration: none;
+    color: #333;
+    border-bottom: 2px solid #eee;
+    transition: all 0.2s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.dropdown-content a:last-child {
+    border-bottom: none;
+}
+
+.dropdown-content a:hover {
+    background: #f8f9fa;
+    border-radius: 8px;
+}
+
+.dropdown:hover .dropdown-content {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+/* Баннер */
+.banner {
+    display: grid;
+    align-items: center;
+    text-align: center;
+    width: 1500px;
+    margin: 0 auto;
+    border-radius: 25px;
+    height: 250px;
+    margin-bottom: 50px;
+    box-shadow: 10px 5px 5px rgba(0,0,0,0.1);
+    background: linear-gradient(rgba(0, 123, 255, 0.5), rgba(0, 109, 219,0.5)), url('./Баннер/Баннер\ 1.jpg') center/cover no-repeat;
+}
+
+.banner-text-1 {
+    font-size: 3.6rem;
+    font-weight: 800;
+    color: rgb(255, 255, 255);
+}
+
+/* Разделы */
+.razdel-tema {
+    width: 1400px;
+    margin: 0 auto;
+    margin-top: 50px;
+    margin-bottom: 30px;
+}
+
+.razdel {
+    color: rgb(0, 109, 219);
+    font-size: 2.1rem;
+    font-weight: 500;
+}
+
+/* Контент */
+.content-section {
+    width: 1400px;
+    background: white;
+    margin: 0 auto;
+    border-radius: 20px;
+    padding: 35px;
+    margin-bottom: 35px;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.08);
+    border-left: 5px solid rgb(0, 109, 219);
+}
+
+.section-title {
+    color: rgb(0, 109, 219);
+    font-size: 2rem;
+    margin-bottom: 25px;
+    display: flex;
+    align-items: center;
+    padding-bottom: 10px;
+    border-bottom: 2px solid #f0f0f0;
+}
+
+.section-title::before {
+    content: "▶";
+    display: inline-block;
+    margin-right: 15px;
+    color: rgb(0, 109, 219);
+    font-size: 1.5rem;
+}
+
+.subsection-title {
+    color: #2c5282;
+    font-size: 1.5rem;
+    margin: 25px 0 15px;
+    padding-left: 20px;
+    border-left: 4px solid #2c5282;
+}
+
+.key-points {
+    background: linear-gradient(135deg, #f0f7ff, #e6f2ff);
+    border-left: 6px solid rgb(0, 109, 219);
+    padding: 25px;
+    margin: 25px 0;
+    border-radius: 0 15px 15px 0;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+}
+
+.key-points h3 {
+    margin-bottom: 15px;
+    color: rgb(0, 109, 219);
+    font-size: 1.4rem;
+}
+
+.key-points ul {
+    padding-left: 25px;
+}
+
+.key-points li {
+    margin-bottom: 10px;
+    position: relative;
+}
+
+.key-points li::before {
+    content: "•";
+    color: rgb(0, 109, 219);
+    font-weight: bold;
+    display: inline-block;
+    width: 1em;
+    margin-left: -1em;
+}
+
+.archaeological-sites {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+    gap: 25px;
+    margin: 25px 0;
+}
+
+.site-card {
+    background: white;
+    border-radius: 15px;
+    padding: 25px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+    border-top: 5px solid rgb(0, 109, 219);
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.site-card::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: linear-gradient(90deg, rgb(0, 109, 219), #2c5282);
+}
+
+.site-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 12px 30px rgba(0,0,0,0.15);
+}
+
+.site-card h4 {
+    color: rgb(0, 109, 219);
+    margin-bottom: 12px;
+    font-size: 1.3rem;
+}
+
+.site-card .region {
+    background: #e6f2ff;
+    color: #2c5282;
+    padding: 5px 12px;
+    border-radius: 20px;
+    font-size: 0.9rem;
+    font-weight: 600;
+    display: inline-block;
+    margin-bottom: 15px;
+}
+
+.conclusion {
+    background: linear-gradient(135deg, #e8f4ff, #d4e7ff);
+    padding: 30px;
+    border-radius: 15px;
+    margin: 35px 0;
+    border: 2px solid #c2e0ff;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+}
+
+.conclusion h3 {
+    color: rgb(0, 109, 219);
+    margin-bottom: 20px;
+    font-size: 1.6rem;
+    text-align: center;
+}
+
+.important-note {
+    background: #fff3cd;
+    border: 2px solid #ffeaa7;
+    border-left: 6px solid #fdcb6e;
+    padding: 20px;
+    margin: 20px 0;
+    border-radius: 10px;
+}
+
+.timeline-event {
+    background: #f8fafc;
+    border-left: 4px solid #2c5282;
+    padding: 20px;
+    margin: 15px 0;
+    border-radius: 0 8px 8px 0;
+}
+
+.event-year {
+    font-weight: bold;
+    color: #2c5282;
+    font-size: 1.1rem;
+    margin-bottom: 8px;
+}
+
+.leader-card {
+    background: linear-gradient(135deg, #ffffff, #f8fafc);
+    border-radius: 12px;
+    padding: 20px;
+    margin: 15px 0;
+    border: 2px solid #e6f2ff;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+}
+
+.leader-name {
+    color: #2c5282;
+    font-size: 1.3rem;
+    font-weight: 600;
+    margin-bottom: 10px;
+}
+
+/* Футер */
+footer {
+    width: 1300px;
+    margin: 0 auto;
+    border-top: 3px solid #3498db;
+    border-left: 3px solid #3498db;
+    border-right: 3px solid #3498db;
+    border-bottom: none;
+    border-radius: 15px 15px 0 0;
+    background-color: rgb(244, 244, 244);
+    text-align: center;
+    padding: 25px 25px;
+    margin-top: 3rem;
+}
+.footer-content {
+    color:rgb(69, 69, 69);
+}
+    </style>
+</head>
+<body>
+    <!-- Шапка -->
+    <header>
+        <a href="./Главная.html"><span class="logo">QAZAQ ELI</span></a>
+        <div class="dropdown">
+            <button class="dropdown-btn">
+                <span>Навигация</span>
+            </button>
+            <div class="dropdown-content">
+                <a href="#raz1">Колониальная политика</a>
+                <a href="#raz2">Восстание Кенесары</a>
+                <a href="#raz3">Другие восстания</a>
+                <a href="#raz4">Итоги борьбы</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Баннер 1 -->
+    <div class="banner">
+        <span class="banner-text-1">Колонизация и национально-освободительная борьба</span>
+    </div>
+
+    <!-- Введение -->
+    <div class="content-section" id="introduction">
+        <h2 class="section-title">XIX век: Противостояние колонизации</h2>
+        <p>XIX век стал периодом интенсивной колонизации казахских земель Российской империей и одновременно временем мощного национально-освободительного движения казахского народа. Этот сложный исторический этап характеризовался борьбой за сохранение традиционного уклада жизни, земель и политической самостоятельности.</p>
+        
+        <div class="key-points">
+            <h3>Основные характеристики периода:</h3>
+            <ul>
+                <li>Постепенное упразднение ханской власти и традиционных институтов</li>
+                <li>Массовое изъятие земель для казачьих станиц и переселенцев</li>
+                <li>Административные реформы, направленные на интеграцию в империю</li>
+                <li>Мощные народные восстания против колониальной политики</li>
+                <li>Формирование национальной интеллигенции и новых форм сопротивления</li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- Колониальная политика -->
+    <div class="razdel-tema" id="raz1">
+        <span class="razdel">Колониальная политика Российской империи</span>
+    </div>
+
+    <div class="content-section">
+        <h2 class="section-title">Системное закрепление колониального господства</h2>
+        <p>В течение XIX века Российская империя проводила последовательную политику по интеграции казахских земель в состав империи, что сопровождалось коренными изменениями в социально-экономической и политической жизни казахского общества.</p>
+        
+        <h3 class="subsection-title">Ключевые административные реформы</h3>
+        
+        <div class="timeline-event">
+            <div class="event-year">1822 год - Устав о сибирских киргизах</div>
+            <p>Разработан М.М. Сперанским. Упразднил ханскую власть в Среднем жузе, разделил территорию на округа, волости и аулы. Ввел систему выборов старшин, подконтрольных русской администрации.</p>
+        </div>
+
+        <div class="timeline-event">
+            <div class="event-year">1824 год - Устав об оренбургских киргизах</div>
+            <p>Ликвидировал ханскую власть в Младшем жузе. Создал аналогичную систему управления с назначением султанов-правителей, подчиняющихся Оренбургской пограничной комиссии.</p>
+        </div>
+
+        <div class="timeline-event">
+            <div class="event-year">1867-1868 годы - "Временное положение"</div>
+            <p>Радикальная реформа, разделившая казахские земли на три области: Уральскую, Тургайскую, Семипалатинскую и Семиреченскую. Ввела российскую систему судопроизводства и налогообложения.</p>
+        </div>
+
+        <div class="timeline-event">
+            <div class="event-year">1891 год - Степное положение</div>
+            <p>Окончательно закрепило административное устройство казахских земель по российскому образцу, завершив процесс интеграции в состав империи.</p>
+        </div>
+
+        <h3 class="subsection-title">Экономическая колонизация</h3>
+        <div class="archaeological-sites">
+            <div class="site-card">
+                <h4>Земельная политика</h4>
+                <p>• Изъятие лучших пастбищных земель<br>
+                • Создание казачьих станиц и военных укреплений<br>
+                • Переселение крестьян из центральных губерний<br>
+                • Ограничение кочевых маршрутов</p>
+            </div>
+            <div class="site-card">
+                <h4>Налоговая система</h4>
+                <p>• Введение кибиточного сбора<br>
+                • Земские сборы и повинности<br>
+                • Таможенные пошлины<br>
+                • Рекрутская повинность</p>
+            </div>
+            <div class="site-card">
+                <h4>Торговая эксплуатация</h4>
+                <p>• Монополизация торговли скотом<br>
+                • Заниженные цены на казахские товары<br>
+                • Ростовщичество и долговая зависимость<br>
+                • Контроль над ярмарками</p>
+            </div>
+        </div>
+
+        <div class="important-note">
+            <strong>Последствия колонизации:</strong> К концу XIX века казахи потеряли около 40 миллионов десятин лучших земель, были разрушены традиционные кочевые маршруты, начался процесс обнищания значительной части населения и разрушения традиционного уклада жизни.
+        </div>
+    </div>
+
+    <!-- Восстание Кенесары -->
+    <div class="razdel-tema" id="raz2">
+        <span class="razdel">Восстание Кенесары Касымова (1837-1847)</span>
+    </div>
+
+    <div class="content-section">
+        <h2 class="section-title">Самое масштабное национально-освободительное движение</h2>
+        <p>Восстание под руководством Кенесары Касымова стало крупнейшим и наиболее организованным выступлением казахского народа против колониальной политики Российской империи. Оно охватило все три жуза и продолжалось整整十年.</p>
+        
+        <div class="leader-card">
+            <div class="leader-name">Кенесары Касымов (1802-1847)</div>
+            <p>Внук Абылай-хана, потомок Чингисхана. Выдающийся полководец, дипломат и государственный деятель. Ставил целью восстановление целостности Казахского ханства в границах эпохи Абылай-хана и ликвидацию колониального господства.</p>
+        </div>
+
+        <h3 class="subsection-title">Основные этапы восстания</h3>
+        
+        <div class="timeline-event">
+            <div class="event-year">1837-1840 годы - Начальный этап</div>
+            <p>Формирование повстанческой армии в районе Тургая. Первые успешные бои против царских отрядов. Установление контроля над территориями Среднего жуза. Дипломатические переговоры с российской администрацией.</p>
+        </div>
+
+        <div class="timeline-event">
+            <div class="event-year">1841-1844 годы - Период расцвета</div>
+            <p>Провозглашение Кенесары ханом всего Казахстана. Создание централизованного государства с столицей в урочище Уш-Арал. Введение налоговой системы, судопроизводства, организации регулярной армии. Расширение влияния на все жузы.</p>
+        </div>
+
+        <div class="timeline-event">
+            <div class="event-year">1845-1847 годы - Завершающий этап</div>
+            <p>Вынужденный отход в Семиречье под давлением превосходящих сил противника. Конфликт с кыргызскими манапами. Героическая гибель Кенесары в бою с кыргызскими отрядами при поддержке русских войск.</p>
+        </div>
+
+        <h3 class="subsection-title">Программа и требования восставших</h3>
+        <div class="key-points">
+            <ul>
+                <li><strong>Восстановление ханской власти</strong> - ликвидация окружной системы управления</li>
+                <li><strong>Возврат отнятых земель</strong> - прекращение колонизации казахских территорий</li>
+                <li><strong>Отмена налогового гнета</strong> - упразднение кибиточной подати и других сборов</li>
+                <li><strong>Свобода торговли</strong> - ликвидация ограничений и монополий</li>
+                <li><strong>Прекращение строительства укреплений</strong> - демонтаж крепостей на казахских землях</li>
+                <li><strong>Освобождение заложников</strong> - возвращение аманатов (заложников)</li>
+            </ul>
+        </div>
+
+        <div class="important-note">
+            <strong>Историческое значение:</strong> Восстание Кенесары стало кульминацией национально-освободительной борьбы казахского народа в XIX веке. Несмотря на поражение, оно показало силу народного сопротивления и стало важным этапом в формировании национального самосознания.
+        </div>
+    </div>
+
+    <!-- Другие восстания -->
+    <div class="razdel-tema" id="raz3">
+        <span class="razdel">Другие народные восстания</span>
+    </div>
+
+    <div class="content-section">
+        <h2 class="section-title">Волна сопротивления колониальной политике</h2>
+        <p>Помимо восстания Кенесары, XIX век был отмечен многочисленными выступлениями казахского народа против колониального гнета, каждое из которых имело свои особенности и значение.</p>
+        
+        <h3 class="subsection-title">Крупнейшие восстания XIX века</h3>
+        
+        <div class="archaeological-sites">
+            <div class="site-card">
+                <div class="region">Младший жуз</div>
+                <h4>Восстание Исатая Тайманова<br>и Махамбета Утемисова</h4>
+                <p><strong>Годы:</strong> 1836-1838<br>
+                <strong>Причина:</strong> Произвол хана Жангира и царской администрации<br>
+                <strong>Ход:</strong> Осада Ханской ставки, битва у Тастюбе<br>
+                <strong>Итог:</strong> Поражение, гибель лидеров</p>
+            </div>
+            <div class="site-card">
+                <div class="region">Старший жуз</div>
+                <h4>Восстание Жанкожи Нурмухамедова</h4>
+                <p><strong>Годы:</strong> 1856-1857<br>
+                <strong>Причина:</strong> Строительство укреплений на сырдарьинских землях<br>
+                <strong>Ход:</strong> Нападения на казачьи отряды, осада укреплений<br>
+                <strong>Итог:</strong> Подавление превосходящими силами</p>
+            </div>
+            <div class="site-card">
+                <div class="region">Уральская область</div>
+                <h4>Восстание казахов<br>в Уральской области</h4>
+                <p><strong>Годы:</strong> 1868-1869<br>
+                <strong>Причина:</strong> Введение "Временного положения" 1867-1868 гг.<br>
+                <strong>Ход:</strong> Массовые выступления, нападения на администрацию<br>
+                <strong>Итог:</strong> Жестоко подавлено войсками</p>
+            </div>
+        </div>
+
+        <h3 class="subsection-title">Формы и методы сопротивления</h3>
+        <div class="key-points">
+            <ul>
+                <li><strong>Вооруженная борьба</strong> - партизанские действия, нападения на военные отряды и укрепления</li>
+                <li><strong>Массовые протесты</strong> - подача коллективных жалоб и петиций царским властям</li>
+                <li><strong>Экономическое сопротивление</strong> - отказ платить налоги, бойкот переселенческих участков</li>
+                <li><strong>Дипломатические усилия</strong> - переговоры с российской администрацией, посольства в соседние страны</li>
+                <li><strong>Идеологическая борьба</strong> - распространение произведений акынов, сохранение исторической памяти</li>
+            </ul>
+        </div>
+
+        <div class="leader-card">
+            <div class="leader-name">Махамбет Утемисов (1803-1846)</div>
+            <p>Выдающийся акын, поэт и один из руководителей восстания в Букеевской орде. Его стихи и песни стали мощным идеологическим оружием в борьбе против колониального гнета. Погиб в неравном бою с царскими карателями.</p>
+        </div>
+    </div>
+
+    <!-- Итоги борьбы -->
+    <div class="razdel-tema" id="raz4">
+        <span class="razdel">Итоги и значение национально-освободительной борьбы</span>
+    </div>
+
+    <div class="content-section">
+        <h2 class="section-title">Исторические уроки сопротивления</h2>
+        <p>Несмотря на поражение народных восстаний, национально-освободительная борьба казахского народа в XIX веке имела огромное историческое значение и оказала profound влияние на дальнейшее развитие национального самосознания.</p>
+        
+        <h3 class="subsection-title">Причины поражения восстаний</h3>
+        <div class="key-points">
+            <ul>
+                <li><strong>Военно-техническое превосходство</strong> российской армии</li>
+                <li><strong>Разобщенность казахских родов</strong> и отсутствие единства среди знати</li>
+                <li><strong>Предательство части султанов</strong> и биев, перешедших на сторону колонизаторов</li>
+                <li><strong>Экономическая истощенность</strong> после многолетних военных действий</li>
+                <li><strong>Дипломатическая изоляция</strong> и отсутствие внешней поддержки</li>
+                <li><strong>Преимущества централизованного государства</strong> перед традиционной кочевой организацией</li>
+            </ul>
+        </div>
+
+        <h3 class="subsection-title">Историческое значение освободительной борьбы</h3>
+        
+        <div class="archaeological-sites">
+            <div class="site-card">
+                <h4>Политическое значение</h4>
+                <p>• Доказала жизнеспособность идеи казахской государственности<br>
+                • Способствовала консолидации казахского народа<br>
+                • Стала школой политической борьбы для будущих поколений<br>
+                • Сохранила преемственность национальной политической традиции</p>
+            </div>
+            <div class="site-card">
+                <h4>Культурное наследие</h4>
+                <p>• Обогатила национальную литературу и фольклор<br>
+                • Создала галерею национальных героев и батыров<br>
+                • Укрепила историческую память народа<br>
+                • Развила традиции устного народного творчества</p>
+            </div>
+            <div class="site-card">
+                <h4>Исторические уроки</h4>
+                <p>• Показала необходимость национального единства<br>
+                • Продемонстрировала важность модернизации общества<br>
+                • Выявила необходимость международной поддержки<br>
+                • Указала на важность адаптации к новым историческим условиям</p>
+            </div>
+        </div>
+
+        <div class="important-note">
+            <strong>Преемственность борьбы:</strong> Национально-освободительное движение XIX века стало важным этапом в истории казахского народа, заложив основы для последующей борьбы за независимость в XX веке. Идеи и опыт этой борьбы были унаследованы казахской интеллигенцией начала XX века.
+        </div>
+    </div>
+
+    <!-- Заключение -->
+    <div class="content-section" id="conclusion">
+        <h2 class="section-title">Колониальный период: утрата и сохранение</h2>
+        
+        <div class="conclusion">
+            <h3>Между колониализмом и сопротивлением</h3>
+            <p>XIX век стал для казахского народа временем глубоких исторических испытаний. С одной стороны, это был период потери политической независимости и коренных изменений традиционного уклада жизни. С другой стороны, именно в этот период сформировалось modern казахское национальное самосознание, окрепли идеи единства и государственности.</p>
+            
+            <div class="key-points">
+                <h3>Основные исторические итоги колониального периода:</h3>
+                <ul>
+                    <li><strong>Утрата государственности</strong> - ликвидация традиционных институтов власти</li>
+                    <li><strong>Территориальные потери</strong> - массовое изъятие земель и ограничение кочевания</li>
+                    <li><strong>Экономическая трансформация</strong> - разрушение традиционного хозяйства</li>
+                    <li><strong>Формирование национального единства</strong> - преодоление жузовой разобщенности</li>
+                    <li><strong>Зарождение modern интеллигенции</strong> - появление новых форм культурного и политического сопротивления</li>
+                    <li><strong>Сохранение культурной идентичности</strong> - несмотря на все испытания, народ сохранил язык, традиции и историческую память</li>
+                </ul>
+            </div>
+            
+            <p>Национально-освободительная борьба XIX века, несмотря на военное поражение, стала важнейшим этапом в истории казахского народа, закалив национальный характер и подготовив почву для будущего возрождения государственности.</p>
+        </div>
+    </div>
+
+    <!-- Футер -->
+    <footer>
+        <div class="footer-content">
+            <p>&copy; 2025 Образовательный веб-ресурс "История Казахстана"</p>
+            <p>Разработано в рамках учебного проекта средствами HTML и CSS</p>
+        </div>
+    </footer>
+</body>
+</html>

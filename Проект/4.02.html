@@ -1,0 +1,771 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Революция и Гражданская война в Казахстане</title>
+    <style>
+@import url('https://fonts.googleapis.com/css2?family=Dela+Gothic+One&family=Unbounded:wght@200..900&display=swap');
+
+/* Главные */
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Unbounded;
+    background-color: rgb(244, 244, 244);
+}
+
+a {
+    text-decoration: none;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+/* Шапка */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 1400px;
+    margin: 0 auto;
+    padding: 30px 0;
+}
+
+header .logo {
+    color: rgb(0, 109, 219);
+    text-transform: uppercase;
+    font-size: 20px;
+    font-weight: 500;
+}
+
+/* Бургер */
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown-btn {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 10px 15px;
+    background: #f8f9fa;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.dropdown-btn:hover {
+    background: #e9ecef;
+    border-color: #adb5bd;
+}
+
+.dropdown-btn span {
+    font-weight: 500;
+    font-size: 15px;
+    font-family: Unbounded;
+    color: rgb(0, 109, 219);
+}
+
+.dropdown-content {
+    position: absolute;
+    right: 0;
+    background: white;
+    min-width: 300px;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+    border-radius: 10px;
+    z-index: 1000;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-10px);
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.dropdown-content a {
+    display: block;
+    padding: 12px 16px;
+    text-decoration: none;
+    color: #333;
+    border-bottom: 2px solid #eee;
+    transition: all 0.2s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.dropdown-content a:last-child {
+    border-bottom: none;
+}
+
+.dropdown-content a:hover {
+    background: #f8f9fa;
+    border-radius: 8px;
+}
+
+.dropdown:hover .dropdown-content {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+/* Баннер */
+.banner {
+    display: grid;
+    align-items: center;
+    text-align: center;
+    width: 1500px;
+    margin: 0 auto;
+    border-radius: 25px;
+    height: 250px;
+    margin-bottom: 50px;
+    box-shadow: 10px 5px 5px rgba(0,0,0,0.1);
+    background: linear-gradient(rgba(0, 123, 255, 0.5), rgba(0, 109, 219,0.5)), url('./Баннер/Баннер\ 1.jpg') center/cover no-repeat;
+}
+
+.banner-text-1 {
+    font-size: 3.6rem;
+    font-weight: 800;
+    color: rgb(255, 255, 255);
+}
+
+/* Разделы */
+.razdel-tema {
+    width: 1400px;
+    margin: 0 auto;
+    margin-top: 50px;
+    margin-bottom: 30px;
+}
+
+.razdel {
+    color: rgb(0, 109, 219);
+    font-size: 2.1rem;
+    font-weight: 500;
+}
+
+/* Контент */
+.content-section {
+    width: 1400px;
+    background: white;
+    margin: 0 auto;
+    border-radius: 20px;
+    padding: 35px;
+    margin-bottom: 35px;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.08);
+    border-left: 5px solid rgb(0, 109, 219);
+}
+
+.section-title {
+    color: rgb(0, 109, 219);
+    font-size: 2rem;
+    margin-bottom: 25px;
+    display: flex;
+    align-items: center;
+    padding-bottom: 10px;
+    border-bottom: 2px solid #f0f0f0;
+}
+
+.section-title::before {
+    content: "▶";
+    display: inline-block;
+    margin-right: 15px;
+    color: rgb(0, 109, 219);
+    font-size: 1.5rem;
+}
+
+.subsection-title {
+    color: #2c5282;
+    font-size: 1.5rem;
+    margin: 25px 0 15px;
+    padding-left: 20px;
+    border-left: 4px solid #2c5282;
+}
+
+.key-points {
+    background: linear-gradient(135deg, #f0f7ff, #e6f2ff);
+    border-left: 6px solid rgb(0, 109, 219);
+    padding: 25px;
+    margin: 25px 0;
+    border-radius: 0 15px 15px 0;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+}
+
+.key-points h3 {
+    margin-bottom: 15px;
+    color: rgb(0, 109, 219);
+    font-size: 1.4rem;
+}
+
+.key-points ul {
+    padding-left: 25px;
+}
+
+.key-points li {
+    margin-bottom: 10px;
+    position: relative;
+}
+
+.key-points li::before {
+    content: "•";
+    color: rgb(0, 109, 219);
+    font-weight: bold;
+    display: inline-block;
+    width: 1em;
+    margin-left: -1em;
+}
+
+.archaeological-sites {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+    gap: 25px;
+    margin: 25px 0;
+}
+
+.site-card {
+    background: white;
+    border-radius: 15px;
+    padding: 25px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+    border-top: 5px solid rgb(0, 109, 219);
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.site-card::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: linear-gradient(90deg, rgb(0, 109, 219), #2c5282);
+}
+
+.site-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 12px 30px rgba(0,0,0,0.15);
+}
+
+.site-card h4 {
+    color: rgb(0, 109, 219);
+    margin-bottom: 12px;
+    font-size: 1.3rem;
+}
+
+.site-card .region {
+    background: #e6f2ff;
+    color: #2c5282;
+    padding: 5px 12px;
+    border-radius: 20px;
+    font-size: 0.9rem;
+    font-weight: 600;
+    display: inline-block;
+    margin-bottom: 15px;
+}
+
+.conclusion {
+    background: linear-gradient(135deg, #e8f4ff, #d4e7ff);
+    padding: 30px;
+    border-radius: 15px;
+    margin: 35px 0;
+    border: 2px solid #c2e0ff;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+}
+
+.conclusion h3 {
+    color: rgb(0, 109, 219);
+    margin-bottom: 20px;
+    font-size: 1.6rem;
+    text-align: center;
+}
+
+.important-note {
+    background: #fff3cd;
+    border: 2px solid #ffeaa7;
+    border-left: 6px solid #fdcb6e;
+    padding: 20px;
+    margin: 20px 0;
+    border-radius: 10px;
+}
+
+.timeline-event {
+    background: #f8fafc;
+    border-left: 4px solid #2c5282;
+    padding: 20px;
+    margin: 15px 0;
+    border-radius: 0 8px 8px 0;
+}
+
+.event-year {
+    font-weight: bold;
+    color: #2c5282;
+    font-size: 1.1rem;
+    margin-bottom: 8px;
+}
+
+.leader-card {
+    background: linear-gradient(135deg, #ffffff, #f8fafc);
+    border-radius: 12px;
+    padding: 20px;
+    margin: 15px 0;
+    border: 2px solid #e6f2ff;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+}
+
+.leader-name {
+    color: #2c5282;
+    font-size: 1.3rem;
+    font-weight: 600;
+    margin-bottom: 10px;
+}
+
+.timeline-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 25px 0;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.timeline-table th {
+    background: linear-gradient(135deg, rgb(0, 109, 219), #2c5282);
+    color: white;
+    padding: 18px;
+    text-align: left;
+    font-weight: 600;
+}
+
+.timeline-table td {
+    padding: 18px;
+    border-bottom: 1px solid #eaeaea;
+    vertical-align: top;
+}
+
+.timeline-table tr:nth-child(even) {
+    background: #f8fafc;
+}
+
+.timeline-table tr:hover {
+    background: #e6f2ff;
+    transform: translateY(-1px);
+    transition: all 0.2s ease;
+}
+
+.comparison-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 25px 0;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.comparison-table th {
+    background: #2c5282;
+    color: white;
+    padding: 15px;
+    text-align: center;
+    font-weight: 600;
+}
+
+.comparison-table td {
+    padding: 15px;
+    border: 1px solid #eaeaea;
+    text-align: center;
+}
+
+.comparison-table tr:nth-child(even) {
+    background: #f8fafc;
+}
+
+/* Футер */
+footer {
+    width: 1300px;
+    margin: 0 auto;
+    border-top: 3px solid #3498db;
+    border-left: 3px solid #3498db;
+    border-right: 3px solid #3498db;
+    border-bottom: none;
+    border-radius: 15px 15px 0 0;
+    background-color: rgb(244, 244, 244);
+    text-align: center;
+    padding: 25px 25px;
+    margin-top: 3rem;
+}
+.footer-content {
+    color:rgb(69, 69, 69);
+}
+    </style>
+</head>
+<body>
+    <!-- Шапка -->
+    <header>
+        <a href="./Главная.html"><span class="logo">QAZAQ ELI</span></a>
+        <div class="dropdown">
+            <button class="dropdown-btn">
+                <span>Навигация</span>
+            </button>
+            <div class="dropdown-content">
+                <a href="#raz1">Революция 1917 года</a>
+                <a href="#raz2">Матросы и восстания</a>
+                <a href="#raz3">Гражданская война</a>
+                <a href="#raz4">Итоги и последствия</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Баннер 1 -->
+    <div class="banner">
+        <span class="banner-text-1">Революция и Гражданская война в Казахстане</span>
+    </div>
+
+    <!-- Введение -->
+    <div class="content-section" id="introduction">
+        <h2 class="section-title">1917-1920: Годы великого потрясения</h2>
+        <p>Период революции и Гражданской войны стал одним из самых трагических и переломных в истории Казахстана. Разрушение старой государственности, братоубийственная война и установление новой власти коренным образом изменили судьбу казахского народа.</p>
+        
+        <div class="key-points">
+            <h3>Основные характеристики периода:</h3>
+            <ul>
+                <li>Крах Российской империи и разрушение старой административной системы</li>
+                <li>Борьба различных политических сил за власть в регионе</li>
+                <li>Активизация национального движения и создание Алаш-Орды</li>
+                <li>Массовое участие населения в военных действиях</li>
+                <li>Экономическая разруха и гуманитарная катастрофа</li>
+                <li>Установление советской власти и начало нового этапа истории</li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- Революция 1917 года -->
+    <div class="razdel-tema" id="raz1">
+        <span class="razdel">Революция 1917 года в Казахстане</span>
+    </div>
+
+    <div class="content-section">
+        <h2 class="section-title">Крах империи и борьба за власть</h2>
+        <p>Февральская и Октябрьская революции 1917 года кардинально изменили политическую ситуацию в Казахстане. Разрушение старой власти создало вакуум, который пытались заполнить различные политические силы.</p>
+        
+        <h3 class="subsection-title">Хронология революционных событий</h3>
+        
+        <table class="timeline-table">
+            <thead>
+                <tr>
+                    <th>Период</th>
+                    <th>События</th>
+                    <th>Участники</th>
+                    <th>Последствия</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><strong>Февраль-март 1917</strong></td>
+                    <td>Свержение монархии. Создание комитетов Временного правительства</td>
+                    <td>Чиновники старого режима, либеральная интеллигенция</td>
+                    <td>Разрушение имперской администрации, начало политической активности</td>
+                </tr>
+                <tr>
+                    <td><strong>Апрель-июль 1917</strong></td>
+                    <td>Формирование Советов рабочих и солдатских депутатов</td>
+                    <td>Большевики, эсеры, меньшевики</td>
+                    <td>Создание альтернативных центров власти</td>
+                </tr>
+                <tr>
+                    <td><strong>Июль 1917</strong></td>
+                    <td>Первый всеказахский съезд в Оренбурге</td>
+                    <td>Лидеры Алашского движения, национальная интеллигенция</td>
+                    <td>Создание партии "Алаш", начало борьбы за автономию</td>
+                </tr>
+                <tr>
+                    <td><strong>Октябрь-ноябрь 1917</strong></td>
+                    <td>Вооруженное восстание большевиков. Установление советской власти</td>
+                    <td>Большевики, революционные солдаты и матросы</td>
+                    <td>Начало Гражданской войны, раскол общества</td>
+                </tr>
+                <tr>
+                    <td><strong>Декабрь 1917</strong></td>
+                    <td>Второй всеказахский съезд. Провозглашение автономии Алаш</td>
+                    <td>Правительство Алаш-Орды, представители регионов</td>
+                    <td>Создание национального правительства, определение границ автономии</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <h3 class="subsection-title">Политические силы в революции</h3>
+        <div class="archaeological-sites">
+            <div class="site-card">
+                <div class="region">Национальное движение</div>
+                <h4>Алаш-Орда</h4>
+                <p><strong>Лидеры:</strong> А. Бокейханов, А. Байтурсынов, М. Дулатов<br>
+                <strong>Цели:</strong> Национальная автономия в составе России<br>
+                <strong>Поддержка:</strong> Казахская интеллигенция, часть баев<br>
+                <strong>Тактика:</strong> Политическая борьба, переговоры</p>
+            </div>
+            <div class="site-card">
+                <div class="region">Революционные силы</div>
+                <h4>Большевики</h4>
+                <p><strong>Лидеры:</strong> А. Джангильдин, С. Пестковский<br>
+                <strong>Цели:</strong> Установление советской власти<br>
+                <strong>Поддержка:</strong> Рабочие, беднейшее крестьянство<br>
+                <strong>Тактика:</strong> Вооруженная борьба, агитация</p>
+            </div>
+            <div class="site-card">
+                <div class="region">Контрреволюция</div>
+                <h4>Белое движение</h4>
+                <p><strong>Лидеры:</strong> А. Колчак, А. Дутов<br>
+                <strong>Цели:</strong> Восстановление "единой и неделимой России"<br>
+                <strong>Поддержка:</strong> Офицерство, казачество, часть интеллигенции<br>
+                <strong>Тактика:</strong> Военная диктатура, террор</p>
+            </div>
+        </div>
+
+        <div class="important-note">
+            <strong>Особенности революции в Казахстане:</strong> Революционные события развивались неравномерно. В промышленных центрах и городах установление советской власти происходило быстро, в степных районах сохранялось влияние Алаш-Орды, а в казачьих станицах преобладали контрреволюционные настроения.
+        </div>
+    </div>
+
+    <!-- Матросы и восстания -->
+    <div class="razdel-tema" id="raz2">
+        <span class="razdel">Матросы и вооруженные восстания</span>
+    </div>
+
+    <div class="content-section">
+        <h2 class="section-title">Революционные моряки в Гражданской войне</h2>
+        <p>Матросы Балтийского флота и других флотилий сыграли важную роль в установлении и укреплении советской власти в Казахстане. Их боевые отряды стали ударной силой красных в ключевых сражениях Гражданской войны.</p>
+        
+        <h3 class="subsection-title">Роль матросов в революционных событиях</h3>
+        
+        <table class="comparison-table">
+            <thead>
+                <tr>
+                    <th>Формирование</th>
+                    <th>Командующий</th>
+                    <th>Боевые операции</th>
+                    <th>Значение</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><strong>Матросский отряд из Кронштадта</strong></td>
+                    <td>А. Джангильдин</td>
+                    <td>Бои за Оренбург, Тургай, Актюбинск</td>
+                    <td>Стал ядром красных сил в Западном Казахстане</td>
+                </tr>
+                <tr>
+                    <td><strong>Морской экспедиционный отряд</strong></td>
+                    <td>П. Кобозев</td>
+                    <td>Установление советской власти в Семиречье</td>
+                    <td>Обеспечил контроль над Восточным Казахстаном</td>
+                </tr>
+                <tr>
+                    <td><strong>Отряд балтийских матросов</strong></td>
+                    <td>С. Цвиллинг</td>
+                    <td>Оборона Оренбурга, бои с дутовцами</td>
+                    <td>Защитил важный стратегический центр</td>
+                </tr>
+                <tr>
+                    <td><strong>Морские части Туркестанского фронта</strong></td>
+                    <td>М. Фрунзе</td>
+                    <td>Разгром белогвардейцев в Средней Азии</td>
+                    <td>Завершили установление советской власти в регионе</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <h3 class="subsection-title">Крупнейшие вооруженные восстания</h3>
+        
+        <div class="timeline-event">
+            <div class="event-year">Октябрь 1917 года - Восстание в Ташкенте</div>
+            <p>Матросы и солдаты Ташкентского гарнизона под руководством большевиков захватили власть в Туркестанском крае. Создан Совет народных комиссаров Туркестанской республики.</p>
+        </div>
+
+        <div class="timeline-event">
+            <div class="event-year">Январь 1918 года - Установление советской власти в Верном</div>
+            <p>Отряд балтийских матросов и местных красногвардейцев взял под контроль город Верный (ныне Алматы). Ликвидированы органы Временного правительства.</p>
+        </div>
+
+        <div class="timeline-event">
+            <div class="event-year">Апрель 1918 года - Восстание в Семипалатинске</div>
+            <p>Рабочие и солдаты под руководством большевиков установили советскую власть. Создан военно-революционный комитет, начато формирование красногвардейских отрядов.</p>
+        </div>
+
+        <div class="leader-card">
+            <div class="leader-name">Алиби Джангильдин (1884-1953)</div>
+            <p>Выдающийся революционер, один из организаторов советской власти в Казахстане. Возглавлял матросский отряд, который прошел с боями от Оренбурга до Тургая. Впоследствии - видный государственный деятель Казахской ССР.</p>
+        </div>
+    </div>
+
+    <!-- Гражданская война -->
+    <div class="razdel-tema" id="raz3">
+        <span class="razdel">Гражданская война на территории Казахстана</span>
+    </div>
+
+    <div class="content-section">
+        <h2 class="section-title">Фронты и сражения 1918-1920 годов</h2>
+        <p>Территория Казахстана стала ареной ожесточенных боев между красными, белыми и национальными формированиями. Военные действия велись на нескольких фронтах одновременно, отличались особой жестокостью и привели к огромным человеческим жертвам.</p>
+        
+        <h3 class="subsection-title">Основные фронты Гражданской войны</h3>
+        
+        <table class="timeline-table">
+            <thead>
+                <tr>
+                    <th>Фронт</th>
+                    <th>Период</th>
+                    <th>Основные сражения</th>
+                    <th>Итог</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><strong>Восточный фронт</strong></td>
+                    <td>1918-1919</td>
+                    <td>Бои за Оренбург, Уральск, Орск</td>
+                    <td>Разгром армии Колчака, установление советской власти</td>
+                </tr>
+                <tr>
+                    <td><strong>Туркестанский фронт</strong></td>
+                    <td>1919-1920</td>
+                    <td>Оборона Актюбинска, бои за Ташкент</td>
+                    <td>Ликвидация белогвардейских формирований в Средней Азии</td>
+                </tr>
+                <tr>
+                    <td><strong>Уральский фронт</strong></td>
+                    <td>1918-1920</td>
+                    <td>Осада Уральска, бои с уральскими казаками</td>
+                    <td>Подавление казачьего сопротивления</td>
+                </tr>
+                <tr>
+                    <td><strong>Семиреченский фронт</strong></td>
+                    <td>1918-1920</td>
+                    <td>Бои за Верный, Джаркент, борьба с атаманом Анненковым</td>
+                    <td>Установление контроля над Восточным Казахстаном</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <h3 class="subsection-title">Позиции основных политических сил</h3>
+        <div class="archaeological-sites">
+            <div class="site-card">
+                <h4>Красные (большевики)</h4>
+                <p>• Контролировали промышленные центры и города<br>
+                • Опирались на рабочих и беднейшее крестьянство<br>
+                • Получали поддержку из центральной России<br>
+                • Использовали революционных матросов как ударную силу<br>
+                • Выступали под лозунгом "Земля - крестьянам!"</p>
+            </div>
+            <div class="site-card">
+                <h4>Белые (контрреволюция)</h4>
+                <p>• Опирались на казачество и офицерство<br>
+                • Контролировали отдельные регионы и города<br>
+                • Получали помощь от Антанты<br>
+                • Выступали за "единую и неделимую Россию"<br>
+                • Проводили мобилизации и реквизиции</p>
+            </div>
+            <div class="site-card">
+                <h4>Алаш-Орда</h4>
+                <p>• Стремились к национальной автономии<br>
+                • Занимали промежуточное положение<br>
+                • Пытались лавировать между красными и белыми<br>
+                • Опирались на национальную интеллигенцию<br>
+                • Создали собственные вооруженные формирования</p>
+            </div>
+        </div>
+
+        <div class="important-note">
+            <strong>Трагедия Гражданской войны:</strong> Боевые действия сопровождались массовым террором с обеих сторон, реквизициями, голодом и эпидемиями. По оценкам историков, за годы Гражданской войны население Казахстана сократилось на 15-20%, были разрушены хозяйственные связи, уничтожены материальные ценности.
+        </div>
+    </div>
+
+    <!-- Итоги и последствия -->
+    <div class="razdel-tema" id="raz4">
+        <span class="razdel">Итоги и последствия Гражданской войны</span>
+    </div>
+
+    <div class="content-section">
+        <h2 class="section-title">Цена победы и исторические уроки</h2>
+        <p>К 1920 году советская власть была установлена на всей территории Казахстана. Однако победа красных была достигнута огромной ценой и имела глубокие последствия для дальнейшего развития казахского общества.</p>
+        
+        <h3 class="subsection-title">Демографические и экономические последствия</h3>
+        
+        <table class="comparison-table">
+            <thead>
+                <tr>
+                    <th>Сфера</th>
+                    <th>Состояние до войны</th>
+                    <th>Состояние после войны</th>
+                    <th>Потери</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><strong>Население</strong></td>
+                    <td>~6,5 млн человек (1914)</td>
+                    <td>~5,2 млн человек (1920)</td>
+                    <td>Около 1,3 млн человек (20%)</td>
+                </tr>
+                <tr>
+                    <td><strong>Скотоводство</strong></td>
+                    <td>~29 млн голов скота</td>
+                    <td>~7 млн голов скота</td>
+                    <td>Около 22 млн голов (76%)</td>
+                </tr>
+                <tr>
+                    <td><strong>Посевные площади</strong></td>
+                    <td>~4,5 млн десятин</td>
+                    <td>~1,5 млн десятин</td>
+                    <td>Около 3 млн десятин (67%)</td>
+                </tr>
+                <tr>
+                    <td><strong>Промышленность</strong></td>
+                    <td>Добыча угля, нефти, цветных металлов</td>
+                    <td>Полностью разрушена</td>
+                    <td>Производство упало на 80-90%</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <h3 class="subsection-title">Политические итоги</h3>
+        <div class="key-points">
+            <ul>
+                <li><strong>Установление советской власти</strong> - создание новых органов управления</li>
+                <li><strong>Ликвидация Алаш-Орды</strong> - поражение национального движения</li>
+                <li><strong>Создание Киргизской (Казахской) АССР</strong> - образование автономии в составе РСФСР</li>
+                <li><strong>Формирование новой политической элиты</strong> - выдвижение сторонников советской власти</li>
+                <li><strong>Начало политики "военного коммунизма"</strong> - введение продразверстки и других чрезвычайных мер</li>
+            </ul>
+        </div>
+
+        <div class="conclusion">
+            <h3>Исторические уроки Гражданской войны</h3>
+            <p>Гражданская война 1918-1920 годов стала глубокой травмой для казахского народа. Братская рознь, разруха и человеческие страдания оставили тяжелое наследие, последствия которого ощущались на протяжении всего советского периода.</p>
+            
+            <div class="key-points">
+                <h3>Основные исторические выводы:</h3>
+                <ul>
+                    <li><strong>Цена революционных преобразований</strong> - насилие порождает насилие</li>
+                    <li><strong>Сложность национального вопроса</strong> - поиск баланса между интернационализмом и национальными интересами</li>
+                    <li><strong>Важность политического компромисса</strong> - трагедия Алаш-Орды показала опасность непримиримых позиций</li>
+                    <li><strong>Роль внешнего фактора</strong> - вмешательство иностранных держав усугубляло конфликт</li>
+                    <li><strong>Необходимость сохранения человечности</strong> - даже в условиях войны важно сохранять моральные принципы</li>
+                </ul>
+            </div>
+            
+            <p>Несмотря на трагические последствия, период революции и Гражданской войны стал важным этапом в формировании современного Казахстана. Опыт этих лет, как положительный, так и отрицательный, стал частью национальной исторической памяти и продолжает влиять на развитие казахстанского общества.</p>
+        </div>
+    </div>
+
+    <!-- Футер -->
+    <footer>
+        <div class="footer-content">
+            <p>&copy; 2025 Образовательный веб-ресурс "История Казахстана"</p>
+            <p>Разработано в рамках учебного проекта средствами HTML и CSS</p>
+        </div>
+    </footer>
+</body>
+</html>

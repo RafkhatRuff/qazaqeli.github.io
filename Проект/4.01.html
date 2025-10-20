@@ -1,0 +1,663 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Кризис империи и национальное пробуждение</title>
+    <style>
+@import url('https://fonts.googleapis.com/css2?family=Dela+Gothic+One&family=Unbounded:wght@200..900&display=swap');
+
+/* Главные */
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Unbounded;
+    background-color: rgb(244, 244, 244);
+}
+
+a {
+    text-decoration: none;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+/* Шапка */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 1400px;
+    margin: 0 auto;
+    padding: 30px 0;
+}
+
+header .logo {
+    color: rgb(0, 109, 219);
+    text-transform: uppercase;
+    font-size: 20px;
+    font-weight: 500;
+}
+
+/* Бургер */
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown-btn {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 10px 15px;
+    background: #f8f9fa;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.dropdown-btn:hover {
+    background: #e9ecef;
+    border-color: #adb5bd;
+}
+
+.dropdown-btn span {
+    font-weight: 500;
+    font-size: 15px;
+    font-family: Unbounded;
+    color: rgb(0, 109, 219);
+}
+
+.dropdown-content {
+    position: absolute;
+    right: 0;
+    background: white;
+    min-width: 300px;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+    border-radius: 10px;
+    z-index: 1000;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-10px);
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.dropdown-content a {
+    display: block;
+    padding: 12px 16px;
+    text-decoration: none;
+    color: #333;
+    border-bottom: 2px solid #eee;
+    transition: all 0.2s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.dropdown-content a:last-child {
+    border-bottom: none;
+}
+
+.dropdown-content a:hover {
+    background: #f8f9fa;
+    border-radius: 8px;
+}
+
+.dropdown:hover .dropdown-content {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+/* Баннер */
+.banner {
+    display: grid;
+    align-items: center;
+    text-align: center;
+    width: 1500px;
+    margin: 0 auto;
+    border-radius: 25px;
+    height: 250px;
+    margin-bottom: 50px;
+    box-shadow: 10px 5px 5px rgba(0,0,0,0.1);
+    background: linear-gradient(rgba(0, 123, 255, 0.5), rgba(0, 109, 219,0.5)), url('./Баннер/Баннер\ 1.jpg') center/cover no-repeat;
+}
+
+.banner-text-1 {
+    font-size: 3.6rem;
+    font-weight: 800;
+    color: rgb(255, 255, 255);
+}
+
+/* Разделы */
+.razdel-tema {
+    width: 1400px;
+    margin: 0 auto;
+    margin-top: 50px;
+    margin-bottom: 30px;
+}
+
+.razdel {
+    color: rgb(0, 109, 219);
+    font-size: 2.1rem;
+    font-weight: 500;
+}
+
+/* Контент */
+.content-section {
+    width: 1400px;
+    background: white;
+    margin: 0 auto;
+    border-radius: 20px;
+    padding: 35px;
+    margin-bottom: 35px;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.08);
+    border-left: 5px solid rgb(0, 109, 219);
+}
+
+.section-title {
+    color: rgb(0, 109, 219);
+    font-size: 2rem;
+    margin-bottom: 25px;
+    display: flex;
+    align-items: center;
+    padding-bottom: 10px;
+    border-bottom: 2px solid #f0f0f0;
+}
+
+.section-title::before {
+    content: "▶";
+    display: inline-block;
+    margin-right: 15px;
+    color: rgb(0, 109, 219);
+    font-size: 1.5rem;
+}
+
+.subsection-title {
+    color: #2c5282;
+    font-size: 1.5rem;
+    margin: 25px 0 15px;
+    padding-left: 20px;
+    border-left: 4px solid #2c5282;
+}
+
+.key-points {
+    background: linear-gradient(135deg, #f0f7ff, #e6f2ff);
+    border-left: 6px solid rgb(0, 109, 219);
+    padding: 25px;
+    margin: 25px 0;
+    border-radius: 0 15px 15px 0;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+}
+
+.key-points h3 {
+    margin-bottom: 15px;
+    color: rgb(0, 109, 219);
+    font-size: 1.4rem;
+}
+
+.key-points ul {
+    padding-left: 25px;
+}
+
+.key-points li {
+    margin-bottom: 10px;
+    position: relative;
+}
+
+.key-points li::before {
+    content: "•";
+    color: rgb(0, 109, 219);
+    font-weight: bold;
+    display: inline-block;
+    width: 1em;
+    margin-left: -1em;
+}
+
+.archaeological-sites {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+    gap: 25px;
+    margin: 25px 0;
+}
+
+.site-card {
+    background: white;
+    border-radius: 15px;
+    padding: 25px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+    border-top: 5px solid rgb(0, 109, 219);
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.site-card::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: linear-gradient(90deg, rgb(0, 109, 219), #2c5282);
+}
+
+.site-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 12px 30px rgba(0,0,0,0.15);
+}
+
+.site-card h4 {
+    color: rgb(0, 109, 219);
+    margin-bottom: 12px;
+    font-size: 1.3rem;
+}
+
+.site-card .region {
+    background: #e6f2ff;
+    color: #2c5282;
+    padding: 5px 12px;
+    border-radius: 20px;
+    font-size: 0.9rem;
+    font-weight: 600;
+    display: inline-block;
+    margin-bottom: 15px;
+}
+
+.conclusion {
+    background: linear-gradient(135deg, #e8f4ff, #d4e7ff);
+    padding: 30px;
+    border-radius: 15px;
+    margin: 35px 0;
+    border: 2px solid #c2e0ff;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+}
+
+.conclusion h3 {
+    color: rgb(0, 109, 219);
+    margin-bottom: 20px;
+    font-size: 1.6rem;
+    text-align: center;
+}
+
+.important-note {
+    background: #fff3cd;
+    border: 2px solid #ffeaa7;
+    border-left: 6px solid #fdcb6e;
+    padding: 20px;
+    margin: 20px 0;
+    border-radius: 10px;
+}
+
+.timeline-event {
+    background: #f8fafc;
+    border-left: 4px solid #2c5282;
+    padding: 20px;
+    margin: 15px 0;
+    border-radius: 0 8px 8px 0;
+}
+
+.event-year {
+    font-weight: bold;
+    color: #2c5282;
+    font-size: 1.1rem;
+    margin-bottom: 8px;
+}
+
+.leader-card {
+    background: linear-gradient(135deg, #ffffff, #f8fafc);
+    border-radius: 12px;
+    padding: 20px;
+    margin: 15px 0;
+    border: 2px solid #e6f2ff;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+}
+
+.leader-name {
+    color: #2c5282;
+    font-size: 1.3rem;
+    font-weight: 600;
+    margin-bottom: 10px;
+}
+
+.movement-card {
+    background: linear-gradient(135deg, #f0f7ff, #e6f2ff);
+    border-radius: 12px;
+    padding: 20px;
+    margin: 15px 0;
+    border-left: 5px solid #2c5282;
+}
+
+.movement-title {
+    color: #2c5282;
+    font-size: 1.2rem;
+    font-weight: 600;
+    margin-bottom: 10px;
+}
+
+.idea-card {
+    background: white;
+    border-radius: 10px;
+    padding: 20px;
+    margin: 15px 0;
+    border: 2px solid #e6f2ff;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.05);
+}
+
+.idea-title {
+    color: #2c5282;
+    font-size: 1.1rem;
+    font-weight: 600;
+    margin-bottom: 8px;
+}
+
+/* Футер */
+footer {
+    width: 1300px;
+    margin: 0 auto;
+    border-top: 3px solid #3498db;
+    border-left: 3px solid #3498db;
+    border-right: 3px solid #3498db;
+    border-bottom: none;
+    border-radius: 15px 15px 0 0;
+    background-color: rgb(244, 244, 244);
+    text-align: center;
+    padding: 25px 25px;
+    margin-top: 3rem;
+}
+.footer-content {
+    color:rgb(69, 69, 69);
+}
+    </style>
+</head>
+<body>
+    <!-- Шапка -->
+    <header>
+        <a href="./Главная.html"><span class="logo">QAZAQ ELI</span></a>
+        <div class="dropdown">
+            <button class="dropdown-btn">
+                <span>Навигация</span>
+            </button>
+            <div class="dropdown-content">
+                <a href="#raz1">Кризис имперской системы</a>
+                <a href="#raz2">Алашское движение</a>
+                <a href="#raz3">Национальная интеллигенция</a>
+                <a href="#raz4">Революция 1917 года</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Баннер 1 -->
+    <div class="banner">
+        <span class="banner-text-1">Кризис империи и национальное пробуждение</span>
+    </div>
+
+    <!-- Введение -->
+    <div class="content-section" id="introduction">
+        <h2 class="section-title">Начало XX века: Переломная эпоха</h2>
+        <p>Первые десятилетия XX века стали временем глубокого кризиса Российской империи и одновременно периодом национального пробуждения казахского народа. Нарастание социально-экономических и политических противоречий совпало с формированием современного казахского национального движения.</p>
+        
+        <div class="key-points">
+            <h3>Основные характеристики периода 1900-1917 годов:</h3>
+            <ul>
+                <li>Углубление кризиса имперской системы управления</li>
+                <li>Нарастание социально-экономических противоречий</li>
+                <li>Формирование организованного национального движения</li>
+                <li>Развитие национальной печати и просвещения</li>
+                <li>Участие казахов в общероссийском политическом процессе</li>
+                <li>Подготовка почвы для национальной автономии</li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- Кризис имперской системы -->
+    <div class="razdel-tema" id="raz1">
+        <span class="razdel">Кризис имперской системы</span>
+    </div>
+
+    <div class="content-section">
+        <h2 class="section-title">Нарастание системных противоречий</h2>
+        <p>К началу XX века колониальная политика Российской империи в Казахстане вступила в глубокий кризис. Накопившиеся социально-экономические и политические проблемы требовали коренных реформ, но имперская власть оказалась неспособной к последовательной модернизации.</p>
+        
+        <h3 class="subsection-title">Ключевые кризисные явления</h3>
+        
+        <div class="movement-card">
+            <div class="movement-title">Земельный вопрос</div>
+            <p>К 1917 году у казахского населения было изъято более 45 миллионов десятин лучших земель. Массовое переселение крестьян из центральных губерний привело к земельному голоду и обострению межнациональных отношений.</p>
+        </div>
+
+        <div class="movement-card">
+            <div class="movement-title">Экономическая эксплуатация</div>
+            <p>Казахстан превратился в сырьевой придаток империи. Разрушение традиционного кочевого хозяйства не сопровождалось созданием достаточного количества рабочих мест в промышленности. Росла бедность и социальная напряженность.</p>
+        </div>
+
+        <div class="movement-card">
+            <div class="movement-title">Политическое бесправие</div>
+            <p>Казахское население было лишено основных политических прав. Отсутствие представительства в законодательных органах, ограничения в местном самоуправлении и дискриминация в доступе к образованию и государственной службе.</p>
+        </div>
+
+        <h3 class="subsection-title">События, обострившие кризис</h3>
+        
+        <div class="timeline-event">
+            <div class="event-year">1905-1907 годы - Первая русская революция</div>
+            <p>Волна забастовок и крестьянских выступлений по всей империи. Созвание Государственной думы и первые попытки политического реформирования. Казахская интеллигенция активно включается в политический процесс.</p>
+        </div>
+
+        <div class="timeline-event">
+            <div class="event-year">1914-1918 годы - Первая мировая война</div>
+            <p>Мобилизация казахов на тыловые работы. Реквизиция скота для армии. Рост налогов и повинностей. Ухудшение экономического положения населения. Нарастание антивоенных настроений.</p>
+        </div>
+
+        <div class="timeline-event">
+            <div class="event-year">1916 год - Национально-освободительное восстание</div>
+            <p>Массовое выступление против указа о мобилизации на тыловые работы. Восстание охватило весь Казахстан и Среднюю Азию. Жестоко подавлено царскими войсками, что еще более обострило отношения между властью и народом.</p>
+        </div>
+
+        <div class="important-note">
+            <strong>Историческое значение:</strong> Кризис имперской системы создал объективные предпосылки для национального пробуждения казахского народа. Накопившиеся противоречия требовали коренного решения, что привело к формированию организованного национального движения.
+        </div>
+    </div>
+
+    <!-- Алашское движение -->
+    <div class="razdel-tema" id="raz2">
+        <span class="razdel">Алашское движение и национальная автономия</span>
+    </div>
+
+    <div class="content-section">
+        <h2 class="section-title">Становление политической организации</h2>
+        <p>Алашское движение стало первым организованным политическим движением казахского народа, которое выдвинуло программу национального возрождения и создания автономного государства в составе демократической России.</p>
+        
+        <div class="leader-card">
+            <div class="leader-name">Лидеры Алашского движения</div>
+            <p>Алихан Бокейханов, Ахмет Байтурсынов, Миржакип Дулатов, Мустафа Шокай и другие представители казахской интеллигенции стали идеологами и организаторами национального движения. Их деятельность охватывала просвещение, журналистику, политическую организацию.</p>
+        </div>
+
+        <h3 class="subsection-title">Основные этапы развития движения</h3>
+        
+        <div class="timeline-event">
+            <div class="event-year">1905-1917 годы - Период становления</div>
+            <p>Формирование казахской национальной интеллигенции. Издание газет "Казах" и "Айкап". Участие в деятельности Государственной думы. Разработка программных документов и идеологии национального движения.</p>
+        </div>
+
+        <div class="timeline-event">
+            <div class="event-year">Июль 1917 года - Первый всеказахский съезд</div>
+            <p>Съезд в Оренбурге принял решение о создании партии "Алаш". Избраны временный народный совет "Алаш-Орда" и комиссия для выработки программы партии. Принята резолюция о необходимости национально-территориальной автономии.</p>
+        </div>
+
+        <div class="timeline-event">
+            <div class="event-year">Декабрь 1917 года - Второй всеказахский съезд</div>
+            <p>Провозглашена Автономия Алаш-Орда. Принято решение о создании национального правительства и вооруженных сил. Определены границы автономии и основные принципы государственного устройства.</p>
+        </div>
+
+        <h3 class="subsection-title">Программные положения Алаш</h3>
+        <div class="archaeological-sites">
+            <div class="site-card">
+                <h4>Политические требования</h4>
+                <p>• Национально-территориальная автономия<br>
+                • Демократическая федеративная Россия<br>
+                • Равноправие всех народов<br>
+                • Свобода слова, печати, собраний<br>
+                • Всеобщее избирательное право</p>
+            </div>
+            <div class="site-card">
+                <h4>Социально-экономические цели</h4>
+                <p>• Возврат отнятых земель<br>
+                • Прекращение переселенческой политики<br>
+                • Развитие национального образования<br>
+                • Поддержка кочевого и оседлого хозяйства<br>
+                • Создание промышленности</p>
+            </div>
+            <div class="site-card">
+                <h4>Культурные задачи</h4>
+                <p>• Развитие образования на казахском языке<br>
+                • Создание национальной системы просвещения<br>
+                • Поддержка науки и литературы<br>
+                • Сохранение культурного наследия<br>
+                • Модернизация традиционной культуры</p>
+            </div>
+        </div>
+
+        <div class="important-note">
+            <strong>Историческое значение:</strong> Алашское движение впервые в истории казахского народа создало организованную политическую силу с четкой программой национального развития. Оно стало важным этапом в формировании современной казахской государственности.
+        </div>
+    </div>
+
+    <!-- Национальная интеллигенция -->
+    <div class="razdel-tema" id="raz3">
+        <span class="razdel">Национальная интеллигенция и просвещение</span>
+    </div>
+
+    <div class="content-section">
+        <h2 class="section-title">Создание основ национального возрождения</h2>
+        <p>Казахская интеллигенция начала XX века сыграла ключевую роль в национальном пробуждении. Через просветительскую деятельность, развитие печати и образование она заложила основы современной казахской культуры и политической мысли.</p>
+        
+        <h3 class="subsection-title">Выдающиеся деятели национального возрождения</h3>
+        
+        <div class="archaeological-sites">
+            <div class="site-card">
+                <div class="region">Политический лидер</div>
+                <h4>Алихан Бокейханов</h4>
+                <p>• Первый премьер-министр Алаш-Орды<br>
+                • Депутат I Государственной думы<br>
+                • Редактор газеты "Казах"<br>
+                • Организатор национального движения<br>
+                • Ученый-экономист и публицист</p>
+            </div>
+            <div class="site-card">
+                <div class="region">Просветитель и реформатор</div>
+                <h4>Ахмет Байтурсынов</h4>
+                <p>• Реформатор казахской письменности<br>
+                • Создатель учебников и методик обучения<br>
+                • Поэт и литературный критик<br>
+                • Один из лидеров Алашского движения<br>
+                • Основоположник казахского языкознания</p>
+            </div>
+            <div class="site-card">
+                <div class="region">Поэт и публицист</div>
+                <h4>Миржакип Дулатов</h4>
+                <p>• Автор первого казахского романа "Несчастная Жамал"<br>
+                • Поэт и публицист<br>
+                • Редактор газеты "Казах"<br>
+                • Член правительства Алаш-Орды<br>
+                • Просветитель и педагог</p>
+            </div>
+        </div>
+
+        <h3 class="subsection-title">Развитие национальной печати и образования</h3>
+        
+        <div class="idea-card">
+            <div class="idea-title">Газета "Казах" (1913-1918)</div>
+            <p>Стала главным печатным органом национального движения. Публиковала материалы по истории, культуре, экономике Казахстана. Выступала за просвещение народа, развитие образования, возврат отнятых земель.</p>
+        </div>
+
+        <div class="idea-card">
+            <div class="idea-title">Журнал "Айкап" (1911-1915)</div>
+            <p>Литературно-публицистический журнал, сыгравший важную роль в развитии национальной мысли. Критиковал колониальную политику, пропагандировал достижения мировой культуры, выступал за модернизацию казахского общества.</p>
+        </div>
+
+        <div class="idea-card">
+            <div class="idea-title">Создание школ и культурных обществ</div>
+            <p>Открытие новометодных школ, создание культурно-просветительских обществ, организация библиотек и читален. Разработка новых учебников и программ обучения на казахском языке.</p>
+        </div>
+
+        <div class="key-points">
+            <h3>Основные идеи казахской интеллигенции:</h3>
+            <ul>
+                <li><strong>Национальное возрождение</strong> - пробуждение национального самосознания</li>
+                <li><strong>Просвещение народа</strong> - борьба с невежеством и темнотой</li>
+                <li><strong>Модернизация общества</strong> - сочетание традиций и прогресса</li>
+                <li><strong>Политическая организация</strong> - создание структур национального движения</li>
+                <li><strong>Культурное развитие</strong> - сохранение и обновление национальной культуры</li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- Революция 1917 года -->
+    <div class="razdel-tema" id="raz4">
+        <span class="razdel">Революция 1917 года и её последствия</span>
+    </div>
+
+    <div class="content-section">
+        <h2 class="section-title">Крах империи и новые возможности</h2>
+        <p>Февральская и Октябрьская революции 1917 года кардинально изменили политическую ситуацию в России и создали новые возможности для национального развития казахского народа. Однако последовавшая Гражданская война и установление советской власти привели к трагическим последствиям для национального движения.</p>
+        
+        <h3 class="subsection-title">Политические процессы 1917-1920 годов</h3>
+        
+        <div class="timeline-event">
+            <div class="event-year">Февраль 1917 года - Свержение монархии</div>
+            <p>Падение царского режима создало условия для активизации национального движения. Казахская интеллигенция получила возможность легальной политической деятельности. Началось создание национальных организаций и комитетов.</p>
+        </div>
+
+        <div class="timeline-event">
+            <div class="event-year">Октябрь 1917 года - Приход большевиков к власти</div>
+            <p>Установление советской власти поставило перед национальным движением сложный выбор. Лидеры Алаш пытались найти компромисс с новой властью, но большевистская политика вызывала серьезные опасения.</p>
+        </div>
+
+        <div class="timeline-event">
+            <div class="event-year">1918-1920 годы - Гражданская война</div>
+            <p>Трагический период междоусобной борьбы. Алаш-Орда оказалась между красными и белыми. Попытки сохранить автономию в условиях военного времени. Постепенное подавление национального движения советской властью.</p>
+        </div>
+
+        <h3 class="subsection-title">Итоги и историческое значение</h3>
+        <div class="key-points">
+            <ul>
+                <li><strong>Создание национальной государственности</strong> - первый опыт автономного управления</li>
+                <li><strong>Формирование политической элиты</strong> - подготовка кадров для будущего развития</li>
+                <li><strong>Разработка идеологии</strong> - создание программы национального развития</li>
+                <li><strong>Трагическая судьба лидеров</strong> - большинство деятелей Алаш были репрессированы</li>
+                <li><strong>Историческое наследие</strong> - идеи Алашского движения стали основой для будущего возрождения</li>
+            </ul>
+        </div>
+
+        <div class="conclusion">
+            <h3>Национальное пробуждение: достижения и уроки</h3>
+            <p>Период кризиса империи и национального пробуждения стал важнейшим этапом в истории казахского народа. Несмотря на трагический финал Алашского движения, этот период заложил основы современной казахской государственности и национального самосознания.</p>
+            
+            <div class="key-points">
+                <h3>Основные исторические уроки:</h3>
+                <ul>
+                    <li><strong>Значение политической организации</strong> - необходимость создания структур национального движения</li>
+                    <li><strong>Важность образования и просвещения</strong> - роль интеллигенции в национальном возрождении</li>
+                    <li><strong>Необходимость международной поддержки</strong> - важность внешнеполитических связей</li>
+                    <li><strong>Цена компромиссов</strong> - сложность выбора в условиях политического кризиса</li>
+                    <li><strong>Преемственность борьбы</strong> - идеи национального движения продолжали жить даже в условиях репрессий</li>
+                </ul>
+            </div>
+            
+            <p>Наследие Алашского движения и казахской интеллигенции начала XX века стало важным фундаментом для восстановления независимости Казахстана в 1991 году и продолжает влиять на развитие современного казахстанского общества.</p>
+        </div>
+    </div>
+
+    <!-- Футер -->
+    <footer>
+        <div class="footer-content">
+            <p>&copy; 2025 Образовательный веб-ресурс "История Казахстана"</p>
+            <p>Разработано в рамках учебного проекта средствами HTML и CSS</p>
+        </div>
+    </footer>
+</body>
+</html>

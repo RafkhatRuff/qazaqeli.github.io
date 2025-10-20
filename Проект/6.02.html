@@ -1,0 +1,750 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Казахская традиционная культура и эпоха Просвещения</title>
+    <style>
+@import url('https://fonts.googleapis.com/css2?family=Dela+Gothic+One&family=Unbounded:wght@200..900&display=swap');
+
+/* Главные */
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Unbounded;
+    background-color: rgb(244, 244, 244);
+}
+
+a {
+    text-decoration: none;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+/* Шапка */
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 1400px;
+    margin: 0 auto;
+    padding: 30px 0;
+}
+
+header .logo {
+    color: rgb(0, 109, 219);
+    text-transform: uppercase;
+    font-size: 20px;
+    font-weight: 500;
+}
+
+/* Бургер */
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown-btn {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 10px 15px;
+    background: #f8f9fa;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.dropdown-btn:hover {
+    background: #e9ecef;
+    border-color: #adb5bd;
+}
+
+.dropdown-btn span {
+    font-weight: 500;
+    font-size: 15px;
+    font-family: Unbounded;
+    color: rgb(0, 109, 219);
+}
+
+.dropdown-content {
+    position: absolute;
+    right: 0;
+    background: white;
+    min-width: 300px;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+    border-radius: 10px;
+    z-index: 1000;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-10px);
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.dropdown-content a {
+    display: block;
+    padding: 12px 16px;
+    text-decoration: none;
+    color: #333;
+    border-bottom: 2px solid #eee;
+    transition: all 0.2s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.dropdown-content a:last-child {
+    border-bottom: none;
+}
+
+.dropdown-content a:hover {
+    background: #f8f9fa;
+    border-radius: 8px;
+}
+
+.dropdown:hover .dropdown-content {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+/* Баннер */
+
+.banner {
+    display: grid;
+    align-items: center;
+    text-align: center;
+    width: 1500px;
+    margin: 0 auto;
+    border-radius: 25px;
+    height: 250px;
+    margin-bottom: 50px;
+    box-shadow: 10px 5px 5px rgba(0,0,0,0.1);
+    background: linear-gradient(rgba(0, 123, 255, 0.5), rgba(0, 109, 219,0.5)), url('./Баннер/Баннер\ 1.jpg') center/cover no-repeat;
+}
+
+.banner-text-1 {
+    font-size: 3.6rem;
+    font-weight: 800;
+    color: rgb(255, 255, 255);
+}
+
+/* Разделы */
+
+.razdel-tema {
+    width: 1400px;
+    margin: 0 auto;
+    margin-top: 50px;
+    margin-bottom: 30px;
+}
+
+.razdel {
+    color: rgb(0, 109, 219);
+    font-size: 2.1rem;
+    font-weight: 500;
+}
+
+/* Контент */
+
+.content-section {
+    width: 1400px;
+    background: white;
+    margin: 0 auto;
+    border-radius: 20px;
+    padding: 35px;
+    margin-bottom: 35px;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.08);
+    border-left: 5px solid rgb(0, 109, 219);
+}
+
+        .section-title {
+            color: rgb(0, 109, 219);
+            font-size: 2rem;
+            margin-bottom: 25px;
+            display: flex;
+            align-items: center;
+            padding-bottom: 10px;
+            border-bottom: 2px solid #f0f0f0;
+        }
+
+        .section-title::before {
+            content: "▶";
+            display: inline-block;
+            margin-right: 15px;
+            color: rgb(0, 109, 219);
+            font-size: 1.5rem;
+        }
+
+        .subsection-title {
+            color: #2c5282;
+            font-size: 1.5rem;
+            margin: 25px 0 15px;
+            padding-left: 20px;
+            border-left: 4px solid #2c5282;
+        }
+
+        .timeline-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 25px 0;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+            border-radius: 10px;
+            overflow: hidden;
+        }
+
+        .timeline-table th {
+            background: linear-gradient(135deg, rgb(0, 109, 219), #2c5282);
+            color: white;
+            padding: 18px;
+            text-align: left;
+            font-weight: 600;
+        }
+
+        .timeline-table td {
+            padding: 18px;
+            border-bottom: 1px solid #eaeaea;
+            vertical-align: top;
+        }
+
+        .timeline-table tr:nth-child(even) {
+            background: #f8fafc;
+        }
+
+        .timeline-table tr:hover {
+            background: #e6f2ff;
+            transform: translateY(-1px);
+            transition: all 0.2s ease;
+        }
+
+        .key-points {
+            background: linear-gradient(135deg, #f0f7ff, #e6f2ff);
+            border-left: 6px solid rgb(0, 109, 219);
+            padding: 25px;
+            margin: 25px 0;
+            border-radius: 0 15px 15px 0;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+        }
+
+        .key-points h3 {
+            margin-bottom: 15px;
+            color: rgb(0, 109, 219);
+            font-size: 1.4rem;
+        }
+
+        .key-points ul {
+            padding-left: 25px;
+        }
+
+        .key-points li {
+            margin-bottom: 10px;
+            position: relative;
+        }
+
+        .key-points li::before {
+            content: "•";
+            color: rgb(0, 109, 219);
+            font-weight: bold;
+            display: inline-block;
+            width: 1em;
+            margin-left: -1em;
+        }
+
+        .archaeological-sites {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+            gap: 25px;
+            margin: 25px 0;
+        }
+
+        .site-card {
+            background: white;
+            border-radius: 15px;
+            padding: 25px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+            border-top: 5px solid rgb(0, 109, 219);
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .site-card::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, rgb(0, 109, 219), #2c5282);
+        }
+
+        .site-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 12px 30px rgba(0,0,0,0.15);
+        }
+
+        .site-card h4 {
+            color: rgb(0, 109, 219);
+            margin-bottom: 12px;
+            font-size: 1.3rem;
+        }
+
+        .site-card .region {
+            background: #e6f2ff;
+            color: #2c5282;
+            padding: 5px 12px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            display: inline-block;
+            margin-bottom: 15px;
+        }
+
+        .conclusion {
+            background: linear-gradient(135deg, #e8f4ff, #d4e7ff);
+            padding: 30px;
+            border-radius: 15px;
+            margin: 35px 0;
+            border: 2px solid #c2e0ff;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+        }
+
+        .conclusion h3 {
+            color: rgb(0, 109, 219);
+            margin-bottom: 20px;
+            font-size: 1.6rem;
+            text-align: center;
+        }
+
+        .important-note {
+            background: #fff3cd;
+            border: 2px solid #ffeaa7;
+            border-left: 6px solid #fdcb6e;
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 10px;
+        }
+
+        .comparison-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 25px 0;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+            border-radius: 10px;
+            overflow: hidden;
+        }
+
+        .comparison-table th {
+            background: #2c5282;
+            color: white;
+            padding: 15px;
+            text-align: center;
+            font-weight: 600;
+        }
+
+        .comparison-table td {
+            padding: 15px;
+            border: 1px solid #eaeaea;
+            text-align: center;
+        }
+
+        .comparison-table tr:nth-child(even) {
+            background: #f8fafc;
+        }
+
+/* Футер */
+
+footer {
+    width: 1300px;
+    margin: 0 auto;
+    border-top: 3px solid #3498db;
+    border-left: 3px solid #3498db;
+    border-right: 3px solid #3498db;
+    border-bottom: none;
+    border-radius: 15px 15px 0 0;
+    background-color: rgb(244, 244, 244);
+    text-align: center;
+    padding: 25px 25px;
+    margin-top: 3rem;
+}
+.footer-content {
+    color:rgb(69, 69, 69);
+}
+
+.book-card {
+    background: linear-gradient(135deg, #f8f9fa, #e9ecef);
+    border-radius: 15px;
+    padding: 20px;
+    margin: 15px 0;
+    border-left: 6px solid #2c5282;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+.book-title {
+    color: #2c5282;
+    font-size: 1.3rem;
+    font-weight: 600;
+    margin-bottom: 10px;
+}
+
+.book-author {
+    color: #4a5568;
+    font-style: italic;
+    margin-bottom: 10px;
+}
+
+.book-description {
+    color: #2d3748;
+    line-height: 1.6;
+}
+    </style>
+</head>
+<body>
+    <!-- Шапка -->
+    <header>
+        <a href="./Главная.html"><span class="logo">QAZAQ ELI</span></a>
+        <div class="dropdown">
+            <button class="dropdown-btn">
+                <span>Навигация</span>
+            </button>
+            <div class="dropdown-content">
+                <a href="#raz1">Традиционная культура</a>
+                <a href="#raz2">Эпоха Просвещения</a>
+                <a href="#raz3">Великие мыслители</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Баннер 1 -->
+    <div class="banner">
+        <span class="banner-text-1">Казахская традиционная культура и эпоха Просвещения</span>
+    </div>
+
+    <!-- Введение -->
+        <div class="content-section" id="introduction">
+            <h2 class="section-title">Введение: Культурное наследие казахского народа</h2>
+            <p>Казахская традиционная культура представляет собой уникальный сплав кочевых традиций, духовных ценностей и многовековой мудрости степного народа. Эпоха Просвещения в казахской степи стала периодом расцвета философской мысли, литературы и образования.</p>
+            
+            <div class="key-points">
+                <h3>Основные черты казахской традиционной культуры:</h3>
+                <ul>
+                    <li>Гармония с природой и кочевой образ жизни</li>
+                    <li>Устное народное творчество как хранилище мудрости</li>
+                    <li>Традиционная музыка и инструментальное наследие</li>
+                    <li>Нравственно-этические кодексы и обычное право</li>
+                    <li>Преемственность поколений и культ предков</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Традиционная культура -->
+        <div class="razdel-tema" id="raz1">
+            <span class="razdel">Традиционная культура казахов</span>
+        </div>
+
+        <div class="content-section">
+            <h2 class="section-title">Основы кочевой цивилизации</h2>
+            <p>Традиционная культура казахов формировалась в условиях кочевого скотоводства, которое определяло все стороны жизни - от хозяйственной деятельности до мировоззрения.</p>
+            
+            <h3 class="subsection-title">Структура традиционного общества</h3>
+            <table class="timeline-table">
+                <thead>
+                    <tr>
+                        <th>Социальный институт</th>
+                        <th>Функции и значение</th>
+                        <th>Представители</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>Аул</strong></td>
+                        <td>Основная ячейка общества, родственная община</td>
+                        <td>Сородичи, соседи</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Жуз</strong></td>
+                        <td>Крупное племенное объединение, военно-политический союз</td>
+                        <td>Старший, Средний, Младший жузы</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Ру</strong></td>
+                        <td>Родоплеменная структура, основа социальной организации</td>
+                        <td>Представители одного рода</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Совет биев</strong></td>
+                        <td>Судебно-правовой орган, носитель обычного права</td>
+                        <td>Бии - знатоки права</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <h3 class="subsection-title">Духовная культура и традиции</h3>
+            <table class="timeline-table">
+                <thead>
+                    <tr>
+                        <th>Сфера культуры</th>
+                        <th>Проявления</th>
+                        <th>Значение</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>Устное творчество</strong></td>
+                        <td>
+                            • Эпосы и героические сказания<br>
+                            • Легенды и предания<br>
+                            • Пословицы и поговорки<br>
+                            • Шежире (родословные)
+                        </td>
+                        <td>Сохранение исторической памяти, воспитание молодёжи</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Музыкальное искусство</strong></td>
+                        <td>
+                            • Кюи для домбры<br>
+                            • Народные песни<br>
+                            • Терме и толгау<br>
+                            • Айтысы акынов
+                        </td>
+                        <td>Выражение души народа, философское осмысление жизни</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Декоративно-прикладное искусство</strong></td>
+                        <td>
+                            • Войлочные ковры<br>
+                            • Ювелирные изделия<br>
+                            • Резьба по дереву<br>
+                            • Узорное ткачество
+                        </td>
+                        <td>Эстетическое оформление быта, символическое мировоззрение</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Традиционные праздники</strong></td>
+                        <td>
+                            • Наурыз<br>
+                            • Тойы<br>
+                            • Ашары<br>
+                            • Обряды жизненного цикла
+                        </td>
+                        <td>Сохранение культурной идентичности, укрепление общины</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <!-- Эпоха Просвещения -->
+        <div class="razdel-tema" id="raz2">
+            <span class="razdel">Эпоха Просвещения в Казахстане</span>
+        </div>
+
+        <div class="content-section">
+            <h2 class="section-title">Расцвет казахской литературы и философии</h2>
+            <p>XVIII-XIX века стали "золотым веком" казахской культуры, когда творили великие поэты, мыслители и просветители, заложившие основы современной казахской литературы.</p>
+            
+            <h3 class="subsection-title">Великие произведения казахского Просвещения</h3>
+            <div class="archaeological-sites">
+                <div class="site-card">
+                    <div class="region">Поэзия</div>
+                    <h4>"Книга слов" Абая</h4>
+                    <p><strong>Автор:</strong> Абай Кунанбаев<br>
+                    <strong>Год:</strong> 1890-е годы<br>
+                    <strong>Значение:</strong> Философский манифест казахского Просвещения<br>
+                    <strong>Основные идеи:</strong> Нравственное совершенствование, образование, критика пороков общества</p>
+                </div>
+                <div class="site-card">
+                    <div class="region">Эпическая поэзия</div>
+                    <h4>"Кыз Жибек"</h4>
+                    <p><strong>Автор:</strong> Народное творчество<br>
+                    <strong>Время создания:</strong> XVI-XVII вв.<br>
+                    <strong>Значение:</strong> Жемчужина казахского фольклора<br>
+                    <strong>Сюжет:</strong> Трагическая любовь Жибек и Толегена</p>
+                </div>
+                <div class="site-card">
+                    <div class="region">Дидактическая поэзия</div>
+                    <h4>Творчество Бухар жырау</h4>
+                    <p><strong>Автор:</strong> Бухар Калкаманулы<br>
+                    <strong>Период:</strong> 1693-1787 гг.<br>
+                    <strong>Значение:</strong> Наставления правителям и народу<br>
+                    <strong>Темы:</strong> Справедливость, мудрость правления, единство народа</p>
+                </div>
+            </div>
+
+            <h3 class="subsection-title">Основные направления просветительской мысли</h3>
+            <div class="archaeological-sites">
+                <div class="site-card">
+                    <h4>Философское направление</h4>
+                    <p>• Глубокое осмысление бытия<br>
+                    • Нравственные искания<br>
+                    • Критика социальных пороков<br>
+                    • Призыв к самопознанию</p>
+                </div>
+                <div class="site-card">
+                    <h4>Общественно-политическое</h4>
+                    <p>• Идеи справедливости<br>
+                    • Критика угнетения<br>
+                    • Защита народных интересов<br>
+                    • Просвещение масс</p>
+                </div>
+                <div class="site-card">
+                    <h4>Педагогическое</h4>
+                    <p>• Важность образования<br>
+                    • Воспитание молодёжи<br>
+                    • Распространение знаний<br>
+                    • Критика невежества</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Великие мыслители -->
+        <div class="razdel-tema" id="raz3">
+            <span class="razdel">Великие мыслители и просветители</span>
+        </div>
+
+        <div class="content-section">
+            <h2 class="section-title">Титаны казахской мысли</h2>
+            
+            <h3 class="subsection-title">Абай Кунанбаев (1845-1904)</h3>
+            <div class="book-card">
+                <div class="book-title">"Книга слов" (Қара сөздер)</div>
+                <div class="book-author">Абай Кунанбаев</div>
+                <div class="book-description">
+                    Философский труд, состоящий из 45 слов-назиданий. В этой книге Абай рассматривает вопросы морали, образования, справедливости, критикует пороки казахского общества своего времени. Каждое "слово" представляет собой законченное философское эссе.
+                </div>
+            </div>
+
+            <div class="key-points">
+                <h3>Основные идеи "Книги слов":</h3>
+                <ul>
+                    <li><strong>Слово 1:</strong> О разуме и знании - "Человек, не стремящийся к знанию, подобен скоту"</li>
+                    <li><strong>Слово 8:</strong> О воспитании - "Воспитывай в детях любовь к труду и знаниям"</li>
+                    <li><strong>Слово 25:</strong> О справедливости - "Справедливость - основа мира"</li>
+                    <li><strong>Слово 38:</strong> О единстве народа - "Разрозненный народ - легкая добыча для врагов"</li>
+                </ul>
+            </div>
+
+            <h3 class="subsection-title">Шокан Уалиханов (1835-1865)</h3>
+            <div class="book-card">
+                <div class="book-title">Научные труды и исследования</div>
+                <div class="book-author">Шокан Уалиханов</div>
+                <div class="book-description">
+                    Первый казахский ученый-просветитель, историк, этнограф, путешественник. Его работы посвящены истории, культуре казахского народа, географии Центральной Азии. Исследовал эпос "Манас", оставил ценные наблюдения о жизни народов Восточного Туркестана.
+                </div>
+            </div>
+
+            <h3 class="subsection-title">Ыбырай Алтынсарин (1841-1889)</h3>
+            <div class="book-card">
+                <div class="book-title">Просветительская деятельность</div>
+                <div class="book-author">Ыбырай Алтынсарин</div>
+                <div class="book-description">
+                    Выдающийся педагог-просветитель, основатель первых казахских школ, автор учебников. Открыл более 10 школ, создал первые учебники на казахском языке, ввел обучение ремеслам. Его деятельность заложила основы светского образования в Казахстане.
+                </div>
+            </div>
+        </div>
+
+        <!-- Музыкальное наследие -->
+        <div class="content-section" id="music">
+            <h2 class="section-title">Музыкальное и поэтическое наследие</h2>
+            
+            <h3 class="subsection-title">Великие композиторы-кюйши</h3>
+            <table class="timeline-table">
+                <thead>
+                    <tr>
+                        <th>Композитор</th>
+                        <th>Известные кюи</th>
+                        <th>Творческий вклад</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>Курмангазы</strong><br>(1818-1889)</td>
+                        <td>"Адай", "Сарыарка", "Балбырауын"</td>
+                        <td>Реформатор домбровой музыки, создатель эпических кюев</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Даулеткерей</strong><br>(1820-1887)</td>
+                        <td>"Көңіл ашар", "Жигер", "Бұлбұл"</td>
+                        <td>Мастер лирических кюев, основатель шертпе-кюев</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Таттимбет</strong><br>(1815-1862)</td>
+                        <td>"Саржайлау", "Көкейкесті", "Бес тоқал"</td>
+                        <td>Создатель танцевальных кюев, мастер ритмики</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Дина Нурпеисова</strong><br>(1861-1955)</td>
+                        <td>"Булбул", "Асем коныр", "Байжұма"</td>
+                        <td>Продолжатель традиций Курмангазы, первая женщина-кюйши</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <h3 class="subsection-title">Жанры устного народного творчества</h3>
+            <div class="archaeological-sites">
+                <div class="site-card">
+                    <h4>Айтысы</h4>
+                    <p>• Поэтические состязания акынов<br>
+                    • Импровизация на заданные темы<br>
+                    • Остроумие и красноречие<br>
+                    • Социальная сатира</p>
+                </div>
+                <div class="site-card">
+                    <h4>Терме и толгау</h4>
+                    <p>• Философские размышления<br>
+                    • Назидания и поучения<br>
+                    • Размышления о смысле жизни<br>
+                    • Нравственные искания</p>
+                </div>
+                <div class="site-card">
+                    <h4>Эпосы и дастаны</h4>
+                    <p>• Героические сказания<br>
+                    • Исторические предания<br>
+                    • Любовные поэмы<br>
+                    • Мифологические сюжеты</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Выводы -->
+        <div class="content-section" id="conclusion">
+            <h2 class="section-title">Историческое значение и современное наследие</h2>
+            
+            <div class="conclusion">
+                <h3>Вечное значение культурного наследия</h3>
+                <p>Казахская традиционная культура и эпоха Просвещения оставили бесценное наследие, которое продолжает вдохновлять и направлять современное казахское общество.</p>
+                
+                <div class="key-points">
+                    <h3>Основные достижения и значение:</h3>
+                    <ul>
+                        <li><strong>Духовные ценности</strong> - формирование национального характера и мировоззрения</li>
+                        <li><strong>Литературное наследие</strong> - создание классических произведений мировой значимости</li>
+                        <li><strong>Музыкальная культура</strong> - развитие уникальной инструментальной традиции</li>
+                        <li><strong>Просветительские идеи</strong> - заложение основ современного образования и науки</li>
+                        <li><strong>Нравственные ориентиры</strong> - выработка этических принципов и идеалов</li>
+                    </ul>
+                </div>
+                
+                <p>Творчество Абая, Шокана, Курмангазы и других великих представителей казахской культуры стало достоянием не только казахского народа, но и всего человечества, обогатив мировую цивилизацию уникальным опытом кочевой культуры и глубокой философской мысли.</p>
+            </div>
+
+            <div class="important-note">
+                <strong>Актуальность наследия:</strong> Идеи казахских просветителей о важности образования, нравственности, единства народа остаются чрезвычайно актуальными в современном мире и продолжают влиять на развитие казахстанского общества.
+            </div>
+        </div>
+    </div>
+     <!-- Футер -->
+    <footer>
+        <div class="footer-content">
+            <p>&copy; 2025 Образовательный веб-ресурс "История Казахстана"</p>
+            <p>Разработано в рамках учебного проекта средствами HTML и CSS</p>
+        </div>
+    </footer>
+</body>
+</html>

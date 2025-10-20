@@ -1,0 +1,768 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Казахстан в эпоху камня и бронзы</title>
+    <style>
+@import url('https://fonts.googleapis.com/css2?family=Dela+Gothic+One&family=Unbounded:wght@200..900&display=swap');
+
+/* Главные */
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Unbounded;
+    background-color: rgb(244, 244, 244);
+}
+
+a {
+    text-decoration: none;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+/* Шапка */
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 1400px;
+    margin: 0 auto;
+    padding: 30px 0;
+}
+
+header .logo {
+    color: rgb(0, 109, 219);
+    text-transform: uppercase;
+    font-size: 20px;
+    font-weight: 500;
+}
+
+/* Бургер */
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown-btn {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 10px 15px;
+    background: #f8f9fa;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.dropdown-btn:hover {
+    background: #e9ecef;
+    border-color: #adb5bd;
+}
+
+.dropdown-btn span {
+    font-weight: 500;
+    font-size: 15px;
+    font-family: Unbounded;
+    color: rgb(0, 109, 219);
+}
+
+.dropdown-content {
+    position: absolute;
+    right: 0;
+    background: white;
+    min-width: 300px;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+    border-radius: 10px;
+    z-index: 1000;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-10px);
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.dropdown-content a {
+    display: block;
+    padding: 12px 16px;
+    text-decoration: none;
+    color: #333;
+    border-bottom: 2px solid #eee;
+    transition: all 0.2s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.dropdown-content a:last-child {
+    border-bottom: none;
+}
+
+.dropdown-content a:hover {
+    background: #f8f9fa;
+    border-radius: 8px;
+}
+
+.dropdown:hover .dropdown-content {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+/* Баннер */
+
+.banner {
+    display: grid;
+    align-items: center;
+    text-align: center;
+    width: 1500px;
+    margin: 0 auto;
+    border-radius: 25px;
+    height: 250px;
+    margin-bottom: 50px;
+    box-shadow: 10px 5px 5px rgba(0,0,0,0.1);
+    background: linear-gradient(rgba(0, 123, 255, 0.5), rgba(0, 109, 219,0.5)), url('./Баннер/Баннер\ 1.jpg') center/cover no-repeat;
+}
+
+.banner-text-1 {
+    font-size: 3.6rem;
+    font-weight: 800;
+    color: rgb(255, 255, 255);
+}
+
+/* Разделы */
+
+.razdel-tema {
+    width: 1400px;
+    margin: 0 auto;
+    margin-top: 50px;
+    margin-bottom: 30px;
+}
+
+.razdel {
+    color: rgb(0, 109, 219);
+    font-size: 2.1rem;
+    font-weight: 500;
+}
+
+/* Контент */
+
+.content-section {
+    width: 1400px;
+    background: white;
+    margin: 0 auto;
+    border-radius: 20px;
+    padding: 35px;
+    margin-bottom: 35px;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.08);
+    border-left: 5px solid rgb(0, 109, 219);
+}
+
+        .section-title {
+            color: rgb(0, 109, 219);
+            font-size: 2rem;
+            margin-bottom: 25px;
+            display: flex;
+            align-items: center;
+            padding-bottom: 10px;
+            border-bottom: 2px solid #f0f0f0;
+        }
+
+        .section-title::before {
+            content: "▶";
+            display: inline-block;
+            margin-right: 15px;
+            color: rgb(0, 109, 219);
+            font-size: 1.5rem;
+        }
+
+        .subsection-title {
+            color: #2c5282;
+            font-size: 1.5rem;
+            margin: 25px 0 15px;
+            padding-left: 20px;
+            border-left: 4px solid #2c5282;
+        }
+
+        .timeline-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 25px 0;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+            border-radius: 10px;
+            overflow: hidden;
+        }
+
+        .timeline-table th {
+            background: linear-gradient(135deg, rgb(0, 109, 219), #2c5282);
+            color: white;
+            padding: 18px;
+            text-align: left;
+            font-weight: 600;
+        }
+
+        .timeline-table td {
+            padding: 18px;
+            border-bottom: 1px solid #eaeaea;
+            vertical-align: top;
+        }
+
+        .timeline-table tr:nth-child(even) {
+            background: #f8fafc;
+        }
+
+        .timeline-table tr:hover {
+            background: #e6f2ff;
+            transform: translateY(-1px);
+            transition: all 0.2s ease;
+        }
+
+        .key-points {
+            background: linear-gradient(135deg, #f0f7ff, #e6f2ff);
+            border-left: 6px solid rgb(0, 109, 219);
+            padding: 25px;
+            margin: 25px 0;
+            border-radius: 0 15px 15px 0;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+        }
+
+        .key-points h3 {
+            margin-bottom: 15px;
+            color: rgb(0, 109, 219);
+            font-size: 1.4rem;
+        }
+
+        .key-points ul {
+            padding-left: 25px;
+        }
+
+        .key-points li {
+            margin-bottom: 10px;
+            position: relative;
+        }
+
+        .key-points li::before {
+            content: "•";
+            color: rgb(0, 109, 219);
+            font-weight: bold;
+            display: inline-block;
+            width: 1em;
+            margin-left: -1em;
+        }
+
+        .archaeological-sites {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+            gap: 25px;
+            margin: 25px 0;
+        }
+
+        .site-card {
+            background: white;
+            border-radius: 15px;
+            padding: 25px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+            border-top: 5px solid rgb(0, 109, 219);
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .site-card::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, rgb(0, 109, 219), #2c5282);
+        }
+
+        .site-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 12px 30px rgba(0,0,0,0.15);
+        }
+
+        .site-card h4 {
+            color: rgb(0, 109, 219);
+            margin-bottom: 12px;
+            font-size: 1.3rem;
+        }
+
+        .site-card .region {
+            background: #e6f2ff;
+            color: #2c5282;
+            padding: 5px 12px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            display: inline-block;
+            margin-bottom: 15px;
+        }
+
+        .conclusion {
+            background: linear-gradient(135deg, #e8f4ff, #d4e7ff);
+            padding: 30px;
+            border-radius: 15px;
+            margin: 35px 0;
+            border: 2px solid #c2e0ff;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+        }
+
+        .conclusion h3 {
+            color: rgb(0, 109, 219);
+            margin-bottom: 20px;
+            font-size: 1.6rem;
+            text-align: center;
+        }
+
+        .important-note {
+            background: #fff3cd;
+            border: 2px solid #ffeaa7;
+            border-left: 6px solid #fdcb6e;
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 10px;
+        }
+
+        .comparison-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 25px 0;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+            border-radius: 10px;
+            overflow: hidden;
+        }
+
+        .comparison-table th {
+            background: #2c5282;
+            color: white;
+            padding: 15px;
+            text-align: center;
+            font-weight: 600;
+        }
+
+        .comparison-table td {
+            padding: 15px;
+            border: 1px solid #eaeaea;
+            text-align: center;
+        }
+
+        .comparison-table tr:nth-child(even) {
+            background: #f8fafc;
+        }
+
+/* Футер */
+
+footer {
+    width: 1300px;
+    margin: 0 auto;
+    border-top: 3px solid #3498db;
+    border-left: 3px solid #3498db;
+    border-right: 3px solid #3498db;
+    border-bottom: none;
+    border-radius: 15px 15px 0 0;
+    background-color: rgb(244, 244, 244);
+    text-align: center;
+    padding: 25px 25px;
+    margin-top: 3rem;
+}
+.footer-content {
+    color:rgb(69, 69, 69);
+}
+    </style>
+</head>
+<body>
+    <!-- Шапка -->
+    <header>
+        <a href="./Главная.html"><span class="logo">QAZAQ ELI</span></a>
+        <div class="dropdown">
+            <button class="dropdown-btn">
+                <span>Навигация</span>
+            </button>
+            <div class="dropdown-content">
+                <a href="#raz1">Эпоха камня</a>
+                <a href="#raz2">Эпоха бронзы</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Баннер 1 -->
+    <div class="banner">
+        <span class="banner-text-1">Казахстан в эпоху камня и бронзы</span>
+    </div>
+
+    <!-- Введение -->
+        <div class="content-section" id="introduction">
+            <h2 class="section-title">Введение: Центральная Азия в системе мировой цивилизации</h2>
+            <p>Территория современного Казахстана с древнейших времен являлась важным центром формирования человеческой цивилизации. Благодаря своему географическому положению в центре Евразии, эта земля стала мостом между Востоком и Западом, где происходили ключевые процессы антропогенеза и культурогенеза.</p>
+            
+            <div class="key-points">
+                <h3>Значение территории Казахстана в древней истории:</h3>
+                <ul>
+                    <li>Один из древнейших очагов расселения человека в Северной Азии</li>
+                    <li>Перекресток миграционных путей древнейших человеческих популяций</li>
+                    <li>Центр формирования кочевых культур и технологий</li>
+                    <li>Мост для культурных и технологических обменов между цивилизациями</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Эпоха камня -->
+        <div class="razdel-tema" id="raz1">
+            <span class="razdel">Эпоха камня: Древнейший период</span>
+        </div>
+
+        <div class="content-section">
+            <h2 class="section-title">Появление древнейшего человека в Казахстане</h2>
+            <p>Первые люди появились на территории Казахстана в раннем палеолите, около 2,5-1,5 млн лет назад. Миграция древних гоминид шла из Африки через Ближний Восток и Кавказ в Центральную Азию.</p>
+            
+            <h3 class="subsection-title">Антропологическая эволюция на территории Казахстана</h3>
+            <table class="timeline-table">
+                <thead>
+                    <tr>
+                        <th>Антропологический тип</th>
+                        <th>Период</th>
+                        <th>Характеристики</th>
+                        <th>Археологические свидетельства</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>Homo habilis</strong><br>(Человек умелый)</td>
+                        <td>2,5-1,5 млн л.н.</td>
+                        <td>Первое изготовление каменных орудий, объем мозга ~600-700 см³</td>
+                        <td>Галечные орудия на стоянках Каратау</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Homo erectus</strong><br>(Человек прямоходящий)</td>
+                        <td>1,5 млн - 400 тыс. л.н.</td>
+                        <td>Освоение огня, более сложные орудия, объем мозга ~800-1100 см³</td>
+                        <td>Рубила, скребла на стоянках Южного Казахстана</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Неандертальцы</strong></td>
+                        <td>200-40 тыс. л.н.</td>
+                        <td>Адаптация к холодному климату, зачатки духовной культуры</td>
+                        <td>Стоянки с остатками жилищ, кострищами</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Homo sapiens</strong><br>(Человек разумный)</td>
+                        <td>с 40 тыс. л.н.</td>
+                        <td>Современный тип человека, сложные орудия, искусство</td>
+                        <td>Усовершенствованные орудия, украшения</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <h3 class="subsection-title">Детальная хронология эпохи камня</h3>
+            <table class="timeline-table">
+                <thead>
+                    <tr>
+                        <th>Период</th>
+                        <th>Хронология</th>
+                        <th>Технологии и орудия</th>
+                        <th>Хозяйство и социальная организация</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>Ранний палеолит</strong></td>
+                        <td>2,5 млн - 300 тыс. л.н.</td>
+                        <td>
+                            • Чопперы и чоппинги<br>
+                            • Галечные орудия<br>
+                            • Ручные рубила<br>
+                            • Отщепная техника
+                        </td>
+                        <td>
+                            • Присваивающее хозяйство<br>
+                            • Бродячие охотники-собиратели<br>
+                            • Первобытное стадо<br>
+                            • Начало использования огня
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><strong>Средний палеолит</strong></td>
+                        <td>300 - 40 тыс. л.н.</td>
+                        <td>
+                            • Техника леваллуа<br>
+                            • Наконечники копий<br>
+                            • Скребла, остроконечники<br>
+                            • Специализированные орудия
+                        </td>
+                        <td>
+                            • Загонная охота<br>
+                            • Сезонные стойбища<br>
+                            • Родовая община<br>
+                            • Захоронения, зачатки религии
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><strong>Поздний палеолит</strong></td>
+                        <td>40 - 12 тыс. л.н.</td>
+                        <td>
+                            • Ножевидные пластины<br>
+                            • Резцы, проколки<br>
+                            • Костяные изделия<br>
+                            • Составные орудия
+                        </td>
+                        <td>
+                            • Сложная охота<br>
+                            • Долговременные жилища<br>
+                            • Племенная организация<br>
+                            • Пещерное искусство
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><strong>Мезолит</strong></td>
+                        <td>12 - 8 тыс. л.н.</td>
+                        <td>
+                            • Лук и стрелы<br>
+                            • Микролиты<br>
+                            • Вкладышевые орудия<br>
+                            • Шлифованные орудия
+                        </td>
+                        <td>
+                            • Индивидуальная охота<br>
+                            • Собирательство, рыболовство<br>
+                            • Приручение собаки<br>
+                            • Сезонные миграции
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><strong>Неолит</strong></td>
+                        <td>8 - 5 тыс. л.н.</td>
+                        <td>
+                            • Шлифованные топоры<br>
+                            • Керамика<br>
+                            • Ткачество<br>
+                            • Пряслица, грузила
+                        </td>
+                        <td>
+                            • Неолитическая революция<br>
+                            • Зарождение земледелия<br>
+                            • Приручение животных<br>
+                            • Оседлые поселения
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <!-- Археологические памятники -->
+        <div class="content-section" id="sites">
+            <h2 class="section-title">Археологические памятники эпохи камня</h2>
+            
+            <h3 class="subsection-title">Ключевые стоянки палеолита</h3>
+            <div class="archaeological-sites">
+                <div class="site-card">
+                    <div class="region">Южный Казахстан</div>
+                    <h4>Борыказган</h4>
+                    <p><strong>Возраст:</strong> ~1 млн лет<br>
+                    <strong>Значение:</strong> Одна из древнейших стоянок в Казахстане<br>
+                    <strong>Находки:</strong> Галечные орудия, чопперы, отщепы<br>
+                    <strong>Особенности:</strong> Расположена в предгорьях Каратау, рядом с источниками сырья для орудий</p>
+                </div>
+                <div class="site-card">
+                    <div class="region">Южный Казахстан</div>
+                    <h4>Танирказган</h4>
+                    <p><strong>Возраст:</strong> 800-600 тыс. лет<br>
+                    <strong>Значение:</strong> Многослойная стоянка<br>
+                    <strong>Находки:</strong> Рубила, скребла, нуклеусы<br>
+                    <strong>Особенности:</strong> Демонстрирует эволюцию техники обработки камня</p>
+                </div>
+                <div class="site-card">
+                    <div class="region">Южный Казахстан</div>
+                    <h4>Шакпак-ата</h4>
+                    <p><strong>Возраст:</strong> 300-100 тыс. лет<br>
+                    <strong>Значение:</strong> Стоянка неандертальцев<br>
+                    <strong>Находки:</strong> Орудия мустьерского типа, кострища<br>
+                    <strong>Особенности:</strong> Следы организованных жилых пространств</p>
+                </div>
+            </div>
+
+            <h3 class="subsection-title">Памятники мезолита и неолита</h3>
+            <div class="archaeological-sites">
+                <div class="site-card">
+                    <div class="region">Центральный Казахстан</div>
+                    <h4>Кызылтау</h4>
+                    <p><strong>Возраст:</strong> 10-8 тыс. лет<br>
+                    <strong>Значение:</strong> Крупная мезолитическая стоянка<br>
+                    <strong>Находки:</strong> Микролиты, костяные гарпуны<br>
+                    <strong>Особенности:</strong> Свидетельства специализированной охоты</p>
+                </div>
+                <div class="site-card">
+                    <div class="region">Восточный Казахстан</div>
+                    <h4>Караунгур</h4>
+                    <p><strong>Возраст:</strong> 7-5 тыс. лет<br>
+                    <strong>Значение:</strong> Неолитическое поселение<br>
+                    <strong>Находки:</strong> Керамика, шлифованные топоры<br>
+                    <strong>Особенности:</strong> Ранние следы производящего хозяйства</p>
+                </div>
+                <div class="site-card">
+                    <div class="region">Западный Казахстан</div>
+                    <h4>Тобол-Тургайские стоянки</h4>
+                    <p><strong>Возраст:</strong> 6-4 тыс. лет<br>
+                    <strong>Значение:</strong> Группа неолитических памятников<br>
+                    <strong>Находки:</strong> Лепная керамика, кости домашних животных<br>
+                    <strong>Особенности:</strong> Зарождение скотоводства в степной зоне</p>
+                </div>
+            </div>
+
+            <div class="important-note">
+                <strong>Важно:</strong> Концентрация древнейших памятников в Южном Казахстане связана с благоприятными природными условиями - наличием воды, кремневого сырья и богатой фауны.
+            </div>
+        </div>
+
+        <!-- Эпоха бронзы -->
+        <div class="razdel-tema" id="raz2">
+            <span class="razdel">Эпоха бронзы: Расцвет древних культур</span>
+        </div>
+
+        <div class="content-section">
+            <h2 class="section-title">Андроновская культурно-историческая общность</h2>
+            <p>В эпоху бронзы (XVIII-IX вв. до н.э.) на территории Казахстана формируется Андроновская культурно-историческая общность - одна из крупнейших археологических культур бронзового века Евразии.</p>
+            
+            <h3 class="subsection-title">Этапы развития Андроновской культуры</h3>
+            <table class="comparison-table">
+                <thead>
+                    <tr>
+                        <th>Этап</th>
+                        <th>Хронология</th>
+                        <th>Характерные черты</th>
+                        <th>Памятники</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>Ранний</strong><br>(Фёдоровский)</td>
+                        <td>XVIII-XV вв. до н.э.</td>
+                        <td>Зарождение металлургии, простые формы керамики</td>
+                        <td>Фёдоровские могильники</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Развитой</strong><br>(Алакульский)</td>
+                        <td>XV-XIII вв. до н.э.</td>
+                        <td>Расцвет металлургии, сложные могильные сооружения</td>
+                        <td>Алакульские поселения</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Поздний</strong><br>(Замараевский)</td>
+                        <td>XII-IX вв. до н.э.</td>
+                        <td>Упадок, переход к кочевничеству</td>
+                        <td>Замараевские стоянки</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <h3 class="subsection-title">Хозяйство и технологии эпохи бронзы</h3>
+            <div class="archaeological-sites">
+                <div class="site-card">
+                    <h4>Металлургия</h4>
+                    <p>• Добыча меди в Рудном Алтае<br>
+                    • Выплавка бронзы (медь+олово)<br>
+                    • Литейное производство<br>
+                    • Изготовление орудий и оружия</p>
+                </div>
+                <div class="site-card">
+                    <h4>Скотоводство</h4>
+                    <p>• Пастушеское скотоводство<br>
+                    • Разведение КРС, лошадей, овец<br>
+                    • Отгонное животноводство<br>
+                    • Зарождение кочевничества</p>
+                </div>
+                <div class="site-card">
+                    <h4>Земледелие</h4>
+                    <p>• Мотыжное земледелие<br>
+                    • Выращивание ячменя, пшеницы<br>
+                    • Ирригационные системы<br>
+                    • Использование серпов</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Культура и верования -->
+        <div class="content-section" id="culture">
+            <h2 class="section-title">Духовная культура и верования</h2>
+            
+            <h3 class="subsection-title">Религиозные представления</h3>
+            <div class="key-points">
+                <h3>Основные культы древнего населения:</h3>
+                <ul>
+                    <li><strong>Культ солнца</strong> - солярные символы на керамике, ориентация погребений</li>
+                    <li><strong>Культ огня</strong> - священные кострища, ритуальное сожжение</li>
+                    <li><strong>Культ предков</strong> - сложные погребальные обряды, курганы</li>
+                    <li><strong>Тотемизм</strong> - изображения животных как тотемов рода</li>
+                    <li><strong>Анимизм</strong> - одушевление природных явлений и объектов</li>
+                </ul>
+            </div>
+
+            <h3 class="subsection-title">Погребальная обрядность</h3>
+            <table class="timeline-table">
+                <thead>
+                    <tr>
+                        <th>Тип погребения</th>
+                        <th>Характеристики</th>
+                        <th>Социальная интерпретация</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>Курганы</strong></td>
+                        <td>Каменные или земляные насыпи, коллективные захоронения</td>
+                        <td>Знать, родовая верхушка</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Грунтовые могилы</strong></td>
+                        <td>Одиночные захоронения без насыпи</td>
+                        <td>Рядовые общинники</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Кенотафы</strong></td>
+                        <td>Символические погребения без тела</td>
+                        <td>Погибшие на чужбине</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <!-- Выводы -->
+        <div class="content-section" id="conclusion">
+            <h2 class="section-title">Историческое значение и выводы</h2>
+            
+            <div class="conclusion">
+                <h3>Основные достижения эпохи камня и бронзы на территории Казахстана</h3>
+                <p>Эпоха камня и бронзы стала фундаментальным периодом в истории Казахстана, в ходе которого были заложены основы всей последующей цивилизации Великой Степи. </p>
+                
+                <div class="key-points">
+                    <h3>Ключевые итоги развития:</h3>
+                    <ul>
+                        <li><strong>Освоение территории</strong> - заселение всех природных зон Казахстана</li>
+                        <li><strong>Хозяйственная адаптация</strong> - формирование эффективных моделей хозяйства</li>
+                        <li><strong>Технологический прогресс</strong> - от примитивных орудий к металлургии</li>
+                        <li><strong>Социальная эволюция</strong> - от первобытного стада к племенным союзам</li>
+                        <li><strong>Культурное развитие</strong> - сложная духовная культура и верования</li>
+                    </ul>
+                </div>
+                
+                <p>Достижения населения Казахстана в эпоху камня и бронзы оказали значительное влияние на формирование кочевых цивилизаций Евразии и стали важной частью общечеловеческого культурного наследия.</p>
+            </div>
+        </div>
+    </div>
+     <!-- Футер -->
+    <footer>
+        <div class="footer-content">
+            <p>&copy; 2025 Образовательный веб-ресурс "История Казахстана"</p>
+            <p>Разработано в рамках учебного проекта средствами HTML и CSS</p>
+        </div>
+    </footer>
+</body>
+</html>

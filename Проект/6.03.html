@@ -1,0 +1,762 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Советская и современная культура Казахстана</title>
+    <style>
+@import url('https://fonts.googleapis.com/css2?family=Dela+Gothic+One&family=Unbounded:wght@200..900&display=swap');
+
+/* Главные */
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Unbounded;
+    background-color: rgb(244, 244, 244);
+}
+
+a {
+    text-decoration: none;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+/* Шапка */
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 1400px;
+    margin: 0 auto;
+    padding: 30px 0;
+}
+
+header .logo {
+    color: rgb(0, 109, 219);
+    text-transform: uppercase;
+    font-size: 20px;
+    font-weight: 500;
+}
+
+/* Бургер */
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown-btn {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 10px 15px;
+    background: #f8f9fa;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.dropdown-btn:hover {
+    background: #e9ecef;
+    border-color: #adb5bd;
+}
+
+.dropdown-btn span {
+    font-weight: 500;
+    font-size: 15px;
+    font-family: Unbounded;
+    color: rgb(0, 109, 219);
+}
+
+.dropdown-content {
+    position: absolute;
+    right: 0;
+    background: white;
+    min-width: 300px;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+    border-radius: 10px;
+    z-index: 1000;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-10px);
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.dropdown-content a {
+    display: block;
+    padding: 12px 16px;
+    text-decoration: none;
+    color: #333;
+    border-bottom: 2px solid #eee;
+    transition: all 0.2s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.dropdown-content a:last-child {
+    border-bottom: none;
+}
+
+.dropdown-content a:hover {
+    background: #f8f9fa;
+    border-radius: 8px;
+}
+
+.dropdown:hover .dropdown-content {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+/* Баннер */
+
+.banner {
+    display: grid;
+    align-items: center;
+    text-align: center;
+    width: 1500px;
+    margin: 0 auto;
+    border-radius: 25px;
+    height: 250px;
+    margin-bottom: 50px;
+    box-shadow: 10px 5px 5px rgba(0,0,0,0.1);
+    background: linear-gradient(rgba(0, 123, 255, 0.5), rgba(0, 109, 219,0.5)), url('./Баннер/Баннер\ 1.jpg') center/cover no-repeat;
+}
+
+.banner-text-1 {
+    font-size: 3.6rem;
+    font-weight: 800;
+    color: rgb(255, 255, 255);
+}
+
+/* Разделы */
+
+.razdel-tema {
+    width: 1400px;
+    margin: 0 auto;
+    margin-top: 50px;
+    margin-bottom: 30px;
+}
+
+.razdel {
+    color: rgb(0, 109, 219);
+    font-size: 2.1rem;
+    font-weight: 500;
+}
+
+/* Контент */
+
+.content-section {
+    width: 1400px;
+    background: white;
+    margin: 0 auto;
+    border-radius: 20px;
+    padding: 35px;
+    margin-bottom: 35px;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.08);
+    border-left: 5px solid rgb(0, 109, 219);
+}
+
+        .section-title {
+            color: rgb(0, 109, 219);
+            font-size: 2rem;
+            margin-bottom: 25px;
+            display: flex;
+            align-items: center;
+            padding-bottom: 10px;
+            border-bottom: 2px solid #f0f0f0;
+        }
+
+        .section-title::before {
+            content: "▶";
+            display: inline-block;
+            margin-right: 15px;
+            color: rgb(0, 109, 219);
+            font-size: 1.5rem;
+        }
+
+        .subsection-title {
+            color: #2c5282;
+            font-size: 1.5rem;
+            margin: 25px 0 15px;
+            padding-left: 20px;
+            border-left: 4px solid #2c5282;
+        }
+
+        .timeline-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 25px 0;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+            border-radius: 10px;
+            overflow: hidden;
+        }
+
+        .timeline-table th {
+            background: linear-gradient(135deg, rgb(0, 109, 219), #2c5282);
+            color: white;
+            padding: 18px;
+            text-align: left;
+            font-weight: 600;
+        }
+
+        .timeline-table td {
+            padding: 18px;
+            border-bottom: 1px solid #eaeaea;
+            vertical-align: top;
+        }
+
+        .timeline-table tr:nth-child(even) {
+            background: #f8fafc;
+        }
+
+        .timeline-table tr:hover {
+            background: #e6f2ff;
+            transform: translateY(-1px);
+            transition: all 0.2s ease;
+        }
+
+        .key-points {
+            background: linear-gradient(135deg, #f0f7ff, #e6f2ff);
+            border-left: 6px solid rgb(0, 109, 219);
+            padding: 25px;
+            margin: 25px 0;
+            border-radius: 0 15px 15px 0;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+        }
+
+        .key-points h3 {
+            margin-bottom: 15px;
+            color: rgb(0, 109, 219);
+            font-size: 1.4rem;
+        }
+
+        .key-points ul {
+            padding-left: 25px;
+        }
+
+        .key-points li {
+            margin-bottom: 10px;
+            position: relative;
+        }
+
+        .key-points li::before {
+            content: "•";
+            color: rgb(0, 109, 219);
+            font-weight: bold;
+            display: inline-block;
+            width: 1em;
+            margin-left: -1em;
+        }
+
+        .archaeological-sites {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+            gap: 25px;
+            margin: 25px 0;
+        }
+
+        .site-card {
+            background: white;
+            border-radius: 15px;
+            padding: 25px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+            border-top: 5px solid rgb(0, 109, 219);
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .site-card::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, rgb(0, 109, 219), #2c5282);
+        }
+
+        .site-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 12px 30px rgba(0,0,0,0.15);
+        }
+
+        .site-card h4 {
+            color: rgb(0, 109, 219);
+            margin-bottom: 12px;
+            font-size: 1.3rem;
+        }
+
+        .site-card .region {
+            background: #e6f2ff;
+            color: #2c5282;
+            padding: 5px 12px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            display: inline-block;
+            margin-bottom: 15px;
+        }
+
+        .conclusion {
+            background: linear-gradient(135deg, #e8f4ff, #d4e7ff);
+            padding: 30px;
+            border-radius: 15px;
+            margin: 35px 0;
+            border: 2px solid #c2e0ff;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+        }
+
+        .conclusion h3 {
+            color: rgb(0, 109, 219);
+            margin-bottom: 20px;
+            font-size: 1.6rem;
+            text-align: center;
+        }
+
+        .important-note {
+            background: #fff3cd;
+            border: 2px solid #ffeaa7;
+            border-left: 6px solid #fdcb6e;
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 10px;
+        }
+
+        .comparison-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 25px 0;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+            border-radius: 10px;
+            overflow: hidden;
+        }
+
+        .comparison-table th {
+            background: #2c5282;
+            color: white;
+            padding: 15px;
+            text-align: center;
+            font-weight: 600;
+        }
+
+        .comparison-table td {
+            padding: 15px;
+            border: 1px solid #eaeaea;
+            text-align: center;
+        }
+
+        .comparison-table tr:nth-child(even) {
+            background: #f8fafc;
+        }
+
+/* Футер */
+
+footer {
+    width: 1300px;
+    margin: 0 auto;
+    border-top: 3px solid #3498db;
+    border-left: 3px solid #3498db;
+    border-right: 3px solid #3498db;
+    border-bottom: none;
+    border-radius: 15px 15px 0 0;
+    background-color: rgb(244, 244, 244);
+    text-align: center;
+    padding: 25px 25px;
+    margin-top: 3rem;
+}
+.footer-content {
+    color:rgb(69, 69, 69);
+}
+
+.book-card {
+    background: linear-gradient(135deg, #f8f9fa, #e9ecef);
+    border-radius: 15px;
+    padding: 20px;
+    margin: 15px 0;
+    border-left: 6px solid #2c5282;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+.book-title {
+    color: #2c5282;
+    font-size: 1.3rem;
+    font-weight: 600;
+    margin-bottom: 10px;
+}
+
+.book-author {
+    color: #4a5568;
+    font-style: italic;
+    margin-bottom: 10px;
+}
+
+.book-description {
+    color: #2d3748;
+    line-height: 1.6;
+}
+
+.era-card {
+    background: linear-gradient(135deg, #ffffff, #f8f9fa);
+    border-radius: 15px;
+    padding: 25px;
+    margin: 20px 0;
+    border: 2px solid #e9ecef;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+}
+
+.era-title {
+    color: #2c5282;
+    font-size: 1.4rem;
+    font-weight: 600;
+    margin-bottom: 15px;
+    display: flex;
+    align-items: center;
+}
+
+.era-title::before {
+    content: "★";
+    margin-right: 10px;
+    color: #fdcb6e;
+}
+
+.period-badge {
+    background: linear-gradient(135deg, #3498db, #2c5282);
+    color: white;
+    padding: 5px 15px;
+    border-radius: 20px;
+    font-size: 0.9rem;
+    font-weight: 600;
+    display: inline-block;
+    margin-bottom: 15px;
+}
+    </style>
+</head>
+<body>
+    <!-- Шапка -->
+    <header>
+        <a href="./Главная.html"><span class="logo">QAZAQ ELI</span></a>
+        <div class="dropdown">
+            <button class="dropdown-btn">
+                <span>Навигация</span>
+            </button>
+            <div class="dropdown-content">
+                <a href="#raz1">Советский период</a>
+                <a href="#raz2">Независимость</a>
+                <a href="#raz3">Современность</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Баннер 1 -->
+    <div class="banner">
+        <span class="banner-text-1">Советская и современная культура Казахстана</span>
+    </div>
+
+    <!-- Введение -->
+        <div class="content-section" id="introduction">
+            <h2 class="section-title">Введение: Культурная трансформация XX-XXI веков</h2>
+            <p>XX век стал для казахской культуры периодом глубоких трансформаций - от традиционного общества к советской модернизации и далее к независимому развитию. Этот путь сопровождался сложными процессами сохранения идентичности и адаптации к новым реалиям.</p>
+            
+            <div class="key-points">
+                <h3>Основные этапы культурного развития:</h3>
+                <ul>
+                    <li><strong>1920-1950-е:</strong> Формирование советской культуры, борьба с неграмотностью</li>
+                    <li><strong>1960-1980-е:</strong> "Оттепель" и "застой" - противоречивое развитие</li>
+                    <li><strong>1990-е:</strong> Культурный ренессанс независимого Казахстана</li>
+                    <li><strong>2000-е - настоящее время:</strong> Глобализация и поиск национального кода</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Советский период -->
+        <div class="razdel-tema" id="raz1">
+            <span class="razdel">Советский период: Между традицией и модернизацией</span>
+        </div>
+
+        <div class="content-section">
+            <h2 class="section-title">Становление советской культуры в Казахстане</h2>
+            <p>После установления советской власти начался процесс коренной трансформации культурной жизни, характеризовавшийся как достижениями, так и потерями.</p>
+            
+            <h3 class="subsection-title">Ключевые процессы 1920-1930-х годов</h3>
+            <table class="timeline-table">
+                <thead>
+                    <tr>
+                        <th>Направление</th>
+                        <th>Достижения</th>
+                        <th>Проблемы и потери</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>Образование</strong></td>
+                        <td>• Ликвидация неграмотности<br>• Создание системы образования<br>• Открытие вузов</td>
+                        <td>• Разрыв с традиционной системой знаний<br>• Идеологизация образования</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Литература</strong></td>
+                        <td>• Развитие письменной литературы<br>• Создание Союза писателей<br>• Новые жанры и формы</td>
+                        <td>• Репрессии против интеллигенции<br>• Ограничение творческой свободы</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Искусство</strong></td>
+                        <td>• Создание театров, филармоний<br>• Развитие изобразительного искусства<br>• Кинематограф</td>
+                        <td>• Насаждение соцреализма<br>• Ограничение традиционных форм</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Наука</strong></td>
+                        <td>• Создание Академии наук<br>• Развитие казахского языкознания<br>• Археологические исследования</td>
+                        <td>• Идеологический контроль<br>• Изоляция от мирового научного сообщества</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <h3 class="subsection-title">Великие деятели советского периода</h3>
+            <div class="archaeological-sites">
+                <div class="site-card">
+                    <div class="region">Литература</div>
+                    <h4>Мухтар Ауэзов</h4>
+                    <p><strong>Годы:</strong> 1897-1961<br>
+                    <strong>Главный труд:</strong> "Путь Абая"<br>
+                    <strong>Вклад:</strong> Создание казахского романа-эпопеи<br>
+                    <strong>Значение:</strong> Классик казахской и мировой литературы</p>
+                </div>
+                <div class="site-card">
+                    <div class="region">Поэзия</div>
+                    <h4>Жамбыл Жабаев</h4>
+                    <p><strong>Годы:</strong> 1846-1945<br>
+                    <strong>Известность:</strong> Народный акын<br>
+                    <strong>Творчество:</strong> Патриотические произведения<br>
+                    <strong>Наследие:</strong> Связь традиции и современности</p>
+                </div>
+                <div class="site-card">
+                    <div class="region">Музыка</div>
+                    <h4>Ахмет Жубанов</h4>
+                    <p><strong>Годы:</strong> 1906-1968<br>
+                    <strong>Достижения:</strong> Создание оркестра народных инструментов<br>
+                    <strong>Вклад:</strong> Развитие музыкального образования<br>
+                    <strong>Наследие:</strong> Оркестр имени Курмангазы</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Эпоха независимости -->
+        <div class="razdel-tema" id="raz2">
+            <span class="razdel">Эпоха независимости: Культурный ренессанс</span>
+        </div>
+
+        <div class="content-section">
+            <h2 class="section-title">Возрождение национальной культуры (1990-2000-е)</h2>
+            <p>Обретение независимости в 1991 году открыло новые возможности для развития казахской культуры, возрождения традиций и интеграции в мировое культурное пространство.</p>
+            
+            <div class="era-card">
+                <div class="period-badge">1991-2000 годы</div>
+                <div class="era-title">Возрождение национального самосознания</div>
+                <p>Период характеризуется активным восстановлением культурного наследия, возрождением традиционных ценностей и формированием новой национальной идентичности.</p>
+                
+                <div class="key-points">
+                    <h3>Основные достижения:</h3>
+                    <ul>
+                        <li>Возвращение наследия Алаш-Орды</li>
+                        <li>Восстановление исторических топонимов</li>
+                        <li>Развитие казахского языка как государственного</li>
+                        <li>Возрождение религиозных и национальных праздников</li>
+                    </ul>
+                </div>
+            </div>
+
+            <h3 class="subsection-title">Культурные проекты и институты</h3>
+            <table class="comparison-table">
+                <thead>
+                    <tr>
+                        <th>Направление</th>
+                        <th>Проекты и учреждения</th>
+                        <th>Значение</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>Образование</strong></td>
+                        <td>• Программа "Болашак"<br>• Назарбаев Университет<br>• Обновление школьных программ</td>
+                        <td>Интеграция в мировое образовательное пространство</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Наука</strong></td>
+                        <td>• Изучение истории Казахского ханства<br>• Археологические исследования<br>• Развитие гуманитарных наук</td>
+                        <td>Формирование национальной исторической школы</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Искусство</strong></td>
+                        <td>• Театр "Астана-опера"<br>• Кинофестиваль "Евразия"<br>• Галереи современного искусства</td>
+                        <td>Выход на международную арену</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Литература</strong></td>
+                        <td>• Издание классиков<br>• Современная проза и поэзия<br>• Переводческая деятельность</td>
+                        <td>Сохранение и развитие литературного наследия</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <!-- Современная культура -->
+        <div class="razdel-tema" id="raz3">
+            <span class="razdel">Современная культура: Глобализация и идентичность</span>
+        </div>
+
+        <div class="content-section">
+            <h2 class="section-title">Казахстанская культура в XXI веке</h2>
+            
+            <h3 class="subsection-title">Основные тенденции современности</h3>
+            <div class="archaeological-sites">
+                <div class="site-card">
+                    <h4>Цифровизация культуры</h4>
+                    <p>• Онлайн-платформы и музеи<br>
+                    • Цифровые архивы<br>
+                    • Виртуальные выставки<br>
+                    • Социальные медиа</p>
+                </div>
+                <div class="site-card">
+                    <h4>Глобализация</h4>
+                    <p>• Международные проекты<br>
+                    • Копродукция в кино<br>
+                    • Участие в биеннале<br>
+                    • Культурный обмен</p>
+                </div>
+                <div class="site-card">
+                    <h4>Мультикультурализм</h4>
+                    <p>• Диалог культур<br>
+                    • Этнические фестивали<br>
+                    • Многоязычие<br>
+                    • Толерантность</p>
+                </div>
+            </div>
+
+            <h3 class="subsection-title">Выдающиеся современные деятели</h3>
+            <div class="archaeological-sites">
+                <div class="site-card">
+                    <div class="region">Литература</div>
+                    <h4>Роллан Сейсенбаев</h4>
+                    <p><strong>Творчество:</strong> Постмодернистская проза<br>
+                    <strong>Известные работы:</strong> "Тернистый путь"<br>
+                    <strong>Вклад:</strong> Новаторство в казахской литературе<br>
+                    <strong>Признание:</strong> Международные премии</p>
+                </div>
+                <div class="site-card">
+                    <div class="region">Кино</div>
+                    <h4>Ермек Турсунов</h4>
+                    <p><strong>Фильмы:</strong> "Келин", "Шал"<br>
+                    <strong>Стиль:</strong> Поэтический реализм<br>
+                    <strong>Достижения:</strong> Призы международных фестивалей<br>
+                    <strong>Значение:</strong> Представитель "новой волны"</p>
+                </div>
+                <div class="site-card">
+                    <div class="region">Музыка</div>
+                    <h4>Бибигуль Тулегенова</h4>
+                    <p><strong>Статус:</strong> Народная артистка<br>
+                    <strong>Вклад:</strong> Развитие вокального искусства<br>
+                    <strong>Наследие:</strong> Школа казахского bel canto<br>
+                    <strong>Значение:</strong> Связь поколений в музыке</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Современное искусство -->
+        <div class="content-section" id="modern-art">
+            <h2 class="section-title">Современное искусство и массовая культура</h2>
+            
+            <h3 class="subsection-title">Новые формы и направления</h3>
+            <table class="timeline-table">
+                <thead>
+                    <tr>
+                        <th>Сфера</th>
+                        <th>Развитие</th>
+                        <th>Представители</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>Современное искусство</strong></td>
+                        <td>• Концептуальные инсталляции<br>• Видео-арт<br>• Перформансы<br>• Паблик-арт</td>
+                        <td>Ербосын Мельдибеков,<br>Сайралби Есентаева</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Дизайн и мода</strong></td>
+                        <td>• Этно-модерн<br>• Ювелирное искусство<br>• Ландшафтный дизайн<br>• Графический дизайн</td>
+                        <td>Айгуль Касимова,<br>Алия Абдрахманова</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Цифровое искусство</strong></td>
+                        <td>• Медиа-арт<br>• Цифровая графика<br>• 3D-анимация<br>• VR-проекты</td>
+                        <td>Алмаз Алимжанов,<br>Молодые digital-художники</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Массовая культура</strong></td>
+                        <td>• Поп-музыка<br>• Телевидение<br>• Блогинг<br>• Комиксы</td>
+                        <td>Димаш Кудайберген,<br>Медийные личности</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <div class="era-card">
+                <div class="period-badge">2010-2020 годы</div>
+                <div class="era-title">Культурные мегапроекты</div>
+                <p>Реализация масштабных культурных проектов, направленных на укрепление национальной идентичности и продвижение казахстанской культуры в мире.</p>
+                
+                <div class="key-points">
+                    <h3>Ключевые проекты:</h3>
+                    <ul>
+                        <li><strong>"Сакральная география Казахстана"</strong> - сохранение культурно-исторического наследия</li>
+                        <li><strong>"Современная казахстанская культура в глобальном мире"</strong> - продвижение за рубежом</li>
+                        <li><strong>"Великие имена Великой степи"</strong> - популяризация исторического наследия</li>
+                        <li><strong>EXPO-2017</strong> - демонстрация достижений и культурного потенциала</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- Выводы -->
+        <div class="content-section" id="conclusion">
+            <h2 class="section-title">Итоги и перспективы развития</h2>
+            
+            <div class="conclusion">
+                <h3>От советской модернизации к глобальной конкурентоспособности</h3>
+                <p>Советский и современный периоды стали для казахской культуры временем глубокой трансформации, сохранив при этом преемственность с традиционными ценностями.</p>
+                
+                <div class="key-points">
+                    <h3>Основные достижения:</h3>
+                    <ul>
+                        <li><strong>Сохранение идентичности</strong> - несмотря на все исторические вызовы</li>
+                        <li><strong>Модернизация</strong> - интеграция в мировое культурное пространство</li>
+                        <li><strong>Творческая свобода</strong> - развитие разнообразных направлений искусства</li>
+                        <li><strong>Международное признание</strong> - успехи в литературе, кино, музыке</li>
+                        <li><strong>Образовательный прорыв</strong> - создание современной системы образования</li>
+                    </ul>
+                </div>
+                
+                <p>Современная казахстанская культура продолжает развиваться в условиях глобализации, находя баланс между сохранением национальной идентичности и открытостью мировым тенденциям. Этот синтез создает уникальную культурную модель, способную к дальнейшему развитию и международному признанию.</p>
+            </div>
+
+            <div class="important-note">
+                <strong>Перспективы:</strong> В условиях Четвертой промышленной революции казахстанская культура стоит перед вызовами цифровизации, но имеет все возможности для создания инновационных форм художественного выражения, сочетающих традиционные ценности с современными технологиями.
+            </div>
+        </div>
+    </div>
+     <!-- Футер -->
+    <footer>
+        <div class="footer-content">
+            <p>&copy; 2025 Образовательный веб-ресурс "История Казахстана"</p>
+            <p>Разработано в рамках учебного проекта средствами HTML и CSS</p>
+        </div>
+    </footer>
+</body>
+</html>

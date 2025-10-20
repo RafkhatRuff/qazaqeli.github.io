@@ -1,0 +1,787 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Монгольская империя на территории Казахстана</title>
+    <style>
+@import url('https://fonts.googleapis.com/css2?family=Dela+Gothic+One&family=Unbounded:wght@200..900&display=swap');
+
+/* Главные */
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Unbounded;
+    background-color: rgb(244, 244, 244);
+}
+
+a {
+    text-decoration: none;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+/* Шапка */
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 1400px;
+    margin: 0 auto;
+    padding: 30px 0;
+}
+
+header .logo {
+    color: rgb(0, 109, 219);
+    text-transform: uppercase;
+    font-size: 20px;
+    font-weight: 500;
+}
+
+/* Бургер */
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown-btn {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 10px 15px;
+    background: #f8f9fa;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.dropdown-btn:hover {
+    background: #e9ecef;
+    border-color: #adb5bd;
+}
+
+.dropdown-btn span {
+    font-weight: 500;
+    font-size: 15px;
+    font-family: Unbounded;
+    color: rgb(0, 109, 219);
+}
+
+.dropdown-content {
+    position: absolute;
+    right: 0;
+    background: white;
+    min-width: 300px;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+    border-radius: 10px;
+    z-index: 1000;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-10px);
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.dropdown-content a {
+    display: block;
+    padding: 12px 16px;
+    text-decoration: none;
+    color: #333;
+    border-bottom: 2px solid #eee;
+    transition: all 0.2s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.dropdown-content a:last-child {
+    border-bottom: none;
+}
+
+.dropdown-content a:hover {
+    background: #f8f9fa;
+    border-radius: 8px;
+}
+
+.dropdown:hover .dropdown-content {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+/* Баннер */
+
+.banner {
+    display: grid;
+    align-items: center;
+    text-align: center;
+    width: 1500px;
+    margin: 0 auto;
+    border-radius: 25px;
+    height: 250px;
+    margin-bottom: 50px;
+    box-shadow: 10px 5px 5px rgba(0,0,0,0.1);
+    background: linear-gradient(rgba(0, 123, 255, 0.5), rgba(0, 109, 219,0.5)), url('./Баннер/Баннер\ 1.jpg') center/cover no-repeat;
+}
+
+.banner-text-1 {
+    font-size: 3.6rem;
+    font-weight: 800;
+    color: rgb(255, 255, 255);
+}
+
+/* Разделы */
+
+.razdel-tema {
+    width: 1400px;
+    margin: 0 auto;
+    margin-top: 50px;
+    margin-bottom: 30px;
+}
+
+.razdel {
+    color: rgb(0, 109, 219);
+    font-size: 2.1rem;
+    font-weight: 500;
+}
+
+/* Контент */
+
+.content-section {
+    width: 1400px;
+    background: white;
+    margin: 0 auto;
+    border-radius: 20px;
+    padding: 35px;
+    margin-bottom: 35px;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.08);
+    border-left: 5px solid rgb(0, 109, 219);
+}
+
+        .section-title {
+            color: rgb(0, 109, 219);
+            font-size: 2rem;
+            margin-bottom: 25px;
+            display: flex;
+            align-items: center;
+            padding-bottom: 10px;
+            border-bottom: 2px solid #f0f0f0;
+        }
+
+        .section-title::before {
+            content: "▶";
+            display: inline-block;
+            margin-right: 15px;
+            color: rgb(0, 109, 219);
+            font-size: 1.5rem;
+        }
+
+        .subsection-title {
+            color: #2c5282;
+            font-size: 1.5rem;
+            margin: 25px 0 15px;
+            padding-left: 20px;
+            border-left: 4px solid #2c5282;
+        }
+
+        .timeline-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 25px 0;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+            border-radius: 10px;
+            overflow: hidden;
+        }
+
+        .timeline-table th {
+            background: linear-gradient(135deg, rgb(0, 109, 219), #2c5282);
+            color: white;
+            padding: 18px;
+            text-align: left;
+            font-weight: 600;
+        }
+
+        .timeline-table td {
+            padding: 18px;
+            border-bottom: 1px solid #eaeaea;
+            vertical-align: top;
+        }
+
+        .timeline-table tr:nth-child(even) {
+            background: #f8fafc;
+        }
+
+        .timeline-table tr:hover {
+            background: #e6f2ff;
+            transform: translateY(-1px);
+            transition: all 0.2s ease;
+        }
+
+        .key-points {
+            background: linear-gradient(135deg, #f0f7ff, #e6f2ff);
+            border-left: 6px solid rgb(0, 109, 219);
+            padding: 25px;
+            margin: 25px 0;
+            border-radius: 0 15px 15px 0;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+        }
+
+        .key-points h3 {
+            margin-bottom: 15px;
+            color: rgb(0, 109, 219);
+            font-size: 1.4rem;
+        }
+
+        .key-points ul {
+            padding-left: 25px;
+        }
+
+        .key-points li {
+            margin-bottom: 10px;
+            position: relative;
+        }
+
+        .key-points li::before {
+            content: "•";
+            color: rgb(0, 109, 219);
+            font-weight: bold;
+            display: inline-block;
+            width: 1em;
+            margin-left: -1em;
+        }
+
+        .archaeological-sites {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+            gap: 25px;
+            margin: 25px 0;
+        }
+
+        .site-card {
+            background: white;
+            border-radius: 15px;
+            padding: 25px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+            border-top: 5px solid rgb(0, 109, 219);
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .site-card::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, rgb(0, 109, 219), #2c5282);
+        }
+
+        .site-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 12px 30px rgba(0,0,0,0.15);
+        }
+
+        .site-card h4 {
+            color: rgb(0, 109, 219);
+            margin-bottom: 12px;
+            font-size: 1.3rem;
+        }
+
+        .site-card .region {
+            background: #e6f2ff;
+            color: #2c5282;
+            padding: 5px 12px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            display: inline-block;
+            margin-bottom: 15px;
+        }
+
+        .conclusion {
+            background: linear-gradient(135deg, #e8f4ff, #d4e7ff);
+            padding: 30px;
+            border-radius: 15px;
+            margin: 35px 0;
+            border: 2px solid #c2e0ff;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+        }
+
+        .conclusion h3 {
+            color: rgb(0, 109, 219);
+            margin-bottom: 20px;
+            font-size: 1.6rem;
+            text-align: center;
+        }
+
+        .important-note {
+            background: #fff3cd;
+            border: 2px solid #ffeaa7;
+            border-left: 6px solid #fdcb6e;
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 10px;
+        }
+
+        .comparison-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 25px 0;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+            border-radius: 10px;
+            overflow: hidden;
+        }
+
+        .comparison-table th {
+            background: #2c5282;
+            color: white;
+            padding: 15px;
+            text-align: center;
+            font-weight: 600;
+        }
+
+        .comparison-table td {
+            padding: 15px;
+            border: 1px solid #eaeaea;
+            text-align: center;
+        }
+
+        .comparison-table tr:nth-child(even) {
+            background: #f8fafc;
+        }
+
+/* Футер */
+
+footer {
+    width: 1300px;
+    margin: 0 auto;
+    border-top: 3px solid #3498db;
+    border-left: 3px solid #3498db;
+    border-right: 3px solid #3498db;
+    border-bottom: none;
+    border-radius: 15px 15px 0 0;
+    background-color: rgb(244, 244, 244);
+    text-align: center;
+    padding: 25px 25px;
+    margin-top: 3rem;
+}
+.footer-content {
+    color:rgb(69, 69, 69);
+}
+    </style>
+</head>
+<body>
+    <!-- Шапка -->
+    <header>
+        <a href="./Главная.html"><span class="logo">QAZAQ ELI</span></a>
+        <div class="dropdown">
+            <button class="dropdown-btn">
+                <span>Навигация</span>
+            </button>
+            <div class="dropdown-content">
+                <a href="#raz1">Завоевание Казахстана</a>
+                <a href="#raz2">Улусная система</a>
+                <a href="#raz3">Золотая Орда</a>
+                <a href="#raz4">Распад империи</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Баннер 1 -->
+    <div class="banner">
+        <span class="banner-text-1">Монгольская империя на территории Казахстана</span>
+    </div>
+
+    <!-- Введение -->
+        <div class="content-section" id="introduction">
+            <h2 class="section-title">Введение: Создание крупнейшей континентальной империи</h2>
+            <p>В XIII веке под руководством Чингисхана была создана Монгольская империя - крупнейшая по территории континентальная империя в истории человечества. Земли Казахстана вошли в состав империи после масштабных завоеваний 1219-1221 годов.</p>
+            
+            <div class="key-points">
+                <h3>Историческое значение монгольского периода:</h3>
+                <ul>
+                    <li>Создание единой административной системы на огромной территории</li>
+                    <li>Установление трансконтинентальных торговых связей (Великий шелковый путь)</li>
+                    <li>Формирование новых политических традиций в степном регионе</li>
+                    <li>Начало процесса консолидации тюрко-монгольских племен</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Завоевание Казахстана -->
+        <div class="razdel-tema" id="raz1">
+            <span class="razdel">Завоевание территории Казахстана (1219-1221 гг.)</span>
+        </div>
+
+        <div class="content-section">
+            <h2 class="section-title">Монгольские походы и сопротивление местных народов</h2>
+            <p>Завоевание территории Казахстана стало частью Великого западного похода монголов под руководством Чингисхана и его военачальников. Основной удар был направлен против государства Хорезмшахов.</p>
+            
+            <h3 class="subsection-title">Хронология завоевательных походов</h3>
+            <table class="timeline-table">
+                <thead>
+                    <tr>
+                        <th>Год</th>
+                        <th>Военачальник</th>
+                        <th>Основные сражения</th>
+                        <th>Последствия</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>1219</strong></td>
+                        <td>Чингисхан, Джучи, Чагатай, Угэдэй</td>
+                        <td>Осада Отрара, взятие Сыгнака, Ашнаса</td>
+                        <td>Падение городов Южного Казахстана</td>
+                    </tr>
+                    <tr>
+                        <td><strong>1220</strong></td>
+                        <td>Джучи</td>
+                        <td>Завоевание низовьев Сырдарьи, поход в Дешт-и-Кыпчак</td>
+                        <td>Подчинение кыпчакских племен</td>
+                    </tr>
+                    <tr>
+                        <td><strong>1221</strong></td>
+                        <td>Субэдэй, Джебе</td>
+                        <td>Поход через Казахстан в Восточную Европу</td>
+                        <td>Окончательное установление монгольской власти</td>
+                    </tr>
+                    <tr>
+                        <td><strong>1223</strong></td>
+                        <td>Субэдэй, Джебе</td>
+                        <td>Битва на Калке, возвращение через Казахстан</td>
+                        <td>Консолидация власти в степных регионах</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <h3 class="subsection-title">Основные центры сопротивления и их судьба</h3>
+            <table class="timeline-table">
+                <thead>
+                    <tr>
+                        <th>Город/Регион</th>
+                        <th>Правитель/Командующий</th>
+                        <th>Характер сопротивления</th>
+                        <th>Итог</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>Отрар</strong></td>
+                        <td>Каир-хан</td>
+                        <td>6-месячная осада, упорная оборона</td>
+                        <td>Город разрушен, население уничтожено</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Сыгнак</strong></td>
+                        <td>Кокаш-хаджиб</td>
+                        <td>Короткая осада, штурм города</td>
+                        <td>Жестокая расправа над защитниками</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Кыпчакская степь</strong></td>
+                        <td>Хан Котян</td>
+                        <td>Партизанская война, отступление</td>
+                        <td>Часть кыпчаков ушла в Венгрию</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Жетысу</strong></td>
+                        <td>Местные правители</td>
+                        <td>Разрозненное сопротивление</td>
+                        <td>Быстрое подчинение монголам</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <!-- Улусная система -->
+        <div class="razdel-tema" id="raz2">
+            <span class="razdel">Улусная система управления (1224-1269 гг.)</span>
+        </div>
+
+        <div class="content-section">
+            <h2 class="section-title">Административное деление Монгольской империи</h2>
+            <p>После смерти Чингисхана (1227 г.) империя была разделена между его сыновьями на улусы. Территория Казахстана вошла в основном в улус Джучи (Золотую Орду) и частично в улус Чагатая.</p>
+            
+            <h3 class="subsection-title">Улусы и их правители</h3>
+            <div class="archaeological-sites">
+                <div class="site-card">
+                    <div class="region">Западный Казахстан</div>
+                    <h4>Улус Джучи</h4>
+                    <p><strong>Правители:</strong> Джучи, Батый, Берке<br>
+                    <strong>Территория:</strong> Дешт-и-Кыпчак, Поволжье<br>
+                    <strong>Столица:</strong> Сарай-Бату<br>
+                    <strong>Особенности:</strong> Преобладание кыпчакского элемента</p>
+                </div>
+                <div class="site-card">
+                    <div class="region">Южный Казахстан</div>
+                    <h4>Улус Чагатая</h4>
+                    <p><strong>Правители:</strong> Чагатай, Кара-Хулагу<br>
+                    <strong>Территория:</strong> Мавераннахр, Жетысу<br>
+                    <strong>Столица:</strong> Алмалык<br>
+                    <strong>Особенности:</strong> Сохранение оседлых традиций</p>
+                </div>
+                <div class="site-card">
+                    <div class="region">Восточный Казахстан</div>
+                    <h4>Улус Угэдэя</h4>
+                    <p><strong>Правители:</strong> Угэдэй, Гуюк<br>
+                    <strong>Территория:</strong> Западная Монголия, Алтай<br>
+                    <strong>Столица:</strong> Каракорум<br>
+                    <strong>Особенности:</strong> Земли великого хана</p>
+                </div>
+            </div>
+
+            <h3 class="subsection-title">Система управления и налогообложения</h3>
+            <table class="comparison-table">
+                <thead>
+                    <tr>
+                        <th>Административная единица</th>
+                        <th>Управляющий</th>
+                        <th>Функции</th>
+                        <th>Подчинение</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>Улус</strong></td>
+                        <td>Хан (чингизид)</td>
+                        <td>Высшая военная и гражданская власть</td>
+                        <td>Великому хану</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Тумен</strong><br>(10 000 воинов)</td>
+                        <td>Темник</td>
+                        <td>Военное управление, сбор ополчения</td>
+                        <td>Хану улуса</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Тысяча</strong></td>
+                        <td>Тысячник</td>
+                        <td>Налогообложение, судопроизводство</td>
+                        <td>Темнику</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Сотня</strong></td>
+                        <td>Сотник</td>
+                        <td>Местное управление, сбор налогов</td>
+                        <td>Тысячнику</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <!-- Золотая Орда -->
+        <div class="razdel-tema" id="raz3">
+            <span class="razdel">Золотая Орда (1242-1502 гг.)</span>
+        </div>
+
+        <div class="content-section">
+            <h2 class="section-title">Расцвет и могущество Улуса Джучи</h2>
+            <p>Золотая Орда стала одним из самых могущественных государств, образовавшихся после распада Монгольской империи. Территория Казахстана составляла важную часть этого государства.</p>
+            
+            <h3 class="subsection-title">Периоды развития Золотой Орды</h3>
+            <table class="timeline-table">
+                <thead>
+                    <tr>
+                        <th>Период</th>
+                        <th>Годы</th>
+                        <th>Характерные черты</th>
+                        <th>Великие ханы</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>Становление</strong></td>
+                        <td>1242-1257</td>
+                        <td>Батый основывает государство, строительство Сарая</td>
+                        <td>Батый, Сартак, Улагчи</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Расцвет</strong></td>
+                        <td>1257-1359</td>
+                        <td>Экономический подъем, принятие ислама, укрепление власти</td>
+                        <td>Берке, Узбек-хан, Джанибек</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Великая замятня</strong></td>
+                        <td>1359-1380</td>
+                        <td>Междоусобицы, ослабление центральной власти</td>
+                        <td>Более 25 ханов за 20 лет</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Возрождение и упадок</strong></td>
+                        <td>1380-1502</td>
+                        <td>Попытки реформ, окончательный распад</td>
+                        <td>Тохтамыш, Улуг-Мухаммед</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <div class="important-note">
+                <strong>Культурный синтез:</strong> Золотая Орда стала уникальным явлением, где монгольская военно-политическая организация соединилась с тюркской (кыпчакской) культурой и языком, а также с исламской религией и культурой. Именно в этот период началось формирование современных тюркских народов, включая казахов.
+            </div>
+
+            <h3 class="subsection-title">Экономика и города Золотой Орды</h3>
+            <div class="archaeological-sites">
+                <div class="site-card">
+                    <h4>Города и торговля</h4>
+                    <p>• Сарай-Бату - столица на Волге<br>
+                    • Сарай-Берке - новая столица<br>
+                    • Сыгнак - крупный торговый центр<br>
+                    • Отрар - восстановленный город<br>
+                    • Развитие Великого шелкового пути</p>
+                </div>
+                <div class="site-card">
+                    <h4>Ремесла и производство</h4>
+                    <p>• Ювелирное искусство<br>
+                    • Керамическое производство<br>
+                    • Металлургия и оружейное дело<br>
+                    • Кожевенное производство<br>
+                    • Чеканка монет</p>
+                </div>
+                <div class="site-card">
+                    <h4>Сельское хозяйство</h4>
+                    <p>• Кочевое скотоводство<br>
+                    • Оазисное земледелие<br>
+                    • Ирригационные системы<br>
+                    • Товарное производство<br>
+                    • Экспорт зерна и скота</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Распад империи -->
+        <div class="razdel-tema" id="raz4">
+            <span class="razdel">Распад Монгольской империи и образование новых государств</span>
+        </div>
+
+        <div class="content-section">
+            <h2 class="section-title">Процесс децентрализации и формирования новых ханств</h2>
+            <p>С XIV века начинается процесс распада Монгольской империи, который привел к образованию на территории Казахстана новых государственных образований, ставших предшественниками Казахского ханства.</p>
+            
+            <h3 class="subsection-title">Государства-преемники на территории Казахстана</h3>
+            <table class="comparison-table">
+                <thead>
+                    <tr>
+                        <th>Государство</th>
+                        <th>Период существования</th>
+                        <th>Основатель</th>
+                        <th>Территория</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>Ак-Орда</strong></td>
+                        <td>XIV - нач. XV вв.</td>
+                        <td>Орда-Еджен (сын Джучи)</td>
+                        <td>Западный и Центральный Казахстан</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Могулистан</strong></td>
+                        <td>1347-1680 гг.</td>
+                        <td>Тоглук-Тимур</td>
+                        <td>Юго-Восточный Казахстан, Жетысу</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Ханство Абулхаира</strong><br>(Государство кочевых узбеков)</td>
+                        <td>1428-1468 гг.</td>
+                        <td>Абулхаир-хан</td>
+                        <td>Западный и Центральный Казахстан</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Ногайская Орда</strong></td>
+                        <td>XIV - XVII вв.</td>
+                        <td>Ногай (темник Золотой Орды)</td>
+                        <td>Западный Казахстан, Приуралье</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <h3 class="subsection-title">Причины распада Монгольской империи</h3>
+            <div class="key-points">
+                <h3>Факторы, приведшие к децентрализации:</h3>
+                <ul>
+                    <li><strong>Размеры империи</strong> - огромная территория затрудняла управление</li>
+                    <li><strong>Междоусобные войны</strong> - борьба между потомками Чингисхана</li>
+                    <li><strong>Этнокультурные различия</strong> - разнородность населения империи</li>
+                    <li><strong>Экономические проблемы</strong> - нарушение торговых путей, налоговая система</li>
+                    <li><strong>Внешние угрозы</strong> - восстания покоренных народов, экспансия Тимура</li>
+                    <li><strong>Процесс оседания кочевников</strong> - переход к полуоседлому образу жизни</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Наследие и значение -->
+        <div class="content-section" id="heritage">
+            <h2 class="section-title">Наследие Монгольской империи в истории Казахстана</h2>
+            
+            <h3 class="subsection-title">Влияние на политическую культуру и государственность</h3>
+            <table class="timeline-table">
+                <thead>
+                    <tr>
+                        <th>Сфера влияния</th>
+                        <th>Монгольское наследие</th>
+                        <th>Вклад в казахскую государственность</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>Политическая система</strong></td>
+                        <td>Власть чингизидов, курултай, яса</td>
+                        <td>Легитимность только потомков Чингисхана, ханские советы</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Военная организация</strong></td>
+                        <td>Десятичная система, тактика конных лучников</td>
+                        <td>Военная структура казахского ополчения, батырство</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Административное деление</strong></td>
+                        <td>Улусная система, наследственные владения</td>
+                        <td>Деление на жузы как наследие улусного устройства</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Дипломатическая практика</strong></td>
+                        <td>Институт посольств, международные договоры</td>
+                        <td>Традиции дипломатии в Казахском ханстве</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <div class="conclusion">
+                <h3>Историческое значение монгольского периода для Казахстана</h3>
+                <p>Монгольский период стал важным этапом в истории Казахстана, оказавшим глубокое влияние на формирование казахской народности и государственности. Несмотря на разрушительный характер завоеваний, в долгосрочной перспективе монгольское наследие способствовало консолидации тюркских племен региона.</p>
+                
+                <div class="key-points">
+                    <h3>Основные итоги монгольского периода:</h3>
+                    <ul>
+                        <li><strong>Этногенез</strong> - консолидация тюрко-монгольских племен в единую народность</li>
+                        <li><strong>Государственная традиция</strong> - усвоение имперского опыта управления</li>
+                        <li><strong>Военная организация</strong> - совершенствование военного искусства кочевников</li>
+                        <li><strong>Экономическая интеграция</strong> - включение в систему международной торговли</li>
+                        <li><strong>Культурный синтез</strong> - соединение тюркских, монгольских и исламских традиций</li>
+                    </ul>
+                </div>
+                
+                <p>Образование Казахского ханства в 1465 году стало закономерным итогом исторического развития региона в монгольский и послемонгольский периоды, вобрав в себя лучшие традиции государственности предшествующих эпох.</p>
+            </div>
+        </div>
+    </div>
+     <!-- Футер -->
+    <footer>
+        <div class="footer-content">
+            <p>&copy; 2025 Образовательный веб-ресурс "История Казахстана"</p>
+            <p>Разработано в рамках учебного проекта средствами HTML и CSS</p>
+        </div>
+    </footer>
+</body>
+</html>

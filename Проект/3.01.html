@@ -1,0 +1,580 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Закат ханской власти и усиление внешней угрозы</title>
+    <style>
+@import url('https://fonts.googleapis.com/css2?family=Dela+Gothic+One&family=Unbounded:wght@200..900&display=swap');
+
+/* Главные */
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Unbounded;
+    background-color: rgb(244, 244, 244);
+}
+
+a {
+    text-decoration: none;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+/* Шапка */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 1400px;
+    margin: 0 auto;
+    padding: 30px 0;
+}
+
+header .logo {
+    color: rgb(0, 109, 219);
+    text-transform: uppercase;
+    font-size: 20px;
+    font-weight: 500;
+}
+
+/* Бургер */
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown-btn {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 10px 15px;
+    background: #f8f9fa;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.dropdown-btn:hover {
+    background: #e9ecef;
+    border-color: #adb5bd;
+}
+
+.dropdown-btn span {
+    font-weight: 500;
+    font-size: 15px;
+    font-family: Unbounded;
+    color: rgb(0, 109, 219);
+}
+
+.dropdown-content {
+    position: absolute;
+    right: 0;
+    background: white;
+    min-width: 300px;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+    border-radius: 10px;
+    z-index: 1000;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-10px);
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.dropdown-content a {
+    display: block;
+    padding: 12px 16px;
+    text-decoration: none;
+    color: #333;
+    border-bottom: 2px solid #eee;
+    transition: all 0.2s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.dropdown-content a:last-child {
+    border-bottom: none;
+}
+
+.dropdown-content a:hover {
+    background: #f8f9fa;
+    border-radius: 8px;
+}
+
+.dropdown:hover .dropdown-content {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+/* Баннер */
+.banner {
+    display: grid;
+    align-items: center;
+    text-align: center;
+    width: 1500px;
+    margin: 0 auto;
+    border-radius: 25px;
+    height: 250px;
+    margin-bottom: 50px;
+    box-shadow: 10px 5px 5px rgba(0,0,0,0.1);
+    background: linear-gradient(rgba(0, 123, 255, 0.5), rgba(0, 109, 219,0.5)), url('./Баннер/Баннер\ 1.jpg') center/cover no-repeat;
+}
+
+.banner-text-1 {
+    font-size: 3.6rem;
+    font-weight: 800;
+    color: rgb(255, 255, 255);
+}
+
+/* Разделы */
+.razdel-tema {
+    width: 1400px;
+    margin: 0 auto;
+    margin-top: 50px;
+    margin-bottom: 30px;
+}
+
+.razdel {
+    color: rgb(0, 109, 219);
+    font-size: 2.1rem;
+    font-weight: 500;
+}
+
+/* Контент */
+.content-section {
+    width: 1400px;
+    background: white;
+    margin: 0 auto;
+    border-radius: 20px;
+    padding: 35px;
+    margin-bottom: 35px;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.08);
+    border-left: 5px solid rgb(0, 109, 219);
+}
+
+.section-title {
+    color: rgb(0, 109, 219);
+    font-size: 2rem;
+    margin-bottom: 25px;
+    display: flex;
+    align-items: center;
+    padding-bottom: 10px;
+    border-bottom: 2px solid #f0f0f0;
+}
+
+.section-title::before {
+    content: "▶";
+    display: inline-block;
+    margin-right: 15px;
+    color: rgb(0, 109, 219);
+    font-size: 1.5rem;
+}
+
+.subsection-title {
+    color: #2c5282;
+    font-size: 1.5rem;
+    margin: 25px 0 15px;
+    padding-left: 20px;
+    border-left: 4px solid #2c5282;
+}
+
+.key-points {
+    background: linear-gradient(135deg, #f0f7ff, #e6f2ff);
+    border-left: 6px solid rgb(0, 109, 219);
+    padding: 25px;
+    margin: 25px 0;
+    border-radius: 0 15px 15px 0;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+}
+
+.key-points h3 {
+    margin-bottom: 15px;
+    color: rgb(0, 109, 219);
+    font-size: 1.4rem;
+}
+
+.key-points ul {
+    padding-left: 25px;
+}
+
+.key-points li {
+    margin-bottom: 10px;
+    position: relative;
+}
+
+.key-points li::before {
+    content: "•";
+    color: rgb(0, 109, 219);
+    font-weight: bold;
+    display: inline-block;
+    width: 1em;
+    margin-left: -1em;
+}
+
+.archaeological-sites {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+    gap: 25px;
+    margin: 25px 0;
+}
+
+.site-card {
+    background: white;
+    border-radius: 15px;
+    padding: 25px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+    border-top: 5px solid rgb(0, 109, 219);
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.site-card::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: linear-gradient(90deg, rgb(0, 109, 219), #2c5282);
+}
+
+.site-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 12px 30px rgba(0,0,0,0.15);
+}
+
+.site-card h4 {
+    color: rgb(0, 109, 219);
+    margin-bottom: 12px;
+    font-size: 1.3rem;
+}
+
+.site-card .region {
+    background: #e6f2ff;
+    color: #2c5282;
+    padding: 5px 12px;
+    border-radius: 20px;
+    font-size: 0.9rem;
+    font-weight: 600;
+    display: inline-block;
+    margin-bottom: 15px;
+}
+
+.conclusion {
+    background: linear-gradient(135deg, #e8f4ff, #d4e7ff);
+    padding: 30px;
+    border-radius: 15px;
+    margin: 35px 0;
+    border: 2px solid #c2e0ff;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+}
+
+.conclusion h3 {
+    color: rgb(0, 109, 219);
+    margin-bottom: 20px;
+    font-size: 1.6rem;
+    text-align: center;
+}
+
+.important-note {
+    background: #fff3cd;
+    border: 2px solid #ffeaa7;
+    border-left: 6px solid #fdcb6e;
+    padding: 20px;
+    margin: 20px 0;
+    border-radius: 10px;
+}
+
+.timeline-event {
+    background: #f8fafc;
+    border-left: 4px solid #2c5282;
+    padding: 20px;
+    margin: 15px 0;
+    border-radius: 0 8px 8px 0;
+}
+
+.event-year {
+    font-weight: bold;
+    color: #2c5282;
+    font-size: 1.1rem;
+    margin-bottom: 8px;
+}
+
+/* Футер */
+footer {
+    width: 1300px;
+    margin: 0 auto;
+    border-top: 3px solid #3498db;
+    border-left: 3px solid #3498db;
+    border-right: 3px solid #3498db;
+    border-bottom: none;
+    border-radius: 15px 15px 0 0;
+    background-color: rgb(244, 244, 244);
+    text-align: center;
+    padding: 25px 25px;
+    margin-top: 3rem;
+}
+.footer-content {
+    color:rgb(69, 69, 69);
+}
+    </style>
+</head>
+<body>
+    <!-- Шапка -->
+    <header>
+        <a href="./Главная.html"><span class="logo">QAZAQ ELI</span></a>
+        <div class="dropdown">
+            <button class="dropdown-btn">
+                <span>Навигация</span>
+            </button>
+            <div class="dropdown-content">
+                <a href="#raz1">Кризис ханской власти</a>
+                <a href="#raz2">Джунгарская угроза</a>
+                <a href="#raz3">Ослабление централизации</a>
+                <a href="#raz4">Поиски защиты</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Баннер 1 -->
+    <div class="banner">
+        <span class="banner-text-1">Закат ханской власти и усиление внешней угрозы</span>
+    </div>
+
+    <!-- Введение -->
+    <div class="content-section" id="introduction">
+        <h2 class="section-title">XVIII век: Переломный момент в истории Казахского ханства</h2>
+        <p>XVIII столетие стало временем глубокого кризиса казахской государственности. Ослабление центральной ханской власти, внутренние междоусобицы и усиление внешней угрозы со стороны Джунгарского ханства поставили под вопрос само существование Казахского ханства как единого государства.</p>
+        
+        <div class="key-points">
+            <h3>Основные вызовы XVIII века:</h3>
+            <ul>
+                <li>Распад единой ханской власти на три жуза</li>
+                <li>Постоянные набеги джунгарских войск</li>
+                <li>Экономическое ослабление из-за потери пастбищ</li>
+                <li>Отсутствие политического единства среди казахской знати</li>
+                <li>Необходимость выбора внешнеполитической ориентации</li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- Кризис ханской власти -->
+    <div class="razdel-tema" id="raz1">
+        <span class="razdel">Кризис ханской власти и внутренние противоречия</span>
+    </div>
+
+    <div class="content-section">
+        <h2 class="section-title">Распад единой государственной системы</h2>
+        <p>После смерти хана Тауке в 1718 году Казахское ханство окончательно утратило политическое единство. Начался период "многоказанства", когда каждый жуз избирал своего хана, что значительно ослабило обороноспособность казахов.</p>
+        
+        <h3 class="subsection-title">Ханы трех жузов и их политика</h3>
+        <div class="archaeological-sites">
+            <div class="site-card">
+                <div class="region">Старший жуз</div>
+                <h4>Жолбарыс-хан</h4>
+                <p><strong>Годы правления:</strong> 1730-1740<br>
+                <strong>Политика:</strong> Ориентация на Джунгарию<br>
+                <strong>Проблемы:</strong> Сложные отношения с другими жузами<br>
+                <strong>Итог:</strong> Не смог объединить казахов</p>
+            </div>
+            <div class="site-card">
+                <div class="region">Средний жуз</div>
+                <h4>Абылай-хан</h4>
+                <p><strong>Годы правления:</strong> 1771-1781<br>
+                <strong>Политика:</strong> Гибкая дипломатия между Россией и Китаем<br>
+                <strong>Достижения:</strong> Временное укрепление власти<br>
+                <strong>Итог:</strong> Последний влиятельный хан</p>
+            </div>
+            <div class="site-card">
+                <div class="region">Младший жуз</div>
+                <h4>Абулхаир-хан</h4>
+                <p><strong>Годы правления:</strong> 1718-1748<br>
+                <strong>Политика:</strong> Пророссийская ориентация<br>
+                <strong>Событие:</strong> Инициатор принятия российского подданства<br>
+                <strong>Итог:</strong> Убит в междоусобной борьбе</p>
+            </div>
+        </div>
+
+        <div class="important-note">
+            <strong>Политическая раздробленность:</strong> Отсутствие единого руководства привело к тому, что жузы часто действовали разрозненно, не могли организовать совместный отпор внешним врагам и заключали сепаратные договоры с соседними государствами.
+        </div>
+
+        <h3 class="subsection-title">Причины ослабления ханской власти</h3>
+        <div class="key-points">
+            <ul>
+                <li><strong>Наследственный кризис</strong> - отсутствие четкого порядка престолонаследия</li>
+                <li><strong>Сепаратизм султанов</strong> - стремление местной знати к самостоятельности</li>
+                <li><strong>Экономические трудности</strong> - сокращение пастбищных территорий</li>
+                <li><strong>Военные поражения</strong> - потеря влияния после джунгарских набегов</li>
+                <li><strong>Внешнее вмешательство</strong> - политика соседних держав по принципу "разделяй и властвуй"</li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- Джунгарская угроза -->
+    <div class="razdel-tema" id="raz2">
+        <span class="razdel">Джунгарская угроза и борьба за выживание</span>
+    </div>
+
+    <div class="content-section">
+        <h2 class="section-title">Годы Великого бедствия (Ақтабан шұбырынды)</h2>
+        <p>1723-1727 годы вошли в историю как "Ақтабан шұбырынды" - период самых страшных джунгарских нашествий, которые поставили казахский народ на грань физического уничтожения.</p>
+        
+        <div class="timeline-event">
+            <div class="event-year">1723 год - Начало катастрофы</div>
+            <p>Внезапное вторжение джунгарских войск застало казахов врасплох. Были захвачены богатейшие пастбища Жетысу, уничтожены зимние стойбища, тысячи людей погибли или были уведены в плен.</p>
+        </div>
+
+        <div class="timeline-event">
+            <div class="event-year">1724-1725 годы - Массовое бегство</div>
+            <p>Казахи вынуждены были откочевать в малопригодные для жизни районы: в пески Кызылкумов, к берегам Сырдарьи и даже в пределы Хивинского ханства. Начался голод и эпидемии.</p>
+        </div>
+
+        <div class="timeline-event">
+            <div class="event-year">1726 год - Первые победы</div>
+            <p>В битве на реке Буланты казахские ополчения под руководством Абулхаир-хана нанесли первое серьезное поражение джунгарам. Это укрепило моральный дух народа.</p>
+        </div>
+
+        <div class="timeline-event">
+            <div class="event-year">1727 год - Смерть Цэван-Рабдана</div>
+            <p>Смерть джунгарского хонтайджи и начавшаяся в Джунгарии междоусобица временно ослабили давление на казахов, что позволило им перегруппировать силы.</p>
+        </div>
+
+        <h3 class="subsection-title">Анракайская битва - поворотный момент</h3>
+        <p>В 1730 году объединенные силы трех жузов под общим командованием Абулхаир-хана нанесли сокрушительное поражение джунгарам в местности Анракай. Несмотря на эту победу, казахи не смогли полностью использовать ее результаты из-за внутренних разногласий.</p>
+
+        <div class="key-points">
+            <h3>Последствия "Годов Великого бедствия":</h3>
+            <ul>
+                <li>Потеря территории Жетысу и плодородных пастбищ</li>
+                <li>Гибель значительной части населения</li>
+                <li>Экономическая разруха и обнищание народа</li>
+                <li>Ускорение процесса принятия российского подданства</li>
+                <li>Осознание необходимости политического единства</li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- Ослабление централизации -->
+    <div class="razdel-tema" id="raz3">
+        <span class="razdel">Ослабление централизации и рост междоусобиц</span>
+    </div>
+
+    <div class="content-section">
+        <h2 class="section-title">Политическая раздробленность и борьба за власть</h2>
+        <p>Вторая половина XVIII века характеризуется дальнейшим ослаблением ханской власти и усилением междоусобной борьбы между казахскими султанами, что играло на руку внешним силам.</p>
+        
+        <h3 class="subsection-title">Основные центры власти и их лидеры</h3>
+        
+        <div class="archaeological-sites">
+            <div class="site-card">
+                <h4>Барак-султан</h4>
+                <p>Лидер оппозиции Абулхаир-хану в Младшем жузе. Возглавлял группу султанов, недовольных пророссийской ориентацией. Погиб в 1748 году в столкновении с сторонниками Абулхаира.</p>
+            </div>
+            <div class="site-card">
+                <h4>Батыр Баян</h4>
+                <p>Влиятельный батыр и руководитель рода алимулы. Активно противостоял централизаторской политике Абулхаир-хана. После смерти Абулхаира стал одним из лидеров Младшего жуза.</p>
+            </div>
+            <div class="site-card">
+                <h4>Нуралы-хан</h4>
+                <p>Сын Абулхаир-хана. Избран ханом Младшего жуза при поддержке России. Его правление (1748-1786) было отмечено постоянной борьбой с оппозицией и неспособностью укрепить власть.</p>
+            </div>
+        </div>
+
+        <h3 class="subsection-title">Экономические последствия политического кризиса</h3>
+        <div class="key-points">
+            <ul>
+                <li><strong>Сокращение кочевых маршрутов</strong> - потеря лучших пастбищных территорий</li>
+                <li><strong>Разрушение торговых связей</strong> - нарушение традиционных путей караванной торговли</li>
+                <li><strong>Обеспечение населения</strong> - массовый падеж скота и обнищание простых кочевников</li>
+                <li><strong>Налоговый произвол</strong> - увеличение поборов со стороны местных правителей</li>
+                <li><strong>Демографический кризис</strong> - сокращение численности населения из-за войн и голода</li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- Поиски защиты -->
+    <div class="razdel-tema" id="raz4">
+        <span class="razdel">Поиски внешней защиты и изменение политической ориентации</span>
+    </div>
+
+    <div class="content-section">
+        <h2 class="section-title">Принятие российского подданства - вынужденный шаг</h2>
+        <p>В условиях постоянной джунгарской угрозы и внутренней нестабильности казахские правители начали искать поддержку у соседних держав. Наиболее перспективным союзником представлялась Российская империя.</p>
+        
+        <div class="timeline-event">
+            <div class="event-year">1730 год - Первое посольство</div>
+            <p>Абулхаир-хан направляет посольство во главе с Кутлумбетом Коштаевым в Уфу с просьбой о принятии в российское подданство. Это было вызвано тяжелым положением после джунгарских нашествий.</p>
+        </div>
+
+        <div class="timeline-event">
+            <div class="event-year">1731 год - Присяга Младшего жуза</div>
+            <p>10 октября 1731 года в урочище Майтобе состоялась присяга на верность России представителей Младшего жуза. Не все султаны и бии поддержали это решение.</p>
+        </div>
+
+        <div class="timeline-event">
+            <div class="event-year">1732 год - Присоединение Среднего жуза</div>
+            <p>Часть султанов Среднего жуза во главе с Семеке-ханом также приняли российское подданство, однако этот акт имел скорее формальный характер.</p>
+        </div>
+
+        <div class="timeline-event">
+            <div class="event-year">1740-е годы - Двойная политика Абылая</div>
+            <p>Абылай-хан, понимая стратегическое положение Казахстана между Россией и Китаем, проводил гибкую политику, получая подтверждение своего ханского достоинства от обеих империй.</p>
+        </div>
+
+        <h3 class="subsection-title">Последствия принятия российского подданства</h3>
+        <div class="key-points">
+            <ul>
+                <li><strong>Военная защита</strong> - получение гарантий безопасности от джунгарских набегов</li>
+                <li><strong>Потеря суверенитета</strong> - постепенное ограничение самостоятельности в внешней политике</li>
+                <li><strong>Колониальная политика</strong> - начало строительства укрепленных линий и крепостей</li>
+                <li><strong>Экономическая зависимость</strong> - усиление торговой и экономической ориентации на Россию</li>
+                <li><strong>Внутренние противоречия</strong> - раскол среди казахской элиты по вопросу отношений с Россией</li>
+            </ul>
+        </div>
+
+        <div class="important-note">
+            <strong>Историческая оценка:</strong> Принятие российского подданства было вынужденной мерой, вызванной критической внешнеполитической ситуацией. С одной стороны, это давало военную защиту, с другой - означало начало процесса постепенной потери политической независимости.
+        </div>
+    </div>
+
+    <!-- Заключение -->
+    <div class="content-section" id="conclusion">
+        <h2 class="section-title">Исторические уроки заката ханской власти</h2>
+        
+        <div class="conclusion">
+            <h3>XVIII век: Утрата независимости или борьба за выживание?</h3>
+            <p>Период заката ханской власти в XVIII веке стал одним из самых трагических в истории казахского народа. Ослабление центральной власти, внутренние распри и внешняя агрессия привели к потере политической независимости, но одновременно способствовали консолидации национального самосознания.</p>
+            
+            <div class="key-points">
+                <h3>Основные исторические уроки этого периода:</h3>
+                <ul>
+                    <li><strong>Значение единства</strong> - раздробленность делает народ уязвимым перед внешними угрозами</li>
+                    <li><strong>Цена независимости</strong> - сохранение суверенитета требует сильной центральной власти</li>
+                    <li><strong>Дипломатическая гибкость</strong> - в сложной международной обстановке необходима сбалансированная внешняя политика</li>
+                    <li><strong>Роль национального самосознания</strong> - даже в условиях потери государственности народ сохраняет свою идентичность</li>
+                    <li><strong>Историческая память</strong> - трагические события "Ақтабан шұбырынды" стали важным элементом национальной памяти</li>
+                </ul>
+            </div>
+            
+            <p>Несмотря на потерю политической независимости, казахский народ смог сохранить свою культуру, язык и традиции, что впоследствии позволило возродить государственность в новых исторических условиях.</p>
+        </div>
+    </div>
+
+    <!-- Футер -->
+    <footer>
+        <div class="footer-content">
+            <p>&copy; 2025 Образовательный веб-ресурс "История Казахстана"</p>
+            <p>Разработано в рамках учебного проекта средствами HTML и CSS</p>
+        </div>
+    </footer>
+</body>
+</html>
